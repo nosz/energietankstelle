@@ -1,6 +1,6 @@
 # https://my-app.io
 
-![Screenshot](img/energystation.png)
+[![name](link to image on GH)](img/energystation.png)
 
 Thanks to:
 
