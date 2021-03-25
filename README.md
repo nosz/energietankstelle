@@ -1,7 +1,4 @@
-# energystation
-
-Energystation force for your intermediate:
-https://nosz.github.io/energystation/
+# https://my-app.io
 
 Thanks to:
 
