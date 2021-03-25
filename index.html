@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Energietankstelle</title>
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
+
+  <link href="schriften/tangerine_script.css" rel="stylesheet" type="text/css">
+  <link href="schriften/dancing_script.css" rel="stylesheet" type="text/css">
+  <link href="schriften/roboto_script.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload="startBild()">
+  <script src="js/jquery.min.js"></script>
+  <div class="btn-group btn-group-justified" role="group" aria-label="" id="sprache">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" id="btn_deutsch"><img src="img/deutsch.jpg" width="100" height="50"
+          alt="Deutsch" class="img-circle"></button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" id="btn_englisch"><img src="img/englisch.jpg" width="100"
+          height="50" alt="English" class="img-circle"></button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" id="btn_spanisch"><img src="img/spanisch.jpg" width="100"
+          height="50" alt="Spanish" class="img-circle"></button>
+    </div>
+    <!-- für Änderung hier noch einfügen
+      <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" id="btn_aenderung"><img src="img/aenderung.jpg" width="100" height="50" alt="Spanish" class="img-circle"></button>
+    </div> 
+    -->
+  </div>
+
+  <!-- Indicates caution should be taken with this action -->
+  <div id="klickbereich" class="klickbereich">
+    <!-- particles.js container -->
+    <div id="particles-js"> </div>
+    <div class="jumbotron" style="background-color:#ffffff">
+      <div class="" id="farbe" role="alert" style="background-color:white;">
+        <h1 class="text-center" id="moti" style="font-family: 'Tangerine', cursive;"></h1>
+      </div>
+      <div class="row">
+        <div class="alert text-center">
+          <button type="button" class="btn" id="startJetzt">
+            <h1 style="font-family:'Tangerine'; color:#9e0976;" id="text1">
+              &nbsp;Energietankstelle</h1><br><img src="img/energietankstelle_1.png">
+            <h1 id="text2" style="font-family:'Tangerine'; color:#9e0976;">Klick mich<br></h1>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        console.log("neu5; index.html: serviceWorker ist da");
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(function(registration) {
+              console.log("Registered correct service-worker.js:", registration);
+            })
+            .catch(function(error){
+              console.log("Registration failed: ", error);
+            });
+        });
+      } else {
+        console.log("kein Service-Worker");
+      }
+    </script>
+    <script src="js/hammer.min.js"></script>
+    <script src="languages.js"></script>
+    <script src="energystation.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+     
+    </script>
+
+  </div>
+</body>
+
+</html>
