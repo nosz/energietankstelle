@@ -1,6 +1,4 @@
-# https://energietankstelle24.de
 
-[![name](img/energystation.png)](https://my-app.io)
 
 Thanks to:
 
