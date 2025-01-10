@@ -2,7 +2,7 @@
 
 var tempStartseite = true;
 var minBild = 1;
-var maxBild = 195;
+var maxBild = 196;
 var tempSprache;
   //
 var myInterval = setInterval(clickOnDocument, 10000)
@@ -18,16 +18,19 @@ function clickOnDocument() {
 
 //energieanzeigen
 var btn_klickbereich = document.getElementById('klickbereich');
-btn_klickbereich.addEventListener('click', function(){
-	energieJetztAnzeigen(false);
-	clearInterval(myInterval);  
-	myInterval = setInterval(clickOnDocument, 20000);
-})
+// wird durch tap press auch ausgelöst
+//btn_klickbereich.addEventListener('click', function(){
+	//console.log("click");
+	//energieJetztAnzeigen(false);
+	//clearInterval(myInterval);  
+	//myInterval = setInterval(clickOnDocument, 20000);
+//})
 var mc_klickbereich = new Hammer(btn_klickbereich);
 mc_klickbereich.get('pan').set({});
 // listen to events...
 mc_klickbereich.on("tap press", function (ev) {
 	//alert("neu..");
+	//console.log("tap press");
 	energieJetztAnzeigen(false);
 	clearInterval(myInterval); 
 	myInterval = setInterval(clickOnDocument, 20000); 
@@ -36,6 +39,7 @@ mc_klickbereich.on("tap press", function (ev) {
 //for all swipe
 mc_klickbereich.on("swipe", function (ev) {
 	//alert("neu..");
+	//console.log("swipe");
 	energieJetztAnzeigen(false);
 	clearInterval(myInterval);  
 	myInterval = setInterval(clickOnDocument, 20000);
@@ -140,7 +144,7 @@ var mySelectedBack;
 var textfarbe, schriftart, selected;
 
 function energieAnzeigen(tempSelected) {
-
+	console.log(tempStartseite);
 	if (tempStartseite === false) {
 		document.getElementById("moti").innerHTML = tempSelected;
 
@@ -167,8 +171,10 @@ function energieAnzeigen(tempSelected) {
 
 var tempSatzOld;
 var tempBildOld;
+var bildNeu = true;
 
 function energieJetztAnzeigen(boolAnzeige) {
+	console.log("jetzt wird neu angezeigt");
 	"use strict";
 	if (boolAnzeige === false) {
 		tempStartseite = false;
@@ -215,6 +221,11 @@ function energieJetztAnzeigen(boolAnzeige) {
 			zahl = rand(minBild, maxBild);
 		} else {
 			tempBildOld = zahl;
+		}		
+		// 9.1.2025 das das neueste Bild am Anfang angezeigt wird
+		if(bildNeu){
+			zahl = rand(maxBild, maxBild);
+			bildNeu= false;
 		}
 
 		meinBild = "<img src='img/t" + zahl + ".jpg' class='img-circle'>";
@@ -225,6 +236,8 @@ function energieJetztAnzeigen(boolAnzeige) {
 			selected = meinBild + "&nbsp;" + selected;
 		}
 	}
+
+	
 
 	energieAnzeigen(selected);
 
