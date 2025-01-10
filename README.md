@@ -1,4 +1,4 @@
-https://nosz.github.io/energystation/
+https://nosz.github.io/energietankstelle
 
 Thanks to:
 
