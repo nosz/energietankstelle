@@ -144,7 +144,7 @@ var mySelectedBack;
 var textfarbe, schriftart, selected;
 
 function energieAnzeigen(tempSelected) {
-	console.log(tempStartseite);
+	//console.log(tempStartseite);
 	if (tempStartseite === false) {
 		document.getElementById("moti").innerHTML = tempSelected;
 
@@ -174,7 +174,7 @@ var tempBildOld;
 var bildNeu = true;
 
 function energieJetztAnzeigen(boolAnzeige) {
-	console.log("jetzt wird neu angezeigt");
+	// console.log("jetzt wird neu angezeigt");
 	"use strict";
 	if (boolAnzeige === false) {
 		tempStartseite = false;
@@ -224,6 +224,7 @@ function energieJetztAnzeigen(boolAnzeige) {
 		}		
 		// 9.1.2025 das das neueste Bild am Anfang angezeigt wird
 		if(bildNeu){
+			console.log("NEUES BILD AM ANFANG")
 			zahl = rand(maxBild, maxBild);
 			bildNeu= false;
 		}
