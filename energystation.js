@@ -71,6 +71,21 @@ mc_english.on("panleft panright panup pandown tap press", function (ev) {
 	localStorage.setItem("langEnergieText1", "Energy station");
 	localStorage.setItem("langEnergieText2", "click me...");
 });
+//btn_polnisch
+var btn_polnisch = document.getElementById('btn_polnisch');
+var mc_polnisch = new Hammer(btn_polnisch);
+mc_polnisch.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_polnisch.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "Twoja stacja energetyczna";
+	document.getElementById("text2").innerHTML = "Kliknij mnie...";
+	tempSprache = "pl";
+	localStorage.setItem("langEnergie", "pl");
+	localStorage.setItem("langEnergieText1", "Twoja stacja energetyczna");
+	localStorage.setItem("langEnergieText2", "Kliknij mnie...");
+});
 //btn_spanish
 var btn_spanish = document.getElementById('btn_spanisch');
 var mc_spanish = new Hammer(btn_spanish);
@@ -176,6 +191,11 @@ function energieJetztAnzeigen(boolAnzeige) {
 
 	if (tempSprache === "es") {
 		sprachArray = motivationTextEs;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "pl") {
+		sprachArray = motivationTextPL;
 		countText = sprachArray.length;
 	}
 
