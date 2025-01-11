@@ -79,6 +79,9 @@ var motivationTextPL = [
 
     
 var motivationText = [
+"Halte niemals Komplimente zurück. Dafür gibt es keinen Grund",
+"Du übernimmst jetzt selbst die Verantwortung für Dein Denken und Leben. Du bist kraftvoll und dynamisch",
+"Sei gut zu Dir selbst",
 "noFrei lebende Wölfe<img src='img/wolf.jpg' class='img-circle'>und ungekünstelte Frauen haben vieles gemeinsam: die Akkuratheit ihres instinktiven Feingefühls, eine Vorliebe für alles Spielerische und eine schier unverrückbare Loyalität<br><br>Clarissa Pinkola Estes",
 "Lass Dir Dein Leuchten nicht nehmen, nur weil es andere blenden könnte!",   
 "Es ist so wertvoll und schön dass es Dich gibt",    
