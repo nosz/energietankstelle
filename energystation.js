@@ -8,7 +8,7 @@ var tempSprache;
 var myInterval = setInterval(clickOnDocument, 10000)
 function clickOnDocument() {
 	var btn_klickbereich = document.getElementById('klickbereich');
-	btn_klickbereich.click();        
+	btn_klickbereich.click();       
 	clearInterval(myInterval);  
 	myInterval = setInterval(clickOnDocument, 20000);      
   }
@@ -19,26 +19,24 @@ function clickOnDocument() {
 //energieanzeigen
 var btn_klickbereich = document.getElementById('klickbereich');
 // wird durch tap press auch ausgelöst
-//btn_klickbereich.addEventListener('click', function(){
-	//console.log("click");
-	//energieJetztAnzeigen(false);
-	//clearInterval(myInterval);  
-	//myInterval = setInterval(clickOnDocument, 20000);
-//})
+btn_klickbereich.addEventListener('click', function(){
+	console.log("click");
+	energieJetztAnzeigen(false);
+	clearInterval(myInterval);  
+	myInterval = setInterval(clickOnDocument, 20000);
+})
 var mc_klickbereich = new Hammer(btn_klickbereich);
 mc_klickbereich.get('pan').set({});
 // listen to events...
-mc_klickbereich.on("tap press", function (ev) {
-	//alert("neu..");
+//mc_klickbereich.on("tap press", function (ev) {
 	//console.log("tap press");
-	energieJetztAnzeigen(false);
-	clearInterval(myInterval); 
-	myInterval = setInterval(clickOnDocument, 20000); 
-});
+	//energieJetztAnzeigen(false);
+	//clearInterval(myInterval); 
+	//myInterval = setInterval(clickOnDocument, 20000); 
+//});
 
 //for all swipe
 mc_klickbereich.on("swipe", function (ev) {
-	//alert("neu..");
 	//console.log("swipe");
 	energieJetztAnzeigen(false);
 	clearInterval(myInterval);  
