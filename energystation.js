@@ -73,6 +73,24 @@ mc_english.on("panleft panright panup pandown tap press", function (ev) {
 	localStorage.setItem("langEnergieText1", "Energy station");
 	localStorage.setItem("langEnergieText2", "click me...");
 });
+
+//btn_italia
+var btn_italia = document.getElementById('btn_italia');
+var mc_italia = new Hammer(btn_italia);
+mc_italia.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_italia.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia";
+	document.getElementById("text2").innerHTML = "Cliccami...";
+	tempSprache = "it";
+	localStorage.setItem("langEnergie", "it");
+	localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia");
+	localStorage.setItem("langEnergieText2", "Cliccami...");
+});
+
+
 //btn_polnisch
 var btn_polnisch = document.getElementById('btn_polnisch');
 var mc_polnisch = new Hammer(btn_polnisch);
@@ -200,6 +218,11 @@ function energieJetztAnzeigen(boolAnzeige) {
 
 	if (tempSprache === "pl") {
 		sprachArray = motivationTextPL;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "it") {
+		sprachArray = motivationTextIt;
 		countText = sprachArray.length;
 	}
 
