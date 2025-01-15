@@ -1,4 +1,4 @@
-![Energietankstelle](img/energietankstelle_1.png "Energietankstelle")
+![Energietankstelle](img/energietankstelle_languages.jpg "Energietankstelle")
 
 
 
@@ -14,6 +14,6 @@ http://hammerjs.github.io/
 
 https://pixabay.com/
 
-Translation by Maria
+Translation spanish by Maria
 
 
