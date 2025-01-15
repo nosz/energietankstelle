@@ -80,7 +80,7 @@ var motivationTextIt = [
 "Non trattenere mai i complimenti. Non c'è motivo per farlo",
 "Ora ti assumi personalmente la responsabilità dei tuoi pensieri e della tua vita. Sei potente e dinamico",
 "Sii gentile con te stesso",
-"noLupi selvaggi<img src='img/wolf.jpg' class='img-circle'>e donne autentiche hanno molto in comune: la precisione del loro istinto sensibile, una predilezione per tutto ciò che è giocoso e una lealtà incrollabile<br><br>Clarissa Pinkola Estes",
+"Lupi selvaggi<img src='img/wolf.jpg' class='img-circle'>e donne autentiche hanno molto in comune: la precisione del loro istinto sensibile, una predilezione per tutto ciò che è giocoso e una lealtà incrollabile<br><br>Clarissa Pinkola Estes",
 "Non lasciare che la tua luce venga spenta solo perché potrebbe abbagliare gli altri!",   
 "È così prezioso e bello che tu esista",    
 "La tua vera ricchezza sono i tuoi pensieri.",
