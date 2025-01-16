@@ -90,6 +90,22 @@ mc_italia.on("panleft panright panup pandown tap press", function (ev) {
 	localStorage.setItem("langEnergieText2", "Cliccami...");
 });
 
+//btn_russian
+var btn_russian = document.getElementById('btn_russian');
+var mc_russian = new Hammer(btn_russian);
+mc_russian.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_russian.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "энергозаправочная станция";
+	document.getElementById("text2").innerHTML = "Кликни меня...";
+	tempSprache = "ru";
+	localStorage.setItem("langEnergie", "ru");
+	localStorage.setItem("langEnergieText1", "энергозаправочная станция");
+	localStorage.setItem("langEnergieText2", "Кликни меня...");
+});
+
 
 //btn_polnisch
 var btn_polnisch = document.getElementById('btn_polnisch');
@@ -223,6 +239,11 @@ function energieJetztAnzeigen(boolAnzeige) {
 
 	if (tempSprache === "it") {
 		sprachArray = motivationTextIt;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "ru") {
+		sprachArray = motivationTextRu;
 		countText = sprachArray.length;
 	}
 
