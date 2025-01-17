@@ -360,6 +360,7 @@ var motivationTextRu = [
 
     
 var motivationText = [
+"Der grösste Fehler den man im Leben machen kann, ist Angst zu haben ein Fehler zu machen",
 "Halte niemals Komplimente zurück. Dafür gibt es keinen Grund",
 "Du übernimmst jetzt selbst die Verantwortung für Dein Denken und Leben. Du bist kraftvoll und dynamisch",
 "Sei gut zu Dir selbst",
