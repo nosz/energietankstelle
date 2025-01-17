@@ -72,7 +72,8 @@ var motivationTextPL = [
 "Jesteś najważniejszą osobą w swoim życiu, więc kochaj i szanuj siebie.",
 "Szczęście nie zależy od tego, kim jesteś, czy co masz, ale od tego, co myślisz.",
 "Ból i wysiłek to szczeble drabiny prowadzącej do sukcesu.",
-"Jesteś wyjątkowy."
+"Jesteś wyjątkowy.",
+"Najwiekszym bledem, ktorego nie mozesz popelnic, jest strach przed popelnieniem bledu."
 ];
 
 
@@ -360,7 +361,7 @@ var motivationTextRu = [
 
     
 var motivationText = [
-"Der grösste Fehler den man im Leben machen kann, ist Angst zu haben ein Fehler zu machen",
+"Der grösste Fehler den man im Leben machen kann, ist immer Angst zu haben, ein Fehler zu machen",
 "Halte niemals Komplimente zurück. Dafür gibt es keinen Grund",
 "Du übernimmst jetzt selbst die Verantwortung für Dein Denken und Leben. Du bist kraftvoll und dynamisch",
 "Sei gut zu Dir selbst",
