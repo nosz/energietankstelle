@@ -168,6 +168,38 @@ mc_vietnam.on("panleft panright panup pandown tap press", function (ev) {
 	localStorage.setItem("langEnergieText2", "Nhấp vào tôi...");
 });
 
+//btn_bangla
+var btn_bangla = document.getElementById('btn_bangla');
+var mc_bangla = new Hammer(btn_bangla);
+mc_bangla.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_bangla.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "শক্তি স্টেশন";
+	document.getElementById("text2").innerHTML = "ক্লিক করুন...";
+	tempSprache = "ba";
+	localStorage.setItem("langEnergie", "ba");
+	localStorage.setItem("langEnergieText1", "শক্তি স্টেশন");
+	localStorage.setItem("langEnergieText2", "ক্লিক করুন...");
+});
+
+//btn_ungarn
+var btn_ungarn = document.getElementById('btn_ungarn');
+var mc_ungarn = new Hammer(btn_ungarn);
+mc_ungarn.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_ungarn.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "Energiatankoló";
+	document.getElementById("text2").innerHTML = "Kattints rám!...";
+	tempSprache = "un";
+	localStorage.setItem("langEnergie", "un");
+	localStorage.setItem("langEnergieText1", "Energiatankoló");
+	localStorage.setItem("langEnergieText2", "Kattints rám!...");
+});
+
 //end language
 
 var meinBild;
@@ -228,6 +260,7 @@ function energieAnzeigen(tempSelected) {
 		loescheElement(document.getElementById("startJetzt"));
 		loescheElement(document.getElementById("startJetztBild"));
 		loescheElement(document.getElementById("sprache"));
+		loescheElement(document.getElementById("sprache1"));
 	}
 	//document.getElementById("startJetzt").style.display = 'none';
 }
@@ -288,6 +321,15 @@ function energieJetztAnzeigen(boolAnzeige) {
 		countText = sprachArray.length;
 	}
 
+	if (tempSprache === "ba") {
+		sprachArray = motivationTextBa;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "un") {
+		sprachArray = motivationTextUn;
+		countText = sprachArray.length;
+	}
 	selected = sprachArray[rand(0, countText - 1)];
 	if (selected == tempSatzOld) {
 		selected = sprachArray[rand(0, countText - 1)];
