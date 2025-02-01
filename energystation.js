@@ -152,6 +152,21 @@ mc_turkiye.on("panleft panright panup pandown tap press", function (ev) {
 	localStorage.setItem("langEnergieText1", "Enerji istasyonu");
 	localStorage.setItem("langEnergieText2", "Beni tıkla...");
 });
+//btn_vietnam
+var btn_vietnam = document.getElementById('btn_vietnam');
+var mc_vietnam = new Hammer(btn_vietnam);
+mc_vietnam.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_vietnam.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "Trạm năng lượng";
+	document.getElementById("text2").innerHTML = "Nhấp vào tôi...";
+	tempSprache = "vi";
+	localStorage.setItem("langEnergie", "vi");
+	localStorage.setItem("langEnergieText1", "Trạm năng lượng");
+	localStorage.setItem("langEnergieText2", "Nhấp vào tôi...");
+});
 
 //end language
 
@@ -265,6 +280,11 @@ function energieJetztAnzeigen(boolAnzeige) {
 
 	if (tempSprache === "tu") {
 		sprachArray = motivationTextTu;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "vi") {
+		sprachArray = motivationTextVi;
 		countText = sprachArray.length;
 	}
 
