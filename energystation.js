@@ -137,6 +137,22 @@ mc_spanish.on("panleft panright panup pandown tap press", function (ev) {
 	localStorage.setItem("langEnergieText1", "Fuente de Energia");
 	localStorage.setItem("langEnergieText2", "haz clic...");
 });
+//btn_turkiye
+var btn_turkiye = document.getElementById('btn_turkiye');
+var mc_turkiye = new Hammer(btn_turkiye);
+mc_turkiye.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_turkiye.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "Enerji istasyonu";
+	document.getElementById("text2").innerHTML = "Beni tıkla...";
+	tempSprache = "tu";
+	localStorage.setItem("langEnergie", "tu");
+	localStorage.setItem("langEnergieText1", "Enerji istasyonu");
+	localStorage.setItem("langEnergieText2", "Beni tıkla...");
+});
+
 //end language
 
 var meinBild;
@@ -244,6 +260,11 @@ function energieJetztAnzeigen(boolAnzeige) {
 
 	if (tempSprache === "ru") {
 		sprachArray = motivationTextRu;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "tu") {
+		sprachArray = motivationTextTu;
 		countText = sprachArray.length;
 	}
 
