@@ -361,7 +361,7 @@ var motivationTextRu = [
 
     
 var motivationText = [
-"In diesem Augenblick wenn Du an Dich selbst glaubst, dann wird sich Dein Leben verändern",
+"In diesem Augenblick wenn Du aus vollem Herzen an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Der grösste Fehler den man im Leben machen kann, ist immer Angst zu haben, ein Fehler zu machen",
 "Halte niemals Komplimente zurück. Dafür gibt es keinen Grund",
 "Du übernimmst jetzt selbst die Verantwortung für Dein Denken und Leben. Du bist kraftvoll und dynamisch",
