@@ -361,6 +361,9 @@ var motivationTextRu = [
 
     
 var motivationText = [
+"Ich bin glücklich und voller Liebe",
+"Ich bin geduldig und authentisch",
+"Ich bin wertvoll und stolz auf die Person die ich bin",    
 "In diesem Augenblick wenn Du aus vollem Herzen an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Der grösste Fehler den man im Leben machen kann, ist immer Angst zu haben, ein Fehler zu machen",
 "Halte niemals Komplimente zurück. Dafür gibt es keinen Grund",
@@ -670,6 +673,9 @@ var motivationTextVi = [
 ]
 
 var motivationTextUn = [
+    "Boldog vagyok és tele vagyok szeretettel",
+    "Türelmes és hiteles vagyok",
+    "Értékes vagyok, és büszke vagyok arra, aki vagyok",
     "Az életben a legnagyobb hiba, amit elkövethetsz, hogy folyamatosan félsz a hibáktól.",
     "Soha ne tartsd vissza a bókokat. Nincs rá okod.",
     "Most már te vállalod a felelősséget a gondolataidért és az életedért. Erős és dinamikus vagy.",
@@ -1000,6 +1006,9 @@ var motivationTextBa = [
 ]
 
 var motivationTextTu = [
+    "Mutluyum ve sevgiyle doluyum",
+    "Sabırlıyım ve otantiğim",
+    "Değerliyim ve olduğum kişiyle gurur duyuyorum",
     "Hayatta yapılabilecek en büyük hata, her zaman hata yapmaktan korkmaktır.",
     "Komplimanları asla esirgeme. Bunun için hiçbir neden yok.",
     "Artık düşüncelerinin ve hayatının sorumluluğunu kendin alıyorsun. Güçlü ve dinamiksin.",
