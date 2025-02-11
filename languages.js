@@ -361,9 +361,11 @@ var motivationTextRu = [
 
     
 var motivationText = [
+"Sag dir das jeden Tag: <br>Ich bin wertvoll<br>Ich bin glücklich und voller Liebe<br>Ich bin geduldig<br>Ich bin stolz auf die Person die ich bin<br>Ich liebe mich<br>Ich bin authentisch",
 "Sag dir das jeden Tag: Ich bin glücklich und voller Liebe",
 "Sag dir das jeden Tag: Ich bin geduldig und authentisch",
-"Sag dir das jeden Tag: Ich bin wertvoll und stolz auf die Person die ich bin",    
+"Sag dir das jeden Tag: Ich bin wertvoll und stolz auf die Person die ich bin",
+"Sag dir das jeden Tag: <br>Ich bin wertvoll<br>Ich bin glücklich und voller Liebe<br>Ich bin geduldig<br>Ich bin stolz auf die Person die ich bin<br>Ich liebe mich<br>Ich bin authentisch",
 "In diesem Augenblick wenn Du aus vollem Herzen an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Der grösste Fehler den man im Leben machen kann, ist immer Angst zu haben, ein Fehler zu machen",
 "Halte niemals Komplimente zurück. Dafür gibt es keinen Grund",
