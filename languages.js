@@ -499,7 +499,7 @@ var motivationText = [
  "Du brauchst keinen Lehrer, der Dich beeinflusst.<br><br><br>Du brauchst einen Lehrer, der Dich lehrt, Dich nicht mehr beeinflussen zu lassen.",
  "Ehre Deine Schwächen und Narben mit dem Gold Deiner ❤️ Selbstliebe",
  "Die Liebe ❤️ Gottes ist ausgegossen in Dein Herz",
-"Glaube an Wunder, Liebe & Glück<br>Schaue nach vorne<br><br>Tue, was Du willst und stehe dazu, denn dieses Leben lebst nur Du!",
+"Glaube an Wunder, Liebe und Glück<br>Schaue nach vorne<br><br>Tue, was Du willst und stehe dazu, denn dieses Leben lebst nur Du!",
 "Gib Deiner Vergangenheit nicht die Macht, Deine Zukunft zu beeinflussen!<br><br>Lass sie los, Deine Vergangenheit hat Dir nichts Neues zu sagen.",
 "Dein wahrer Reichtum sind Deine Gedanken!",
 "Du kannst ein guter Mensch mit einem liebevollen Herz sein und trotzdem 'nein' sagen.",
