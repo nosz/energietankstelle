@@ -410,7 +410,7 @@ var motivationText = [
 "Glaube an Dich<br><br>Glaube daran dass die göttliche Energie immer in Dir<br>und für Dich ist<br>",
 "Sei immer Du selbst<br>im Jetzt und Hier<br>mache Dir und anderen Komplimente<br>mache Dich und andere zu Riesen",
 "Der Schlüssel &#9825;<br>zu Deinem Glück<br>liegt in Dir",
-"In diesem Augenblick wenn Du an Dich selbst glaubst, dann wird sich Dein Leben verändern",
+"In diesem Augenblick wenn Du wirklich an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Mit dem Herzen an Dein Ziel glauben<br> das ist das Geheimnis der Götter",
 "Du bist der wichtigste Mensch in Deinem Leben<br>deshalb habe Dich lieb &#9825;<br>und respektiere Dich", "no<img src='img/glueck3.jpg' class='img-circle'><br>Glück hängt nicht davon ab<br>wer Du bist oder was Du hast<br>es hängt nur davon ab<br>was Du denkst",
 "Fleiss und Ausdauer<br>sind die Leitersprossen<br>zum Erfolg",
