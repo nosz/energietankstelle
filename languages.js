@@ -496,7 +496,7 @@ var motivationText = [
  "Finde den <b>Mut</b> für die Veränderung, die Du Dir wünschst,<br><br>die <b>Kraft</b> es durchzuziehen<br><br>und den <b>Glauben</b> daran, dass sich alles zum Besten wenden wird.",
  "Du kannst nicht zurück gehen und den Anfang ändern.<br><br>Aber Du kannst jetzt neu Anfangen und das Ende ändern!",
  "Wunderschöne Dinge werden passieren, sobald Du Dich von dem Negativem Distanzierst!",
- "Wie wird man ein Schmetterling?<br><br>...fragte die Raupe nachdenklich.<br><br>DU MUSST SO SEHR WOLLEN, DASS DU BEREIT BIST, DEINE EXISTENZ ALS RAUPE AUFGEBEN ZU WOLLEN.",
+ "noWie wird man ein Schmetterling?<br><br>...fragte die Raupe nachdenklich.<br><br>DU MUSST SO SEHR WOLLEN, DASS DU BEREIT BIST, DEINE EXISTENZ ALS RAUPE AUFGEBEN ZU WOLLEN<img src='img/du_bist_ein_schmetterling.jpg' class='img-circle'>",
  "Und es kam der Tag, an dem das Risiko, in der Knospe zu verharren, schmerzlicher wurde als zu erblühen!",
  "Du brauchst keinen Lehrer, der Dich beeinflusst.<br><br><br>Du brauchst einen Lehrer, der Dich lehrt, Dich nicht mehr beeinflussen zu lassen.",
  "Ehre Deine Schwächen und Narben mit dem Gold Deiner ❤️ Selbstliebe",
