@@ -411,7 +411,7 @@ var motivationText = [
 "In diesem Augenblick wenn Du an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Mit dem Herzen an Dein Ziel glauben<br> das ist das Geheimnis der Götter",
 "Du bist der wichtigste Mensch in Deinem Leben<br>deshalb habe Dich lieb &#9825;<br>und respektiere Dich", "no<img src='img/glueck3.jpg' class='img-circle'><br>Glück hängt nicht davon ab<br>wer Du bist oder was Du hast<br>es hängt nur davon ab<br>was Du denkst",
-"Schmerz und Anstrengung<br>sind die Leitersprossen<br>zum Erfolg",
+"Fleiss und Ausdauer<br>sind die Leitersprossen<br>zum Erfolg",
 "Du bist<br>&#9825;<br>einzigartig", "Wenn Du die Liebe lebst<br>&#x1f496;<br>dann hat die Angst angst und sie flüchtet",
 "Deine Gedanken<br>sind die Nahrung<br>für Deine Seele<br>",
 "Du allein<br>bist der Dirigent<br>Deines Lebens&nbsp;&#9835;",
