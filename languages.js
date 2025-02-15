@@ -545,7 +545,17 @@ var motivationText = [
 "Ich erkenne meine Fähigkeiten an und übernehme Verantwortung für mein Leben",
 "Ich gestalte mein Leben so wie ich es will",
 "Es ist in Ordnung für mich Fehler zu machen",
-"Ich bin bereit mein Leben offen und ehrlich zu führen und habe Fluss in meinem Leben"
+"Ich bin bereit mein Leben offen und ehrlich zu führen und habe Fluss in meinem Leben",
+"Ich schätze und akzeptiere mich genau so wie ich bin",
+"Ich bin zuversichtlich und selbstbewusst",
+"Ich bin stolz darauf wer ich bin",
+"Ich weiß das das Leben immer für mich ist",
+"Ich bin ein wundervoller Mensch",
+"Ich gebe immer mein Bestes",
+"Ich zaubere anderen Menschen ein Lächeln ins Gesicht",
+"Ich bin froh und heiter, das Glück die Liebe und Gesundheit sind meine stetigen Begleiter",
+"Ich gebe immer mein Bestes und bin dadurch erfolgreich",
+"Ich habe Spaß am Leben"
 ];
 
 var motivationTextVi = [
