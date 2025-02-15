@@ -574,7 +574,8 @@ var motivationText = [
 "Ich lasse alle Schuld, Scham und Vorwürfe los, die aus meinen früheren Gedanken und Taten entstanden sind",
 "Ich liebe mich genau so wie ich bin",
 "Ich akzeptiere mich wie ich bin und akzeptiere andere wie sie sind",
-"Ich zaubere anderen Menschen ein Lächeln in ihr Gesicht"
+"Ich zaubere anderen Menschen ein Lächeln in ihr Gesicht",
+"Ich bin offen und bereit für Veränderung"
 ];
 
 var motivationTextVi = [
