@@ -361,11 +361,12 @@ var motivationTextRu = [
 
     
 var motivationText = [
-"Sag dir das jeden Tag: <br>Ich bin wertvoll<br>Ich bin glücklich und voller Liebe<br>Ich bin geduldig<br>Ich bin stolz auf die Person die ich bin<br>Ich liebe mich<br>Ich bin authentisch",
-"Sag dir das jeden Tag: Ich bin glücklich und voller Liebe",
-"Sag dir das jeden Tag: Ich bin geduldig und authentisch",
-"Sag dir das jeden Tag: Ich bin wertvoll und stolz auf die Person die ich bin",
-"Sag dir das jeden Tag: <br>Ich bin wertvoll<br>Ich bin glücklich und voller Liebe<br>Ich bin geduldig<br>Ich bin stolz auf die Person die ich bin<br>Ich liebe mich<br>Ich bin authentisch",
+"Sag dir das jeden Tag:<br><br>Ich bin wertvoll<br>Ich bin glücklich und voller Liebe<br>Ich bin geduldig<br>Ich bin stolz auf die Person die ich bin<br>Ich liebe mich<br>Ich bin authentisch",
+"Sag dir das jeden Tag:<br><br>Ich bin glücklich und voller Liebe",
+"Sag dir das jeden Tag:<br><br>Ich vergebe mir meine Schwäche in Liebe und bin dadurch stark",
+"Sag dir das jeden Tag:<br><br>Ich bin geduldig und authentisch",
+"Sag dir das jeden Tag:<br><br>Ich bin wertvoll und stolz auf die Person die ich bin",
+"Sag dir das jeden Tag:<br><br>Ich bin wertvoll<br>Ich bin glücklich und voller Liebe<br>Ich bin geduldig<br>Ich bin stolz auf die Person die ich bin<br>Ich liebe mich<br>Ich bin authentisch",
 "In diesem Augenblick wenn Du aus vollem Herzen an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Der grösste Fehler den man im Leben machen kann, ist immer Angst zu haben, ein Fehler zu machen",
 "Halte niemals Komplimente zurück. Dafür gibt es keinen Grund",
@@ -394,6 +395,7 @@ var motivationText = [
 "Es gibt nichts größeres als an Dich zu glauben!",
 "Glück entsteht durch deine Art zu Denken",
 "Gott hört auf die Gedanken",
+"noFrei lebende Wölfe<img src='img/wolf.jpg' class='img-circle'>und ungekünstelte Frauen haben vieles gemeinsam: die Akkuratheit ihres instinktiven Feingefühls, eine Vorliebe für alles Spielerische und eine schier unverrückbare Loyalität<br><br>Clarissa Pinkola Estes",
 "Du kannst entweder deine VISIONEN oder deine Ängste leben",
 "Die Angst hat ihren Anfang im Kopf<br>Der Mut allerdings auch", "noDeine Motivations Maschine<img src='img/motivationsmaschine.jpg' class='img-circle'>",
 "So jung wie heute wirst Du nie wieder<br>in Deinem Leben!",
@@ -450,7 +452,7 @@ var motivationText = [
 "In diesem Augenblick wenn Du wirklich an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Was Du denkst erschaffst Du<br>Was Du fühlst ziehst Du an<br>Was Du Dir vorstellst wirst Du bekommen", 
 "Egal was Du tust jeder denkt sowieso von Dir was er will, deshalb kannst Du gleich tun was Du von Herzen willst und der sein, der Du wirklich bist, denn dann fühlst Du Dich mit Dir selbst wohl",
- "Nimm Dein Leben selbst in die Hand<br>Sonst werden es andere für Dich tun<br>", 
+"Nimm Dein Leben selbst in die Hand<br>Sonst werden es andere für Dich tun<br>", 
  "Alles was Du brauchst um erfolgreich zu sein hast Du bereits in Dir", 
  "Sei immer wieder mutig Dich zu verändern", 
  "Sei dankbar für das was du hast<br> während du für das arbeitest<br>was du willst", 
@@ -508,14 +510,20 @@ var motivationText = [
 "Ein Vogel hat niemals Angst davor, dass der Ast unter ihm brechen könnte.<br><br>Nicht, weil er dem Ast vertraut, sondern seinen eigenen Flügeln.<br><br>Verliere nie den Glauben an Dich selbst.",
 "Du kannst und darfst denken was Du willst. Dein Wille geschehe.",
 "Du bist es wert das Beste zu erhalten was Liebe und das Leben bietet",
-"Ich heisse Veänderung in meinem Leben willkommen",
+"Veränderung in meinem Leben heiße ich willkommen",
 "Ich lasse die Vergangenheit freudig los und erwarte jetzt und in Zukunft das Beste",
 "Ich lerne aus all meinen Lebenserfahrungen, auch aus den schlechten und schwierigen",
 "Ich übernehme die Verantwortung für mein Leben zu 100%",
 "Ich entspanne mich, tue mein Bestes und sehe die Schönheit im Leben",
 "Ich bin es wert das Beste zu erhalten was das Leben und die Liebe bietet",
 "Jetzt ist der Zeitpunkt um das Leben zu geniessen",
-"Ich vergebe allen die mir Leid zugefügt haben und bin dadurch frei und machtvoll"
+"Ich vergebe allen die mir Leid zugefügt haben und bin dadurch frei und machtvoll",
+"Ab sofort übernehme ich die volle Verantwortung für mein Leben",
+"Ich steuere mein Leben ab sofort selbst",
+"Ich vertraue den Entscheidungen die ich treffe",
+"Glaube an Dich, denn wenn Du es nicht tust, wer soll es dann tun?",
+"Du bist der Wichtigste Mensch in Deinem Leben.<br>Nur wenn Du stark bist, kannst Du auch andere stärken",
+"Liebe Deinen Nächsten wie Dich selbst"
 ];
 
 var motivationTextVi = [
