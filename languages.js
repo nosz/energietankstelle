@@ -492,6 +492,7 @@ var motivationText = [
  "Wer nicht den Mut hat, Ängste zu durchleben, kann nicht wachsen.",
  "In diesem Augenblick wenn Du aus vollem Herzen an Dich selbst glaubst, dann wird sich Dein Leben verändern",
  "Sei realistisch, plane ein Wunder",
+ "Gutes geht, Besseres kommt!",
  "In diesem Augenblick wenn Du aus vollem Herzen an Dich selbst glaubst, dann wird sich Dein Leben verändern",
  "Glück ist, wenn Du mit Dir selbst zufrieden bist<br> und dafür nicht die Bestätigung anderer brauchst.",
  "Du bist nicht schuld für die Programmierung, welche Du als Kind erfahren hast.<br><br>Als Erwachsener liegt es jedoch in DEINER vollen Verantwortung, um es wieder in Ordnung zu bringen.",
