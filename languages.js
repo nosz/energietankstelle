@@ -405,7 +405,7 @@ var motivationText = [
 "Heute ist ein Geschenk<br> und der einzigste Tag<br>an dem Du etwas verändern kannst",
 "Gebe nie<br>nie<br>niemals auf<br><br>und habe die Ausdauer zum Erfolg!",
 "Habe den Mut zu Risiken<br>denn nur durch diesen Mut<br>kannst Du an wahrer Größe gewinnen",
-"Der Humor ist der Vater &#9786;<br>das Lachen die Mutter<br>eines glücksgemütlichen Menschen<br><img src='img/humor.jpg' class='img-circle'>",
+"noDer Humor ist der Vater &#9786;<br>das Lachen die Mutter<br>eines glücksgemütlichen Menschen<br><img src='img/humor.jpg' class='img-circle'>",
 "Sei bei allem dankbar<br>Auch für Dein Problem<br>denn dies ist der Dünger<br>für Dein Wachstum!",
 "Die Liebe ist nicht nur das Fundament aller Dinge <br>&#9825;sie ist viel mehr<br>&#9825;<br>sie ist auch der Gipfel aller Dinge",
 "Willst Du ein Wunder in Dein Leben ziehen<br><br>so entlasse die Angst und den Zweifel<br>aus Deinen Gedanken",
