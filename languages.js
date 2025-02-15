@@ -529,7 +529,23 @@ var motivationText = [
 "Glaube an Dich, denn wenn Du es nicht tust, wer soll es dann tun?",
 "Du bist der Wichtigste Mensch in Deinem Leben.<br>Nur wenn Du stark bist, kannst Du auch andere stärken",
 "Liebe Deinen Nächsten wie Dich selbst",
-"Es ist ein Wunder das es Dich gibt"
+"Es ist ein Wunder das es Dich gibt",
+"Ich bin das Beste was mir je passiert ist und liebe mich bedingungslos",
+"Ich bin für mich selbst verantwortlich",
+"Es ist leicht für mich Liebe zu geben und Liebe zu erhalten",
+"Es ist für mich in Ordnung in Beziehungen Grenzen zu setzen, und ich tue es",
+"Ich kommuniziere offen und ehrlich",
+"Ich erkenne meine Einzigartigkeit an und die von jedem anderen",
+"Ich bin verantwortlich für mein Verhalten in einer Beziehung",
+"Ich drücke mich anderen gegenüber klar und deutlich aus",
+"Es ist in Ordnung wenn mein Partner eine andere Meinung wie ich habe",
+"Ich bin es wert und bereit eine starke, liebevolle und intime Beziehung zu leben",
+"Ich treffe Entscheidungen und vertraue meiner Entscheidungskraft",
+"Ich begrüße freudig die Gelegenheiten, die Veränderungen mit sich bringen",
+"Ich erkenne meine Fähigkeiten an und übernehme Verantwortung für mein Leben",
+"Ich gestalte mein Leben so wie ich es will",
+"Es ist in Ordnung für mich Fehler zu machen",
+"Ich bin bereit mein Leben offen und ehrlich zu führen und habe Fluss in meinem Leben"
 ];
 
 var motivationTextVi = [
