@@ -564,7 +564,17 @@ var motivationText = [
 "Geld ist ein wunderbares Werkzeug und ich verwende es um Möglichkeiten für mich und andere zu gestalten",
 "Geld gibt mir Wahlmöglichkeiten deshalb ist Geld mein Freund",
 "Mit einer Arbeit die ich liebe kann ich all das Geld verdienen das ich brauche",
-"Geld ist mein Freund"
+"Geld ist mein Freund",
+"Ich verdiene es frei, glücklich und gesund zu sein",
+"Ich lasse liebevoll alles aus meiner Vergangenheit los und ich lebe jetzt mit Liebe und Freude",
+"Ich lasse die Vergangenheit los und freue mich auf das Gute, was mich erwartet",
+"Ich verzeihe meinem Vater und meiner Mutter für Ihre Unvollkommenheit",
+"Ich bin voller Vertrauen in den Fluss des Lebens",
+"Ich vergebe liebevoll und bin frei",
+"Ich lasse alle Schuld, Scham und Vorwürfe los, die aus meinen früheren Gedanken und Taten entstanden sind",
+"Ich liebe mich genau so wie ich bin",
+"Ich akzeptiere mich wie ich bin und akzeptiere andere wie sie sind",
+"Ich zaubere anderen Menschen ein Lächeln in ihr Gesicht"
 ];
 
 var motivationTextVi = [
