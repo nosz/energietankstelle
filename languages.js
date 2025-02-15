@@ -555,7 +555,16 @@ var motivationText = [
 "Ich zaubere anderen Menschen ein Lächeln ins Gesicht",
 "Ich bin froh und heiter, das Glück die Liebe und Gesundheit sind meine stetigen Begleiter",
 "Ich gebe immer mein Bestes und bin dadurch erfolgreich",
-"Ich habe Spaß am Leben"
+"Ich habe Spaß am Leben",
+"Ich gehe ehrlich und überlegt mit Geld um",
+"Ich verdiene es soviel Geld zu haben wie ich brauche",
+"Für alles was ich brauche ist immer gesorgt",
+"Ich genieße es viel Geld zu haben, Geld ist mein Freund",
+"Ich erhalte Geld mit Liebe und Dankbarkeit und akzeptiere das Geld",
+"Geld ist ein wunderbares Werkzeug und ich verwende es um Möglichkeiten für mich und andere zu gestalten",
+"Geld gibt mir Wahlmöglichkeiten deshalb ist Geld mein Freund",
+"Mit einer Arbeit die ich liebe kann ich all das Geld verdienen das ich brauche",
+"Geld ist mein Freund"
 ];
 
 var motivationTextVi = [
