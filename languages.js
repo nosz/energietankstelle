@@ -506,7 +506,16 @@ var motivationText = [
 "Dein wahrer Reichtum sind Deine Gedanken!",
 "Du kannst ein guter Mensch mit einem liebevollen Herz sein und trotzdem 'nein' sagen.",
 "Ein Vogel hat niemals Angst davor, dass der Ast unter ihm brechen könnte.<br><br>Nicht, weil er dem Ast vertraut, sondern seinen eigenen Flügeln.<br><br>Verliere nie den Glauben an Dich selbst.",
-"Du kannst und darfst denken was Du willst. Dein Wille geschehe."
+"Du kannst und darfst denken was Du willst. Dein Wille geschehe.",
+"Du bist es wert das Beste zu erhalten was Liebe und das Leben bietet",
+"Ich heisse Veänderung in meinem Leben willkommen",
+"Ich lasse die Vergangenheit freudig los und erwarte jetzt und in Zukunft das Beste",
+"Ich lerne aus all meinen Lebenserfahrungen, auch aus den schlechten und schwierigen",
+"Ich übernehme die Verantwortung für mein Leben zu 100%",
+"Ich entspanne mich, tue mein Bestes und sehe die Schönheit im Leben",
+"Ich bin es wert das Beste zu erhalten was das Leben und die Liebe bietet",
+"Jetzt ist der Zeitpunkt um das Leben zu geniessen",
+"Ich vergebe allen die mir Leid zugefügt haben und bin dadurch frei und machtvoll"
 ];
 
 var motivationTextVi = [
