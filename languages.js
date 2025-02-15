@@ -523,7 +523,8 @@ var motivationText = [
 "Ich vertraue den Entscheidungen die ich treffe",
 "Glaube an Dich, denn wenn Du es nicht tust, wer soll es dann tun?",
 "Du bist der Wichtigste Mensch in Deinem Leben.<br>Nur wenn Du stark bist, kannst Du auch andere stärken",
-"Liebe Deinen Nächsten wie Dich selbst"
+"Liebe Deinen Nächsten wie Dich selbst",
+"Es ist ein Wunder das es Dich gibt"
 ];
 
 var motivationTextVi = [
