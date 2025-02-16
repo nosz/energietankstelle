@@ -18,11 +18,21 @@ const FILES_TO_CACHE = [
 // Installations-Event
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(FILES_TO_CACHE);
+    caches.open("my-cache").then(async cache => {
+      for (const file of FILES_TO_CACHE) {
+        try {
+          await cache.add(file);
+          console.log(`✅ Erfolgreich gecacht: ${file}`);
+        } catch (error) {
+          console.error(`❌ Fehler beim Cachen von ${file}:`, error);
+        }
+      }
     })
   );
 });
+
+
+
 
 // Aktivierungs-Event
 self.addEventListener("activate", event => {
