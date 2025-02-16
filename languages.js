@@ -591,7 +591,8 @@ var motivationText = [
 "Ich lasse mich im Außen inspirieren ich suche der Wahrheit jedoch nur noch in mir selbst",
 "Ich bin wundervoll ganz genau so wie ich bin in jedem Moment",
 "Es ist so schön dass es mich gibt",
-"Vertraue deinem Leben wie einem guten Freund"
+"Vertraue deinem Leben wie einem guten Freund",
+"Sei offen und bereit für Veränderung"
 ];
 
 var motivationTextVi = [
