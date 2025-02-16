@@ -125,21 +125,13 @@
     </div>
     <script>
       // Check that service workers are supported
-      if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
-        console.log("serviceWorker in navigator");
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('service-worker.js')
-            .then(function(registration) {
-              console.log("Registered correct service-worker.js:", registration);
-            })
-            .catch(function(error){
-              console.log("Registration failed: ", error);
-            });
-        });
-      } else {
-        console.log("kein Service-Worker");
-      }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log("Service Worker registriert!", reg))
+        .catch(err => console.log("Service Worker Fehler: ", err));
+    }
+  </script>
     </script>
     <script src="js/hammer.min.js"></script>
     <script src="languages.js"></script>
