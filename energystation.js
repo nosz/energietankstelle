@@ -2,7 +2,7 @@
 
 var tempStartseite = true;
 var minBild = 1;
-var maxBild = 235;
+var maxBild = 236;
 var tempSprache;
   //
 var myInterval = setInterval(clickOnDocument, 10000)
