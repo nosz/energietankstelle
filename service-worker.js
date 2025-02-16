@@ -1,17 +1,17 @@
 const CACHE_NAME = "offline-cache-v1";
-const OFFLINE_URL = "/energietankstelle/offline.html";
+const OFFLINE_URL = "offline.html";
 const FILES_TO_CACHE = [
   "/",
-  "/energietankstelle/index.html",
-  "/energietankstelle/languages.js",
-  "/energietankstelle/energystation.js",
-  "/energietankstelle/css/style.css",
-  "/energietankstelle/css/bootstrap.min.css",
-  "/energietankstelle/js/index.js",
-  "/energietankstelle/js/hammer.min.js",
-  "/energietankstelle/js/jquery.min.js",
-  "/energietankstelle/js/particles.min.js",
-  "/energietankstelle/images/icon.png",
+  "index.html",
+  "languages.js",
+  "energystation.js",
+  "css/style.css",
+  "css/bootstrap.min.css",
+  "js/index.js",
+  "js/hammer.min.js",
+  "js/jquery.min.js",
+  "js/particles.min.js",
+  "images/icon.png",
   OFFLINE_URL
 ];
 
