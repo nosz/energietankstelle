@@ -350,10 +350,9 @@ function energieJetztAnzeigen(boolAnzeige) {
 		}		
 		// 9.1.2025 das das neueste Bild am Anfang angezeigt wird
 		if(bildNeu){
-			console.log("NEUES BILD AM ANFANG neu")
 			zahl = rand(maxBild, maxBild);
 			bildNeu= false;
-			console.log("NEUES BILD AM ANFANG " + zahl)
+			console.log("Bild am Start: " + zahl)
 		}
 
 		meinBild = "<img src='img/t" + zahl + ".jpg' class='img-circle'>";
