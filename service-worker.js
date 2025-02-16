@@ -3,8 +3,14 @@ const OFFLINE_URL = "offline.html";
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
+  "/languages.js",
+  "/energystation.js",
   "/css/style.css",
+  "/css/bootstrap.min.css",
   "/js/index.js",
+  "/js/hammer.min.js",
+  "/js/jquery.min.js",
+  "/js/particles.min.js",
   "/images/icon.png",
   OFFLINE_URL
 ];
