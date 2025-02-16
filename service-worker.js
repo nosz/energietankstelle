@@ -11,7 +11,7 @@ const FILES_TO_CACHE = [
   "js/hammer.min.js",
   "js/jquery.min.js",
   "js/particles.min.js",
-  "images/icon.png",
+  "img/icon.png",
   OFFLINE_URL
 ];
 
