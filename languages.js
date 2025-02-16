@@ -588,6 +588,8 @@ var motivationText = [
 "Ich vertraue meinem Leben wie einem guten Freund",
 "Lasse ganz einfach los, was Dir nicht gut tut",
 "Ziehe ganz einfach und liebevolle Grenzen die dich schützen",
+"Ich ziehe ganz einfach und liebevoll Grenzen und wahre dies gegenüber jedem Menschen",
+"Ziehe ganz einfach und liebevoll Grenzen und wahre diese gegenüber jedem Menschen",
 "Ich lasse mich im Außen inspirieren ich suche der Wahrheit jedoch nur noch in mir selbst",
 "Ich bin wundervoll ganz genau so wie ich bin in jedem Moment",
 "Es ist so schön dass es mich gibt",
