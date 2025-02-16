@@ -585,7 +585,11 @@ var motivationText = [
 "Vertraut Dir, denn wenn Du Dir selber nicht vertraust wer soll Dir dann vertrauen",
 "Erkenne was Dir gut tut und integriere dies ganz einfach in dein Leben",
 "Ich erkenne was mir gut tut und integriere das in mein Leben",
-"Ich vertraue meinem Leben wie einem guten Freund"
+"Ich vertraue meinem Leben wie einem guten Freund",
+"Lasse ganz einfach los, was Dir nicht gut tut",
+"Ziehe ganz einfach und liebevolle Grenzen die dich schützen",
+"Ich lasse mich im Außen inspirieren ich suche der Wahrheit jedoch nur noch in mir selbst",
+"Ich bin wundervoll ganz genau so wie ich bin in jedem Moment"
 ];
 
 var motivationTextVi = [
