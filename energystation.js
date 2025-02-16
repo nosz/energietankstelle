@@ -352,7 +352,7 @@ function energieJetztAnzeigen(boolAnzeige) {
 		if(bildNeu){
 			zahl = rand(maxBild, maxBild);
 			bildNeu= false;
-			console.log("STARTBILD: " + zahl)
+			console.log("AKTUELLES STARTBILD: " + zahl)
 		}
 
 		meinBild = "<img src='img/t" + zahl + ".jpg' class='img-circle'>";
