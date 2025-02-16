@@ -590,7 +590,8 @@ var motivationText = [
 "Ziehe ganz einfach und liebevolle Grenzen die dich schützen",
 "Ich lasse mich im Außen inspirieren ich suche der Wahrheit jedoch nur noch in mir selbst",
 "Ich bin wundervoll ganz genau so wie ich bin in jedem Moment",
-"Es ist so schön dass es mich gibt"
+"Es ist so schön dass es mich gibt",
+"Vertraue deinem Leben wie einem guten Freund"
 ];
 
 var motivationTextVi = [
