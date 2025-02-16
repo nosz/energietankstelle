@@ -373,7 +373,7 @@ var motivationText = [
 "Du übernimmst jetzt selbst die Verantwortung für Dein Denken und Leben. Du bist kraftvoll und dynamisch",
 "In diesem Augenblick wenn Du wirklich an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Sei gut zu Dir selbst",
-"noFrei lebende Wölfe<img src='img/wolf.jpg' class='img-circle'>und ungekünstelte Frauen haben vieles gemeinsam: die Akkuratheit ihres instinktiven Feingefühls, eine Vorliebe für alles Spielerische und eine schier unverrückbare Loyalität<br><br>Clarissa Pinkola Estes",
+"noFrei lebende Wölfe <img src='img/wolf.jpg' class='img-circle'> und ungekünstelte Frauen haben vieles gemeinsam: die Akkuratheit ihres instinktiven Feingefühls, eine Vorliebe für alles Spielerische und eine schier unverrückbare Loyalität<br><br>Clarissa Pinkola Estes",
 "Lass Dir Dein Leuchten nicht nehmen, nur weil es andere blenden könnte!",   
 "Es ist so wertvoll und schön dass es Dich gibt",    
 "Dein wahrer Reichtum sind Deine Gedanken.",
@@ -399,7 +399,7 @@ var motivationText = [
 "Es gibt nichts größeres als an Dich zu glauben!",
 "Glück entsteht durch deine Art zu Denken",
 "Gott hört auf die Gedanken",
-"noFrei lebende Wölfe<img src='img/wolf.jpg' class='img-circle'>und ungekünstelte Frauen haben vieles gemeinsam: die Akkuratheit ihres instinktiven Feingefühls, eine Vorliebe für alles Spielerische und eine schier unverrückbare Loyalität<br><br>Clarissa Pinkola Estes",
+"noFrei lebende Wölfe <img src='img/wolf1.jpg' class='img-circle'> und ungekünstelte Frauen haben vieles gemeinsam: die Akkuratheit ihres instinktiven Feingefühls, eine Vorliebe für alles Spielerische und eine schier unverrückbare Loyalität<br><br>Clarissa Pinkola Estes",
 "Du kannst entweder deine VISIONEN oder deine Ängste leben",
 "Die Angst hat ihren Anfang im Kopf<br>Der Mut allerdings auch", "noDeine Motivations Maschine<img src='img/motivationsmaschine.jpg' class='img-circle'>",
 "So jung wie heute wirst Du nie wieder<br>in Deinem Leben!",
@@ -575,7 +575,11 @@ var motivationText = [
 "Ich liebe mich genau so wie ich bin",
 "Ich akzeptiere mich wie ich bin und akzeptiere andere wie sie sind",
 "Ich zaubere anderen Menschen ein Lächeln in ihr Gesicht",
-"Ich bin offen und bereit für Veränderung"
+"Ich bin offen und bereit für Veränderung",
+"Ich bin verantwortlich für mein Verhalten in einer Beziehung",
+"Es ist leicht für mich, anderen <b>Liebe zu geben</b> und von anderen <b>Liebe zu erhalten</b>",
+"Ich bin es wert und bereit, eine <b>starke intime</b> und <b>erfüllende Beziehung</b> zu leben",
+"Die <b>Quelle</b> meiner Zufriedenheit und Freude liegt <b>in mir</b>"
 ];
 
 var motivationTextVi = [
