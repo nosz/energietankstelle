@@ -20,7 +20,7 @@ function clickOnDocument() {
 var btn_klickbereich = document.getElementById('klickbereich');
 // wird durch tap press auch ausgelöst
 btn_klickbereich.addEventListener('click', function(){
-	console.log("click");
+	//console.log("click");
 	energieJetztAnzeigen(false);
 	clearInterval(myInterval);  
 	myInterval = setInterval(clickOnDocument, 20000);
@@ -352,7 +352,7 @@ function energieJetztAnzeigen(boolAnzeige) {
 		if(bildNeu){
 			zahl = rand(maxBild, maxBild);
 			bildNeu= false;
-			console.log("Bild am Start: " + zahl)
+			console.log("STARTBILD: " + zahl)
 		}
 
 		meinBild = "<img src='img/t" + zahl + ".jpg' class='img-circle'>";
