@@ -418,7 +418,8 @@ var motivationText = [
 "Der Schlüssel &#9825;<br>zu Deinem Glück<br>liegt in Dir",
 "In diesem Augenblick wenn Du wirklich an Dich selbst glaubst, dann wird sich Dein Leben verändern",
 "Mit dem Herzen an Dein Ziel glauben<br> das ist das Geheimnis der Götter",
-"Du bist der wichtigste Mensch in Deinem Leben<br>deshalb habe Dich lieb &#9825;<br>und respektiere Dich", "no<img src='img/glueck3.jpg' class='img-circle'><br>Glück hängt nicht davon ab<br>wer Du bist oder was Du hast<br>es hängt nur davon ab<br>was Du denkst",
+"Du bist der wichtigste Mensch in Deinem Leben<br>deshalb habe Dich lieb &#9825;<br>und respektiere Dich", 
+"Glück hängt nicht davon ab<br>wer Du bist oder was Du hast<br>es hängt nur davon ab<br>was Du denkst",
 "Fleiss und Ausdauer<br>sind die Leitersprossen<br>zum Erfolg",
 "Du bist<br>&#9825;<br>einzigartig", "Wenn Du die Liebe lebst<br>&#x1f496;<br>dann hat die Angst angst und sie flüchtet",
 "Deine Gedanken<br>sind die Nahrung<br>für Deine Seele<br>",
@@ -445,9 +446,9 @@ var motivationText = [
 "noGeil ist...<br>uıǝs nz ɥɔılʞɔülƃ ıǝqɐp pun uǝllǝʇs nz ɟdoʞ uǝp ɟnɐ ʇlǝʍ ǝıp nz pun qɐ<br><img src='img/umdrehen.jpg' class='img-circle'>", "Sei einfach<br>Du<br>selbst<br>",
 "Jede Stunde<br>jede Minute in Deinem Leben ist ein Geschenk<br>Verschiebe nichts<br>was Deinem Leben Freude bereitet<br>Denn Du weißt nicht<br>&#8987;<br>wieviel Zeit Dir noch bleibt...",
 "Wir müssen verstehen<br><br>dass die Erde eine Schule ist<br>in der wir bestimmte Dinge zu lernen haben<br> beispielsweise Geduld<br>Nachsicht<br>die Entwicklung geistiger und schöpferische Fähigkeiten und vor allem Liebe<br>und das heisst <b>Liebe zu sich selbst</b> und zu anderen<br>Liebe ist in allen Klassen der Lebensschule das Hauptfach<br>also somit die wichtigste und schönste Lernaufgabe<br>&#9825;",
-"noWillst Du glücklich sein?<br><img src='img/glueck3.jpg' class='img-circle'><br>Dann lebe nicht in der Vergangenheit<br>Lebe nicht in der Zukunft<br>sondern lebe jetzt<br>in diesem Augenblick<br>und genieße diesen einzigartigen Moment<br>",
+"Willst Du glücklich sein?<br>Dann lebe nicht in der Vergangenheit<br>Lebe nicht in der Zukunft<br>sondern lebe jetzt<br>in diesem Augenblick<br>und genieße diesen einzigartigen Moment<br>",
 "noGott hat Dir ein Gesicht gegeben<br>doch Lachen musst Du selber<br><img src='img/lachen_musst_selber.jpg' class='img-circle'>",
-"noWunder beginnen dann<br>wenn wir unseren Träumen<br><img src='img/glueck3.jpg' class='img-circle'>mehr Energie geben<br>als unseren Ängsten",
+"Wunder beginnen dann<br>wenn wir unseren Träumen mehr Energie geben<br>als unseren Ängsten",
 "Gib jedem Tag die Chance der Schönste in Deinem Leben zu werden",
 "Die härtesten Zeiten leiten Dich oft zu den grossartigsten Momenten Deines Lebens. Bewahre den Glauben. Alles wird es wert sein am Ende", "Mut steht am Anfang!<br> Es ist nie zu spät das zu werden was man hätte sein können.",
 "Du kannst Dir nicht aussuchen was im Leben alles passiert aber Du kannst Dir aussuchen wie Du damit umgehst. Lass Dir Deine Gegenwart nicht von Deiner Vergangenheit bestimmen und lass die Vergangenheit ein guter Ratgeber für die Zukunft sein",
@@ -595,7 +596,8 @@ var motivationText = [
 "Du bist wundervoll genau so wie Du bist in jedem Moment",
 "Es ist so schön dass es mich gibt",
 "Vertraue deinem Leben wie einem guten Freund",
-"Sei offen und bereit für Veränderung"
+"Sei offen und bereit für Veränderung",
+"Zaubere den Menschen ein Lachen ins Gesicht"
 ];
 
 var motivationTextVi = [
