@@ -913,7 +913,9 @@ var motivationText = [
     "Ich ziehe liebevoll Grenzen die mich schützen",
     "Ich kommuniziere ab sofort nur noch motivierend und aufbauend",
     "Ich bin selbstbewusst und liebevoll",
-    "Du bist wertvoll genau so wie Du bist"
+    "Du bist wertvoll genau so wie Du bist",
+    "Sei dankbar für das was Du bereits hast",
+    "Ich bin dankbar für das was ich bereits habe"
 ];
 
 var motivationTextVi = [
