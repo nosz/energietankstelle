@@ -915,7 +915,9 @@ var motivationText = [
     "Ich bin selbstbewusst und liebevoll",
     "Du bist wertvoll genau so wie Du bist",
     "Sei dankbar für das was Du bereits hast",
-    "Ich bin dankbar für das was ich bereits habe"
+    "Ich bin dankbar für das was ich bereits habe",
+    "Sei eine Bereicherung für jeden der dir begegnet",
+    "Ich bin eine Bereicherung für jeden der mir begegnet"
 ];
 
 var motivationTextVi = [
