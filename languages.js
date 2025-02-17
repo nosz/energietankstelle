@@ -894,7 +894,7 @@ var motivationText = [
     "Die <b>Quelle</b> meiner Zufriedenheit und Freude liegt <b>in mir</b>",
     "Es ist so schön dass es Dich gibt",
     "Ich vertraue mir",
-    "Vertraut Dir, denn wenn Du Dir selber nicht vertraust wer soll Dir dann vertrauen",
+    "Vertraue Dir selbst, denn wenn Du Dir selber nicht vertraust wer soll Dir dann vertrauen?",
     "Erkenne was Dir gut tut und integriere dies ganz einfach in dein Leben",
     "Ich erkenne was mir gut tut und integriere das in mein Leben",
     "Ich vertraue meinem Leben wie einem guten Freund",
