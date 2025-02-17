@@ -917,7 +917,9 @@ var motivationText = [
     "Sei dankbar für das was Du bereits hast",
     "Ich bin dankbar für das was ich bereits habe",
     "Sei eine Bereicherung für jeden der dir begegnet",
-    "Ich bin eine Bereicherung für jeden der mir begegnet"
+    "Ich bin eine Bereicherung für jeden der mir begegnet",
+    "Ich bin fähig und bereit alle Herausforderungen des Lebens zu meistern",
+    "Du bist fähig und bereit alle Herausforderungen des Lebens zu meistern"
 ];
 
 var motivationTextVi = [
