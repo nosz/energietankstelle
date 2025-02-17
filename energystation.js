@@ -262,6 +262,7 @@ function energieAnzeigen(tempSelected) {
 		loescheElement(document.getElementById("startJetztBild"));
 		loescheElement(document.getElementById("sprache"));
 		loescheElement(document.getElementById("sprache1"));
+		loescheElement(document.getElementById("buttonInfo"));
 	}
 	//document.getElementById("startJetzt").style.display = 'none';
 }
