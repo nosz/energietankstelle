@@ -899,7 +899,7 @@ var motivationText = [
     "Ich erkenne was mir gut tut und integriere das in mein Leben",
     "Ich vertraue meinem Leben wie einem guten Freund",
     "Lasse ganz einfach los, was Dir nicht gut tut",
-    "Ziehe ganz einfach und liebevolle Grenzen die dich schützen",
+    "Ziehe liebevolle Grenzen die dich schützen",
     "Ich ziehe ganz einfach und liebevoll Grenzen und wahre dies gegenüber jedem Menschen",
     "Ziehe ganz einfach und liebevoll Grenzen und wahre diese gegenüber jedem Menschen",
     "Ich lasse mich im Außen inspirieren ich suche der Wahrheit jedoch nur noch in mir selbst",
