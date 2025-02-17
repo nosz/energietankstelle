@@ -902,7 +902,7 @@ var motivationText = [
     "Ziehe liebevolle Grenzen die dich schützen",
     "Ich ziehe ganz einfach und liebevoll Grenzen und wahre dies gegenüber jedem Menschen",
     "Ziehe ganz einfach und liebevoll Grenzen und wahre diese gegenüber jedem Menschen",
-    "Ich lasse mich im Außen inspirieren ich suche der Wahrheit jedoch nur noch in mir selbst",
+    "Ich lasse mich im Außen inspirieren ich suche die Wahrheit jedoch nur noch in mir selbst",
     "Ich bin wundervoll ganz genau so wie ich bin in jedem Moment",
     "Du bist wundervoll genau so wie Du bist in jedem Moment",
     "Es ist so schön dass es mich gibt",
