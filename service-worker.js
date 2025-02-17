@@ -2,6 +2,8 @@ const CACHE_NAME = "offline-cache-v1";
 const OFFLINE_URL = "offline.html";
 const FILES_TO_CACHE = [
   "index.html",
+  "info.html",
+  "impressum.html",
   "languages.js",
   "energystation.js",
   "css/style.css",
