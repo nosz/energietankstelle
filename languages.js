@@ -912,7 +912,8 @@ var motivationText = [
     "Jede Erfahrung macht mich stärker",
     "Ich ziehe liebevoll Grenzen die mich schützen",
     "Ich kommuniziere ab sofort nur noch motivierend und aufbauend",
-    "Ich bin selbstbewusst und liebevoll"
+    "Ich bin selbstbewusst und liebevoll",
+    "Du bist wertvoll genau so wie Du bist"
 ];
 
 var motivationTextVi = [
