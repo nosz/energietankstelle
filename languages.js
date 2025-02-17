@@ -597,7 +597,11 @@ var motivationText = [
 "Es ist so schön dass es mich gibt",
 "Vertraue deinem Leben wie einem guten Freund",
 "Sei offen und bereit für Veränderung",
-"Zaubere den Menschen ein Lachen ins Gesicht"
+"Zaubere den Menschen ein Lachen ins Gesicht",
+"Jede Erfahrung macht mich stärker",
+"Ich ziehe liebevoll Grenzen die mich schützen",
+"Ich kommuniziere ab sofort nur noch motivierend und aufbauend",
+"Ich bin selbstbewusst und liebevoll"
 ];
 
 var motivationTextVi = [
