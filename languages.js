@@ -919,7 +919,23 @@ var motivationText = [
     "Sei eine Bereicherung für jeden der dir begegnet",
     "Ich bin eine Bereicherung für jeden der mir begegnet",
     "Ich bin fähig und bereit alle Herausforderungen des Lebens zu meistern",
-    "Du bist fähig und bereit alle Herausforderungen des Lebens zu meistern"
+    "Du bist fähig und bereit alle Herausforderungen des Lebens zu meistern",
+    "Du bist der Einzigste der dich aufhalten kann",
+    "Ich bin der Einzigste der mich aufhalten kann",
+    "Die Zukunft die Du dir wünschst beginnt in Deinem Inneren",
+    "Die Zukunft die ich mir wünsche beginnt in meinem Inneren",
+    "Ich habe alles was ich brauche um erfolgreich zu sein. Alle Antworten und Lösungen sind bereits in mir.",
+    "Du hast alles was Du brauchst um erfolgreich zu sein. Alle Antworten und Lösungen sind bereits in Dir.",
+    "Ich bin diszipliniert",
+    "Ich nehme die Herausforderungen die mich umgeben dankend und voller Freude an",
+    "Nehme die Herausforderungen die Dich umgeben dankend und voller Freude an",
+    "Ich bin dazu bestimmmt Großartiges zu schaffen",
+    "Du bist dazu bestimmt Großartiges zu schaffen",
+    "Angst ist nur ein Gefühl. Ich überwinde alles und gehe nach vorne",
+    "Angst ist nur ein Gefühl, überwinde alles und gehe nach vorne",
+    "Ich bin höflich und respektvoll mit jeder Person die ich treffe",
+    "Ich bin der Einzigste den ich überwinden muss",
+    "Du bist der Einzigste den Du überwinden musst"
 ];
 
 var motivationTextVi = [
