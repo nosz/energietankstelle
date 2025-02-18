@@ -935,7 +935,28 @@ var motivationText = [
     "Angst ist nur ein Gefühl, überwinde alles und gehe nach vorne",
     "Ich bin höflich und respektvoll mit jeder Person die ich treffe",
     "Ich bin der Einzigste den ich überwinden muss",
-    "Du bist der Einzigste den Du überwinden musst"
+    "Du bist der Einzigste den Du überwinden musst",
+    "Ich treffe gute Entscheidungen",
+    "Löse Dich friedlich von toxischen Menschen",
+    "Ich löse mich friedlich von toxischen Menschen",
+    "Die ganze Schönheit des Universums liegt in Dir",
+    "Die ganze Schönheit des Universums liegt in mir",
+    "Sei dankbar für Dein Leben",
+    "Ich bin dankbar für mein Leben",
+    "Ich bin voller Energie und Entschlossenheit",
+    "Sei voller Energie und Entschlossenheit",
+    "Ich vergebe mir jeden Fehler den ich mache",
+    "Du bist ein Wunder",
+    "Ich bin ein Wunder",
+    "Ich bin mutig und stelle mich der Angst",
+    "Sei mutig und stelle dich der Angst",
+    "Jeder Tag ist ein heiliges Geschenk",
+    "Ich liebe das Leben",
+    "Liebe das Leben",
+    "Erfolg kommt automatisch wenn Du Du selbst bist",
+    "Folge Deinem Herzen voller Liebe und Dankbarkeit",
+    "Weigere Dich aufzugeben, weil Du weisst dass alles in Dir ist um Erfolg zu haben",
+    "Ich weigere mich aufzugeben, weil ich weiß dass alles in mir ist um es zu schaffen"
 ];
 
 var motivationTextVi = [
