@@ -303,7 +303,11 @@ var motivationText = [
     "Wofür bist Du dankbar?",
     "Was waren deine heutigen Erfolge?",
     "Was war dein heutiger Glücksmoment?",
-    "Ich bin offen für Neues"
+    "Ich bin offen für Neues",
+    "Ich bin achtsam",
+    "Ich bin mutig",
+    "Ich bin stark",
+    "Ich bin selbstbewusst"
 ];
 
 var motivationTextEn = [ 
