@@ -319,7 +319,11 @@ var motivationText = [
     "Die Angst ist mein Freund",
     "Ich bin wertvoll und verdiene es, finanziell erfolgreich zu sein",
     "Die Angst ist ein Wegweiser und Leuchtturm auf dem Weg zu den unbegrenzten Möglichkeiten",
-    "Für alles was ich brauche ist immer gesorgt"
+    "Für alles was ich brauche ist immer gesorgt",
+    "Sei mutig und stelle Dich der Angst",
+    "Du bist ein Wunder",
+    "Du bist ein Wunder und Chef der größten Firma der Welt mit Billionen Mitarbeitern, deinen Zellen!<br><br>Gehe gut mit Ihnen um 💖",
+    "Sei stolz darauf wer Du bist"
 ];
 
 var motivationTextEn = [ 
@@ -2248,6 +2252,5 @@ var motivationTextTu = [
 ]
 
 var motivationTextTest = [
-    "noDzikie wilki i bezpretensjonalne kobiety mają wiele wspólnego:<img src='img/wolf.jpg' class='img-circle'>precyzję instynktownej wrażliwości, upodobanie do wszystkiego, co zabawne, i niemal niezachwianą lojalność<br><br>Clarissa Pinkola Estes",
-    "To takie cenne i piękne, że istniejesz."
+    "Du bist Chef 💖"
 ];
