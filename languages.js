@@ -351,7 +351,9 @@ var motivationText = [
     "Was waren deine heutigen Erfolge?",
     "Was war dein heutiger Glücksmoment?",
     "Erledige Dinge sofort",
-    "Ich erledige Dinge sofort"
+    "Ich erledige Dinge sofort",
+    "Schön dass es mich gibt",
+    "Schön dass es dich gibt"
 ];
 
 var motivationTextEn = [ 
