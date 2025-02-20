@@ -281,7 +281,7 @@ var motivationText = [
     "Ich bin diszipliniert",
     "Ich nehme die Herausforderungen die mich umgeben dankend und voller Freude an",
     "Nehme die Herausforderungen die Dich umgeben dankend und voller Freude an",
-    "Ich bin dazu bestimmmt Großartiges zu schaffen",
+    "Ich bin dazu bestimmt Großartiges zu schaffen",
     "Du bist dazu bestimmt Großartiges zu schaffen",
     "Angst ist nur ein Gefühl. Ich überwinde alles und gehe nach vorne",
     "Angst ist nur ein Gefühl, überwinde alles und gehe nach vorne",
