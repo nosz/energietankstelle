@@ -341,7 +341,8 @@ var motivationText = [
     "Sei stolz darauf wer Du bist",
     "Habe einfach Spaß am Leben",
     "Vergebe Dir jeden Fehler den Du machst",
-    "Sage JA zu Dir selbst"
+    "Sage JA zu Dir selbst",
+    "Ich bin eine Bereicherung für jeden der mir begegnet"
 ];
 
 var motivationTextEn = [ 
