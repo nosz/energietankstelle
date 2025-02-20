@@ -24,7 +24,7 @@ var motivationText = [
     "Liebeskummer lohnt sich nicht.<br><br>Wenn Die Halbgötter gehen kommen die Götter", 
     "no<img src='img/butterfly.jpg' class='img-circle'>Wusstest Du, dass es für einen Schmetterling unmöglich ist, seine eigenen Flügel zu sehen?<br> Wusstest Du auch, dass seine Flügel als eine der schönsten Errungenschaften in der Natur gelten?<br>Er kann nicht sehen wie schön sie sind, aber alle anderen können es.<br>Genauso ist es bei uns Menschen",
     "Hab Sonne im Herzen, egal ob es stürmt oder schneit, ob der Himmel voll Wolken, die Erde voll Streit - hab Sonne im Herzen, dann komme was mag, das leuchtet voll Licht dir den dunkelsten Tag",
-    "Egal was passiert.Glaube an Dich!<br>Egal was passiert.Bleib Dir treu!<br>Egal was passiert<br>Habe Dich lieb!",
+    "Egal was passiert.Glaube an Dich!<br><br>Egal was passiert.Bleib Dir treu!<br><br>Egal was passiert<br>Habe Dich lieb!",
     "Und immer wieder an Dich selber zu glauben ist das Geheimnis der Götter.",
     "Glück liegt auch im Handeln und Tun.", "Beharrlichkeit ist die geheime Stärke des Erfolgreichen. Sei unerschütterlich.", 
     "noIch bin dankbar für die Steine die mir in den Weg gelegt wurden.<img src='img/steine.jpg' class='img-circle'>Ohne Sie wäre ich sonst nicht über meine Stärken gestolpert.", 
@@ -56,7 +56,8 @@ var motivationText = [
     "Du kannst entweder deine VISIONEN oder deine Ängste leben",
     "Die Angst hat ihren Anfang im Kopf<br>Der Mut allerdings auch", "noDeine Motivations Maschine<img src='img/motivationsmaschine.jpg' class='img-circle'>",
     "So jung wie heute wirst Du nie wieder<br>in Deinem Leben!",
-    "Du bist ein Gewinner!", "Glaube an Dich",
+    "Du bist ein Gewinner!", 
+    "Glaube an Dich",
     "Heute ist ein Geschenk<br> und der einzigste Tag<br>an dem Du etwas verändern kannst",
     "Gebe nie<br>nie<br>niemals auf<br><br>und habe die Ausdauer zum Erfolg!",
     "Habe den Mut zu Risiken<br>denn nur durch diesen Mut<br>kannst Du an wahrer Größe gewinnen",
@@ -141,7 +142,7 @@ var motivationText = [
     "Wer Freude schenkt bringt Licht in einsame Herzen",
     "Eines Tages klopfte die Angst an die Tür. Der Mut stand auf und öffnete, aber da war niemand draußen.",
     "Wer gelernt hat im Dunkeln zu laufen, der braucht auch keine Blender um sich.",
-    "Glaube an Dich! Du hast in deinem Leben schon so vieles GEMEISTERT. DU WIRST ES AUCH DIESMAL SCHAFFEN!",
+    "Glaube an Dich!<br><br>Du hast in deinem Leben schon so vieles GEMEISTERT. DU WIRST ES AUCH DIESMAL SCHAFFEN!",
     "Die Welt gehört denen, die sich trauen anders zu denken",
     "Du wirst leiden, solange Du eine emotionale Reaktion auf alles hast was zu Dir gesagt wird.<br>Wahre Kraft liegt darin, Dich zurück zu lehnen und die Dinge mit Logik & Ruhe zu betrachten.<br><br>Wenn Worte Dich kontrollieren können, bedeutet das, dass jeder Dich kontrollieren kann.<br>Atme durch und erlaube manches einfach los zu lassen.<br><br>Bruce Lee",
     "Die Zukunft hängt davon ab, was Du heute tust.<br> ",
@@ -174,7 +175,7 @@ var motivationText = [
     "Glaube an Wunder, Liebe und Glück<br>Schaue nach vorne<br><br>Tue, was Du willst und stehe dazu, denn dieses Leben lebst nur Du!",
     "Gib Deiner Vergangenheit nicht die Macht, Deine Zukunft zu beeinflussen!<br><br>Lass sie los, Deine Vergangenheit hat Dir nichts Neues zu sagen.",
     "Dein wahrer Reichtum sind Deine Gedanken!",
-    "Du kannst ein guter Mensch mit einem liebevollen Herz sein und trotzdem 'nein' sagen.",
+    "Du kannst ein guter Mensch mit einem liebevollen Herz sein und trotzdem 'NEIN' sagen.",
     "Ein Vogel hat niemals Angst davor, dass der Ast unter ihm brechen könnte.<br><br>Nicht, weil er dem Ast vertraut, sondern seinen eigenen Flügeln.<br><br>Verliere nie den Glauben an Dich selbst.",
     "Du kannst und darfst denken was Du willst. Dein Wille geschehe.",
     "Du bist es wert das Beste zu erhalten was Liebe und das Leben bietet",
@@ -348,7 +349,9 @@ var motivationText = [
     "Worüber hast Du dich heute gefreut?",
     "Wofür bist Du dankbar?",
     "Was waren deine heutigen Erfolge?",
-    "Was war dein heutiger Glücksmoment?"
+    "Was war dein heutiger Glücksmoment?",
+    "Erledige Dinge sofort",
+    "Ich erledige Dinge sofort"
 ];
 
 var motivationTextEn = [ 
