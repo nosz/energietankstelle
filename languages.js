@@ -25,7 +25,7 @@ var motivationText = [
     "Ich habe entschieden nicht länger auf bessere Zeiten zu warten.<br>Die besten Zeiten sind jetzt.<br>Ich mache die restlichen Jahre meines Lebens zu den glücklichsten.<br>Denn das Leben gehört mir und es ist einfach zu kurz um noch länger zu warten.",
     "Egal in was für einer Lebenslage Du dich gerade befindest. Glaube an den wichtigsten Menschen = DICH",
     "Genieße Dein Leben. Verlorene Zeit kehrt niemals zurück. Lebe in Deinem Traum und gebe niemals auf ihn zu verwirklichen", "Das Leben ist wie ein Abenteuer, lebe, fühle, liebe, lache, weine, spiele, gewinne, verliere, stolpere...doch erhebe Dich immer wieder und gehe Deinen Weg",
-    "Sei dir nie zu schade etwas zu unternehmen was dein leben verändern würde.<br>Es könnte dein Glück sein.",
+    "Sei dir nie zu schade etwas zu unternehmen was dein Leben verändern würde.<br>Es könnte dein Glück sein.",
     "Tanze singe und pfeife wann immer Du Lust danach hast<br>denn irgendwann hörst Du nur noch die Stille von Deinem Grab",
     "Bleib Dir immer selbst treu, mit all Deinen Wünschen und Träumen.<br><br>Verstell Dich nicht und geh Deinen Weg.<br><br>Vergebe Dir Deine Schwäche mit Liebe und sei dadurch stark.",
     "Dieser Moment ist einzigartig und kommt nie wieder zurück. Warte nicht auf den perfekten Moment. Mache ihn dir perfekt.",
@@ -307,7 +307,19 @@ var motivationText = [
     "Ich bin achtsam",
     "Ich bin mutig",
     "Ich bin stark",
-    "Ich bin selbstbewusst"
+    "Ich bin selbstbewusst",
+    "Das Beste was Dir passieren kann ist wenn Du morgens aufwachst und gesund bist.<br><br>Mach was daraus aus diesem Geschenk!",
+    "Das Beste was Dir passieren kann ist wenn Du morgens aufwachst und gesund bist. Mach was daraus!",
+    "Für alles was ich brauche ist immer gesorgt",
+    "Ich gehe ehrlich und überlegt mit Geld um",
+    "Ich geniesse es viel Geld zu haben!<br>Geld ist mein Freund",
+    "Die Angst ist die Grenze der Komfortzone",
+    "Ich geniesse es viel Geld zu haben. Geld ist mein Freund",
+    "Ich bin dankbar für das Geld, das bereits in meinem Leben fließt, und für die Möglichkeit, noch mehr anzuziehen",
+    "Die Angst ist mein Freund",
+    "Ich bin wertvoll und verdiene es, finanziell erfolgreich zu sein",
+    "Die Angst ist ein Wegweiser und Leuchtturm auf dem Weg zu den unbegrenzten Möglichkeiten",
+    "Für alles was ich brauche ist immer gesorgt"
 ];
 
 var motivationTextEn = [ 
