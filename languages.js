@@ -36,7 +36,7 @@ var motivationText = [
     "Denke an Deine Träume, sie vermissen Dich.", 
     "Sei einfach glücklich im Jetzt", 
     "no<img src='img/loewenzahn.jpg' class='img-circle'><br>Wenn es ein Löwenzahn durch den Asphalt schafft, dann wirst Du doch sicher auch einen Weg finden!",
-    "Ich habe entschieden nicht länger auf bessere Zeiten zu warten.<br>Die besten Zeiten sind jetzt.<br>Ich mache die restlichen Jahre meines Lebens zu den glücklichsten.<br>Denn das Leben gehört mir und es ist einfach zu kurz um noch länger zu warten.",
+    "Ich habe entschieden nicht länger auf bessere Zeiten zu warten.<br><br>Die besten Zeiten sind jetzt.<br><br>Ich mache die restlichen Jahre meines Lebens zu den glücklichsten.<br><br>Denn das Leben gehört mir und es ist einfach zu kurz um noch länger zu warten.",
     "Egal in was für einer Lebenslage Du dich gerade befindest. Glaube an den wichtigsten Menschen = DICH",
     "Genieße Dein Leben. Verlorene Zeit kehrt niemals zurück. Lebe in Deinem Traum und gebe niemals auf ihn zu verwirklichen", 
     "Das Leben ist wie ein Abenteuer, lebe, fühle, liebe, lache, weine, spiele, gewinne, verliere, stolpere...doch erhebe Dich immer wieder und gehe Deinen Weg",
