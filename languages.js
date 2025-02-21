@@ -373,7 +373,7 @@ var motivationText = [
     "Sei ein Vorbild für andere",
     "Ich habe den Mut erfolgreich zu sein in finanzieller Sicht und in der Partnerschaft",
     "Habe den Mut erfolgreich zu sein in finanzieller Sicht und in der Partnerschaft",
-    "Von jetzt an trage ich Liebe und Respekt zu mir selbst in meinem Inneren.<br><br>Weil ich es mir Wert bin",
+    "Von jetzt an trage ich Liebe und Respekt zu mir selbst in meinem Inneren.<br><br>Weil ich es mir wert bin",
     "Trage von jetzt an Liebe und Respekt zu dir selbst in deinem Inneren.<br><br>Sei es dir wert",
     "Für was bist Du dankbar?",
     "Du bist dein eigener Heiler",
