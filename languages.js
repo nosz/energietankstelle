@@ -382,7 +382,8 @@ var motivationText = [
     "Belaste dich nicht unnötig mit Müll von anderen",
     "Die wahre Ausdauer ist glaube dauernd an Dich",
     "Glaube dauernd an Dich ist die wahre Ausdauer",
-    "Gesundheit kauft man nicht im Handel<br>sie liegt im Lebenswandel"
+    "Gesundheit kauft man nicht im Handel<br>sie liegt im Lebenswandel",
+    "Was war heute Dein schönstes Erlebnis?"
 ];
 
 var motivationTextEn = [ 
