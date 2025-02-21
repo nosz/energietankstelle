@@ -214,7 +214,8 @@ var countText = sprachArray.length;
 var buttonstyle = ["alert alert-success", "alert alert-danger", "alert alert-info"];
 var countbutton = buttonstyle.length;
 //var schriftstyle = ["Tangerine", "Dancing Script", "Roboto"];
-var schriftstyle = ["Tangerine"];
+//var schriftstyle = ["Tangerine"];
+var schriftstyle = ["Arial"];
 
 var countschrift = schriftstyle.length;
 
