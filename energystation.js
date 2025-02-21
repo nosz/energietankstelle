@@ -2,7 +2,7 @@
 
 var tempStartseite = true;
 var minBild = 1;
-var maxBild = 238;
+var maxBild = 239;
 var tempSprache;
   //
 var myInterval = setInterval(clickOnDocument, 10000)
@@ -215,6 +215,7 @@ var buttonstyle = ["alert alert-success", "alert alert-danger", "alert alert-inf
 var countbutton = buttonstyle.length;
 //var schriftstyle = ["Tangerine", "Dancing Script", "Roboto"];
 var schriftstyle = ["Tangerine"];
+
 var countschrift = schriftstyle.length;
 
 var tempSatzOld;

@@ -37,6 +37,59 @@
   <link href="schriften/tangerine_script.css" rel="stylesheet" type="text/css">
   <link href="schriften/dancing_script.css" rel="stylesheet" type="text/css">
   <link href="schriften/roboto_script.css" rel="stylesheet" type="text/css">
+  <!-- CSS direkt im HTML -->
+  <style>
+    /* Standard-Stil für beide Geräte */
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      /* Standardgewicht */
+    }
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      /* Standardgewicht */
+    }
+
+    /* Apple (iOS) spezifische Anpassungen */
+    @supports (-webkit-touch-callout: none) {
+      body {
+        font-family: 'Arial', sans-serif;
+        /* Schrift für iOS */
+        font-weight: 600;
+        /* Erhöhtes Gewicht auf iOS */
+      }
+
+      h1 {
+        font-family: 'Arial', sans-serif;
+        /* Schrift für iOS */
+        font-weight: 600;
+        /* Erhöhtes Gewicht auf iOS */
+      }
+    }
+
+    /* Android spezifische Anpassungen (für Bildschirmgrößen) */
+    @media screen and (max-width: 768px) {
+      body {
+        font-weight: 500;
+        /* Mittleres Gewicht für kleinere Android-Bildschirme */
+      }
+
+      h1 {
+        font-weight: 500;
+        /* Mittleres Gewicht für kleinere Android-Bildschirme */
+      }
+    }
+
+    /* Für größere Android-Geräte */
+    @media screen and (min-width: 769px) {
+      body {
+        font-weight: 400;
+        /* Standardgewicht für größere Android-Bildschirme */
+      }
+    }
+  </style>
 </head>
 
 <body onload="startBild()">
@@ -115,7 +168,8 @@
     <div id="particles-js"> </div>
     <div class="jumbotron" style="background-color:#ffffff">
       <div class="" id="farbe" role="alert" style="background-color:white;">
-        <!-- mot_text --><h1 class="text-center" id="moti"></h1><!-- mot_text -->
+        <!-- mot_text -->
+        <h1 class="text-center" id="moti"></h1><!-- mot_text -->
       </div>
       <div class="row">
         <div class="alert text-center">
