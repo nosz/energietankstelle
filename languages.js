@@ -1,4 +1,5 @@
 var motivationText = [
+    "Gehe immer weiter in Deinem Leben<br><br>bleibe jedoch ruhig und gelassen dabei mit der Zuversicht dass Du es schaffst",
     "Sag dir das jeden Tag:<br><br>Ich bin wertvoll<br><br>Ich bin glücklich und voller Liebe<br><br>Ich bin geduldig<br><br>Ich bin stolz auf die Person die ich bin<br><br>Ich liebe mich<br><br>Ich bin authentisch",
     "Sag dir das jeden Tag:<br><br>Ich bin glücklich und voller Liebe",
     "Sag dir das jeden Tag:<br><br>Ich vergebe mir meine Schwäche in Liebe und bin dadurch stark",
@@ -200,6 +201,7 @@ var motivationText = [
     "Es ist leicht für mich Liebe zu geben und Liebe zu erhalten",
     "Es ist für mich in Ordnung in Beziehungen Grenzen zu setzen, und ich tue es",
     "Ich kommuniziere offen und ehrlich",
+    "Gehe immer weiter in Deinem Leben<br><br>Bleib jedoch ruhig und gelassen dabei mit der Zuversicht dass Du es schaffst",
     "Ich erkenne meine Einzigartigkeit an und die von jedem anderen",
     "Ich bin verantwortlich für mein Verhalten in einer Beziehung",
     "Ich drücke mich anderen gegenüber klar und deutlich aus",
@@ -383,10 +385,12 @@ var motivationText = [
     "Die wahre Ausdauer ist glaube dauernd an Dich",
     "Glaube dauernd an Dich ist die wahre Ausdauer",
     "Gesundheit kauft man nicht im Handel<br>sie liegt im Lebenswandel",
-    "Was war heute Dein schönstes Erlebnis?"
+    "Was war heute Dein schönstes Erlebnis?",
+    "Gehe immer weiter in Deinem Leben<br><br>bleibe jedoch ruhig und gelassen dabei mit der Zuversicht dass Du es schaffst"
 ];
 
 var motivationTextEn = [ 
+"Keep moving forward in your life<br><br>But stay calm and composed with the confidence that you will succeed",
 " The greatest form of giving is forgiveness",  
 "I am constantly learning and growing",  
 "Learn and grow constantly",  
@@ -630,11 +634,13 @@ var motivationTextEn = [
 "What made you happy today?",  
 "What are you grateful for?",  
 "What were your successes today?",  
-"What was your happiest moment today?"  
+"What was your happiest moment today?",
+"Keep moving forward in your life<br><br>But stay calm and composed with the confidence that you will succeed" 
 ];
 
 var motivationTextEs = [ 
-    "La mayor forma de dar es el perdón",  
+"Sigue avanzando en tu vida<br><br>Pero mantente tranquilo y sereno con la confianza de que lo lograrás",
+"La mayor forma de dar es el perdón",  
 "Estoy aprendiendo y creciendo constantemente",  
 "Aprende y crece constantemente",  
 "Estoy listo para el cambio",  
@@ -859,10 +865,12 @@ var motivationTextEs = [
 "¿Qué te hizo feliz hoy?",  
 "¿Por qué estás agradecido?",  
 "¿Cuáles fueron tus éxitos hoy?",  
-"¿Cuál fue tu momento de felicidad hoy?"  
+"¿Cuál fue tu momento de felicidad hoy?",
+"Sigue avanzando en tu vida<br><br>Pero mantente tranquilo y sereno con la confianza de que lo lograrás",  
 ];
 
 var motivationTextPL = [
+"Idź zawsze naprzód w swoim życiu<br><br>Ale pozostań spokojny i opanowany z pewnością, że dasz radę",
 "Największą formą dawania jest przebaczenie",  
 "Stale się uczę i rozwijam",  
 "Ucz się i rozwijaj nieustannie",  
@@ -1105,10 +1113,12 @@ var motivationTextPL = [
 "Co dziś sprawiło Ci radość?",  
 "Za co jesteś wdzięczny?",  
 "Jakie były Twoje dzisiejsze sukcesy?",  
-"Jaki był Twój najszczęśliwszy moment dzisiaj?"  
+"Jaki był Twój najszczęśliwszy moment dzisiaj?",
+"Idź zawsze naprzód w swoim życiu<br><br>Ale pozostań spokojny i opanowany z pewnością, że dasz radę"  
 ];
 
 var motivationTextIt = [
+"Continua ad andare avanti nella tua vita<br><br>Ma rimani calmo e sereno con la fiducia che ce la farai",
 "La più grande forma di donare è il perdono",  
 "Imparo e cresco continuamente",  
 "Impara e cresci continuamente",  
@@ -1445,10 +1455,12 @@ var motivationTextIt = [
 "Cosa ti ha reso felice oggi?",  
 "Per cosa sei grato?",  
 "Quali sono stati i tuoi successi di oggi?",  
-"Qual è stato il tuo momento di felicità oggi?"  
+"Qual è stato il tuo momento di felicità oggi?", 
+"Continua ad andare avanti nella tua vita<br><br>Ma rimani calmo e sereno con la fiducia che ce la farai" 
 ];
 
 var motivationTextRu = [
+"Иди всегда вперед по жизни<br><br>Но оставайся спокойным и уравновешенным с уверенностью, что у тебя всё получится",
 "Самая великая форма дарения — это прощение",  
 "Я постоянно учусь и развиваюсь",  
 "Учись и развивайся постоянно",  
@@ -1737,11 +1749,13 @@ var motivationTextRu = [
 "Что сегодня принесло тебе радость?",  
 "За что ты благодарен?",  
 "Какие у тебя были успехи сегодня?",  
-"Какой был твой самый счастливый момент сегодня?"  
+"Какой был твой самый счастливый момент сегодня?",
+"Иди всегда вперед по жизни<br><br>Но оставайся спокойным и уравновешенным с уверенностью, что у тебя всё получится"
 ];
 
 var motivationTextVi = [
-    "Hình thức cho đi vĩ đại nhất là sự tha thứ",  
+"Hãy luôn tiến về phía trước trong cuộc sống của bạn<br><br>Nhưng hãy giữ bình tĩnh và điềm đạm với sự tự tin rằng bạn sẽ làm được",
+"Hình thức cho đi vĩ đại nhất là sự tha thứ",  
 "Tôi không ngừng học hỏi và phát triển",  
 "Hãy không ngừng học hỏi và phát triển",  
 "Tôi sẵn sàng cho sự thay đổi",  
@@ -2079,10 +2093,12 @@ var motivationTextVi = [
 "Điều gì đã khiến bạn vui hôm nay?",  
 "Bạn biết ơn điều gì?",  
 "Những thành công của bạn hôm nay là gì?",  
-"Khoảnh khắc hạnh phúc nhất của bạn hôm nay là gì?"
+"Khoảnh khắc hạnh phúc nhất của bạn hôm nay là gì?",
+"Hãy luôn tiến về phía trước trong cuộc sống của bạn<br><br>Nhưng hãy giữ bình tĩnh và điềm đạm với sự tự tin rằng bạn sẽ làm được"
 ]
 
 var motivationTextUn = [
+"Haladj mindig tovább az életedben<br><br>De maradj nyugodt és higgadt, a bizalommal, hogy sikerülni fog",
 "A legnagyobb adakozás a megbocsátás",  
 "Folyamatosan tanulok és fejlődöm",  
 "Tanulj és fejlődj folyamatosan",  
@@ -2424,11 +2440,13 @@ var motivationTextUn = [
 "Miért örültél ma?",  
 "Miért vagy hálás?",  
 "Mik voltak a mai sikereid?",  
-"Mi volt a mai boldogság pillanata?"
+"Mi volt a mai boldogság pillanata?",
+"Haladj mindig tovább az életedben<br><br>De maradj nyugodt és higgadt, a bizalommal, hogy sikerülni fog"
 ]
 
 var motivationTextBa = [
-    "সবচেয়ে বড় দানের রূপ হলো ক্ষমা",  
+"তোমার জীবনে সবসময় এগিয়ে যাও<br><br>কিন্তু শান্ত ও ধৈর্য ধরে রাখো এই বিশ্বাস নিয়ে যে তুমি সফল হবে",
+"সবচেয়ে বড় দানের রূপ হলো ক্ষমা",  
 "আমি ক্রমাগত শিখছি এবং বেড়ে উঠছি",  
 "সবসময় শিখো এবং বেড়ে ওঠো",  
 "আমি পরিবর্তনের জন্য প্রস্তুত",  
@@ -2812,10 +2830,12 @@ var motivationTextBa = [
 "আপনি আজ কী নিয়ে খুশি হয়েছেন?",
 "আপনি কিসের জন্য কৃতজ্ঞ?",
 "আপনার আজকের সাফল্য কী ছিল?",
-"আপনার আজকের সুখের মুহূর্ত কী ছিল?"  
+"আপনার আজকের সুখের মুহূর্ত কী ছিল?",
+"তোমার জীবনে সবসময় এগিয়ে যাও<br><br>কিন্তু শান্ত ও ধৈর্য ধরে রাখো এই বিশ্বাস নিয়ে যে তুমি সফল হবে"
 ]
 
 var motivationTextTu = [
+"Hayatında her zaman ilerlemeye devam et<br><br>Ancak sakin ve huzurlu kal, başarılı olacağına dair güvenle",
 "Vermenin en büyük şekli affetmektir",  
 "Sürekli öğreniyor ve gelişiyorum",  
 "Sürekli öğren ve geliş",  
@@ -3109,9 +3129,11 @@ var motivationTextTu = [
 "Bugün neye sevindin?",
 "Neye minnettarsın?",
 "Bugünkü başarıların nelerdi?",
-"Bugün hangi mutlu anı yaşadın?"
+"Bugün hangi mutlu anı yaşadın?",
+"Hayatında her zaman ilerlemeye devam et<br><br>Ancak sakin ve huzurlu kal, başarılı olacağına dair güvenle"
 ]
 
 var motivationTextTest = [
-    "Du bist Chef 💖"
+    "Du bist Chef 💖",
+    "Gehe immer weiter in Deinem Leben<br><br>Bleib jedoch ruhig und gelassen dabei mit der Zuversicht dass Du es schaffst",
 ];
