@@ -418,7 +418,9 @@ var motivationText = [
     "Lasse keine Energieräuber in Deinem Umfeld zu",
     "Was gibt mir Energie?",
     "Harte Arbeit schlägt auf Dauer immer Talent",
-    "Fleiss schlägt auf Dauer immer Talent"
+    "Fleiss schlägt auf Dauer immer Talent",
+    "Niemand kann mich ärgern wenn ich ihm nicht dabei helfe",
+    "Niemand kann Dich ärgern wenn Du ihm nicht dabei hilfst"
 ];
 
 var motivationTextEn = [ 
