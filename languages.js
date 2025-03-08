@@ -420,7 +420,8 @@ var motivationText = [
     "Harte Arbeit schlägt auf Dauer immer Talent",
     "Fleiss schlägt auf Dauer immer Talent",
     "Niemand kann mich ärgern wenn ich ihm nicht dabei helfe",
-    "Niemand kann Dich ärgern wenn Du ihm nicht dabei hilfst"
+    "Niemand kann Dich ärgern wenn Du ihm nicht dabei hilfst",
+    "Alles Negative und Positive, das wir weggeben, kommt wie ein Bumerang wieder zurück!"
 ];
 
 var motivationTextEn = [ 
