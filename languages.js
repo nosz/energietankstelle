@@ -480,7 +480,11 @@ var motivationText = [
     "Lasse dich nicht mehr von deinen Ängsten kontrollieren<br><br>Gehe mutig weiter und nach vorne",
     "Lasse dich nicht mehr von deinen Zweifeln kontrollieren<br><br>Handle trotz Zweifel!",
     "Entfalte Dein volles Potenzial in jedem Bereich Deines Lebens",
-    "Ich entfalte mein volles Potenzial in jedem Bereich meines Lebens"
+    "Ich entfalte mein volles Potenzial in jedem Bereich meines Lebens",
+    "Ich wünsche Dir Liebe ohne Leiden",
+    "Humor macht ungezwungener",
+    "Humor verstärkt die Motivation",
+    "Humor reduziert Widerstand"
 ];
 
 var motivationTextEn = [ 
