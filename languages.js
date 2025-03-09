@@ -25,7 +25,7 @@ var motivationText = [
     "Liebeskummer lohnt sich nicht.<br><br>Wenn Die Halbgötter gehen kommen die Götter", 
     "no<img src='img/butterfly.jpg' class='img-circle'>Wusstest Du, dass es für einen Schmetterling unmöglich ist, seine eigenen Flügel zu sehen?<br> Wusstest Du auch, dass seine Flügel als eine der schönsten Errungenschaften in der Natur gelten?<br>Er kann nicht sehen wie schön sie sind, aber alle anderen können es.<br>Genauso ist es bei uns Menschen",
     "Hab Sonne im Herzen, egal ob es stürmt oder schneit, ob der Himmel voll Wolken, die Erde voll Streit - hab Sonne im Herzen, dann komme was mag, das leuchtet voll Licht dir den dunkelsten Tag",
-    "Egal was passiert.Glaube an Dich!<br><br>Egal was passiert.Bleib Dir treu!<br><br>Egal was passiert<br>Habe Dich lieb!",
+    "Egal was passiert<br>Glaube an Dich!<br><br>Egal was passiert<br>Bleib Dir treu!<br><br>Egal was passiert<br>Habe Dich lieb!",
     "Und immer wieder an Dich selber zu glauben ist das Geheimnis der Götter.",
     "Glück liegt auch im Handeln und Tun.", "Beharrlichkeit ist die geheime Stärke des Erfolgreichen. Sei unerschütterlich.", 
     "noIch bin dankbar für die Steine die mir in den Weg gelegt wurden<img src='img/steine.jpg' class='img-circle'>Ohne sie wäre ich sonst nicht über meine Stärken gestolpert.", 
