@@ -484,7 +484,11 @@ var motivationText = [
     "Ich wünsche Dir Liebe ohne Leiden",
     "Humor macht ungezwungener",
     "Humor verstärkt die Motivation",
-    "Humor reduziert Widerstand"
+    "Humor reduziert Widerstand",
+    "MIT JEDEM ATEMZUG WÄCHST MEIN SELBSTVERTRAUEN",
+    "Ich bin fähig und bereit alle Herausforderungen des Lebens zu meistern",
+    "Alles in meinem Leben passiert im richtigen Augenblick",
+    "Ich bin einzigartig und wertvoll genau so wie ich bin"
 ];
 
 var motivationTextEn = [ 
