@@ -488,7 +488,9 @@ var motivationText = [
     "MIT JEDEM ATEMZUG WÄCHST MEIN SELBSTVERTRAUEN",
     "Ich bin fähig und bereit alle Herausforderungen des Lebens zu meistern",
     "Alles in meinem Leben passiert im richtigen Augenblick",
-    "Ich bin einzigartig und wertvoll genau so wie ich bin"
+    "Ich bin einzigartig und wertvoll genau so wie ich bin",
+    "Ich nehme mich an genau so wie ich bin",
+    "Nehme dich an, genauso wie Du bist"
 ];
 
 var motivationTextEn = [ 
