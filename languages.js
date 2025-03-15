@@ -456,7 +456,7 @@ var motivationText = [
     "Ich verspreche mir selbst, dass ich mich niemals von einem Rückschlag aufhalten lasse",
     "Verspreche dir selbst, dass Du dich niemals von einem Rückschlag aufhalten lässt",
     "Ich verspreche mir selbst dass ich meine Resultate als Feedback sehe",
-    "Verspreche dir selbst dass Du deine Resultate als Feedbach siehst",
+    "Verspreche dir selbst dass Du deine Resultate als Feedback siehst",
     "Ich verspreche mir selbst dass ich wachse<br>jeden Tag in allem was ich tue",
     "Ich bin ein Schüler des Erfolgs<br>ich werde niemals aufhören zu lernen",
     "Ich verspreche mir selbst, dass ich meine aufbauenden Routinen durchziehen werde, egal wie ich mich fühle",
@@ -490,7 +490,8 @@ var motivationText = [
     "Alles in meinem Leben passiert im richtigen Augenblick",
     "Ich bin einzigartig und wertvoll genau so wie ich bin",
     "Ich nehme mich an genau so wie ich bin",
-    "Nehme dich an, genauso wie Du bist"
+    "Nehme dich an, genauso wie Du bist",
+    "Sei frei und stolz auf Dich"
 ];
 
 var motivationTextEn = [ 
