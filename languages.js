@@ -491,7 +491,8 @@ var motivationText = [
     "Ich bin einzigartig und wertvoll genau so wie ich bin",
     "Ich nehme mich an genau so wie ich bin",
     "Nehme dich an, genauso wie Du bist",
-    "Sei frei und stolz auf Dich"
+    "Sei frei und stolz auf Dich",
+    "Geld ist immer nur eine Idee"
 ];
 
 var motivationTextEn = [ 
