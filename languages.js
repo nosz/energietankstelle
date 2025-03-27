@@ -469,7 +469,7 @@ var motivationText = [
     "Balance ist kein Zeit-Problem<br><br>Balance ist ein Energie-Problem",
     "Du kannst deine Energie bewusst steuern",
     "Steuere bewusst deine Energie",
-    "Stärke deine Energiequellen und eliminiere deine Energiefressser",
+    "Stärke deine Energiequellen und eliminiere deine Energiefresser",
     "Es gibt keine Misserfolge sondern nur Lektionen die mich stärker machen",
     "Es gibt keine Misserfolge, sondern nur Lektionen die Dich stärker machen und aus denen Du lernen kannst",
     "Du hast mehr Kraft<br>mehr Fähigkeiten<br><br>mehr Möglichkeiten als Du jetzt glaubst",
@@ -492,7 +492,10 @@ var motivationText = [
     "Ich nehme mich an genau so wie ich bin",
     "Nehme dich an, genauso wie Du bist",
     "Sei frei und stolz auf Dich",
-    "Geld ist immer nur eine Idee"
+    "Geld ist immer nur eine Idee",
+    "Niemand kann mich ärgern wenn ich ihm nicht dabei helfen",
+    "Mache jeden Tag mindestens einen Menschen glücklich, vor allem Dich selbst",
+    "Zauberen jeden Tag mindestens einem Menschen ein Lächeln ins Gesicht, vor allem Dir selbst"
 ];
 
 var motivationTextEn = [ 
