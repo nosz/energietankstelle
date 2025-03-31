@@ -495,7 +495,8 @@ var motivationText = [
     "Geld ist immer nur eine Idee",
     "Niemand kann mich ärgern wenn ich ihm nicht dabei helfen",
     "Mache jeden Tag mindestens einen Menschen glücklich, vor allem Dich selbst",
-    "Zaubere jeden Tag mindestens einem Menschen ein Lächeln ins Gesicht, vor allem Dir selbst"
+    "Zaubere jeden Tag mindestens einem Menschen ein Lächeln ins Gesicht, vor allem Dir selbst",
+    "Strahle wie die Sonne dass die Menschen bei Dir Urlaub machen möchten"
 ];
 
 var motivationTextEn = [ 
