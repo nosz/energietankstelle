@@ -493,7 +493,7 @@ var motivationText = [
     "Nehme dich an, genauso wie Du bist",
     "Sei frei und stolz auf Dich",
     "Geld ist immer nur eine Idee",
-    "Niemand kann mich ärgern wenn ich ihm nicht dabei helfen",
+    "Niemand kann mich ärgern wenn ich ihm nicht dabei helfe",
     "Mache jeden Tag mindestens einen Menschen glücklich, vor allem Dich selbst",
     "Zaubere jeden Tag mindestens einem Menschen ein Lächeln ins Gesicht, vor allem Dir selbst",
     "Strahle wie die Sonne dass die Menschen bei Dir Urlaub machen möchten"

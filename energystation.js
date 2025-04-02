@@ -344,6 +344,10 @@ function energieJetztAnzeigen(boolAnzeige) {
 	if (selected.slice(0, 2) === "no") {
 		selected = selected.slice(2, selected.length);
 	} else {
+
+		//Grossbuchstaben
+		selected = selected.toUpperCase();
+		//end Grossbuchstaben
 		//selected = selected + motivationBild[Math.random() * countBild | 0];
 		zahl = rand(minBild, maxBild);
 		if (zahl == tempBildOld) {
