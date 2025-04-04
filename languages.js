@@ -526,7 +526,11 @@ var motivationText = [
     "Es gibt immer einen Grund zu lächeln, also hebe die Mundwinkel nach oben und sei locker",
     "Du bist ein Riese dem man eingeredet hat dass du ein Zwerg bist",
     "Wir sind Riesen denen man eingeredet hat das wir Zwerge sind",
-    "Weltmacht mit 3 Buchstaben? Ich"
+    "Weltmacht mit 3 Buchstaben? Ich",
+    "Du bist reine Liebe",
+    "Du bist pure Liebe",
+    "Ich bin reine Liebe",
+    "Ich bin reine Liebe"
 ];
 
 var motivationTextEn = [ 
