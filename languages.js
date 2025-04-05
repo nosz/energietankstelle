@@ -530,7 +530,9 @@ var motivationText = [
     "Du bist reine Liebe",
     "Du bist pure Liebe",
     "Ich bin reine Liebe",
-    "Ich bin pure Liebe"
+    "Ich bin pure Liebe",
+    "Je mehr Disziplin Du hast umso freier wirst Du",
+    "Je mehr Disziplin Du hast umso freier und lockerer wirst Du"
 ];
 
 var motivationTextEn = [ 
