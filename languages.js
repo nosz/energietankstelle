@@ -532,7 +532,9 @@ var motivationText = [
     "Ich bin reine Liebe",
     "Ich bin pure Liebe",
     "Je mehr Disziplin Du hast umso freier wirst Du",
-    "Je mehr Disziplin Du hast umso freier und lockerer wirst Du"
+    "Je mehr Disziplin Du hast umso freier und lockerer wirst Du",
+    "Sei der Erwachsene den du als Kind gebraucht hättest",
+    "Mit Freude und Spass löse ich meine Probleme da ich weiss dass Probleme Geschenke sind um mich weiterzuentwickeln"
 ];
 
 var motivationTextEn = [ 
