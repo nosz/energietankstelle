@@ -544,7 +544,10 @@ var motivationText = [
     "Erschaffe bei jedem deiner Gesprächspartner ein gutes Gefühl",
     "Räume durch Deine Kommunikation jedes Missverständnis aus dem Weg",
     "Erschaffe Vertrauen und Verständnis bei jedem deiner Gesprächspartner",
-    "Strahle Sicherheit und Klarheit aus"
+    "Strahle Sicherheit und Klarheit aus",
+    "Ich bin immer gut vorbereitet",
+    "Ich kommuniziere immer authentisch und glaubwürdig denn was ich sage das denke und fühle ich auch",
+    "Kommuniziere immer authentisch und glaubwürdig indem du sagst was du denkst und fühlst"
 ];
 
 var motivationTextEn = [ 
