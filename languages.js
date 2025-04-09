@@ -532,9 +532,19 @@ var motivationText = [
     "Ich bin reine Liebe",
     "Ich bin pure Liebe",
     "Je mehr Disziplin Du hast umso freier wirst Du",
-    "Je mehr Disziplin Du hast umso freier und lockerer wirst Du",
+    "Je mehr Disziplin Du hast umso freier und sicherer wirst Du",
     "Sei der Erwachsene den du als Kind gebraucht hättest",
-    "Mit Freude und Spass löse ich meine Probleme da ich weiss dass Probleme Geschenke sind um mich weiterzuentwickeln"
+    "Mit Freude und Spass löse ich meine Probleme da ich weiss dass Probleme Geschenke sind um mich weiterzuentwickeln",
+    "Ich bin ein Meister in der Kunst der Kommunikation. Ich erzeuge in mir und in anderen gute, aufbauende und motivierende Gefühle",
+    "Ich erschaffe bei jedem meiner Gesprächspartner ein gutes Gefühl",
+    "Ich räume durch meine Kommunikation jedes Missverständnis aus dem Weg",
+    "Ich erschaffe Vertrauen und Verständnis bei jedem meiner Gesprächspartner",
+    "Ich strahle Sicherheit und Klarheit aus",
+    "Sei ein Meister in der Kunst der Kommunikation. Erzeuge in dir und in anderen gute, aufbauende und motivierende Gefühle",
+    "Erschaffe bei jedem deiner Gesprächspartner ein gutes Gefühl",
+    "Räume durch Deine Kommunikation jedes Missverständnis aus dem Weg",
+    "Erschaffe Vertrauen und Verständnis bei jedem deiner Gesprächspartner",
+    "Strahle Sicherheit und Klarheit aus"
 ];
 
 var motivationTextEn = [ 
