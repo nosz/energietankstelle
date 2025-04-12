@@ -547,7 +547,8 @@ var motivationText = [
     "Strahle Sicherheit und Klarheit aus",
     "Ich bin immer gut vorbereitet",
     "Ich kommuniziere immer authentisch und glaubwürdig denn was ich sage das denke und fühle ich auch",
-    "Kommuniziere immer authentisch und glaubwürdig indem du sagst was du denkst und fühlst"
+    "Kommuniziere immer authentisch und glaubwürdig indem du sagst was du denkst und fühlst",
+    "Schön dass Du genau so bist wie Du bist"
 ];
 
 var motivationTextEn = [ 
