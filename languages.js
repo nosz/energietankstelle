@@ -253,7 +253,7 @@ var motivationText = [
     "Erkenne was Dir gut tut und integriere dies ganz einfach in dein Leben",
     "Ich erkenne was mir gut tut und integriere das in mein Leben",
     "Ich vertraue meinem Leben wie einem guten Freund",
-    "Lasse ganz einfach los, was Dir nicht gut tut",
+    "Lasse ganz einfach los was Dir nicht gut tut",
     "Ziehe liebevolle Grenzen die dich schützen",
     "Ich ziehe ganz einfach und liebevoll Grenzen und wahre dies gegenüber jedem Menschen",
     "Ziehe ganz einfach und liebevoll Grenzen und wahre diese gegenüber jedem Menschen",
@@ -548,7 +548,16 @@ var motivationText = [
     "Ich bin immer gut vorbereitet",
     "Ich kommuniziere immer authentisch und glaubwürdig denn was ich sage das denke und fühle ich auch",
     "Kommuniziere immer authentisch und glaubwürdig indem du sagst was du denkst und fühlst",
-    "Schön dass Du genau so bist wie Du bist"
+    "Schön dass Du genau so bist wie Du bist",
+    "WAHRE FREIHEIT BEGINNT IN DIR UND SIE ENTSTEHT IN DEM MOMENT WENN DU LERNST DICH SELBST ZU FÜHREN",
+    "Ich verkaufe mit Klarheit und Selbstvertrauen",
+    "Was du über dich selbst denkst bestimmt wie andere dich wahrnehmen",
+    "Ich denke liebevoll über mich",
+    "Deine innere Kommunikation mit dir selbst entscheidet was aussen ankommt",
+    "Rede liebevoll mit dir selbst",
+    "Ich rede liebevoll mit mir selbst",
+    "Göttliche Ordnung inst jetzt in meinem Geist, in meinem Körper und in allen meinen Angelegenheiten hergestellt",
+    "Ich lasse ganz einfach und liebevoll los was mir nicht gut tut"
 ];
 
 var motivationTextEn = [ 
