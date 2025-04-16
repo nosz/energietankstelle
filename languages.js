@@ -35,7 +35,7 @@ var motivationText = [
     "Fange an Dich zu lieben wie Du bist und nicht wie Dich Andere gern sehen würden.", "Du bist WUNDERBAR", 
     "Schicksal ist immer was du daraus machst", "Sei einfach glücklich im Jetzt", 
     "Hör auf Dich zu vergleichen, lächle in den Spiegel", 
-    "Denke an Deine Träume, sie vermissen Dich.", 
+    "Denke an Deine Träume, sie vermissen Dich", 
     "Sei einfach glücklich im Jetzt", 
     "no<img src='img/loewenzahn.jpg' class='img-circle'><br>Wenn es ein Löwenzahn durch den Asphalt schafft, dann wirst Du doch sicher auch einen Weg finden!",
     "Ich habe entschieden nicht länger auf bessere Zeiten zu warten.<br><br>Die besten Zeiten sind jetzt.<br><br>Ich mache die restlichen Jahre meines Lebens zu den glücklichsten.<br><br>Denn das Leben gehört mir und es ist einfach zu kurz um noch länger zu warten.",
