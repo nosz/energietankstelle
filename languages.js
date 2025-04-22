@@ -557,7 +557,11 @@ var motivationText = [
     "Rede liebevoll mit dir selbst",
     "Ich rede liebevoll mit mir selbst",
     "Göttliche Ordnung inst jetzt in meinem Geist, in meinem Körper und in allen meinen Angelegenheiten hergestellt",
-    "Ich lasse ganz einfach und liebevoll los was mir nicht gut tut"
+    "Ich lasse ganz einfach und liebevoll los was mir nicht gut tut",
+    "Ich bin in der Liebe der Wahrheit und der Freiheit",
+    "Ich nehme das Leben so an wie es ist und bin mir bewusst dass ich Dinge ändern kann",
+    "Spüre die Schönheit deiner Seele",
+    "Ich bin in der goldenen Mitte und dadurch liebvoll und selbstbewusst"
 ];
 
 var motivationTextEn = [ 
