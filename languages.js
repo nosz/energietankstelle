@@ -561,7 +561,7 @@ var motivationText = [
     "Ich bin in der Liebe der Wahrheit und der Freiheit",
     "Ich nehme das Leben so an wie es ist und bin mir bewusst dass ich Dinge ändern kann",
     "Spüre die Schönheit deiner Seele",
-    "Ich bin in der goldenen Mitte und dadurch liebvoll und selbstbewusst"
+    "Ich bin in der goldenen Mitte und dadurch lieebvoll und selbstbewusst"
 ];
 
 var motivationTextEn = [ 
