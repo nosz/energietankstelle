@@ -556,12 +556,17 @@ var motivationText = [
     "Deine innere Kommunikation mit dir selbst entscheidet was aussen ankommt",
     "Rede liebevoll mit dir selbst",
     "Ich rede liebevoll mit mir selbst",
-    "Göttliche Ordnung inst jetzt in meinem Geist, in meinem Körper und in allen meinen Angelegenheiten hergestellt",
+    "Göttliche Ordnung ist jetzt in meinem Geist, in meinem Körper und in allen meinen Angelegenheiten hergestellt",
     "Ich lasse ganz einfach und liebevoll los was mir nicht gut tut",
     "Ich bin in der Liebe der Wahrheit und der Freiheit",
     "Ich nehme das Leben so an wie es ist und bin mir bewusst dass ich Dinge ändern kann",
     "Spüre die Schönheit deiner Seele",
-    "Ich bin in der goldenen Mitte und dadurch liebevoll und selbstbewusst"
+    "Ich bin in der goldenen Mitte und dadurch liebevoll und selbstbewusst",
+    "Alles was wir haben sind Momente",
+    "Alles was wir haben sind Momente<br>Die Vergangenheit ist vorbei und die Zukunft kommt noch",
+    "Worauf lenkst Du deinen Fokus?",
+    "Ich finde immer eine Lösung",
+    "Du wirst immer eine Lösung finden!"
 ];
 
 var motivationTextEn = [ 
