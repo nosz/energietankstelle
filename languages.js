@@ -566,7 +566,13 @@ var motivationText = [
     "Alles was wir haben sind Momente<br>Die Vergangenheit ist vorbei und die Zukunft kommt noch",
     "Worauf lenkst Du deinen Fokus?",
     "Ich finde immer eine Lösung",
-    "Du wirst immer eine Lösung finden!"
+    "Du wirst immer eine Lösung finden!",
+    "Es ist einfach",
+    "Es ist möglich",
+    "Alles was passiert ist für mich",
+    "Ich werde jeden Tag in jeder Beziehung immer besser und besser",
+    "Ich bin das Beste von mir was es gibt und ich bin dankbar dafür",
+    "Worauf lenkst du deine Aufmerksamkeit?"
 ];
 
 var motivationTextEn = [ 
