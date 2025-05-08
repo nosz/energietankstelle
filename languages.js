@@ -586,7 +586,14 @@ var motivationText = [
     "Es ist spannend zu beobachten wie sich deine Aufmerksamkeit auf das richtet was dir gut tut",
     "Mutig zu sein kann dir leicht fallen wenn Du es einfach machst",
     "Interessant ist was passiert, wenn Du liebevoll mit dir selbst redest",
-    "Interessant ist was mit mir passiert wenn ich liebevoll mit mir selbst rede"
+    "Interessant ist was mit mir passiert wenn ich liebevoll mit mir selbst rede",
+    "Vielleicht dankst du dafür was dir Energie gibt",
+    "Es könnte dir gute Gefühle geben wenn du darüber nachdenkst was dir Energie gibt",
+    "Es könnte besser funktionieren wenn du gut vorbereitet bist",
+    "Vielleicht wirst du feststellen das sich vieles leichter anfühlt wenn du gut vorbereitet bist",
+    "Vielleicht werde ich die Erfahrung machen dass sich vieles leichter anfühlt wenn ich gut vorbereitet bin",
+    "Erstaunlich ist was passieren kann wenn ich bereit bin mich selbst zu lieben",
+    "Unglaubliche Dinge können in mein Leben kommen wenn ich bereit bin mich selbst zu lieben"
 ];
 
 var motivationTextEn = [ 
