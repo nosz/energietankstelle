@@ -673,7 +673,11 @@ var motivationText = [
     "Es ist erstaunlich zu spüren, wie ich immer mehr in Frieden mit mir selbst komme, wenn ich meine Eltern und ihre Unvollkommenheiten akzeptiere.",
     "Vielleicht werde ich immer mehr erkennen, wie befreiend es ist, mich selbst zu heilen, indem ich die Unvollkommenheiten meiner Eltern annehme.",
     "Es wird spannend zu sehen, wie du Frieden mit dir selbst findest, wenn du die Unvollkommenheiten deiner Eltern in Liebe loslässt.",
-    "Es ist faszinierend, wie du immer mehr in den Zustand inneren Friedens kommst, wenn du beginnst, deine Eltern für ihre Unvollkommenheit zu verzeihen."
+    "Es ist faszinierend, wie du immer mehr in den Zustand inneren Friedens kommst, wenn du beginnst, deine Eltern für ihre Unvollkommenheit zu verzeihen.",
+    "Es wird spannend zu sehen, wie du immer mehr erkennst, wie viel Verkaufstalent in dir steckt, wenn du dich einfach zeigst",
+    "Es wird spannend zu sehen, wie ich immer mehr erkenne, wie viel Verkaufstalent in mir steckt, wenn ich mich einfach zeige",
+    "Es ist erstaunlich zu beobachten, wie du dein Leben zu einem erfolgreichen Verkaufsgespräch machst, indem du authentisch und überzeugend bist.",
+    "Es ist erstaunlich zu beobachten, wie ich mein Leben zu einem erfolgreichen Verkaufsgespräch mache, indem ich authentisch und überzeugend bin",
 ];
 
 var motivationTextEn = [
