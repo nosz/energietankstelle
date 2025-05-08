@@ -583,8 +583,10 @@ var motivationText = [
     "Eine Lösung wird sich für dich auf eine unbekannte Weise zeigen",
     "Lösungen von Problemen zeigen sich oft dann wenn Du bereit bist sie zu erkennen",
     "Lösungen von Problemen zeigen sich mir oft dann wenn ich bereit bin sie zu erkennen",
-    "Es ist spannend zu beobachten wie sich deine Aufmerksamkeit auf das richtet was dir gut tut"
-
+    "Es ist spannend zu beobachten wie sich deine Aufmerksamkeit auf das richtet was dir gut tut",
+    "Mutig zu sein kann dir leicht fallen wenn Du es einfach machst",
+    "Interessant ist was passiert, wenn Du liebevoll mit dir selbst redest",
+    "Interessant ist was mit mir passiert wenn ich liebevoll mit mir selbst rede"
 ];
 
 var motivationTextEn = [ 
