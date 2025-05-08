@@ -653,7 +653,19 @@ var motivationText = [
     "Völlig neue Erfahrungen wirst du machen wenn du entdeckst dass deine Energie die Bassis sind für alles",
     "Ich erlebe wundervolle Dinge wenn ich meine Energie bewusst steuern kann",
     "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn du spürst wie kraftvoll deine Energie wirklich ist",
-    "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn ich spüre wie kraftvoll meine Energie wirklich ist"
+    "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn ich spüre wie kraftvoll meine Energie wirklich ist",
+    "Es ist faszinierend zu erleben, wie viel kraftvoller alles wird, wenn ich an mich selbst glaube.",
+    "Vielleicht werde ich überrascht sein, wie stark sich mein Leben verändert, wenn ich immer mehr an mich selbst glaube.",
+    "Es ist erstaunlich zu beobachten, wie du beginnst, dein wahres Potenzial zu entfalten, sobald du an dich selbst glaubst.",
+    "Es wird spannend zu sehen, wie du Schritt für Schritt immer mehr an dich selbst glauben kannst.",
+    "Es ist erstaunlich zu bemerken, wie sich immer mehr Liebe in mir entfaltet, je mehr ich mich selbst annehme.",
+    "Vielleicht erkenne ich immer tiefer, wie viel Liebe bereits in mir wohnt und mit jedem Moment wächst.",
+    "Es ist faszinierend zu beobachten, wie du immer mehr Liebe in dir spürst, je mehr du dich öffnest.",
+    "Es wird spannend zu sehen, wie du immer mehr erkennst, wie tief die Liebe in dir verankert ist.",
+    "Es ist faszinierend, wie viel Power in mir steckt, wenn ich mir bewusst mache, wie viel ich beeinflussen kann.",
+    "Vielleicht werde ich immer mehr erkennen, wie kraftvoll ich bin, wenn ich mich mit meinem inneren Potenzial verbinde.",
+    "Es wird spannend zu sehen, wie du die Welt mit deinem inneren Potenzial formst, wenn du die Kraft in dir entdeckst.",
+    "Es ist erstaunlich, wie du beginnen kannst, deine eigene Welt zu gestalten, indem du dich mit deinem wahren Ich verbindest."
 ];
 
 var motivationTextEn = [
