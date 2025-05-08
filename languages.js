@@ -572,7 +572,19 @@ var motivationText = [
     "Alles was passiert ist für mich",
     "Ich werde jeden Tag in jeder Beziehung immer besser und besser",
     "Ich bin das Beste von mir was es gibt und ich bin dankbar dafür",
-    "Worauf lenkst du deine Aufmerksamkeit?"
+    "Worauf lenkst du deine Aufmerksamkeit?",
+    "ETWAS IN DIR WEISS BEREITS DASS ES EINFACH SEIN KANN",
+    "ETWAS IN MIR WEISS BEREITS DASS ES EINFACH SEIN KANN",
+    "Möglichkeiten zeigen sich dann genau wenn Du es brauchst",
+    "Möglichkeiten zeigen sich mir dann genau wenn ich es brauche",
+    "Was auch immer geschieht kann etwas für dich bewegen",
+    "Was auch immer geschieht kann etwas für mich bewegen",
+    "Eine Lösung wird sich für mich auf eine ganz unbekannte Weise zeigen",
+    "Eine Lösung wird sich für dich auf eine unbekannte Weise zeigen",
+    "Lösungen von Problemen zeigen sich oft dann wenn Du bereit bist sie zu erkennen",
+    "Lösungen von Problemen zeigen sich mir oft dann wenn ich bereit bin sie zu erkennen",
+    "Es ist spannend zu beobachten wie sich deine Aufmerksamkeit auf das richtet was dir gut tut"
+
 ];
 
 var motivationTextEn = [ 
