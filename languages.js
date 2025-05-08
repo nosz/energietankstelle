@@ -621,7 +621,9 @@ var motivationText = [
     "Es ist faszinierend, wie sich Angst oft auflöst, wenn du dir bewusst machst wie wenig von der Angst tatsächlich real ist",
     "Es ist erstaunlich wie oft wir feststellen dass die Angst tatsächlich nur in unserem Kopf existiert",
     "Es ist wie ein Wunder es zu erleben wie Liebe in mir selbst wächst und auf natürliche Weise zu den Menschen um mich herum fliesst",
-    "Wunderbar ist es zu erleben wie Liebe in dir selbst wächst und auf die Menschen um dich herum wirkt"
+    "Wunderbar ist es zu erleben wie Liebe in dir selbst wächst und auf die Menschen um dich herum wirkt",
+    "Vielleicht ist es deine Einzigartigkeit die die Welt noch schöner macht",
+    "Wundervoll ist es wenn du spürst dass deine Einzigartigkeit die Welt noch schöner macht"
 ];
 
 var motivationTextEn = [ 
