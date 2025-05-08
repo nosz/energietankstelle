@@ -596,7 +596,11 @@ var motivationText = [
     "Unglaubliche Dinge können in mein Leben kommen wenn ich bereit bin mich selbst zu lieben",
     "Vielleicht ist die Bereitschaft an sich selbst zu glauben eine der besten Entscheidungen deines Lebens",
     "Frei, kraftvoll und selbstbewusst zu sein ist vielleicht eine gute Entscheidung für dein Leben",
-    "Vielleicht wirst du erstaunt sein, was in deinem Leben passiert wenn du die Freiheit, die Kraft und das Selbstbewusssein in Dir entdeckst"
+    "Vielleicht wirst du erstaunt sein, was in deinem Leben passiert wenn du die Freiheit, die Kraft und das Selbstbewusssein in Dir entdeckst",
+    "Es ist interessant zu bemerken das Du der einzige bist der dich aufhalten kann",
+    "Es ist erstaunlich festzustellen dass Du der einzige bist der dich aufhalten könnte",
+    "Es ist bemerkenswert festzustellen das ich der einzige bin der mich aufhalten kann",
+    "Es ist kein Wunder festzustellen dass ich der einzige bin der mich aufhalten kann"
 ];
 
 var motivationTextEn = [ 
