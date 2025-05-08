@@ -623,7 +623,9 @@ var motivationText = [
     "Es ist wie ein Wunder es zu erleben wie Liebe in mir selbst wächst und auf natürliche Weise zu den Menschen um mich herum fliesst",
     "Wunderbar ist es zu erleben wie Liebe in dir selbst wächst und auf die Menschen um dich herum wirkt",
     "Vielleicht ist es deine Einzigartigkeit die die Welt noch schöner macht",
-    "Wundervoll ist es wenn du spürst dass deine Einzigartigkeit die Welt noch schöner macht"
+    "Wundervoll ist es wenn du spürst dass deine Einzigartigkeit die Welt noch schöner macht",
+    "Es ist faszinierend zu bemerken wie sich dein Leben verändert wenn du die Leichtigkeit des Humors entdeckst",
+    "Es ist faszinierend zu bemerken wie sich mein Leben verändert wenn ich die Leichtigkeit des Humors entdecke"
 ];
 
 var motivationTextEn = [ 
