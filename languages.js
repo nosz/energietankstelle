@@ -600,7 +600,28 @@ var motivationText = [
     "Es ist interessant zu bemerken das Du der einzige bist der dich aufhalten kann",
     "Es ist erstaunlich festzustellen dass Du der einzige bist der dich aufhalten könnte",
     "Es ist bemerkenswert festzustellen das ich der einzige bin der mich aufhalten kann",
-    "Es ist kein Wunder festzustellen dass ich der einzige bin der mich aufhalten kann"
+    "Es ist kein Wunder festzustellen dass ich der einzige bin der mich aufhalten kann",
+    "Erstaunliches wird passieren wenn Du einfach im Jetzt lebst",
+    "Dankbarkeit kann erstaunliches in Deinem Leben bewirken",
+    "Dankbarkeit kann wunderbare Erfahrungen in meinem Leben erwirken",
+    "Das das Leben immer für mich ist kann eine sehr gute Einstellung sein",
+    "Vielleicht ist genau jetzt der Moment bei dem Du feststellst dass das Leben für dich ist",
+    "Vielleicht ist jetzt der Moment der mir vermittelt dass das Leben für mich ist",
+    "Grenzen zu ziehen ist eine natürliche Eigenschaft die es mir möglich macht glücklich zu sein",
+    "Grenzen zu ziehen ist eine natürliche Eigenschaft die es Dir ermöglicht glücklich zu sein",
+    "Es ist ein Wunder wenn Du feststellst dass die ganze Schönheit des Universums in Dir liegt",
+    "Wundervolle Dinge passieren wenn Du bemerkst dass die ganze Schönheit des Universums in dir liegt",
+    "Glücksmomente können Dir immer und an jedem Ort passieren",
+    "Glücksmomente können mir immer und an jedem Ort passieren",
+    "Das Leben schenkt dir Glücksmomente - wenn Du sie erkennst",
+    "Das Leben schenkt mir Glücksmomente - wenn ich bereit bin sie zu fühlen",
+    "Dein Leben so zu gestalten wie du es willst kann eine wunderbare Erfahrung sein",
+    "Mein Leben so zu gestalten wie ich es will kann eine Herausforderung und wunderbare Erfahrung sein",
+    "Es ist faszinierend, wie sich Angst oft auflöst, wenn ich mir bewusst mache wie wenig von der Angst tatsächlich real ist",
+    "Es ist faszinierend, wie sich Angst oft auflöst, wenn du dir bewusst machst wie wenig von der Angst tatsächlich real ist",
+    "Es ist erstaunlich wie oft wir feststellen dass die Angst tatsächlich nur in unserem Kopf existiert",
+    "Es ist wie ein Wunder es zu erleben wie Liebe in mir selbst wächst und auf natürliche Weise zu den Menschen um mich herum fliesst",
+    "Wunderbar ist es zu erleben wie Liebe in dir selbst wächst und auf die Menschen um dich herum wirkt"
 ];
 
 var motivationTextEn = [ 
