@@ -625,7 +625,15 @@ var motivationText = [
     "Vielleicht ist es deine Einzigartigkeit die die Welt noch schöner macht",
     "Wundervoll ist es wenn du spürst dass deine Einzigartigkeit die Welt noch schöner macht",
     "Es ist faszinierend zu bemerken wie sich dein Leben verändert wenn du die Leichtigkeit des Humors entdeckst",
-    "Es ist faszinierend zu bemerken wie sich mein Leben verändert wenn ich die Leichtigkeit des Humors entdecke"
+    "Es ist faszinierend zu bemerken wie sich mein Leben verändert wenn ich die Leichtigkeit des Humors entdecke",
+    "Viele erstaunliche Dinge passieren wenn Du ein Mensch bist der Probleme löst",
+    "Wunderbare Erfahrungen wirst du erleben wenn du ein Mensch bist der Probleme löst",
+    "Viele erstaunliche Dinge passieren wenn ich ein Mensch bin der Probleme löst",
+    "Wunderbare Erfahrungen werde ich erleben wenn ich bereit bin Probleme zu lösen",
+    "Völlig neue Erfahrungen wirst du machen wenn du entdeckst dass deine Energie die Bassis sind für alles",
+    "Ich erlebe wundervolle Dinge wenn ich meine Energie bewusst steuern kann",
+    "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn du spürst wie kraftvoll deine Energie wirklich ist",
+    "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn ich spüre wie kraftvoll meine Energie wirklich ist"
 ];
 
 var motivationTextEn = [ 
