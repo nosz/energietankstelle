@@ -593,7 +593,10 @@ var motivationText = [
     "Vielleicht wirst du feststellen das sich vieles leichter anfühlt wenn du gut vorbereitet bist",
     "Vielleicht werde ich die Erfahrung machen dass sich vieles leichter anfühlt wenn ich gut vorbereitet bin",
     "Erstaunlich ist was passieren kann wenn ich bereit bin mich selbst zu lieben",
-    "Unglaubliche Dinge können in mein Leben kommen wenn ich bereit bin mich selbst zu lieben"
+    "Unglaubliche Dinge können in mein Leben kommen wenn ich bereit bin mich selbst zu lieben",
+    "Vielleicht ist die Bereitschaft an sich selbst zu glauben eine der besten Entscheidungen deines Lebens",
+    "Frei, kraftvoll und selbstbewusst zu sein ist vielleicht eine gute Entscheidung für dein Leben",
+    "Vielleicht wirst du erstaunt sein, was in deinem Leben passiert wenn du die Freiheit, die Kraft und das Selbstbewusssein in Dir entdeckst"
 ];
 
 var motivationTextEn = [ 
