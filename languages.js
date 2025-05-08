@@ -665,7 +665,11 @@ var motivationText = [
     "Es ist faszinierend, wie viel Power in mir steckt, wenn ich mir bewusst mache, wie viel ich beeinflussen kann.",
     "Vielleicht werde ich immer mehr erkennen, wie kraftvoll ich bin, wenn ich mich mit meinem inneren Potenzial verbinde.",
     "Es wird spannend zu sehen, wie du die Welt mit deinem inneren Potenzial formst, wenn du die Kraft in dir entdeckst.",
-    "Es ist erstaunlich, wie du beginnen kannst, deine eigene Welt zu gestalten, indem du dich mit deinem wahren Ich verbindest."
+    "Es ist erstaunlich, wie du beginnen kannst, deine eigene Welt zu gestalten, indem du dich mit deinem wahren Ich verbindest.",
+    "Es ist erstaunlich, wie sicher und überzeugend ich in jeder Situation werde, je mehr ich in meine innere Stärke vertraue.",
+    "Vielleicht werde ich immer klarer spüren, wie meine Worte und mein Auftreten immer selbstbewusster und begeisternder wirken.",
+    "Es wird faszinierend zu beobachten, wie du mit jedem Tag sicherer und überzeugender in deinem Auftreten und in deiner Sprache wirst.",
+    "Es ist spannend zu erkennen, wie du dich mit jedem Gespräch immer mehr in deinem sicheren und begeisternden Selbst zeigst."
 ];
 
 var motivationTextEn = [
