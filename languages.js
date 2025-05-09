@@ -695,7 +695,9 @@ var motivationText = [
     "Es ist erstaunlich, was geschehen kann, wenn du beginnst, deiner eigenen Stimme mit offenem Herzen zu vertrauen.",
     "Ich erlebe, wie viel leichter mein Weg wird, seit ich meiner inneren Stimme immer mehr Vertrauen schenke.",
     "Manchmal beginnt echte Veränderung in dem Moment, in dem du erkennst, dass deine Fähigkeiten längst in dir ruhen.",
-    "Ich entdecke täglich neue Kraft in mir, wenn ich beginne, meinen Fähigkeiten voll und ganz zu vertrauen."
+    "Ich entdecke täglich neue Kraft in mir, wenn ich beginne, meinen Fähigkeiten voll und ganz zu vertrauen.",
+    "Es wird immer klarer dass Du eine Bereicherung bist für jeden Menschen der dir begegnet",
+    "Es wird mir immer klarer dass ich eine Bereicherung bin für jeden Menschen der mir begegnet"
 ];
 
 var motivationTextEn = [
