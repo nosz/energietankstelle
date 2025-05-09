@@ -650,7 +650,7 @@ var motivationText = [
     "Wunderbare Erfahrungen wirst du erleben wenn du ein Mensch bist der Probleme löst",
     "Viele erstaunliche Dinge passieren wenn ich ein Mensch bin der Probleme löst",
     "Wunderbare Erfahrungen werde ich erleben wenn ich bereit bin Probleme zu lösen",
-    "Völlig neue Erfahrungen wirst du machen wenn du entdeckst dass deine Energie die Bassis sind für alles",
+    "Völlig neue Erfahrungen wirst du machen wenn du entdeckst dass deine Energie die Basis sind für alles",
     "Ich erlebe wundervolle Dinge weil ich meine Energie bewusst steuern kann",
     "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn du spürst wie kraftvoll deine Energie wirklich ist",
     "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn ich spüre wie kraftvoll meine Energie wirklich ist",
@@ -688,7 +688,14 @@ var motivationText = [
     "Wundervolle Möglichkeiten entstehen in jedem Moment da ich den Schlüssel der Kommunikation gefunden habe",
     "Es fällt mir leicht viel Geld zu verdienen da ich einen großen Mehrwert gebe",
     "Ein Satz im richtigen Moment kann dein Leben verändern",
-    "Es ist fasziniernd zu beobachten wie meine Worte Wunder bewirken können"
+    "Es ist fasziniernd zu beobachten wie meine Worte Wunder bewirken können",
+    "ES PASSIEREN WUNDER WENN DU DICH ENTSCHEIDEST SELBSTBEWUSST ZU SEIN",
+    "Es wird bereichernd, wenn du dem Leben vertraust und echte, aufrichtige Verbindungen zu den Menschen um dich herum aufbaust",
+    "Es wird kraftvoll, wenn ich dem Leben vertraue und echte, aufrichtige Verbindungen zu den Menschen um mich herum aufbaue",
+    "Es ist erstaunlich, was geschehen kann, wenn du beginnst, deiner eigenen Stimme mit offenem Herzen zu vertrauen.",
+    "Ich erlebe, wie viel leichter mein Weg wird, seit ich meiner inneren Stimme immer mehr Vertrauen schenke.",
+    "Manchmal beginnt echte Veränderung in dem Moment, in dem du erkennst, dass deine Fähigkeiten längst in dir ruhen.",
+    "Ich entdecke täglich neue Kraft in mir, wenn ich beginne, meinen Fähigkeiten voll und ganz zu vertrauen."
 ];
 
 var motivationTextEn = [
