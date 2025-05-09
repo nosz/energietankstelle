@@ -697,7 +697,9 @@ var motivationText = [
     "Manchmal beginnt echte Veränderung in dem Moment, in dem du erkennst, dass deine Fähigkeiten längst in dir ruhen.",
     "Ich entdecke täglich neue Kraft in mir, wenn ich beginne, meinen Fähigkeiten voll und ganz zu vertrauen.",
     "Es wird immer klarer dass Du eine Bereicherung bist für jeden Menschen der dir begegnet",
-    "Es wird mir immer klarer dass ich eine Bereicherung bin für jeden Menschen der mir begegnet"
+    "Es wird mir immer klarer dass ich eine Bereicherung bin für jeden Menschen der mir begegnet",
+    "Es ist erstaunlich zu bemerken, wie ein einziger Satz dein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet dich tief in deinem Innersten?",
+    "Es ist erstaunlich zu fühlen, wie ein einziger Satz mein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet mich tief in meinem Innersten?"
 ];
 
 var motivationTextEn = [
