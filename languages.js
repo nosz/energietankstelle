@@ -668,7 +668,7 @@ var motivationText = [
     "Es ist erstaunlich, wie du beginnen kannst, deine eigene Welt zu gestalten, indem du dich mit deinem wahren Ich verbindest.",
     "Es ist erstaunlich, wie sicher und überzeugend ich in jeder Situation werde, je mehr ich in meine innere Stärke vertraue.",
     "Vielleicht werde ich immer klarer spüren, wie meine Worte und mein Auftreten immer selbstbewusster und begeisternder wirken.",
-    "Es wird faszinierend zu beobachten, wie du mit jedem Tag sicherer und überzeugender in deinem Auftreten und in deiner Sprache wirst.",
+    "Es ist faszinierend zu beobachten, wie du mit jedem Tag sicherer und überzeugender in deinem Auftreten und in deiner Sprache wirst.",
     "Es ist spannend zu erkennen, wie du dich mit jedem Gespräch immer mehr in deinem sicheren und begeisternden Selbst zeigst.",
     "Es ist erstaunlich zu spüren, wie ich immer mehr in Frieden mit mir selbst komme, wenn ich meine Eltern und ihre Unvollkommenheiten akzeptiere.",
     "Vielleicht werde ich immer mehr erkennen, wie befreiend es ist, mich selbst zu heilen, indem ich die Unvollkommenheiten meiner Eltern annehme.",
