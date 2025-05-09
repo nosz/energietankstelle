@@ -651,7 +651,7 @@ var motivationText = [
     "Viele erstaunliche Dinge passieren wenn ich ein Mensch bin der Probleme löst",
     "Wunderbare Erfahrungen werde ich erleben wenn ich bereit bin Probleme zu lösen",
     "Völlig neue Erfahrungen wirst du machen wenn du entdeckst dass deine Energie die Bassis sind für alles",
-    "Ich erlebe wundervolle Dinge wenn ich meine Energie bewusst steuern kann",
+    "Ich erlebe wundervolle Dinge weil ich meine Energie bewusst steuern kann",
     "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn du spürst wie kraftvoll deine Energie wirklich ist",
     "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn ich spüre wie kraftvoll meine Energie wirklich ist",
     "Es ist faszinierend zu erleben, wie viel kraftvoller alles wird, wenn ich an mich selbst glaube.",
@@ -678,6 +678,17 @@ var motivationText = [
     "Es ist spannend zu sehen, wie ich immer mehr erkenne, wie viel Verkaufstalent in mir steckt, wenn ich mich einfach zeige",
     "Es ist erstaunlich zu beobachten, wie du dein Leben zu einem erfolgreichen Verkaufsgespräch machst, indem du authentisch und überzeugend bist.",
     "Es ist erstaunlich zu beobachten, wie ich mein Leben zu einem erfolgreichen Verkaufsgespräch mache, indem ich authentisch und überzeugend bin",
+    "Wunderbare neue Fähigkeiten entdecke ich jeden Tag in mir",
+    "Es ist faszinierend festzustellen dass mein Selbstbewusstsein mit jedem Atemzug immer mehr wächst",
+    "Auf einfache Weise stelle ich fest dass wunderschöne Dinge passieren wenn ich mich einfach zeige wie ich bin",
+    "Faszinierende und geniale Dinge passieren durch mich weil ich Selbstbewusstsein und innere Stärke ausstrahle",
+    "Es ist wunderschön es zu beobachten wie durch meinen natürlichen Humor Menschen ein Lachen in ihr Gesicht gezaubert wird",
+    "Wunderschöne Dinge entstehen durch meine Fähigkeit mich und andere Menschen zu motivieren",
+    "Doch meine liebevolle und direkte Art entstehen völlig neue Möglichkeiten in meinem Leben",
+    "Wundervolle Möglichkeiten entstehen in jedem Moment da ich den Schlüssel der Kommunikation gefunden habe",
+    "Es fällt mir leicht viel Geld zu verdienen da ich einen großen Mehrwert gebe",
+    "Ein Satz im richtigen Moment kann dein Leben verändern",
+    "Es ist fasziniernd zu beobachten wie meine Worte Wunder bewirken können"
 ];
 
 var motivationTextEn = [
