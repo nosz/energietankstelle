@@ -724,7 +724,11 @@ var motivationText = [
     "Ich beginne immer mehr zu spüren, dass mein Leben nicht nach Zeit, sondern nach Energie in Balance kommt – wie eine Welle, die mich trägt",
     "Es fühlt sich kraftvoll an zu erkennen, dass meine innere Balance kein Zeit-, sondern ein Energie-Thema ist – und dass ich jeden Moment neu entscheiden darf, wie ich fließe",
     "Vielleicht spürst du, wie das Leben sich eher wie eine dynamische Welle anfühlt – und wie es nicht um Zeit-Balance geht, sondern um die Kraft deiner Energie, die dich trägt",
-    "Manchmal entsteht tiefer Frieden, wenn du erkennst, dass wahre Balance nichts mit Zeit, sondern mit Energie zu tun hat – und dass du jederzeit neu wählen kannst"
+    "Manchmal entsteht tiefer Frieden, wenn du erkennst, dass wahre Balance nichts mit Zeit, sondern mit Energie zu tun hat – und dass du jederzeit neu wählen kannst",
+    "Es wird immer klarer, dass das, was mich an anderen Menschen triggert, oft ein Hinweis auf etwas in mir ist, das gesehen und geheilt werden möchte.",
+    "Manchmal entdecke ich in dem, was mich stört, den Schlüssel zu meinem eigenen Wachstum – als ob meine Schatten mir zuflüstern, wo mein Licht entstehen kann",
+    "Vielleicht beginnt dir auf eine neue Art bewusst zu werden, dass das, was dich an anderen Menschen stört, manchmal einfach ein Teil von dir ist, der nach deiner liebevollen Aufmerksamkeit ruft",
+    "Es kann tief berühren, zu erkennen, dass das, was dich bei anderen triggert, eine Einladung sein kann – zur Heilung, zur Annahme, zur inneren Entwicklung"
 ];
 
 var motivationTextEn = [
