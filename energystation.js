@@ -51,12 +51,12 @@ mc_german.get('pan').set({
 });
 // listen to events...
 mc_german.on("panleft panright panup pandown tap press", function (ev) {
-	document.getElementById("text1").innerHTML = "Energietankstelle";
-	document.getElementById("text2").innerHTML = "klick mich...";
+	document.getElementById("text1").innerHTML = "ENERGIETANKSTELLE";
+	document.getElementById("text2").innerHTML = "klick mich<br>immer wieder";
 	tempSprache = "de";
 	localStorage.setItem("langEnergie", "de");
-	localStorage.setItem("langEnergieText1", "Energietankstelle");
-	localStorage.setItem("langEnergieText2", "klick mich...");
+	localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
+	localStorage.setItem("langEnergieText2", "klick mich<br>immer wieder");
 });
 //btn_english
 var btn_english = document.getElementById('btn_englisch');
@@ -386,8 +386,8 @@ function startBild() {
 	tempStartseite = true;
 	if (localStorage.getItem("langEnergie") == null) {
 		localStorage.setItem("langEnergie", "de");
-		localStorage.setItem("langEnergieText1", "Energietankstelle");
-		localStorage.setItem("langEnergieText2", "Klick mich...");
+		localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
+		localStorage.setItem("langEnergieText2", "klick mich<br>immer wieder");
 	}
 	tempSprache = localStorage.getItem("langEnergie");
 	//alert(tempSprache);
