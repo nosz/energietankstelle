@@ -684,7 +684,7 @@ var motivationText = [
     "Faszinierende und geniale Dinge passieren durch mich weil ich Selbstbewusstsein und innere Stärke ausstrahle",
     "Es ist wunderschön es zu beobachten wie durch meinen natürlichen Humor Menschen ein Lachen in ihr Gesicht gezaubert wird",
     "Wunderschöne Dinge entstehen durch meine Fähigkeit mich und andere Menschen zu motivieren",
-    "Doch meine liebevolle und direkte Art entstehen völlig neue Möglichkeiten in meinem Leben",
+    "Duch meine liebevolle und direkte Art entstehen völlig neue Möglichkeiten in meinem Leben",
     "Wundervolle Möglichkeiten entstehen in jedem Moment da ich den Schlüssel der liebevollen und erfolgreichen Kommunikation gefunden habe",
     "Wundervolle Möglichkeiten beginnen sich in jedem Moment zu entfalten, während du spürst, dass der Schlüssel zu liebevoller und erfolgreicher Kommunikation längst in dir liegt.",
     "Wundervolle Möglichkeiten entfalten sich in jedem Moment, weil ich mehr und mehr erkenne, dass der Schlüssel zu liebevoller und erfolgreicher Kommunikation längst in mir ist.",
@@ -728,7 +728,8 @@ var motivationText = [
     "Es wird immer klarer, dass das, was mich an anderen Menschen triggert, oft ein Hinweis auf etwas in mir ist, das gesehen und geheilt werden möchte.",
     "Manchmal entdecke ich in dem, was mich stört, den Schlüssel zu meinem eigenen Wachstum – als ob meine Schatten mir zuflüstern, wo mein Licht entstehen kann",
     "Vielleicht beginnt dir auf eine neue Art bewusst zu werden, dass das, was dich an anderen Menschen stört, manchmal einfach ein Teil von dir ist, der nach deiner liebevollen Aufmerksamkeit ruft",
-    "Es kann tief berühren, zu erkennen, dass das, was dich bei anderen triggert, eine Einladung sein kann – zur Heilung, zur Annahme, zur inneren Entwicklung"
+    "Es kann tief berühren, zu erkennen, dass das, was dich bei anderen triggert, eine Einladung sein kann – zur Heilung, zur Annahme, zur inneren Entwicklung",
+    "Es kann eine gute Entscheidung sein anstatt Ausreden zu suchen es einfach zu machen"
 ];
 
 var motivationTextEn = [
