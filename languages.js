@@ -712,7 +712,15 @@ var motivationText = [
     "Es ist erstaunlich, was in meinem Leben geschieht, wenn ich jeden Tag beginne, mir selbst ein Lächeln zu schenken und es weiterzugeben.", 
     "Ein Lächeln, das ich mir schenke, kann sanft die Welt um mich herum verändern – manchmal beginnt alles genau damit",
     "Manchmal reicht ein Lächeln, das du dir selbst schenkst, um einen ganzen Tag heller werden zu lassen – für dich und andere",
-    "Wundervolle Dinge geschehen, wenn du beginnst, einem Menschen ein Lächeln zu schenken – vor allem dir selbst"
+    "Wundervolle Dinge geschehen, wenn du beginnst, einem Menschen ein Lächeln zu schenken – vor allem dir selbst",
+    "Was wäre, wenn du dir sagst, dass du gut und genial bist - und es dir scheissegal ist was andere über dich sagen oder denken?",
+    "Was wäre, wenn ich zu mir sage, dass ich gut und genial bin - und es mir scheissegal ist was andere über mich sagen oder denken?",
+    "Was wäre, wenn du dir sagst, dass du gut und genial bist - und es dir total egal ist was andere über dich sagen oder denken?",
+    "Was wäre, wenn ich zu mir sage, dass ich gut und genial bin - und es mir total egal ist was andere über mich sagen oder denken?",
+    "Was wäre, wenn ich mir selbst immer wieder sage, dass ich gut und genial bin – unabhängig davon, was andere denken oder sagen?",
+    "Was wäre, wenn du dir erlaubst, dich als gut und genial zu sehen – ganz gleich, was andere über dich denken?",
+    "Ich entscheide mich, an meine eigene Stärke und Genialität zu glauben – mit Liebe und unabhängig davon, was andere über mich denken",
+    "Du darfst mit Liebe an deine eigene Stärke und Genialität glauben – ganz gleich, was andere über dich denken oder sagen"
 ];
 
 var motivationTextEn = [
