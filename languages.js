@@ -703,8 +703,12 @@ var motivationText = [
     "Es ist erstaunlich zu bemerken, wie ein einziger Satz dein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet dich tief in deinem Innersten?",
     "Es ist erstaunlich zu fühlen, wie ein einziger Satz mein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet mich tief in meinem Innersten?",
     "Es ist faszinierend zu beobachten wie Du immmer mehr die Chancen siehst die das Leben dir bietet",
-    "Es ist faszinierend zu beobachten wie ich immer mehr die Chancen sehe die das Leben mir bietet"
-
+    "Es ist faszinierend zu beobachten wie ich immer mehr die Chancen sehe die das Leben mir bietet",
+    "Es ist erstaunlich festzustellen wie Musik die mir gut tut meine Energie auf eine wurderbare Weise erhöhen kann",
+    "Es ist wunderbar zu beobachten, wie Musik die dir gut tut, deine Energie auf natürliche Weise steigert",
+    "Schon ein einziger Moment mit der Musik die dir gut tut kann deine Energie auf wunderbare Weise erhöhen",
+    "Schon ein einziger Moment mit der richtigen Musik kann deine Energie auf magische Weise verändern.",
+    "Schon ein einziger Moment mit der richtigen Musik kann meine Energie auf magische Weise verändern"
 ];
 
 var motivationTextEn = [
