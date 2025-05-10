@@ -701,7 +701,10 @@ var motivationText = [
     "Es wird immer klarer dass Du eine Bereicherung bist für jeden Menschen der dir begegnet",
     "Es wird mir immer klarer dass ich eine Bereicherung bin für jeden Menschen der mir begegnet",
     "Es ist erstaunlich zu bemerken, wie ein einziger Satz dein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet dich tief in deinem Innersten?",
-    "Es ist erstaunlich zu fühlen, wie ein einziger Satz mein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet mich tief in meinem Innersten?"
+    "Es ist erstaunlich zu fühlen, wie ein einziger Satz mein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet mich tief in meinem Innersten?",
+    "Es ist faszinierend zu beobachten wie Du immmer mehr die Chancen siehst die das Leben dir bietet",
+    "Es ist faszinierend zu beobachten wie ich immer mehr die Chancen sehe die das Leben mir bietet"
+
 ];
 
 var motivationTextEn = [
