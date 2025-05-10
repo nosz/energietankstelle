@@ -708,7 +708,11 @@ var motivationText = [
     "Es ist wunderbar zu beobachten, wie Musik die dir gut tut, deine Energie auf natürliche Weise steigert",
     "Schon ein einziger Moment mit der Musik die dir gut tut kann deine Energie auf wunderbare Weise erhöhen",
     "Schon ein einziger Moment mit der richtigen Musik kann deine Energie auf magische Weise verändern.",
-    "Schon ein einziger Moment mit der richtigen Musik kann meine Energie auf magische Weise verändern"
+    "Schon ein einziger Moment mit der richtigen Musik kann meine Energie auf magische Weise verändern",
+    "Es ist erstaunlich, was in meinem Leben geschieht, wenn ich jeden Tag beginne, mir selbst ein Lächeln zu schenken und es weiterzugeben.", 
+    "Ein Lächeln, das ich mir schenke, kann sanft die Welt um mich herum verändern – manchmal beginnt alles genau damit",
+    "Manchmal reicht ein Lächeln, das du dir selbst schenkst, um einen ganzen Tag heller werden zu lassen – für dich und andere",
+    "Wundervolle Dinge geschehen, wenn du beginnst, einem Menschen ein Lächeln zu schenken – vor allem dir selbst"
 ];
 
 var motivationTextEn = [
