@@ -720,7 +720,11 @@ var motivationText = [
     "Was wäre, wenn ich mir selbst immer wieder sage, dass ich gut und genial bin – unabhängig davon, was andere denken oder sagen?",
     "Was wäre, wenn du dir erlaubst, dich als gut und genial zu sehen – ganz gleich, was andere über dich denken?",
     "Ich entscheide mich, an meine eigene Stärke und Genialität zu glauben – mit Liebe und unabhängig davon, was andere über mich denken",
-    "Du darfst mit Liebe an deine eigene Stärke und Genialität glauben – ganz gleich, was andere über dich denken oder sagen"
+    "Du darfst mit Liebe an deine eigene Stärke und Genialität glauben – ganz gleich, was andere über dich denken oder sagen",
+    "Ich beginne immer mehr zu spüren, dass mein Leben nicht nach Zeit, sondern nach Energie in Balance kommt – wie eine Welle, die mich trägt",
+    "Es fühlt sich kraftvoll an zu erkennen, dass meine innere Balance kein Zeit-, sondern ein Energie-Thema ist – und dass ich jeden Moment neu entscheiden darf, wie ich fließe",
+    "Vielleicht spürst du, wie das Leben sich eher wie eine dynamische Welle anfühlt – und wie es nicht um Zeit-Balance geht, sondern um die Kraft deiner Energie, die dich trägt",
+    "Manchmal entsteht tiefer Frieden, wenn du erkennst, dass wahre Balance nichts mit Zeit, sondern mit Energie zu tun hat – und dass du jederzeit neu wählen kannst"
 ];
 
 var motivationTextEn = [
