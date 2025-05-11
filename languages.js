@@ -729,7 +729,11 @@ var motivationText = [
     "Manchmal entdecke ich in dem, was mich stört, den Schlüssel zu meinem eigenen Wachstum – als ob meine Schatten mir zuflüstern, wo mein Licht entstehen kann",
     "Vielleicht beginnt dir auf eine neue Art bewusst zu werden, dass das, was dich an anderen Menschen stört, manchmal einfach ein Teil von dir ist, der nach deiner liebevollen Aufmerksamkeit ruft",
     "Es kann tief berühren, zu erkennen, dass das, was dich bei anderen triggert, eine Einladung sein kann – zur Heilung, zur Annahme, zur inneren Entwicklung",
-    "Es kann eine gute Entscheidung sein anstatt Ausreden zu suchen es einfach zu machen"
+    "Es kann eine gute Entscheidung sein anstatt Ausreden zu suchen es einfach zu machen",
+    "Worte sind Orte an denen Du dich befindest",
+    "Worte sind Orte an denen ich mich befinde",
+    "Spannend ist es zu beobachten wie Ordnung mir immer mehr Freude bereitet",
+    "Spannend ist es zu beobachten das Ordnung ein natürlicher Teil von mir ist"
 ];
 
 var motivationTextEn = [
