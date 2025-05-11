@@ -739,7 +739,9 @@ var motivationText = [
     "Manchmal zeigen dir stille Zeichen, wie sehr du es verdienst, dich selbst zu achten und zu lieben",
     "In den kleinen Momenten beginne ich zu erkennen, wie wertvoll und liebenswert ich wirklich bin",
     "Es ist erstaunlich, wie du dir Geschichten erzählst, um die Angst zu erklären, die in Wirklichkeit nur in deinem Kopf existiert und keinen realen Ursprung hat",
-    "Es ist faszinierend zu bemerken, wie ich mir Geschichten erzähle, um die Angst zu begründen, die eigentlich nur in meinem Kopf entsteht und keine wirkliche Grundlage hat"
+    "Es ist faszinierend zu bemerken, wie ich mir Geschichten erzähle, um die Angst zu begründen, die eigentlich nur in meinem Kopf entsteht und keine wirkliche Grundlage hat",
+    "ES IST faszinierend, wie die richtigen Worte im richtigen Moment dein Leben mit neuer Energie und Klarheit erfüllen kann",
+    "Mit jedem kraftvollen Wort im richtigen Moment öffnet sich für mich eine neue Dimension der Möglichkeiten, die mein Leben stark und voller Energie verändert"
 ];
 
 var motivationTextEn = [
