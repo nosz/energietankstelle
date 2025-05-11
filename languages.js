@@ -733,7 +733,12 @@ var motivationText = [
     "Worte sind Orte an denen Du dich befindest",
     "Worte sind Orte an denen ich mich befinde",
     "Spannend ist es zu beobachten wie Ordnung mir immer mehr Freude bereitet",
-    "Spannend ist es zu beobachten das Ordnung ein natürlicher Teil von mir ist"
+    "Spannend ist es zu beobachten das Ordnung ein natürlicher Teil von mir ist",
+    "Es ist faszinierend zu beobachten wie kleine Details alles verändern können",
+    "Es fühlt sich erstaunlich an zu bemerken, wie kleine, scheinbar unbedeutende Details mir auf sanfte Weise Hinweise geben, die meinen Weg zum Ziel klarer und leichter machen",
+    "Vielleicht spürst du, wie sich mehr Klarheit zeigt, wenn du beginnst, den kleinen Details Aufmerksamkeit zu schenken – und erkennst, dass genau darin die Impulse liegen, die dich deinem Ziel näherbringen",
+    "Manchmal zeigen dir stille Zeichen, wie sehr du es verdienst, dich selbst zu achten und zu lieben",
+    "In den kleinen Momenten beginne ich zu erkennen, wie wertvoll und liebenswert ich wirklich bin"
 ];
 
 var motivationTextEn = [
