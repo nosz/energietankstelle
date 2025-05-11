@@ -415,7 +415,6 @@ var motivationText = [
     "Wenn Du dich veränderst ist es normal dass es zuerst schlimmer wird bevor es besser wird",
     "Dein Geist öffnet sich durch Fragen<br>Stelle dir deshalb selbst immer die richtigen Fragen!",
     "Dein Geist sperrt sich durch Aussagen",
-    "Angst ist zu 99,9% nicht echt, sie existiert nur in Deinem Kopf",
     "Sprenge deine Ketten",
     "Sprenge deine Blockaden und Ketten",
     "Ich sprenge meine Blockaden und Ketten",
@@ -738,7 +737,9 @@ var motivationText = [
     "Es fühlt sich erstaunlich an zu bemerken, wie kleine, scheinbar unbedeutende Details mir auf sanfte Weise Hinweise geben, die meinen Weg zum Ziel klarer und leichter machen",
     "Vielleicht spürst du, wie sich mehr Klarheit zeigt, wenn du beginnst, den kleinen Details Aufmerksamkeit zu schenken – und erkennst, dass genau darin die Impulse liegen, die dich deinem Ziel näherbringen",
     "Manchmal zeigen dir stille Zeichen, wie sehr du es verdienst, dich selbst zu achten und zu lieben",
-    "In den kleinen Momenten beginne ich zu erkennen, wie wertvoll und liebenswert ich wirklich bin"
+    "In den kleinen Momenten beginne ich zu erkennen, wie wertvoll und liebenswert ich wirklich bin",
+    "Es ist erstaunlich, wie du dir Geschichten erzählst, um die Angst zu erklären, die in Wirklichkeit nur in deinem Kopf existiert und keinen realen Ursprung hat",
+    "Es ist faszinierend zu bemerken, wie ich mir Geschichten erzähle, um die Angst zu begründen, die eigentlich nur in meinem Kopf entsteht und keine wirkliche Grundlage hat"
 ];
 
 var motivationTextEn = [

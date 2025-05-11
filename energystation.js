@@ -51,12 +51,12 @@ mc_german.get('pan').set({
 });
 // listen to events...
 mc_german.on("panleft panright panup pandown tap press", function (ev) {
-	document.getElementById("text1").innerHTML = "ENERGIETANKSTELLE";
-	document.getElementById("text2").innerHTML = "klick mich<br>immer wieder";
+	document.getElementById("text1").innerHTML = "DEINE ENERGIETANKSTELLE";
+	document.getElementById("text2").innerHTML = "Immer wieder klicken<br>immer wieder Energie auftanken";
 	tempSprache = "de";
 	localStorage.setItem("langEnergie", "de");
-	localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
-	localStorage.setItem("langEnergieText2", "klick mich<br>immer wieder");
+	localStorage.setItem("langEnergieText1", "DEINE ENERGIETANKSTELLE");
+	localStorage.setItem("langEnergieText2", "Immer wieder klicken<br>immer wieder Energie auftanken");
 });
 //btn_english
 var btn_english = document.getElementById('btn_englisch');
@@ -359,8 +359,9 @@ function energieJetztAnzeigen(boolAnzeige) {
 		if(bildNeu){
 			zahl = rand(maxBild, maxBild);
 			bildNeu= false;
-			console.log("AKTUELLES STARTBILD: " + zahl)
+			//console.log("AKTUELLES STARTBILD: " + zahl)
 		}
+		console.log(selected);
 
 		meinBild = "<img src='img/t" + zahl + ".jpg' class='img-circle'>";
 		zahl1 = rand(1, 2);
@@ -387,7 +388,7 @@ function startBild() {
 	if (localStorage.getItem("langEnergie") == null) {
 		localStorage.setItem("langEnergie", "de");
 		localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
-		localStorage.setItem("langEnergieText2", "klick mich<br>immer wieder");
+		localStorage.setItem("langEnergieText2", "Immer wieder klicken<br>immer wieder Energie auftanken");
 	}
 	tempSprache = localStorage.getItem("langEnergie");
 	//alert(tempSprache);
