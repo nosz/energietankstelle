@@ -52,11 +52,11 @@ mc_german.get('pan').set({
 // listen to events...
 mc_german.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "DEINE ENERGIETANKSTELLE";
-	document.getElementById("text2").innerHTML = "Immer wieder klicken<br>immer wieder Energie auftanken";
+	document.getElementById("text2").innerHTML = "Immer wieder klicken<br>Immer wieder Energie auftanken";
 	tempSprache = "de";
 	localStorage.setItem("langEnergie", "de");
 	localStorage.setItem("langEnergieText1", "DEINE ENERGIETANKSTELLE");
-	localStorage.setItem("langEnergieText2", "Immer wieder klicken<br>immer wieder Energie auftanken");
+	localStorage.setItem("langEnergieText2", "Immer wieder klicken<br>Immer wieder Energie auftanken");
 });
 //btn_english
 var btn_english = document.getElementById('btn_englisch');
@@ -388,7 +388,7 @@ function startBild() {
 	if (localStorage.getItem("langEnergie") == null) {
 		localStorage.setItem("langEnergie", "de");
 		localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
-		localStorage.setItem("langEnergieText2", "Immer wieder klicken<br>immer wieder Energie auftanken");
+		localStorage.setItem("langEnergieText2", "Immer wieder klicken<br>Immer wieder Energie auftanken");
 	}
 	tempSprache = localStorage.getItem("langEnergie");
 	//alert(tempSprache);
