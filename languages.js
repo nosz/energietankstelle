@@ -771,7 +771,14 @@ var motivationText = [
     "Es ist faszinierend, wie sich die Verbindung zu Geld immer mehr als unterstützend und harmonisch zeigt",
     "Wunderbar ist es, wie Geld sich zu einem treuen Begleiter in deinem Leben entwickelt",
     "Es ist spannend zu beobachten, wie sich deine Vision immer klarer zeigt und dich Schritt für Schritt führt",
-    "Vielleicht entdeckst du, wie deine individuelle Strategie dich mit Leichtigkeit zu deinem Erfolg führt"
+    "Vielleicht entdeckst du, wie deine individuelle Strategie dich mit Leichtigkeit zu deinem Erfolg führt",
+    "Es ist erstaunlich zu spüren, wie sich mein Leben immer dann wandelt, wenn ich beginne zu handeln",
+    "Erstaunlich ist es wie sich dein Leben immer dann wandelt wenn du beginnst zu handeln",
+    "Vielleicht wirst du entdecken, wie sich Türen öffnen und neue Möglichkeiten auftauchen, genau in dem Moment, in dem du beginnst, dich zu bewegen und zu handeln",
+    "Mit jedem Schritt, den ich mutig gehe, weitet sich mein Weg, und das Leben beginnt, sich auf überraschende Weise zu entfalten",
+    "Mit jedem Schritt, den ich mutig gehe, lösen sich Begrenzungen auf, und neue Möglichkeiten zeigen sich wie von selbst",
+    "Mit jedem Schritt, den ich mutig gehe, öffnen sich neue Wege wie von selbst, und Veränderung geschieht wie ein wunderschönes Aufblühen",
+    "Vielleicht spürst Du es , wie sich mit jeder deiner Handlungen mehr Möglichkeiten zeigen, als hätte das Leben selbst begonnen, Türen zu öffnen"
 ];
 
 var motivationTextEn = [
