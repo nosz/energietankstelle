@@ -766,7 +766,10 @@ var motivationText = [
     "Es ist, als ob sich ein innerer Nebel lichtet – und mein Ziel in leuchtender Klarheit vor mir steht",
     "Es kann faszinierend sein zu beobachten, wie sich dein Ziel langsam, aber deutlich vor deinem inneren Auge zeigt – ganz klar, ganz ruhig",
     "Vielleicht spürst du, wie deine Schritte dich genau dorthin führen, wo dein inneres Ziel schon auf dich wartet",
-    "Während du einfach weitergehst, kann es geschehen, dass sich Möglichkeiten zeigen, die dich sanft und klar zu deinen Zielen tragen"
+    "Während du einfach weitergehst, kann es geschehen, dass sich Möglichkeiten zeigen, die dich sanft und klar zu deinen Zielen tragen",
+    "Vielleicht bemerkst du, wie sich deine Beziehung zu Geld auf eine neue, freundliche Weise entfaltet",
+    "Es ist faszinierend, wie sich die Verbindung zu Geld immer mehr als unterstützend und harmonisch zeigt",
+    "Wunderbar ist es, wie Geld sich zu einem treuen Begleiter in deinem Leben entwickelt"
 ];
 
 var motivationTextEn = [
