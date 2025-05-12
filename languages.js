@@ -741,7 +741,32 @@ var motivationText = [
     "Es ist erstaunlich, wie du dir Geschichten erzählst, um die Angst zu erklären, die in Wirklichkeit nur in deinem Kopf existiert und keinen realen Ursprung hat",
     "Es ist faszinierend zu bemerken, wie ich mir Geschichten erzähle, um die Angst zu begründen, die eigentlich nur in meinem Kopf entsteht und keine wirkliche Grundlage hat",
     "ES IST faszinierend, wie die richtigen Worte im richtigen Moment dein Leben mit neuer Energie und Klarheit erfüllen kann",
-    "Mit jedem kraftvollen Wort im richtigen Moment öffnet sich für mich eine neue Dimension der Möglichkeiten, die mein Leben stark und voller Energie verändert"
+    "Mit jedem kraftvollen Wort im richtigen Moment öffnet sich für mich eine neue Dimension der Möglichkeiten, die mein Leben stark und voller Energie verändert",
+    "Es ist faszinierend zu beobachten wie es mir immer leichter fällt meine Talente und Fähigkeiten zu teilen",
+    "Es ist, als würden meine Talente wie Lichtstrahlen aus mir hervorgehen – klar, lebendig und bereit, die Menschen zu berühren",
+    "Es ist wie ein Wunder wie es dir immer mehr gelingt deine Talente und Fähigkeiten zu teilen",
+    "Es ist beeindruckend zu spüren, wie deine Fähigkeiten wie ein starker Lichtstrahl nach außen scheint – und dabei genau den Menschen erreicht, der ihn braucht",
+    "Erstaunlich ist es wie du das Leben anderer lebenswerter machst indem du einfach nur du selbst bist",
+    "Faszinierend ist es zu beobachten wie ich das Leben anderer immer lebenswerter mache indem ich einfach nur ich selbst bin",
+    "Immer deutlicher spüre ich, wie mein Wirken das Leben anderer zum Strahlen bringt",
+    "Vielleicht erkennst du immer deutlicher wie dein Wirken das Leben anderer zum Strahlen bringt",
+    "Immer klarer spüre ich, wie meine innere Ausrichtung mir hilft, entschlossen und zielgerichtet zu handeln",
+    "Es ist beeindruckend zu erleben, wie du beginnst, deinem Weg mit neuer Klarheit und Konsequenz zu folgen",
+    "Mit jedem Moment wird spürbarer, wie Fülle in mein Leben fließt, während ich anderen helfe",
+    "Vielleicht beginnst du gerade zu erkennen, wie wahre Fülle entsteht, wenn du aus dem Herzen gibst",
+    "Mit jedem Atemzug wird mir bewusster, wie kraftvoll es ist, die volle Verantwortung für mein Leben zu tragen",
+    "Vielleicht spürst du schon jetzt, wie befreiend und stärkend es ist, ganz in deine eigene Verantwortung zu treten",
+    "Immer mehr erkenne ich, wie sehr mein Dasein das Leben anderer bereichert – oft auf stille, tief wirkende Weise",
+    "Es ist erstaunlich, wie viel Gutes du in das Leben anderer bringst – einfach dadurch, dass du du selbst bist",
+    "Immer mehr spüre ich, wie erfüllend es ist, aus vollem Herzen zu geben – ganz ohne Erwartung",
+    "Vielleicht kannst du jetzt schon wahrnehmen, wie viel Wärme entsteht, wenn du großzügig und aus vollem Herzen gibst",
+    "Ich entdecke, wie sehr mein inneres Leuchten wächst, wenn ich beitrage und mit Freude diene und helfe",
+    "Manchmal ist es einfach wundervoll zu sehen, wie viel Sinn entsteht, wenn du anderen mit Freude etwas Gutes tust",
+    "Mit jedem Schritt wird der Weg klarer und es fühlt sich ganz natürlich an, meine Ziele zu erreichen",
+    "Es ist, als ob sich ein innerer Nebel lichtet – und mein Ziel in leuchtender Klarheit vor mir steht",
+    "Es kann faszinierend sein zu beobachten, wie sich dein Ziel langsam, aber deutlich vor deinem inneren Auge zeigt – ganz klar, ganz ruhig",
+    "Vielleicht spürst du, wie deine Schritte dich genau dorthin führen, wo dein inneres Ziel schon auf dich wartet",
+    "Während du einfach weitergehst, kann es geschehen, dass sich Möglichkeiten zeigen, die dich sanft und klar zu deinen Zielen tragen"
 ];
 
 var motivationTextEn = [
