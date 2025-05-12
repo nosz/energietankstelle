@@ -769,7 +769,9 @@ var motivationText = [
     "Während du einfach weitergehst, kann es geschehen, dass sich Möglichkeiten zeigen, die dich sanft und klar zu deinen Zielen tragen",
     "Vielleicht bemerkst du, wie sich deine Beziehung zu Geld auf eine neue, freundliche Weise entfaltet",
     "Es ist faszinierend, wie sich die Verbindung zu Geld immer mehr als unterstützend und harmonisch zeigt",
-    "Wunderbar ist es, wie Geld sich zu einem treuen Begleiter in deinem Leben entwickelt"
+    "Wunderbar ist es, wie Geld sich zu einem treuen Begleiter in deinem Leben entwickelt",
+    "Es ist spannend zu beobachten, wie sich deine Vision immer klarer zeigt und dich Schritt für Schritt führt",
+    "Vielleicht entdeckst du, wie deine individuelle Strategie dich mit Leichtigkeit zu deinem Erfolg führt"
 ];
 
 var motivationTextEn = [
