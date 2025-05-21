@@ -778,7 +778,24 @@ var motivationText = [
     "Mit jedem Schritt, den ich mutig gehe, weitet sich mein Weg, und das Leben beginnt, sich auf überraschende Weise zu entfalten",
     "Mit jedem Schritt, den ich mutig gehe, lösen sich Begrenzungen auf, und neue Möglichkeiten zeigen sich wie von selbst",
     "Mit jedem Schritt, den ich mutig gehe, öffnen sich neue Wege wie von selbst, und Veränderung geschieht wie ein wunderschönes Aufblühen",
-    "Vielleicht spürst Du es , wie sich mit jeder deiner Handlungen mehr Möglichkeiten zeigen, als hätte das Leben selbst begonnen, Türen zu öffnen"
+    "Vielleicht spürst Du es , wie sich mit jeder deiner Handlungen mehr Möglichkeiten zeigen, als hätte das Leben selbst begonnen, Türen zu öffnen",
+    "Es ist erstaunlich wie wohl du dich fühlen kannst indem du nur einen tiefen entspannten Atemzug nimmst",
+    "Manchmal entsteht tiefer innerer Frieden genau dann, wenn du beginnst, Menschen und Situationen einfach sein zu lassen – ohne inneren Widerstand",
+    "Ich entscheide mich für Gelassenheit – und bemerke, wie viel leichter mein Leben wird, wenn ich mit offenem Herzen akzeptiere, was ist",
+    "Ich spüre, wie sich mit jedem ruhigen Moment mehr Klarheit zeigt – als ob meine inneren Ziele langsam aus dem Nebel auftauchen, genau im richtigen Tempo",
+    "Etwas in dir weiß längst, wohin die Reise geht – und mit jedem neuen Impuls wird deine Richtung spürbarer, klarer, lebendiger",
+    "Es ist faszinierend zu beobachten, wie ich immer mehr Freude daran finde, meine Ideen so zu teilen, dass andere sie mit offenem Herzen annehmen",
+    "Mit jedem neuen Tag erkenne ich klarer, dass es ein Akt von Wertschätzung ist, meine Angebote mit Überzeugung zu teilen",
+    "Es wird immer natürlicher für mich, das was ich kann, liebevoll und selbstbewusst in die Welt zu bringen – weil ich es wert bin, gesehen zu werden",
+    "Tief in mir wächst das Vertrauen, dass neue finanzielle Wege entstehen – oft genau dann, wenn ich beginne, innerlich klar und ruhig zu werden",
+    "Ich öffne mich dafür, dass Geld auf neue, unerwartete und liebevolle Weise in mein Leben fließen darf",
+    "Ich erkenne die Kraft in mir, kreative Lösungen zu finden – und spüre, dass auch jetzt Unterstützung da ist, in sichtbarer und unsichtbarer Form",
+    "Mit jedem Moment wächst in mir die stille Gewissheit, dass klare Entscheidungen aus innerer Ruhe entstehen",
+    "Mit jedem Atemzug löse ich mich mehr von starren Gedanken – und öffne mich der Weite des Möglichen",
+    "Es könnte sein … dass du entdeckst … wie frei du wirklich bist … wenn du deiner inneren Schöpferkraft Raum gibst",
+    "In mir wächst das stille Vertrauen, dass unendlich viel möglich ist … weit mehr, als der Verstand je begreifen kann.",
+    "Manchmal genügt ein stiller Moment, um zu erkennen, dass in allem, was wir nicht wissen, auch Hoffnung wohnt."
+
 ];
 
 var motivationTextEn = [
