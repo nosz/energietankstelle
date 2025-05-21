@@ -794,8 +794,12 @@ var motivationText = [
     "Mit jedem Atemzug löse ich mich mehr von starren Gedanken – und öffne mich der Weite des Möglichen",
     "Es könnte sein … dass du entdeckst … wie frei du wirklich bist … wenn du deiner inneren Schöpferkraft Raum gibst",
     "In mir wächst das stille Vertrauen, dass unendlich viel möglich ist … weit mehr, als der Verstand je begreifen kann.",
-    "Manchmal genügt ein stiller Moment, um zu erkennen, dass in allem, was wir nicht wissen, auch Hoffnung wohnt."
-
+    "Manchmal genügt ein stiller Moment, um zu erkennen, dass in allem, was wir nicht wissen, auch Hoffnung wohnt.",
+    "Wunderbares kann geschehen wenn Du dein Denken für dein eigenes grenzenloses Potenzial öffnest",
+    "Wundervolles kann passieren wenn ich mein Denken für mein eigenes grenzenloses Potenzial öffne",
+    "Wunderbares beginnt zu geschehen, wenn du spürst, wie sich dein Denken für dein eigenes grenzenloses Potenzial öffnet",
+    "Es ist erstaunlich, was möglich wird, wenn du deinem Denken erlaubst, sich für dein unendliches inneres Potenzial zu öffnen",
+    "Ich spüre, wie sich mein Denken mehr und mehr für mein grenzenloses Potenzial öffnet – und wie Wunder dadurch fast wie von selbst geschehen"
 ];
 
 var motivationTextEn = [
