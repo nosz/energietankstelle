@@ -649,7 +649,7 @@ var motivationText = [
     "Wunderbare Erfahrungen wirst du erleben wenn du ein Mensch bist der Probleme löst",
     "Viele erstaunliche Dinge passieren wenn ich ein Mensch bin der Probleme löst",
     "Wunderbare Erfahrungen werde ich erleben wenn ich bereit bin Probleme zu lösen",
-    "Völlig neue Erfahrungen wirst du machen wenn du entdeckst dass deine Energie die Basis sind für alles",
+    "Völlig neue Erfahrungen wirst du machen wenn du entdeckst dass deine Energie die Basis ist für alles",
     "Ich erlebe wundervolle Dinge weil ich meine Energie bewusst steuern kann",
     "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn du spürst wie kraftvoll deine Energie wirklich ist",
     "Es ist faszinierend zu bemerken, wie viel alles leichter wird, wenn ich spüre wie kraftvoll meine Energie wirklich ist",
@@ -799,7 +799,13 @@ var motivationText = [
     "Wundervolles kann passieren wenn ich mein Denken für mein eigenes grenzenloses Potenzial öffne",
     "Wunderbares beginnt zu geschehen, wenn du spürst, wie sich dein Denken für dein eigenes grenzenloses Potenzial öffnet",
     "Es ist erstaunlich, was möglich wird, wenn du deinem Denken erlaubst, sich für dein unendliches inneres Potenzial zu öffnen",
-    "Ich spüre, wie sich mein Denken mehr und mehr für mein grenzenloses Potenzial öffnet – und wie Wunder dadurch fast wie von selbst geschehen"
+    "Ich spüre, wie sich mein Denken mehr und mehr für mein grenzenloses Potenzial öffnet – und wie Wunder dadurch fast wie von selbst geschehen",
+    "Schreibe dein eigenes Buch des Lebens und nicht was dir diktiert wird",
+    "Stell dir vor, wie befreiend es sein kann, wenn du beginnst, dein Leben wirklich selbst zu leben – jenseits dessen, was andere dir vielleicht auferlegt haben",
+    "Ich erlaube mir, mein eigenes Leben zu leben – frei von Erwartungen, frei von fremden Geschichten – und folge meiner wahren Spur",
+    "Ich löse mich Schritt für Schritt von dem, was andere für mich vorgesehen haben – und beginne, mein wahres Leben zu gestalten",
+    "Ich bin bereit, meine eigene Wahrheit zu leben – voller Mut, Klarheit und in tiefer Verbindung mit mir selbst"
+
 ];
 
 var motivationTextEn = [
