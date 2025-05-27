@@ -803,8 +803,15 @@ var motivationText = [
     "Stell dir vor, wie befreiend es sein kann, wenn du beginnst, dein Leben wirklich selbst zu leben – jenseits dessen, was andere dir vielleicht auferlegt haben",
     "Ich erlaube mir, mein eigenes Leben zu leben – frei von Erwartungen, frei von fremden Geschichten – und folge meiner wahren Spur",
     "Ich löse mich Schritt für Schritt von dem, was andere für mich vorgesehen haben – und beginne, mein wahres Leben zu gestalten",
-    "Ich bin bereit, meine eigene Wahrheit zu leben – voller Mut, Klarheit und in tiefer Verbindung mit mir selbst"
-
+    "Ich bin bereit, meine eigene Wahrheit zu leben – voller Mut, Klarheit und in tiefer Verbindung mit mir selbst",
+    "Es ist erstaunlich festzustellen wie es mir immer mehr gelingt Ordnung in mein Leben zu bringen",
+    "Erstaunlich ist es wie Ordnung mir immmer mehr Freude bereitet und es ein natürlicher Bestandteil von mir ist",
+    "Stelle dir diese Frage immer wieder am Tag: 'Wie würde dein ideales Selbst in der jetzigen Situation handeln",
+    "Es ist interessant zu beobachten wie du die Herausforderungen die dich umgeben immer mehr annimmst und Lösungsmöglichkeiten findest",
+    "Gehe nicht von dieser Welt ohne deine Musik gespielt zu haben",
+    "Es kann sehr interessant werden wenn Du dir ein Denken zu eigen machst das offen und unabhängig ist",
+    "Nur das was du besitzt kannst du geben. Was besitzt du in deinem Inneren?",
+    "Wunderschöne Dinge passieren wenn Du erkennst wer Du wirklich bist"
 ];
 
 var motivationTextEn = [
