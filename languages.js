@@ -813,7 +813,8 @@ var motivationText = [
     "Nur das was du besitzt kannst du geben. Was besitzt du in deinem Inneren?",
     "Wunderschöne Dinge passieren wenn Du erkennst wer Du wirklich bist",
     "Genieße das Leben und genieße es gründlich und je mehr Humor du im Leben hast umso besser für Dich",
-    "Wenn Du dir von jemand Vertrauten helfen lassen willst dann solltest du keine Informationen zurückhalten selbst wenn sie scheinbar nicht zur Sache gehören"
+    "Wenn Du dir von jemand Vertrauten helfen lassen willst dann solltest du keine Informationen zurückhalten selbst wenn sie scheinbar nicht zur Sache gehören",
+    "Es ist interessant zu beobachten dass Du immer selbst dein bester Lehrer bist"
 ];
 
 var motivationTextEn = [
