@@ -200,6 +200,38 @@ mc_ungarn.on("panleft panright panup pandown tap press", function (ev) {
 	localStorage.setItem("langEnergieText2", "Kattints újra és újra<br>töltsd fel energiáidat újra és újra");
 });
 
+//btn_ukraine
+var btn_ukraine = document.getElementById('btn_ukraine');
+var mc_ukraine = new Hammer(btn_ukraine);
+mc_ukraine.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_ukraine.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "Твоя енергетична заправка";
+	document.getElementById("text2").innerHTML = "Завжди заряджайся енергією знову";
+	tempSprache = "ukr";
+	localStorage.setItem("langEnergie", "ukr");
+	localStorage.setItem("langEnergieText1", "Твоя енергетична заправка");
+	localStorage.setItem("langEnergieText2", "Завжди заряджайся енергією знову");
+});
+
+//btn_china
+var btn_china = document.getElementById('btn_china');
+var mc_china = new Hammer(btn_china);
+mc_china.get('pan').set({
+	direction: Hammer.DIRECTION_ALL
+});
+// listen to events...
+mc_china.on("panleft panright panup pandown tap press", function (ev) {
+	document.getElementById("text1").innerHTML = "你的能量加油站";
+	document.getElementById("text2").innerHTML = "直补充能量";
+	tempSprache = "china";
+	localStorage.setItem("langEnergie", "china");
+	localStorage.setItem("langEnergieText1", "你的能量加油站");
+	localStorage.setItem("langEnergieText2", "直补充能量");
+});
+
 //end language
 
 var meinBild;
@@ -264,6 +296,7 @@ function energieAnzeigen(tempSelected) {
 		loescheElement(document.getElementById("startJetztBild"));
 		loescheElement(document.getElementById("sprache"));
 		loescheElement(document.getElementById("sprache1"));
+		loescheElement(document.getElementById("sprache2"));
 		loescheElement(document.getElementById("buttonInfo"));
 	}
 	//document.getElementById("startJetzt").style.display = 'none';
@@ -332,6 +365,16 @@ function energieJetztAnzeigen(boolAnzeige) {
 
 	if (tempSprache === "un") {
 		sprachArray = motivationTextUn;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "ukr") {
+		sprachArray = motivationTextUkr;
+		countText = sprachArray.length;
+	}
+
+	if (tempSprache === "china") {
+		sprachArray = motivationTextChina;
 		countText = sprachArray.length;
 	}
 	selected = sprachArray[rand(0, countText - 1)];
