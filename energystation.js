@@ -83,11 +83,11 @@ mc_italia.get('pan').set({
 // listen to events...
 mc_italia.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia";
-	document.getElementById("text2").innerHTML = "Clicca ancora e ancora<br>ricarica la tua energia ancora e ancora";
+	document.getElementById("text2").innerHTML = "Clicca ancora e ancora<br>ricarica la tua energia<br>ancora e ancora";
 	tempSprache = "it";
 	localStorage.setItem("langEnergie", "it");
 	localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia");
-	localStorage.setItem("langEnergieText2", "Clicca ancora e ancora<br>ricarica la tua energia ancora e ancora");
+	localStorage.setItem("langEnergieText2", "Clicca ancora e ancora<br>ricarica la tua energia<br>ancora e ancora");
 });
 
 //btn_russian
