@@ -67,11 +67,11 @@ mc_english.get('pan').set({
 // listen to events...
 mc_english.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Your Energy station";
-	document.getElementById("text2").innerHTML = "Click again and again<br>recharge your energy again and again";
+	document.getElementById("text2").innerHTML = "Click again and again<br>recharge your energy<br>again and again";
 	tempSprache = "en";
 	localStorage.setItem("langEnergie", "en");
 	localStorage.setItem("langEnergieText1", "Your Energy station");
-	localStorage.setItem("langEnergieText2", "Click again and again<br>recharge your energy again and again");
+	localStorage.setItem("langEnergieText2", "Click again and again<br>recharge your energy<br>again and again");
 });
 
 //btn_italia
@@ -99,11 +99,11 @@ mc_russian.get('pan').set({
 // listen to events...
 mc_russian.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Ваша энергетическая станция";
-	document.getElementById("text2").innerHTML = "Нажмите снова и снова<br>заряжайте свою энергию снова и снова";
+	document.getElementById("text2").innerHTML = "Нажмите снова и снова<br>заряжайте свою энергию<br>снова и снова";
 	tempSprache = "ru";
 	localStorage.setItem("langEnergie", "ru");
 	localStorage.setItem("langEnergieText1", "Ваша энергетическая станция");
-	localStorage.setItem("langEnergieText2", "Нажмите снова и снова<br>заряжайте свою энергию снова и снова");
+	localStorage.setItem("langEnergieText2", "Нажмите снова и снова<br>заряжайте свою энергию<br>снова и снова");
 });
 
 
@@ -209,11 +209,11 @@ mc_ukraine.get('pan').set({
 // listen to events...
 mc_ukraine.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Твоя енергетична заправка";
-	document.getElementById("text2").innerHTML = "Завжди заряджайся енергією знову";
+	document.getElementById("text2").innerHTML = "Завжди заряджайся<br>енергією знову";
 	tempSprache = "ukr";
 	localStorage.setItem("langEnergie", "ukr");
 	localStorage.setItem("langEnergieText1", "Твоя енергетична заправка");
-	localStorage.setItem("langEnergieText2", "Завжди заряджайся енергією знову");
+	localStorage.setItem("langEnergieText2", "Завжди заряджайся<br>енергією знову");
 });
 
 //btn_china
