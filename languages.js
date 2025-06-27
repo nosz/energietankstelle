@@ -814,7 +814,11 @@ var motivationText = [
     "Wunderschöne Dinge passieren wenn Du erkennst wer Du wirklich bist",
     "Genieße das Leben und genieße es gründlich und je mehr Humor du im Leben hast umso besser für Dich",
     "Wenn Du dir von jemand Vertrauten helfen lassen willst dann solltest du keine Informationen zurückhalten selbst wenn sie scheinbar nicht zur Sache gehören",
-    "Es ist interessant zu beobachten dass Du immer selbst dein bester Lehrer bist"
+    "Es ist interessant zu beobachten dass Du immer selbst dein bester Lehrer bist",
+    "Es gibt keine schlechten Tage, es gibt nur Tage die den Charakter formen",
+    "Es gibt keine schlechten Tage, es gibt nur Tage die Deinen Charakter formen",
+    "Es ist interessant zu beobachten dass es keine schlechten Tage gibt, sondern nur Tage die deinen Charakter formen",
+    "Wundervoll ist es zu beobachten dass es keine schlechten Tage gibt, sondern nur Tage die den Charakter formen"
 ];
 
 var motivationTextEn = [
