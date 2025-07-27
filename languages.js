@@ -818,7 +818,10 @@ var motivationText = [
     "Es gibt keine schlechten Tage, es gibt nur Tage die den Charakter formen",
     "Es gibt keine schlechten Tage, es gibt nur Tage die Deinen Charakter formen",
     "Es ist interessant zu beobachten dass es keine schlechten Tage gibt, sondern nur Tage die deinen Charakter formen",
-    "Wundervoll ist es zu beobachten dass es keine schlechten Tage gibt, sondern nur Tage die den Charakter formen"
+    "Wundervoll ist es zu beobachten dass es keine schlechten Tage gibt, sondern nur Tage die den Charakter formen",
+    "Wenn du aufhörst zu zweifeln, beginnt Dein Geld natürlich zu Dir zu fließen",
+    "In dem Moment, in dem du Vertrauen spürst, beginnt das Universum leise für dich zu arbeiten",
+    "Geld liebt Klarheit – und deine innere Ruhe zieht es an wie ein Magnet"
 ];
 
 var motivationTextEn = [
