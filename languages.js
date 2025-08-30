@@ -821,7 +821,9 @@ var motivationText = [
     "Wundervoll ist es zu beobachten dass es keine schlechten Tage gibt, sondern nur Tage die den Charakter formen",
     "Wenn du aufhörst zu zweifeln, beginnt Dein Geld natürlich zu Dir zu fließen",
     "In dem Moment, in dem du Vertrauen spürst, beginnt das Universum leise für dich zu arbeiten",
-    "Geld liebt Klarheit – und deine innere Ruhe zieht es an wie ein Magnet"
+    "Geld liebt Klarheit – und deine innere Ruhe zieht es an wie ein Magnet",
+    "Du bist reich in der Sekunde in der du dankbar bist",
+    "In der Sekunde in der du dankbar bist, da bist du reich"
 ];
 
 var motivationTextEn = [
