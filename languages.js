@@ -905,7 +905,8 @@ var motivationText = [
     "Es fühlt sich gut an, gesund zu leben",
     "Es fühlt sich gut an, bewusst zu leben",
     "Mein Geschmacks- und mein Geruchssinn sind optimal",
-    "Ich bin dankbar"
+    "Ich bin dankbar",
+    "An Zorn festzuhalten, ist wie Gift zu trinken und zu erwarten dass der andere dadurch stirbt<br><br>Buddha"
 ];
 
 var motivationTextEn = [
