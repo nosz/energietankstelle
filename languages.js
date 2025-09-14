@@ -906,7 +906,12 @@ var motivationText = [
     "Es fühlt sich gut an, bewusst zu leben",
     "Mein Geschmacks- und mein Geruchssinn sind optimal",
     "Ich bin dankbar",
-    "An Zorn festzuhalten, ist wie Gift zu trinken und zu erwarten dass der andere dadurch stirbt<br><br>Buddha"
+    "An Zorn festzuhalten, ist wie Gift zu trinken und zu erwarten dass der andere dadurch stirbt<br><br>Buddha",
+    "Du bist ein Original und trägst einen Schatz in Dir, der nur von Dir selbst entdeckt und geborgen werden kann",
+    "So wie Du bist, so bist Du genau richtig! Vergiss niemals, woher Du kommst und wer Du in Wirklichkeit bist",
+    "Erstaunliches wird passieren wenn Du merkst dass Du einzigartig bist und den Schatz in Dir entdeckst",
+    "Wenn du fühlst wer Du in Wirklichkeit bist, dann geschehen Wunder und Du kannst vielleicht spüren dass Du genau richtig bist",
+    "Du bist auserwählt"
 ];
 
 var motivationTextEn = [
