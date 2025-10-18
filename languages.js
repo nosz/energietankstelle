@@ -848,7 +848,7 @@ var motivationText = [
     "Ich bin dankbar für Erfahrungen, die mich zu dem gemacht haben, der ich bin",
     "Ich bin einzigartig",
     "Ich liebe mich von Moment zu Moment mehr",
-    "Ich liebe mich mit jedem Atemzuug immer mehr",
+    "Ich liebe mich mit jedem Atemzug immer mehr",
     "Ich bin mit Liebe erfüllt",
     "Ich respektiere mich",
     "Ich vertraue mir",
@@ -925,7 +925,11 @@ var motivationText = [
     "Deine Worte sind deine Welt. Meine Worte sind meine Welt",
     "Sprich niemals negativ über dich selbst, auch nicht als Scheerz! Dein Körper kennt den Unterschied nicht. Worte sind Energie und wirken wie ein Zauberspruch. Ändere die Art und Weise, wie Du über dich selbst sprichst und du kannst dein Leben ändern. Was Du nicht änderst, wählst du auch. <br>Bruce Lee",
     "Was Du nicht änderst wählst Du",
-    "Worte können dir Energie geben oder dir Energie rauben. Wähle deshalb die richtigen, Worte vor allem wie Du mit dir selber sprichst"
+    "Worte können dir Energie geben oder dir Energie rauben. Wähle deshalb die richtigen, Worte vor allem wie Du mit dir selber sprichst",
+    "Ändere deine Gewohnheiten und Du änderst dein Leben",
+    "Ändere deine Worte und du änderst dein Leben",
+    "Es ist erstaunlich zu beobachten wie Du dein Leben ändern kannst indem du einfach deine Gewohnheiten änderst",
+    "Faszinierend ist es zu bemerken wie Du dein Leben ändern kannst indem Du deine Worte änderst"
 ];
 
 var motivationTextEn = [
