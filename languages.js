@@ -682,7 +682,7 @@ var motivationText = [
     "Faszinierende und geniale Dinge passieren durch mich weil ich Selbstbewusstsein und innere Stärke ausstrahle",
     "Es ist wunderschön es zu beobachten wie durch meinen natürlichen Humor Menschen ein Lachen in ihr Gesicht gezaubert wird",
     "Wunderschöne Dinge entstehen durch meine Fähigkeit mich und andere Menschen zu motivieren",
-    "Duch meine liebevolle und direkte Art entstehen völlig neue Möglichkeiten in meinem Leben",
+    "Durch meine liebevolle und direkte Art entstehen völlig neue Möglichkeiten in meinem Leben",
     "Wundervolle Möglichkeiten entstehen in jedem Moment da ich den Schlüssel der liebevollen und erfolgreichen Kommunikation gefunden habe",
     "Wundervolle Möglichkeiten beginnen sich in jedem Moment zu entfalten, während du spürst, dass der Schlüssel zu liebevoller und erfolgreicher Kommunikation längst in dir liegt.",
     "Wundervolle Möglichkeiten entfalten sich in jedem Moment, weil ich mehr und mehr erkenne, dass der Schlüssel zu liebevoller und erfolgreicher Kommunikation längst in mir ist.",
@@ -914,7 +914,18 @@ var motivationText = [
     "Du bist auserwählt",
     "Freude und gute Laune erfüllen mein Herz",
     "Meine Seele ist mit hellen Träumen künftigen Glücks erfüllt",
-    Me
+    "Meine Seele singt vor Glück und Lebensfreude",
+    "Ich bin gut so wie ich bin",
+    "Ich bin dankbar",
+    "Ich bin ich und das ist wunderbar",
+    "Ich bin erfüllt von Lebensfreude",
+    "Ich entscheide mich glücklich zu sein",
+    "Ich vertraue den Entscheidungen die ich treffe",
+    "Ich vertraue mir",
+    "Deine Worte sind deine Welt. Meine Worte sind meine Welt",
+    "Sprich niemals negativ über dich selbst, auch nicht als Scheerz! Dein Körper kennt den Unterschied nicht. Worte sind Energie und wirken wie ein Zauberspruch. Ändere die Art und Weise, wie Du über dich selbst sprichst und du kannst dein Leben ändern. Was Du nicht änderst, wählst du auch. <br>Bruce Lee",
+    "Was Du nicht änderst wählst Du",
+    "Worte können dir Energie geben oder dir Energie rauben. Wähle deshalb die richtigen, Worte vor allem wie Du mit dir selber sprichst"
 ];
 
 var motivationTextEn = [
