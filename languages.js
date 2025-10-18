@@ -911,7 +911,10 @@ var motivationText = [
     "So wie Du bist, so bist Du genau richtig! Vergiss niemals, woher Du kommst und wer Du in Wirklichkeit bist",
     "Erstaunliches wird passieren wenn Du merkst dass Du einzigartig bist und den Schatz in Dir entdeckst",
     "Wenn du fühlst wer Du in Wirklichkeit bist, dann geschehen Wunder und Du kannst vielleicht spüren dass Du genau richtig bist",
-    "Du bist auserwählt"
+    "Du bist auserwählt",
+    "Freude und gute Laune erfüllen mein Herz",
+    "Meine Seele ist mit hellen Träumen künftigen Glücks erfüllt",
+    Me
 ];
 
 var motivationTextEn = [
