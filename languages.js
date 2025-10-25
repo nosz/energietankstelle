@@ -934,7 +934,9 @@ var motivationText = [
     "Mit jedem Atemzug kannst du immer mehr spüren daß das Leben für dich ist wenn Du bereit bist das Leben anzunehmen wie es ist",
     "Loslassen von Erwartungen & Annehmen was ist & Vertrauen auf das was kommt, kann der Schlüssel für ein erfülltes und schönes Leben sein",
     "Alles ist nur ein Zustand und Augenblick. Dein freier Wille gibt dir die Macht daraus was Schönes zu machen.",
-    "Ich akzeptiere alles was heute kommt mit einem offenem Herzen"
+    "Ich akzeptiere alles was heute kommt mit einem freien und offenen Herzen",
+    "Entscheide dich bewusst jeden Tag alles anzunehmen was heute passiert. Ich akzeptiere alles was heute kommt mit einem freien und offenen Herzen",
+    "Mit einem freien und offenen Herzen zu akzeptieren, was heute alles passiert, kann eine gute Entscheidung sein"
 ];
 
 var motivationTextEn = [
