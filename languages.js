@@ -481,7 +481,7 @@ var motivationText = [
     "Ich verspreche mir selbst, dass ich meine aufbauenden Routinen durchziehen werde, egal wie ich mich fühle",
     "Verspreche Dir selbst dass Du deine aufbauenden Routinen durchziehst, egal wie Du dich fühlst",
     "Ich verspreche mir selbst dass ich Disziplin über Ausreden stelle",
-    "Verspreche dir selbst dass Du Disziplin über Ausrden stellst",
+    "Verspreche dir selbst dass Du Disziplin über Ausreden stellst",
     "Ich verspreche mir selbst, dass ich mein Potenzial durch bewusste Systeme entfessele",
     "Versprich dir selbst, dass Du dein Potenzial durch bewusste Systeme entfesselst",
     "Das Leben ist eine dynamische Welle und es geht nicht um Zeit-Balance sondern um Energie-Balance",
