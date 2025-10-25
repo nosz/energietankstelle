@@ -933,7 +933,8 @@ var motivationText = [
     "Pflege und schätze das was du jetzt bereits besitzt und du wirst bekommen was Du willst",
     "Mit jedem Atemzug kannst du immer mehr spüren daß das Leben für dich ist wenn Du bereit bist das Leben anzunehmen wie es ist",
     "Loslassen von Erwartungen & Annehmen was ist & Vertrauen auf das was kommt, kann der Schlüssel für ein erfülltes und schönes Leben sein",
-    "Alles ist nur ein Zustand und Augenblick. Dein freier Wille gibt dir die Macht daraus was Schönes zu machen."
+    "Alles ist nur ein Zustand und Augenblick. Dein freier Wille gibt dir die Macht daraus was Schönes zu machen.",
+    "Ich akzeptiere alles was heute kommt mit einem offenem Herzen"
 ];
 
 var motivationTextEn = [
