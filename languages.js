@@ -702,7 +702,7 @@ var motivationText = [
     "Es ist erstaunlich zu fühlen, wie ein einziger Satz mein ganzes Leben stärken – oder schwächen – kann. Welcher Satz begleitet mich tief in meinem Innersten?",
     "Es ist faszinierend zu beobachten wie Du immmer mehr die Chancen siehst die das Leben dir bietet",
     "Es ist faszinierend zu beobachten wie ich immer mehr die Chancen sehe die das Leben mir bietet",
-    "Es ist erstaunlich festzustellen wie Musik die mir gut tut meine Energie auf eine wurderbare Weise erhöhen kann",
+    "Es ist erstaunlich festzustellen wie Musik die mir gut tut meine Energie auf eine wunderbare Weise erhöhen kann",
     "Es ist wunderbar zu beobachten, wie Musik die dir gut tut, deine Energie auf natürliche Weise steigert",
     "Schon ein einziger Moment mit der Musik die dir gut tut kann deine Energie auf wunderbare Weise erhöhen",
     "Schon ein einziger Moment mit der richtigen Musik kann deine Energie auf magische Weise verändern.",
@@ -923,13 +923,17 @@ var motivationText = [
     "Ich vertraue den Entscheidungen die ich treffe",
     "Ich vertraue mir",
     "Deine Worte sind deine Welt. Meine Worte sind meine Welt",
-    "Sprich niemals negativ über dich selbst, auch nicht als Scheerz! Dein Körper kennt den Unterschied nicht. Worte sind Energie und wirken wie ein Zauberspruch. Ändere die Art und Weise, wie Du über dich selbst sprichst und du kannst dein Leben ändern. Was Du nicht änderst, wählst du auch. <br>Bruce Lee",
+    "Sprich niemals negativ über dich selbst, auch nicht als Scherz! Dein Körper kennt den Unterschied nicht. Worte sind Energie und wirken wie ein Zauberspruch. Ändere die Art und Weise, wie Du über dich selbst sprichst und du kannst dein Leben ändern. Was Du nicht änderst, wählst du auch. <br>Bruce Lee",
     "Was Du nicht änderst wählst Du",
     "Worte können dir Energie geben oder dir Energie rauben. Wähle deshalb die richtigen, Worte vor allem wie Du mit dir selber sprichst",
     "Ändere deine Gewohnheiten und Du änderst dein Leben",
     "Ändere deine Worte und du änderst dein Leben",
     "Es ist erstaunlich zu beobachten wie Du dein Leben ändern kannst indem du einfach deine Gewohnheiten änderst",
-    "Faszinierend ist es zu bemerken wie Du dein Leben ändern kannst indem Du deine Worte änderst"
+    "Faszinierend ist es zu bemerken wie Du dein Leben ändern kannst indem Du deine Worte änderst",
+    "Pflege und schätze das was du jetzt bereits besitzt und du wirst bekommen was Du willst",
+    "Mit jedem Atemzug kannst du immer mehr spüren daß das Leben für dich ist wenn Du bereit bist das Leben anzunehmen wie es ist",
+    "Loslassen von Erwartungen & Annehmen was ist & Vertrauen auf das was kommt, kann der Schlüssel für ein erfülltes und schönes Leben sein",
+    "Alles ist nur ein Zustand und Augenblick. Dein freier Wille gibt dir die Macht daraus was Schönes zu machen."
 ];
 
 var motivationTextEn = [
