@@ -936,7 +936,16 @@ var motivationText = [
     "Alles ist nur ein Zustand und Augenblick. Dein freier Wille gibt dir die Macht daraus was Schönes zu machen.",
     "Ich akzeptiere alles was heute kommt mit einem freien und offenen Herzen",
     "Entscheide dich bewusst jeden Tag alles anzunehmen was heute passiert. Ich akzeptiere alles was heute kommt mit einem freien und offenen Herzen",
-    "Mit einem freien und offenen Herzen zu akzeptieren, was heute alles passiert, kann eine gute Entscheidung sein"
+    "Mit einem freien und offenen Herzen zu akzeptieren, was heute alles passiert, kann eine gute Entscheidung sein",
+    "Das Leben ist ein Spiel das zu meiner Freude stattfindet",
+    "Was wäre wenn du ab jetzt die Einstellung hast, daß das Leben ein Spiel ist das zu deiner Freude stattfindet",
+    "Deine Emotionen machst Du!<br>Sie passieren durch deine Einstellung und Bewertung",
+    "Stell dir vor dass Du deine Emotionen steuern kannst durch deine Einstellung und Bewertungen",
+    "Deine Bewertungen geben dir die Macht deine Emotionen und Gefühle zu steuern",
+    "Du bist ein grenzenloses Wesen des Lichts das in jedem Moment die Wahl hat Liebe und Verständnis in die Welt zu bringen",
+    "Ich bin ein grenzenloses Wesen des Lichts das in jedem Moment die Wahl hat Liebe und Verständnis in die Welt zu bringen",
+    "Die wichtigste Kommunikation ist die wie Du mit dir selbst redest",
+    "Was wäre wenn Du ab sofort nur noch liebevoll mit dir selbst redest?"
 ];
 
 var motivationTextEn = [

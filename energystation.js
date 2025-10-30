@@ -51,12 +51,12 @@ mc_german.get('pan').set({
 });
 // listen to events...
 mc_german.on("panleft panright panup pandown tap press", function (ev) {
-	document.getElementById("text1").innerHTML = "DEINE ENERGIETANKSTELLE";
-	document.getElementById("text2").innerHTML = "Immer wieder klicken<br>Immer wieder Energie auftanken";
+	document.getElementById("text1").innerHTML = "ENERGIETANKSTELLE";
+	document.getElementById("text2").innerHTML = "Klicken und immer wieder Energie auftankenmit Deiner<br>HERZ-INTELLIGENZ";
 	tempSprache = "de";
 	localStorage.setItem("langEnergie", "de");
-	localStorage.setItem("langEnergieText1", "DEINE ENERGIETANKSTELLE");
-	localStorage.setItem("langEnergieText2", "Immer wieder klicken<br>Immer wieder Energie auftanken");
+	localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
+	localStorage.setItem("langEnergieText2", "Klicken und immer wieder Energie auftanken mit Deiner<br>HERZ-INTELLIGENZ");
 });
 //btn_english
 var btn_english = document.getElementById('btn_englisch');
