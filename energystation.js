@@ -4,6 +4,116 @@ var tempStartseite = true;
 var minBild = 1;
 var maxBild = 293;
 var tempSprache;
+
+// --- AUTOMATISCHE SPRACHWAHL AUS URL ---
+function getLangFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('lang'); // z.B. "es", "ru"
+}
+
+// --- Funktion, um Sprache direkt zu setzen ---
+function setLanguage(langCode) {
+    switch (langCode) {
+        case "de":
+            document.getElementById("text1").innerHTML = "ENERGIETANKSTELLE";
+            document.getElementById("text2").innerHTML = "Klicken und immer wieder<br>Energie auftanken mit deiner<br>HERZ-INTELLIGENZ";
+            tempSprache = "de";
+            localStorage.setItem("langEnergie", "de");
+            localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
+            localStorage.setItem("langEnergieText2", "Klicken und immer wieder<br>Energie auftanken mit deiner<br>HERZ-INTELLIGENZ");
+            break;
+        case "en":
+            document.getElementById("text1").innerHTML = "Energy station";
+            document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE";
+            tempSprache = "en";
+            localStorage.setItem("langEnergie", "en");
+            localStorage.setItem("langEnergieText1", "Energy station");
+            localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE");
+            break;
+        case "es":
+            document.getElementById("text1").innerHTML = "Tu estación de energía";
+            document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN";
+            tempSprache = "es";
+            localStorage.setItem("langEnergie", "es");
+            localStorage.setItem("langEnergieText1", "Tu estación de energía");
+            localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN");
+            break;
+        case "ru":
+            document.getElementById("text1").innerHTML = "Ваша энергетическая станция";
+            document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
+            tempSprache = "ru";
+            localStorage.setItem("langEnergie", "ru");
+            localStorage.setItem("langEnergieText1", "Ваша энергетическая станция");
+            localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
+            break;
+        case "it":
+            document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia";
+            document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE";
+            tempSprache = "it";
+            localStorage.setItem("langEnergie", "it");
+            localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia");
+            localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE");
+            break;
+        case "pl":
+            document.getElementById("text1").innerHTML = "Twoja stacja energetyczna";
+            document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA";
+            tempSprache = "pl";
+            localStorage.setItem("langEnergie", "pl");
+            localStorage.setItem("langEnergieText1", "Twoja stacja energetyczna");
+            localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA");
+            break;
+        case "tu":
+            document.getElementById("text1").innerHTML = "Enerji istasyonunuz";
+            document.getElementById("text2").innerHTML = "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile";
+            tempSprache = "tu";
+            localStorage.setItem("langEnergie", "tu");
+            localStorage.setItem("langEnergieText1", "Enerji istasyonunuz");
+            localStorage.setItem("langEnergieText2", "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile");
+            break;
+        case "vi":
+            document.getElementById("text1").innerHTML = "Trạm năng lượng của bạn";
+            document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn";
+            tempSprache = "vi";
+            localStorage.setItem("langEnergie", "vi");
+            localStorage.setItem("langEnergieText1", "Trạm năng lượng của bạn");
+            localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn");
+            break;
+        case "ba":
+            document.getElementById("text1").innerHTML = "তোমার বিদ্যুৎ কেন্দ্র";
+            document.getElementById("text2").innerHTML = "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে";
+            tempSprache = "ba";
+            localStorage.setItem("langEnergie", "ba");
+            localStorage.setItem("langEnergieText1", "তোমার বিদ্যুৎ কেন্দ্র");
+            localStorage.setItem("langEnergieText2", "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে");
+            break;
+        case "un":
+            document.getElementById("text1").innerHTML = "A te energiaállomásod";
+            document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével";
+            tempSprache = "un";
+            localStorage.setItem("langEnergie", "un");
+            localStorage.setItem("langEnergieText1", "A te energiaállomásod");
+            localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével");
+            break;
+        case "ukr":
+            document.getElementById("text1").innerHTML = "Твоя енергетична заправка";
+            document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
+            tempSprache = "ukr";
+            localStorage.setItem("langEnergie", "ukr");
+            localStorage.setItem("langEnergieText1", "Твоя енергетична заправка");
+            localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
+            break;
+        case "china":
+            document.getElementById("text1").innerHTML = "你的能量加油站";
+            document.getElementById("text2").innerHTML = "点击并一次又一次地<br>为自己充能<br>用你的心智";
+            tempSprache = "china";
+            localStorage.setItem("langEnergie", "china");
+            localStorage.setItem("langEnergieText1", "你的能量加油站");
+            localStorage.setItem("langEnergieText2", "点击并一次又一次地<br>为自己充能<br>用你的心智");
+            break;
+        default:
+            startBild(); // fallback auf lokale oder Standard-Sprache
+    }
+}
   //
 var myInterval = setInterval(clickOnDocument, 10000)
 function clickOnDocument() {
@@ -448,3 +558,16 @@ function startBild() {
 	document.getElementById("startJetzt").style.backgroundColor = "white";
 	document.getElementById("startJetzt").style.color = "#9e0976";
 }
+
+// Am Seitenstart prüfen
+window.addEventListener('DOMContentLoaded', function() {
+	console.log("DOMCONTENTLOADED");
+    const langParam = getLangFromURL();
+    if (langParam) {
+		console.log("Sprach-Paramter übergeben " + langParam);
+        setLanguage(langParam); // Sprache aus URL setzen
+    } else {
+        console.log("Keine Param übergeben");
+		startBild(); // fallback auf lokale Spracheinstellung
+    }
+});
