@@ -24,43 +24,43 @@ function setLanguage(langCode) {
             break;
         case "en":
             document.getElementById("text1").innerHTML = "Energy station";
-            document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE";
+            document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE";
             tempSprache = "en";
             localStorage.setItem("langEnergie", "en");
             localStorage.setItem("langEnergieText1", "Energy station");
-            localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE");
+            localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE");
             break;
         case "es":
             document.getElementById("text1").innerHTML = "Tu estación de energía";
-            document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN";
+            document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN";
             tempSprache = "es";
             localStorage.setItem("langEnergie", "es");
             localStorage.setItem("langEnergieText1", "Tu estación de energía");
-            localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN");
+            localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN");
             break;
         case "ru":
             document.getElementById("text1").innerHTML = "Ваша энергетическая станция";
-            document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
+            document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
             tempSprache = "ru";
             localStorage.setItem("langEnergie", "ru");
             localStorage.setItem("langEnergieText1", "Ваша энергетическая станция");
-            localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
+            localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
             break;
         case "it":
             document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia";
-            document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE";
+            document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE";
             tempSprache = "it";
             localStorage.setItem("langEnergie", "it");
             localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia");
-            localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE");
+            localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE");
             break;
         case "pl":
             document.getElementById("text1").innerHTML = "Twoja stacja energetyczna";
-            document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA";
+            document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA";
             tempSprache = "pl";
             localStorage.setItem("langEnergie", "pl");
             localStorage.setItem("langEnergieText1", "Twoja stacja energetyczna");
-            localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA");
+            localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA");
             break;
         case "tu":
             document.getElementById("text1").innerHTML = "Enerji istasyonunuz";
@@ -72,11 +72,11 @@ function setLanguage(langCode) {
             break;
         case "vi":
             document.getElementById("text1").innerHTML = "Trạm năng lượng của bạn";
-            document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn";
+            document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM<br>của bạn";
             tempSprache = "vi";
             localStorage.setItem("langEnergie", "vi");
             localStorage.setItem("langEnergieText1", "Trạm năng lượng của bạn");
-            localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn");
+            localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM<br>của bạn");
             break;
         case "ba":
             document.getElementById("text1").innerHTML = "তোমার বিদ্যুৎ কেন্দ্র";
@@ -88,19 +88,19 @@ function setLanguage(langCode) {
             break;
         case "un":
             document.getElementById("text1").innerHTML = "A te energiaállomásod";
-            document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével";
+            document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével";
             tempSprache = "un";
             localStorage.setItem("langEnergie", "un");
             localStorage.setItem("langEnergieText1", "A te energiaállomásod");
-            localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével");
+            localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével");
             break;
         case "ukr":
             document.getElementById("text1").innerHTML = "Твоя енергетична заправка";
-            document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
+            document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
             tempSprache = "ukr";
             localStorage.setItem("langEnergie", "ukr");
             localStorage.setItem("langEnergieText1", "Твоя енергетична заправка");
-            localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
+            localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
             break;
         case "china":
             document.getElementById("text1").innerHTML = "你的能量加油站";
@@ -177,11 +177,11 @@ mc_english.get('pan').set({
 // listen to events...
 mc_english.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Energy station";
-	document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE";
+	document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE";
 	tempSprache = "en";
 	localStorage.setItem("langEnergie", "en");
 	localStorage.setItem("langEnergieText1", "Energy station");
-	localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE");
+	localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE");
 });
 
 //btn_italia
@@ -193,11 +193,11 @@ mc_italia.get('pan').set({
 // listen to events...
 mc_italia.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia";
-	document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE";
+	document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE";
 	tempSprache = "it";
 	localStorage.setItem("langEnergie", "it");
 	localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia");
-	localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE");
+	localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE");
 });
 
 //btn_russian
@@ -209,11 +209,11 @@ mc_russian.get('pan').set({
 // listen to events...
 mc_russian.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Ваша энергетическая станция";
-	document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
+	document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
 	tempSprache = "ru";
 	localStorage.setItem("langEnergie", "ru");
 	localStorage.setItem("langEnergieText1", "Ваша энергетическая станция");
-	localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
+	localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
 });
 
 
@@ -226,11 +226,11 @@ mc_polnisch.get('pan').set({
 // listen to events...
 mc_polnisch.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Twoja stacja energetyczna";
-	document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA";
+	document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA";
 	tempSprache = "pl";
 	localStorage.setItem("langEnergie", "pl");
 	localStorage.setItem("langEnergieText1", "Twoja stacja energetyczna");
-	localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA");
+	localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA");
 });
 //btn_spanish
 var btn_spanish = document.getElementById('btn_spanisch');
@@ -241,11 +241,11 @@ mc_spanish.get('pan').set({
 // listen to events...
 mc_spanish.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Tu estación de energía";
-	document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN";
+	document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN";
 	tempSprache = "es";
 	localStorage.setItem("langEnergie", "es");
 	localStorage.setItem("langEnergieText1", "Tu estación de energía");
-	localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN");
+	localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN");
 });
 //btn_turkiye
 var btn_turkiye = document.getElementById('btn_turkiye');
@@ -271,11 +271,11 @@ mc_vietnam.get('pan').set({
 // listen to events...
 mc_vietnam.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Trạm năng lượng của bạn";
-	document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn";
+	document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng<br>TRÍ THÔNG MINH TRÁI TIM<br>của bạn";
 	tempSprache = "vi";
 	localStorage.setItem("langEnergie", "vi");
 	localStorage.setItem("langEnergieText1", "Trạm năng lượng của bạn");
-	localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn");
+	localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng<br>TRÍ THÔNG MINH TRÁI TIM<br>của bạn");
 });
 
 //btn_bangla
@@ -303,11 +303,11 @@ mc_ungarn.get('pan').set({
 // listen to events...
 mc_ungarn.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "A te energiaállomásod";
-	document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével";
+	document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével";
 	tempSprache = "un";
 	localStorage.setItem("langEnergie", "un");
 	localStorage.setItem("langEnergieText1", "A te energiaállomásod");
-	localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével");
+	localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével");
 });
 
 //btn_ukraine
@@ -319,11 +319,11 @@ mc_ukraine.get('pan').set({
 // listen to events...
 mc_ukraine.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Твоя енергетична заправка";
-	document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
+	document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
 	tempSprache = "ukr";
 	localStorage.setItem("langEnergie", "ukr");
 	localStorage.setItem("langEnergieText1", "Твоя енергетична заправка");
-	localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
+	localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
 });
 
 //btn_china
