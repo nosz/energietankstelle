@@ -66,12 +66,12 @@ mc_english.get('pan').set({
 });
 // listen to events...
 mc_english.on("panleft panright panup pandown tap press", function (ev) {
-	document.getElementById("text1").innerHTML = "Your Energy station";
-	document.getElementById("text2").innerHTML = "Click again and again<br>recharge your energy<br>again and again";
+	document.getElementById("text1").innerHTML = "Energy station";
+	document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE";
 	tempSprache = "en";
 	localStorage.setItem("langEnergie", "en");
-	localStorage.setItem("langEnergieText1", "Your Energy station");
-	localStorage.setItem("langEnergieText2", "Click again and again<br>recharge your energy<br>again and again");
+	localStorage.setItem("langEnergieText1", "Energy station");
+	localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your HEART INTELLIGENCE");
 });
 
 //btn_italia
@@ -83,11 +83,11 @@ mc_italia.get('pan').set({
 // listen to events...
 mc_italia.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia";
-	document.getElementById("text2").innerHTML = "Clicca ancora e ancora<br>ricarica la tua energia<br>ancora e ancora";
+	document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE";
 	tempSprache = "it";
 	localStorage.setItem("langEnergie", "it");
 	localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia");
-	localStorage.setItem("langEnergieText2", "Clicca ancora e ancora<br>ricarica la tua energia<br>ancora e ancora");
+	localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua INTELLIGENZA DEL CUORE");
 });
 
 //btn_russian
@@ -99,11 +99,11 @@ mc_russian.get('pan').set({
 // listen to events...
 mc_russian.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Ваша энергетическая станция";
-	document.getElementById("text2").innerHTML = "Нажмите снова и снова<br>заряжайте свою энергию<br>снова и снова";
+	document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
 	tempSprache = "ru";
 	localStorage.setItem("langEnergie", "ru");
 	localStorage.setItem("langEnergieText1", "Ваша энергетическая станция");
-	localStorage.setItem("langEnergieText2", "Нажмите снова и снова<br>заряжайте свою энергию<br>снова и снова");
+	localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
 });
 
 
@@ -116,11 +116,11 @@ mc_polnisch.get('pan').set({
 // listen to events...
 mc_polnisch.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Twoja stacja energetyczna";
-	document.getElementById("text2").innerHTML = "Kliknij raz po raz<br>doładuj swoją energię raz po raz";
+	document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA";
 	tempSprache = "pl";
 	localStorage.setItem("langEnergie", "pl");
 	localStorage.setItem("langEnergieText1", "Twoja stacja energetyczna");
-	localStorage.setItem("langEnergieText2", "Kliknij raz po raz<br>doładuj swoją energię raz po raz");
+	localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą TWOJEJ INTELIGENCJI SERCA");
 });
 //btn_spanish
 var btn_spanish = document.getElementById('btn_spanisch');
@@ -131,11 +131,11 @@ mc_spanish.get('pan').set({
 // listen to events...
 mc_spanish.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Tu estación de energía";
-	document.getElementById("text2").innerHTML = "Haz clic una y otra vez<br>recarga tu energía una y otra vez";
+	document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN";
 	tempSprache = "es";
 	localStorage.setItem("langEnergie", "es");
 	localStorage.setItem("langEnergieText1", "Tu estación de energía");
-	localStorage.setItem("langEnergieText2", "Haz clic una y otra vez<br>recarga tu energía una y otra vez");
+	localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu INTELIGENCIA DEL CORAZÓN");
 });
 //btn_turkiye
 var btn_turkiye = document.getElementById('btn_turkiye');
@@ -146,11 +146,11 @@ mc_turkiye.get('pan').set({
 // listen to events...
 mc_turkiye.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Enerji istasyonunuz";
-	document.getElementById("text2").innerHTML = "Tekrar tekrar tıklayın<br>enerjinizi tekrar tekrar şarj edin";
+	document.getElementById("text2").innerHTML = "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile";
 	tempSprache = "tu";
 	localStorage.setItem("langEnergie", "tu");
 	localStorage.setItem("langEnergieText1", "Enerji istasyonu");
-	localStorage.setItem("langEnergieText2", "Tekrar tekrar tıklayın<br>enerjinizi tekrar tekrar şarj edin");
+	localStorage.setItem("langEnergieText2", "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile");
 });
 //btn_vietnam
 var btn_vietnam = document.getElementById('btn_vietnam');
@@ -161,11 +161,11 @@ mc_vietnam.get('pan').set({
 // listen to events...
 mc_vietnam.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Trạm năng lượng của bạn";
-	document.getElementById("text2").innerHTML = "Nhấp chuột liên tục<br>nạp lại năng lượng của bạn liên tục";
+	document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn";
 	tempSprache = "vi";
 	localStorage.setItem("langEnergie", "vi");
 	localStorage.setItem("langEnergieText1", "Trạm năng lượng của bạn");
-	localStorage.setItem("langEnergieText2", "Nhấp chuột liên tục<br>nạp lại năng lượng của bạn liên tục");
+	localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM của bạn");
 });
 
 //btn_bangla
@@ -177,11 +177,11 @@ mc_bangla.get('pan').set({
 // listen to events...
 mc_bangla.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "তোমার বিদ্যুৎ কেন্দ্র";
-	document.getElementById("text2").innerHTML = "বারবার ক্লিক করুন<br>আপনার শক্তি বারবার রিচার্জ করুন";
+	document.getElementById("text2").innerHTML = "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে";
 	tempSprache = "ba";
 	localStorage.setItem("langEnergie", "ba");
 	localStorage.setItem("langEnergieText1", "তোমার বিদ্যুৎ কেন্দ্র");
-	localStorage.setItem("langEnergieText2", "বারবার ক্লিক করুন<br>আপনার শক্তি বারবার রিচার্জ করুন");
+	localStorage.setItem("langEnergieText2", "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে");
 });
 
 //btn_ungarn
@@ -193,11 +193,11 @@ mc_ungarn.get('pan').set({
 // listen to events...
 mc_ungarn.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "A te energiaállomásod";
-	document.getElementById("text2").innerHTML = "Kattints újra és újra<br>töltsd fel energiáidat újra és újra";
+	document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével";
 	tempSprache = "un";
 	localStorage.setItem("langEnergie", "un");
 	localStorage.setItem("langEnergieText1", "A te energiaállomásod");
-	localStorage.setItem("langEnergieText2", "Kattints újra és újra<br>töltsd fel energiáidat újra és újra");
+	localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD segítségével");
 });
 
 //btn_ukraine
@@ -209,11 +209,11 @@ mc_ukraine.get('pan').set({
 // listen to events...
 mc_ukraine.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Твоя енергетична заправка";
-	document.getElementById("text2").innerHTML = "Завжди заряджайся<br>енергією знову";
+	document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
 	tempSprache = "ukr";
 	localStorage.setItem("langEnergie", "ukr");
 	localStorage.setItem("langEnergieText1", "Твоя енергетична заправка");
-	localStorage.setItem("langEnergieText2", "Завжди заряджайся<br>енергією знову");
+	localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
 });
 
 //btn_china
@@ -225,11 +225,11 @@ mc_china.get('pan').set({
 // listen to events...
 mc_china.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "你的能量加油站";
-	document.getElementById("text2").innerHTML = "直补充能量";
+	document.getElementById("text2").innerHTML = "点击并一次又一次地<br>为自己充能<br>用你的心智";
 	tempSprache = "china";
 	localStorage.setItem("langEnergie", "china");
 	localStorage.setItem("langEnergieText1", "你的能量加油站");
-	localStorage.setItem("langEnergieText2", "直补充能量");
+	localStorage.setItem("langEnergieText2", "点击并一次又一次地<br>为自己充能<br>用你的心智");
 });
 
 //end language
