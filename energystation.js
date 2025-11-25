@@ -15,12 +15,12 @@ function getLangFromURL() {
 function setLanguage(langCode) {
     switch (langCode) {
         case "de":
-            document.getElementById("text1").innerHTML = "ENERGIETANKSTELLE";
-            document.getElementById("text2").innerHTML = "Klicken und immer wieder<br>Energie auftanken mit deiner<br>HERZ-INTELLIGENZ";
+            document.getElementById("text1").innerHTML = "DIE UNENDLICHE GLÜCKS UND<br>HERZ ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
+            document.getElementById("text2").innerHTML = "einfach draufklicken und immer wieder<br>Glück und Energie auftanken";
             tempSprache = "de";
             localStorage.setItem("langEnergie", "de");
-            localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
-            localStorage.setItem("langEnergieText2", "Klicken und immer wieder<br>Energie auftanken mit deiner<br>HERZ-INTELLIGENZ");
+            localStorage.setItem("langEnergieText1", "DIE UNENDLICHE GLÜCKS UND<br>HERZ ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
+            localStorage.setItem("langEnergieText2", "einfach draufklicken und immer wieder<br>Glück und Energie auftanken mit Deiner<br>HERZ-INTELLIGENZ");
             break;
         case "en":
             document.getElementById("text1").innerHTML = "Energy station";
@@ -161,12 +161,12 @@ mc_german.get('pan').set({
 });
 // listen to events...
 mc_german.on("panleft panright panup pandown tap press", function (ev) {
-	document.getElementById("text1").innerHTML = "ENERGIETANKSTELLE";
-	document.getElementById("text2").innerHTML = "Klicken und immer wieder<br>Energie auftanken mit deiner<br>HERZ-INTELLIGENZ";
+	document.getElementById("text1").innerHTML = "DIE UNENDLICHE GLÜCKS UND<br>HERZ ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
+	document.getElementById("text2").innerHTML = "einfach draufklicken und immer wieder<br>Glück und Energie auftanken mit deiner<br>HERZ-INTELLIGENZ";
 	tempSprache = "de";
 	localStorage.setItem("langEnergie", "de");
-	localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
-	localStorage.setItem("langEnergieText2", "Klicken und immer wieder<br>Energie auftanken mit deiner<br>HERZ-INTELLIGENZ");
+	localStorage.setItem("langEnergieText1", "DIE UNENDLICHE GLÜCKS UND<br>HERZ ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
+	localStorage.setItem("langEnergieText2", "einfach draufklicken und immer wieder<br>Glück und Energie auftanken mit deiner<br>HERZ-INTELLIGENZ");
 });
 //btn_english
 var btn_english = document.getElementById('btn_englisch');
@@ -540,8 +540,8 @@ function startBild() {
 	tempStartseite = true;
 	if (localStorage.getItem("langEnergie") == null) {
 		localStorage.setItem("langEnergie", "de");
-		localStorage.setItem("langEnergieText1", "ENERGIETANKSTELLE");
-		localStorage.setItem("langEnergieText2", "Klicken und immer wieder<br>Energie auftanken mit deiner<br>HERZ-INTELLIGENZ");
+		localStorage.setItem("langEnergieText1", "DIE UNENDLICHE GLÜCKS UND<br>HERZ ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
+		localStorage.setItem("langEnergieText2", "einfach draufklicken und immer wieder<br>Energie und Glück auftanken");
 	}
 	tempSprache = localStorage.getItem("langEnergie");
 	//alert(tempSprache);
