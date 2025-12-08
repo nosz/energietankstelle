@@ -950,7 +950,8 @@ var motivationText = [
     "Heute ist ein neuer Tag",
     "Jetzt ist ein neuer Tag und dein Herz schlägt für dich und liebt dich bedingungslos",
     "Jetzt ist ein neuer Tag",
-    "Danke<br>Ich lebe<br>Ich bin wach<br>Ich sehe die Sonne<br>Ich werde der Sonne und allem und jedem meine Dankbarkeit bezeugen<br>Weil ich noch am Leben bin"
+    "Danke<br>Ich lebe<br>Ich bin wach<br>Ich sehe die Sonne<br>Ich werde der Sonne und allem und jedem meine Dankbarkeit bezeugen<br>Weil ich noch am Leben bin<br>Dies ist ein weiterer Tag um ich selbst zu sein",
+    "Sage dir das jeden morgen wenn Du aufwachst: <br>Danke<br>Ich lebe<br>Ich bin wach<br>Ich sehe die Sonne<br>Ich werde der Sonne und allem und jedem meine Dankbarkeit bezeugen<br>Weil ich noch am Leben bin<br>Dies ist ein weiterer Tag um ich selbst zu sein"
 ];
 
 var motivationTextEn = [
