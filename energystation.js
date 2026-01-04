@@ -2,7 +2,7 @@
 
 var tempStartseite = true;
 var minBild = 1;
-var maxBild = 295;
+var maxBild = 296;
 var tempSprache;
 
 // --- AUTOMATISCHE SPRACHWAHL AUS URL ---
