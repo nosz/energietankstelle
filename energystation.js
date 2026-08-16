@@ -2,7 +2,7 @@
 
 var tempStartseite = true;
 var minBild = 1;
-var maxBild = 325;
+var maxBild = 327;
 var tempSprache;
 
 // --- AUTOMATISCHE SPRACHWAHL AUS URL ---
@@ -15,11 +15,11 @@ function getLangFromURL() {
 function setLanguage(langCode) {
     switch (langCode) {
         case "de":
-            document.getElementById("text1").innerHTML = "GLÜCKS<br>ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
+            document.getElementById("text1").innerHTML = "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "unendlich klicken...";
             tempSprache = "de";
             localStorage.setItem("langEnergie", "de");
-            localStorage.setItem("langEnergieText1", "GLÜCKS<br>ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
+            localStorage.setItem("langEnergieText1", "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "unendlich klicken...");
             break;
         case "en":
@@ -161,11 +161,11 @@ mc_german.get('pan').set({
 });
 // listen to events...
 mc_german.on("panleft panright panup pandown tap press", function (ev) {
-	document.getElementById("text1").innerHTML = "GLÜCKS<br>ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
+	document.getElementById("text1").innerHTML = "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "unendlich klicken...";
 	tempSprache = "de";
 	localStorage.setItem("langEnergie", "de");
-	localStorage.setItem("langEnergieText1", "GLÜCKS<br>ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
+	localStorage.setItem("langEnergieText1", "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "unendlich klicken...");
 });
 //btn_english
@@ -540,7 +540,7 @@ function startBild() {
 	tempStartseite = true;
 	if (localStorage.getItem("langEnergie") == null) {
 		localStorage.setItem("langEnergie", "de");
-		localStorage.setItem("langEnergieText1", "GLÜCKS<br>ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
+		localStorage.setItem("langEnergieText1", "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
 		localStorage.setItem("langEnergieText2", "unendlich klicken...");
 	}
 	tempSprache = localStorage.getItem("langEnergie");
