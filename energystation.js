@@ -411,7 +411,6 @@ function energieAnzeigen(tempSelected) {
 		loescheElement(document.getElementById("sprache"));
 		loescheElement(document.getElementById("sprache1"));
 		loescheElement(document.getElementById("sprache2"));
-		loescheElement(document.getElementById("buttonInfo"));
 
 		// Share-Button erst jetzt anzeigen, da vorher noch kein Bild/Spruch existiert
 		var btnShare = document.getElementById("btn_share");
