@@ -4,6 +4,29 @@ canvas {
   vertical-align: bottom;
 }
 
+/* ---- Kopfzeile: Share-Button ganz rechts, getrennt von den übrigen Buttons ---- */
+
+#gotoStart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#btn_share {
+  margin-left: auto;
+}
+
+/* ---- Links: Marken-Farbe statt Standard-Schwarz ---- */
+
+a {
+  color: #9e0976;
+}
+
+a:hover,
+a:focus {
+  color: #7a075c;
+}
+
 /* ---- particles.js container ---- */
 
 #particles-js {

@@ -367,7 +367,7 @@ var currentShareImageUrl = null;
 var cachedShareFile = null;
 var sharePrerenderPromise = null;
 var sharePrerenderIdleId = null;
-var sharePrerenderUsesIdleCallback = false;
+var sharePrerenderTimeoutId = null;
 
 //motivationText is from language.js
 var sprachArray = motivationText;
@@ -620,11 +620,15 @@ async function erzeugeShareDatei() {
 	try {
 		// Screenshot des aktuell sichtbaren Bereichs (Bild + Spruch zusammen)
 		// scale: 1 statt Geräte-Pixel-Dichte (auf Handys oft 3x), sonst werden
-		// die Screenshots unnötig riesig (mehrere MB statt einiger hundert KB)
+		// die Screenshots unnötig riesig (mehrere MB statt einiger hundert KB).
+		// Auf Geräten mit hoher Pixeldichte zusätzlich auf 0.75 reduziert:
+		// falls kein vorgerendertes Bild bereitliegt und live beim Klick
+		// gerendert werden muss, bleibt html2canvas so schnell genug, um die
+		// für navigator.share() nötige User-Aktivierung nicht zu verlieren.
 		canvas = await html2canvas(zielElement, {
 			backgroundColor: "#ffffff",
 			useCORS: true,
-			scale: 1,
+			scale: (window.devicePixelRatio > 1) ? 0.75 : 1,
 			// Partikel-Canvas beim Rendern des Screenshots überspringen: das
 			// Rastern der laufenden Animation war unvorhersehbar teuer und
 			// hat den Teilen-Button manchmal spürbar langsam gemacht. Die
@@ -662,7 +666,7 @@ async function erzeugeShareDatei() {
 			var file = new File([blob], dateiname, { type: "image/jpeg" });
 			console.log("Geteilte Bilddatei-Größe:", Math.round(blob.size / 1024) + " KB");
 			resolve(file);
-		}, "image/jpeg", 0.85);
+		}, "image/jpeg", 0.75);
 	});
 }
 
@@ -670,36 +674,56 @@ async function erzeugeShareDatei() {
 // Spruch/Bild angezeigt wird - nicht erst beim Klick auf "Teilen". Läuft
 // leicht verzögert/idle, damit der teure html2canvas-Aufruf nicht mit der
 // Farbwechsel-Animation um Rechenzeit konkurriert.
+// Sicherheitsnetz-Timeout in ms: spätestens nach dieser Zeit wird das
+// Vorrendern gestartet, auch wenn requestIdleCallback bis dahin nicht
+// gefeuert hat. Auf Android hält die dauerhaft laufende particles.js-
+// Animation (rAF-Loop) den Main Thread meist so beschäftigt, dass
+// requestIdleCallback selten oder erst deutlich nach 1500ms feuert -
+// dann lag beim tatsächlichen Klick noch kein fertiges Bild vor.
+var SHARE_PRERENDER_FALLBACK_MS = 400;
+
 function schedulePrerenderShareImage() {
 	"use strict";
 
 	// Alten Stand verwerfen, der aktuelle Inhalt hat sich geändert.
 	cachedShareFile = null;
 
-	if (sharePrerenderIdleId !== null) {
-		if (sharePrerenderUsesIdleCallback && typeof cancelIdleCallback === 'function') {
-			cancelIdleCallback(sharePrerenderIdleId);
-		} else {
-			clearTimeout(sharePrerenderIdleId);
-		}
+	// Beide möglichen Trigger (Idle-Callback und Timeout) aus dem
+	// vorherigen Aufruf sauber abräumen, bevor neu geplant wird.
+	if (sharePrerenderIdleId !== null && typeof cancelIdleCallback === 'function') {
+		cancelIdleCallback(sharePrerenderIdleId);
 		sharePrerenderIdleId = null;
 	}
+	if (sharePrerenderTimeoutId !== null) {
+		clearTimeout(sharePrerenderTimeoutId);
+		sharePrerenderTimeoutId = null;
+	}
 
+	var vorrenderGestartet = false;
 	var starteVorrendern = function () {
+		if (vorrenderGestartet) return;
+		vorrenderGestartet = true;
+		if (sharePrerenderIdleId !== null && typeof cancelIdleCallback === 'function') {
+			cancelIdleCallback(sharePrerenderIdleId);
+		}
+		if (sharePrerenderTimeoutId !== null) {
+			clearTimeout(sharePrerenderTimeoutId);
+		}
 		sharePrerenderIdleId = null;
+		sharePrerenderTimeoutId = null;
 		sharePrerenderPromise = erzeugeShareDatei().then(function (file) {
 			cachedShareFile = file;
 			return file;
 		});
 	};
 
+	// Rennen: wer zuerst feuert (Idle-Slot oder das Sicherheitsnetz),
+	// startet das Vorrendern. So wartet Android nicht mehr auf einen
+	// Idle-Slot, der wegen der Partikel-Animation evtl. nie/spät kommt.
 	if (typeof requestIdleCallback === 'function') {
-		sharePrerenderUsesIdleCallback = true;
-		sharePrerenderIdleId = requestIdleCallback(starteVorrendern, { timeout: 1500 });
-	} else {
-		sharePrerenderUsesIdleCallback = false;
-		sharePrerenderIdleId = setTimeout(starteVorrendern, 300);
+		sharePrerenderIdleId = requestIdleCallback(starteVorrendern, { timeout: SHARE_PRERENDER_FALLBACK_MS });
 	}
+	sharePrerenderTimeoutId = setTimeout(starteVorrendern, SHARE_PRERENDER_FALLBACK_MS);
 }
 
 async function teileAktuellesBild() {
