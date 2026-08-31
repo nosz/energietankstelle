@@ -602,7 +602,15 @@ async function teileAktuellesBild() {
 		canvas = await html2canvas(zielElement, {
 			backgroundColor: "#ffffff",
 			useCORS: true,
-			scale: 1
+			scale: 1,
+			// Partikel-Canvas beim Rendern des Screenshots überspringen: das
+			// Rastern der laufenden Animation war unvorhersehbar teuer und
+			// hat den Teilen-Button manchmal spürbar langsam gemacht. Die
+			// Animation läuft im echten DOM unbeeinflusst weiter, taucht
+			// aber im Screenshot nicht mehr auf.
+			ignoreElements: function (element) {
+				return element.id === "particles-js";
+			}
 		});
 	} catch (err) {
 		console.error("Screenshot fehlgeschlagen:", err);
