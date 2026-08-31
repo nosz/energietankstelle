@@ -137,6 +137,7 @@ canvas {
   font-weight: 600;
   color: #333;
   line-height: 1.5;
+  text-align: left;
 }
 
 .greeting-text {
