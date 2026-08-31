@@ -349,6 +349,10 @@ var meinBildVorher;
 
 var zahl;
 var zahl1;
+
+// --- für Teilen-Funktion ---
+var currentShareText = "";
+var currentShareImageUrl = null;
 //motivationText is from language.js
 var sprachArray = motivationText;
 var countText = sprachArray.length;
@@ -408,6 +412,12 @@ function energieAnzeigen(tempSelected) {
 		loescheElement(document.getElementById("sprache1"));
 		loescheElement(document.getElementById("sprache2"));
 		loescheElement(document.getElementById("buttonInfo"));
+
+		// Share-Button erst jetzt anzeigen, da vorher noch kein Bild/Spruch existiert
+		var btnShare = document.getElementById("btn_share");
+		if (btnShare) {
+			btnShare.style.display = "block";
+		}
 	}
 	//document.getElementById("startJetzt").style.display = 'none';
 }
@@ -496,6 +506,9 @@ function energieJetztAnzeigen(boolAnzeige) {
 
 	if (selected.slice(0, 2) === "no") {
 		selected = selected.slice(2, selected.length);
+		// kein Bild in diesem Fall -> nur Text zum Teilen
+		currentShareText = selected;
+		currentShareImageUrl = null;
 	} else {
 
 		//Grossbuchstaben
@@ -515,6 +528,10 @@ function energieJetztAnzeigen(boolAnzeige) {
 			//console.log("AKTUELLES STARTBILD: " + zahl)
 		}
 		console.log(selected);
+
+		// für Teilen-Funktion merken (reiner Text + Bild-URL, vor dem Zusammenbauen des HTML)
+		currentShareText = selected;
+		currentShareImageUrl = "img/t" + zahl + ".jpg";
 
 		meinBild = "<img src='img/t" + zahl + ".jpg' class='img-circle'>";
 		zahl1 = rand(1, 2);
@@ -558,6 +575,130 @@ function startBild() {
 	document.getElementById("startJetzt").style.backgroundColor = "white";
 	document.getElementById("startJetzt").style.color = "#9e0976";
 }
+
+// --- Teilen-Funktion (Button oben rechts) ---
+// Nach dem bewährten Muster der Challenge-App: einfaches navigator.share()
+// mit {text, url} - ohne fetch/Blob/File-Anhang, da dieser Weg auf manchen
+// mobilen Browsern scheitert (z.B. wenn canShare({files}) false liefert
+// oder das lokale Bild per fetch() nicht geladen werden kann). Stattdessen
+// wird der absolute Link zum aktuellen Bild mitgeteilt.
+async function teileAktuellesBild() {
+	"use strict";
+	console.log("teileAktuellesBild() aufgerufen");
+
+	var text = currentShareText || "";
+	var zielElement = document.getElementById('klickbereich') || document.getElementById('farbe');
+
+	if (typeof html2canvas !== 'function') {
+		console.error("html2canvas ist nicht geladen - kann keinen Screenshot erstellen.");
+		alert("Teilen ist gerade nicht möglich (Screenshot-Funktion konnte nicht geladen werden).");
+		return;
+	}
+
+	var canvas;
+	try {
+		// Screenshot des aktuell sichtbaren Bereichs (Bild + Spruch zusammen)
+		// scale: 1 statt Geräte-Pixel-Dichte (auf Handys oft 3x), sonst werden
+		// die Screenshots unnötig riesig (mehrere MB statt einiger hundert KB)
+		canvas = await html2canvas(zielElement, {
+			backgroundColor: "#ffffff",
+			useCORS: true,
+			scale: 1
+		});
+	} catch (err) {
+		console.error("Screenshot fehlgeschlagen:", err);
+		alert("Screenshot konnte nicht erstellt werden.");
+		return;
+	}
+
+	// Zusätzlich auf eine vernünftige maximale Breite verkleinern, falls das
+	// Element selbst schon sehr breit/hoch ist (z.B. großer Handybildschirm)
+	var MAX_BREITE = 1080;
+	if (canvas.width > MAX_BREITE) {
+		var skaliert = document.createElement('canvas');
+		var faktor = MAX_BREITE / canvas.width;
+		skaliert.width = MAX_BREITE;
+		skaliert.height = Math.round(canvas.height * faktor);
+		skaliert.getContext('2d').drawImage(canvas, 0, 0, skaliert.width, skaliert.height);
+		canvas = skaliert;
+	}
+
+	canvas.toBlob(async function (blob) {
+		if (!blob) {
+			console.error("Konnte Screenshot nicht in Bild-Datei umwandeln.");
+			alert("Bild konnte nicht erzeugt werden.");
+			return;
+		}
+
+		var dateiname = "energie-tankstelle.jpg";
+		var file = new File([blob], dateiname, { type: "image/jpeg" });
+		console.log("Geteilte Bilddatei-Größe:", Math.round(blob.size / 1024) + " KB");
+
+		console.log("navigator.share verfügbar:", !!navigator.share,
+			"| canShare(files):", !!(navigator.canShare && navigator.canShare({ files: [file] })),
+			"| isSecureContext:", window.isSecureContext);
+
+		// Bevorzugt: Bild-Datei + Text direkt teilen
+		if (navigator.canShare && navigator.canShare({ files: [file] })) {
+			try {
+				await navigator.share({ files: [file], text: text });
+				console.log("navigator.share() mit Bild-Datei erfolgreich aufgerufen");
+				return;
+			} catch (err) {
+				console.log("navigator.share() mit Datei abgebrochen oder fehlgeschlagen:", err);
+				return; // Nutzer hat evtl. bewusst abgebrochen - keinen Fallback erzwingen
+			}
+		}
+
+		// Web Share API ohne Datei-Unterstützung -> wenigstens Text teilen
+		if (navigator.share) {
+			try {
+				await navigator.share({ text: text });
+				console.log("navigator.share() nur mit Text erfolgreich aufgerufen");
+				return;
+			} catch (err) {
+				console.log("navigator.share() (nur Text) abgebrochen oder fehlgeschlagen:", err);
+			}
+		}
+
+		// Letzter Fallback (z.B. Desktop-Browser ohne Web-Share-API):
+		// Bild herunterladen + Text in Zwischenablage
+		console.warn("navigator.share nicht verfügbar - Fallback: Download + Zwischenablage.");
+		var link = document.createElement("a");
+		link.href = URL.createObjectURL(blob);
+		link.download = dateiname;
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+
+		if (navigator.clipboard) {
+			try {
+				await navigator.clipboard.writeText(text);
+				alert("Bild wird heruntergeladen und Spruch wurde in die Zwischenablage kopiert.");
+				return;
+			} catch (err) {
+				// weiter zum letzten Hinweis
+			}
+		}
+		alert("Bild wird heruntergeladen.\n\nSpruch:\n" + text);
+	}, "image/jpeg", 0.85);
+}
+
+// Klick-Handler für den Share-Button (addEventListener statt Inline-onclick,
+// damit Fehler sauber in der Konsole sichtbar sind und die Bindung nicht
+// von Inline-Skript-Restriktionen abhängt)
+document.addEventListener('DOMContentLoaded', function () {
+	var btnShareEl = document.getElementById('btn_share');
+	if (btnShareEl) {
+		btnShareEl.addEventListener('click', function (ev) {
+			console.log("Share-Button geklickt");
+			ev.stopPropagation();
+			teileAktuellesBild();
+		});
+	} else {
+		console.warn("btn_share Element nicht gefunden - Share-Button kann nicht gebunden werden.");
+	}
+});
 
 // Am Seitenstart prüfen
 window.addEventListener('DOMContentLoaded', function() {

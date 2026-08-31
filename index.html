@@ -95,11 +95,31 @@
         /* Mittleres Gewicht für kleinere Android-Bildschirme */
       }
     }
+
+    /* Share-Button oben rechts */
+    #btn_share {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    #btn_share:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+      transform: translateY(-2px);
+    }
+
+    #btn_share:active {
+      transform: translateY(0) scale(0.95);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 
 <body onload="startBild()">
   <script src="js/jquery.min.js"></script>
+  <button type="button" id="btn_share" class="btn btn-default"
+    style="display:none; position:fixed; top:10px; right:10px; z-index:1000;">
+    <img src="img/share.svg" width="100" height="100">
+  </button>
   <div id="gotoStart">
     <div class="btn-group" role="group"><br>
       <a href="index.html"><button type="button" class="btn btn-default"><img src="img/house-heart.svg" width="100"
@@ -193,15 +213,36 @@
     </div>
     <script>
       // Check that service workers are supported
-
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
-        //.then(reg => console.log("Service Worker registriert!", reg))
-        //.catch(err => console.log("Service Worker Fehler: ", err));
+          .then(function (reg) {
+            console.log("Service Worker registriert!", reg);
+          })
+          .catch(function (err) {
+            console.log("Service Worker Fehler: ", err);
+          });
+
+        // Automatisches Neuladen, sobald eine neue Version des Service
+        // Workers die Kontrolle übernommen hat, damit der Nutzer immer die
+        // aktuellste Version angezeigt bekommt, ohne die App manuell
+        // schließen und neu öffnen zu müssen.
+        //
+        // hadControllerAtLoad verhindert einen unnötigen Reload direkt beim
+        // allerersten Öffnen der Seite (dann gab es ja noch keine "alte"
+        // Version, die abgelöst wird).
+        var hadControllerAtLoad = !!navigator.serviceWorker.controller;
+        var hasReloaded = false;
+
+        navigator.serviceWorker.addEventListener('controllerchange', function () {
+          if (!hadControllerAtLoad) return;
+          if (hasReloaded) return;
+          hasReloaded = true;
+          window.location.reload();
+        });
       }
     </script>
-    </script>
     <script src="js/hammer.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
     <script src="languages.js"></script>
     <script src="energystation.js"></script>
     <script src="js/particles.min.js"></script>

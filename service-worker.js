@@ -1,4 +1,9 @@
-const CACHE_NAME = "offline-cache-v1";
+// ---- Versionierung ----
+// Bei jedem neuen Release diese Nummer erhöhen. Das ändert den Cache-Namen,
+// wodurch der Browser den Service Worker als "neu" erkennt und alte Caches
+// beim Aktivieren automatisch gelöscht werden.
+const APP_VERSION = "2";
+const CACHE_NAME = "energietankstelle-cache-v" + APP_VERSION;
 const OFFLINE_URL = "offline.html";
 const FILES_TO_CACHE = [
   "index.html",
@@ -10,16 +15,18 @@ const FILES_TO_CACHE = [
   "css/bootstrap.min.css",
   "js/index.js",
   "js/hammer.min.js",
+  "js/html2canvas.min.js",
   "js/jquery.min.js",
   "js/particles.min.js",
   "img/icon.png",
+  "img/share.svg",
   OFFLINE_URL
 ];
 
 // Installations-Event
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open("my-cache").then(async cache => {
+    caches.open(CACHE_NAME).then(async cache => {
       for (const file of FILES_TO_CACHE) {
         try {
           await cache.add(file);
@@ -30,6 +37,9 @@ self.addEventListener("install", event => {
       }
     })
   );
+  // Neue Version sofort aktivieren, statt zu warten, bis alle offenen Tabs
+  // mit der alten Version geschlossen wurden.
+  self.skipWaiting();
 });
 
 
@@ -42,10 +52,15 @@ self.addEventListener("activate", event => {
       return Promise.all(
         cacheNames.map(cache => {
           if (cache !== CACHE_NAME) {
+            console.log(`🗑️ Alter Cache wird gelöscht: ${cache}`);
             return caches.delete(cache);
           }
         })
       );
+    }).then(() => {
+      // Übernimmt sofort die Kontrolle über bereits offene Tabs/Seiten,
+      // damit die neue Version ohne manuellen Neustart der App greift.
+      return self.clients.claim();
     })
   );
 });
