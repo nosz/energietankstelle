@@ -652,16 +652,17 @@ async function erzeugeShareDatei() {
 	var canvas;
 	try {
 		// Screenshot des aktuell sichtbaren Bereichs (Bild + Spruch zusammen)
-		// scale: 1 statt Geräte-Pixel-Dichte (auf Handys oft 3x), sonst werden
-		// die Screenshots unnötig riesig (mehrere MB statt einiger hundert KB).
-		// Auf Geräten mit hoher Pixeldichte zusätzlich auf 0.75 reduziert:
-		// falls kein vorgerendertes Bild bereitliegt und live beim Klick
-		// gerendert werden muss, bleibt html2canvas so schnell genug, um die
-		// für navigator.share() nötige User-Aktivierung nicht zu verlieren.
+		// scale: bisher auf Geräten mit hoher Pixeldichte (Handys oft 2-3x)
+		// auf 0.75 reduziert, sonst 1 - das machte die Screenshots klein und
+		// etwas unscharf. Jetzt scale: 1 für alle Geräte, d.h. es wird immer
+		// mindestens in normaler CSS-Pixel-Auflösung gerendert (kein
+		// zusätzliches Herunterskalieren mehr allein wegen hoher
+		// Pixeldichte). Die endgültige Auflösung wird weiter unten über
+		// MAX_BREITE gedeckelt, damit die Datei nicht zu groß wird.
 		canvas = await html2canvas(zielElement, {
 			backgroundColor: "#ffffff",
 			useCORS: true,
-			scale: (window.devicePixelRatio > 1) ? 0.75 : 1,
+			scale: 1,
 			// Partikel-Canvas beim Rendern des Screenshots überspringen: das
 			// Rastern der laufenden Animation war unvorhersehbar teuer und
 			// hat den Teilen-Button manchmal spürbar langsam gemacht. Die
@@ -677,8 +678,9 @@ async function erzeugeShareDatei() {
 	}
 
 	// Zusätzlich auf eine vernünftige maximale Breite verkleinern, falls das
-	// Element selbst schon sehr breit/hoch ist (z.B. großer Handybildschirm)
-	var MAX_BREITE = 1080;
+	// Element selbst schon sehr breit/hoch ist (z.B. großer Handybildschirm).
+	// Von 1080 auf 1440 erhöht für eine spürbar höhere Auflösung.
+	var MAX_BREITE = 1440;
 	if (canvas.width > MAX_BREITE) {
 		var skaliert = document.createElement('canvas');
 		var faktor = MAX_BREITE / canvas.width;
@@ -699,7 +701,7 @@ async function erzeugeShareDatei() {
 			var file = new File([blob], dateiname, { type: "image/jpeg" });
 			console.log("Geteilte Bilddatei-Größe:", Math.round(blob.size / 1024) + " KB");
 			resolve(file);
-		}, "image/jpeg", 0.75);
+		}, "image/jpeg", 0.85);
 	});
 }
 
