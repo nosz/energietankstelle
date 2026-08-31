@@ -351,6 +351,10 @@ var zahl;
 var zahl1;
 
 // --- für Teilen-Funktion ---
+// TEMPORÄR: Teilen-Button vorerst ausgeblendet, bis die Ursache der
+// gemeldeten Instabilität auf Android gefunden ist. Auf true setzen,
+// um den Button wieder zu aktivieren.
+var SHARE_BUTTON_AKTIV = false;
 var currentShareText = "";
 var currentShareImageUrl = null;
 
@@ -429,14 +433,18 @@ function energieAnzeigen(tempSelected) {
 		loescheElement(document.getElementById("sprache2"));
 
 		// Share-Button erst jetzt anzeigen, da vorher noch kein Bild/Spruch existiert
-		var btnShare = document.getElementById("btn_share");
-		if (btnShare) {
-			btnShare.style.display = "";
-		}
+		// TEMPORÄR DEAKTIVIERT (siehe SHARE_BUTTON_AKTIV weiter oben): Button
+		// bleibt ausgeblendet, bis die Android-Instabilität geklärt ist.
+		if (SHARE_BUTTON_AKTIV) {
+			var btnShare = document.getElementById("btn_share");
+			if (btnShare) {
+				btnShare.style.display = "";
+			}
 
-		// Share-Bild für den aktuell sichtbaren Spruch/Bild im Hintergrund
-		// vorbereiten (siehe Kommentar bei den Variablen oben).
-		schedulePrerenderShareImage();
+			// Share-Bild für den aktuell sichtbaren Spruch/Bild im Hintergrund
+			// vorbereiten (siehe Kommentar bei den Variablen oben).
+			schedulePrerenderShareImage();
+		}
 	}
 	//document.getElementById("startJetzt").style.display = 'none';
 }
