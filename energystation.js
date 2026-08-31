@@ -416,7 +416,7 @@ function energieAnzeigen(tempSelected) {
 		// Share-Button erst jetzt anzeigen, da vorher noch kein Bild/Spruch existiert
 		var btnShare = document.getElementById("btn_share");
 		if (btnShare) {
-			btnShare.style.display = "block";
+			btnShare.style.display = "";
 		}
 	}
 	//document.getElementById("startJetzt").style.display = 'none';
