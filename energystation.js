@@ -353,6 +353,22 @@ var zahl1;
 // --- für Teilen-Funktion ---
 var currentShareText = "";
 var currentShareImageUrl = null;
+
+// Vorgerendertes Share-Bild: wird im Hintergrund erzeugt, sobald ein neuer
+// Spruch/Bild angezeigt wird (statt erst beim Klick auf "Teilen"). So liegt
+// beim tatsächlichen Klick meist schon eine fertige Datei bereit und
+// navigator.share() kann sofort/synchron aufgerufen werden - vorher ging
+// zwischen Klick und navigator.share() oft so viel Zeit durch den teuren
+// html2canvas-Aufruf verloren, dass die für Web-Share nötige "User-
+// Aktivierung" auf manchen (v.a. langsameren Android-)Geräten schon
+// abgelaufen war. Das führte dazu, dass der erste Klick scheinbar nichts
+// tat (navigator.share() wurde mit NotAllowedError abgelehnt) und erst der
+// zweite Klick funktionierte.
+var cachedShareFile = null;
+var sharePrerenderPromise = null;
+var sharePrerenderIdleId = null;
+var sharePrerenderUsesIdleCallback = false;
+
 //motivationText is from language.js
 var sprachArray = motivationText;
 var countText = sprachArray.length;
@@ -417,6 +433,10 @@ function energieAnzeigen(tempSelected) {
 		if (btnShare) {
 			btnShare.style.display = "";
 		}
+
+		// Share-Bild für den aktuell sichtbaren Spruch/Bild im Hintergrund
+		// vorbereiten (siehe Kommentar bei den Variablen oben).
+		schedulePrerenderShareImage();
 	}
 	//document.getElementById("startJetzt").style.display = 'none';
 }
@@ -581,16 +601,19 @@ function startBild() {
 // mobilen Browsern scheitert (z.B. wenn canShare({files}) false liefert
 // oder das lokale Bild per fetch() nicht geladen werden kann). Stattdessen
 // wird der absolute Link zum aktuellen Bild mitgeteilt.
-async function teileAktuellesBild() {
+//
+// erzeugeShareDatei() macht den eigentlichen (teuren) Screenshot und liefert
+// eine fertige File. Wird sowohl vom Hintergrund-Vorrendern als auch als
+// Fallback direkt beim Klick verwendet (falls das Vorrendern fehlgeschlagen
+// ist oder aus irgendeinem Grund kein Ergebnis vorliegt).
+async function erzeugeShareDatei() {
 	"use strict";
-	console.log("teileAktuellesBild() aufgerufen");
 
 	var zielElement = document.getElementById('klickbereich') || document.getElementById('farbe');
 
 	if (typeof html2canvas !== 'function') {
 		console.error("html2canvas ist nicht geladen - kann keinen Screenshot erstellen.");
-		alert("Teilen ist gerade nicht möglich (Screenshot-Funktion konnte nicht geladen werden).");
-		return;
+		return null;
 	}
 
 	var canvas;
@@ -613,8 +636,7 @@ async function teileAktuellesBild() {
 		});
 	} catch (err) {
 		console.error("Screenshot fehlgeschlagen:", err);
-		alert("Screenshot konnte nicht erstellt werden.");
-		return;
+		return null;
 	}
 
 	// Zusätzlich auf eine vernünftige maximale Breite verkleinern, falls das
@@ -629,43 +651,111 @@ async function teileAktuellesBild() {
 		canvas = skaliert;
 	}
 
-	canvas.toBlob(async function (blob) {
-		if (!blob) {
-			console.error("Konnte Screenshot nicht in Bild-Datei umwandeln.");
-			alert("Bild konnte nicht erzeugt werden.");
-			return;
-		}
-
-		var dateiname = "energie-tankstelle.jpg";
-		var file = new File([blob], dateiname, { type: "image/jpeg" });
-		console.log("Geteilte Bilddatei-Größe:", Math.round(blob.size / 1024) + " KB");
-
-		console.log("navigator.share verfügbar:", !!navigator.share,
-			"| canShare(files):", !!(navigator.canShare && navigator.canShare({ files: [file] })),
-			"| isSecureContext:", window.isSecureContext);
-
-		// Nur das Bild teilen (der Spruch steckt bereits im Screenshot selbst)
-		if (navigator.canShare && navigator.canShare({ files: [file] })) {
-			try {
-				await navigator.share({ files: [file] });
-				console.log("navigator.share() mit Bild-Datei erfolgreich aufgerufen");
+	return new Promise(function (resolve) {
+		canvas.toBlob(function (blob) {
+			if (!blob) {
+				console.error("Konnte Screenshot nicht in Bild-Datei umwandeln.");
+				resolve(null);
 				return;
-			} catch (err) {
-				console.log("navigator.share() mit Datei abgebrochen oder fehlgeschlagen:", err);
-				return; // Nutzer hat evtl. bewusst abgebrochen - keinen Fallback erzwingen
 			}
-		}
+			var dateiname = "energie-tankstelle.jpg";
+			var file = new File([blob], dateiname, { type: "image/jpeg" });
+			console.log("Geteilte Bilddatei-Größe:", Math.round(blob.size / 1024) + " KB");
+			resolve(file);
+		}, "image/jpeg", 0.85);
+	});
+}
 
-		// Letzter Fallback (z.B. Desktop-Browser ohne Datei-Share-Unterstützung):
-		// Bild einfach herunterladen
-		console.warn("Datei-Teilen nicht verfügbar - Fallback: Bild wird heruntergeladen.");
-		var link = document.createElement("a");
-		link.href = URL.createObjectURL(blob);
-		link.download = dateiname;
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-	}, "image/jpeg", 0.85);
+// Stößt die Screenshot-Erzeugung im Hintergrund an, sobald ein neuer
+// Spruch/Bild angezeigt wird - nicht erst beim Klick auf "Teilen". Läuft
+// leicht verzögert/idle, damit der teure html2canvas-Aufruf nicht mit der
+// Farbwechsel-Animation um Rechenzeit konkurriert.
+function schedulePrerenderShareImage() {
+	"use strict";
+
+	// Alten Stand verwerfen, der aktuelle Inhalt hat sich geändert.
+	cachedShareFile = null;
+
+	if (sharePrerenderIdleId !== null) {
+		if (sharePrerenderUsesIdleCallback && typeof cancelIdleCallback === 'function') {
+			cancelIdleCallback(sharePrerenderIdleId);
+		} else {
+			clearTimeout(sharePrerenderIdleId);
+		}
+		sharePrerenderIdleId = null;
+	}
+
+	var starteVorrendern = function () {
+		sharePrerenderIdleId = null;
+		sharePrerenderPromise = erzeugeShareDatei().then(function (file) {
+			cachedShareFile = file;
+			return file;
+		});
+	};
+
+	if (typeof requestIdleCallback === 'function') {
+		sharePrerenderUsesIdleCallback = true;
+		sharePrerenderIdleId = requestIdleCallback(starteVorrendern, { timeout: 1500 });
+	} else {
+		sharePrerenderUsesIdleCallback = false;
+		sharePrerenderIdleId = setTimeout(starteVorrendern, 300);
+	}
+}
+
+async function teileAktuellesBild() {
+	"use strict";
+	console.log("teileAktuellesBild() aufgerufen");
+
+	// Meist liegt hier schon ein fertig vorgerendertes Bild bereit (siehe
+	// schedulePrerenderShareImage), dann geht es ab hier sofort weiter.
+	var file = cachedShareFile;
+
+	// Seltener Fall: Nutzer tippt so schnell, dass das Vorrendern noch
+	// läuft - dann kurz auf das laufende Promise warten statt neu von vorn
+	// zu beginnen.
+	if (!file && sharePrerenderPromise) {
+		try {
+			file = await sharePrerenderPromise;
+		} catch (err) {
+			file = null;
+		}
+	}
+
+	// Letzter Fallback, falls kein Vorrendern lief oder es fehlgeschlagen
+	// ist (z.B. html2canvas nicht geladen): jetzt live erzeugen wie bisher.
+	if (!file) {
+		file = await erzeugeShareDatei();
+	}
+
+	if (!file) {
+		alert("Teilen ist gerade nicht möglich (Bild konnte nicht erzeugt werden).");
+		return;
+	}
+
+	console.log("navigator.share verfügbar:", !!navigator.share,
+		"| canShare(files):", !!(navigator.canShare && navigator.canShare({ files: [file] })),
+		"| isSecureContext:", window.isSecureContext);
+
+	// Nur das Bild teilen (der Spruch steckt bereits im Screenshot selbst)
+	if (navigator.canShare && navigator.canShare({ files: [file] })) {
+		try {
+			await navigator.share({ files: [file] });
+			console.log("navigator.share() mit Bild-Datei erfolgreich aufgerufen");
+		} catch (err) {
+			console.log("navigator.share() mit Datei abgebrochen oder fehlgeschlagen:", err);
+		}
+		return;
+	}
+
+	// Letzter Fallback (z.B. Desktop-Browser ohne Datei-Share-Unterstützung):
+	// Bild einfach herunterladen
+	console.warn("Datei-Teilen nicht verfügbar - Fallback: Bild wird heruntergeladen.");
+	var link = document.createElement("a");
+	link.href = URL.createObjectURL(file);
+	link.download = file.name;
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
 }
 
 // Klick-Handler für den Share-Button (addEventListener statt Inline-onclick,
