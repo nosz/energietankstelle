@@ -6,41 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Energietankstelle</title>
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
+  <link href="schriften/dancing_script.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* General Styles */
+    /* Gleiche Schrift-Logik wie auf index.html, damit es keinen
+       Design-Bruch zwischen den Seiten gibt. Fließtext/Überschriften
+       laufen einheitlich auf Arial; nur die Zier-Überschriften
+       (.page-title, .greeting-heading, .recommend-heading) nutzen
+       zusätzlich Dancing Script, siehe style.css. */
     body,
     h1 {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      margin: 20px;
+      font-family: 'Arial', sans-serif;
+      font-weight: 500;
     }
 
-    /* Apple (iOS) specific adjustments */
+    /* Apple (iOS) spezifische Anpassungen */
     @supports (-webkit-touch-callout: none) {
-
       body,
       h1 {
         font-family: 'Arial', sans-serif;
-        font-weight: 600;
+        font-weight: 500;
       }
     }
 
-    /* Android-specific adjustments (for smaller screen sizes) */
+    /* Android spezifische Anpassungen (für Bildschirmgrößen) */
     @media screen and (max-width: 768px) {
-
       body,
       h1 {
         font-weight: 500;
       }
     }
 
-    /* For larger Android devices */
+    /* Für größere Android-Geräte */
     @media screen and (min-width: 769px) {
-
       body,
       h1 {
-        font-weight: 400;
+        font-weight: 500;
       }
     }
   </style>
@@ -48,11 +49,15 @@
 
 <body>
 
-  <div class="container energie-page">
+  <div id="gotoStart">
+    <div class="btn-group" role="group">
+      <a href="index.html" aria-label="Zur Startseite"><button type="button" class="btn btn-default"><img src="img/house-heart.svg" width="100"
+            height="100">
+        </button></a>
+    </div>
+  </div>
 
-    <a href="index.html" class="home-link" aria-label="Zur Startseite">
-      <img src="img/house-heart.svg" width="28" height="28" alt="Home icon">
-    </a>
+  <div class="container energie-page">
 
     <h1 class="page-title">Energietankstelle</h1>
 

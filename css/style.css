@@ -109,17 +109,26 @@ a:focus {
   text-align: left;
 }
 
-.cta-button {
+.cta-button,
+.share-button {
   display: inline-block;
-  margin: 14px 0 6px;
+  box-sizing: border-box;
+  min-width: 220px;
   padding: 12px 26px;
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
+  border-radius: 30px;
+  border: 1px solid #9e0976;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-button {
+  margin: 14px 0 6px;
   color: #ffffff;
   background-color: #9e0976;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
 }
 
 .cta-button:hover,
@@ -144,27 +153,11 @@ a:focus {
   padding-bottom: 40px;
 }
 
-.home-link {
-  display: inline-block;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-}
-
-.home-link:hover,
-.home-link:focus {
-  opacity: 1;
-}
-
-.home-link img {
-  display: block;
-  width: 28px;
-  height: 28px;
-}
-
 .page-title {
-  margin: 18px 0 10px;
-  font-size: 28px;
-  font-weight: 600;
+  margin: 18px 0 14px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: 700;
   color: #333;
   text-align: center;
 }
@@ -177,11 +170,12 @@ a:focus {
 }
 
 .greeting-heading {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 600;
+  margin: 0 0 12px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: 700;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.4;
   text-align: left;
 }
 
@@ -198,9 +192,10 @@ a:focus {
 }
 
 .recommend-heading {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 600;
+  margin: 0 0 12px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: 700;
   color: #333;
 }
 
@@ -221,17 +216,9 @@ a:focus {
 }
 
 .share-button {
-  display: inline-block;
   margin: 16px 0 0;
-  padding: 10px 24px;
-  font-size: 16px;
-  font-weight: 600;
   color: #9e0976;
   background-color: #fff;
-  border: 1px solid #9e0976;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .share-button:hover,
