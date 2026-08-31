@@ -125,18 +125,30 @@ function clickOnDocument() {
 ;
 
 // Auto-Klick pausieren, solange die Seite nicht sichtbar ist (Tab im
-// Hintergrund, Bildschirm aus, andere App im Vordergrund). Vorher lief der
-// Timer für immer weiter und hat alle 10-20s DOM-Arbeit (und früher auch
-// teure Screenshots) ausgelöst, obwohl niemand zusehen konnte - das erhöht
-// den Hintergrund-Ressourcenverbrauch unnötig und macht die App auf Android
-// zu einem wahrscheinlicheren Kandidaten dafür, vom System im Hintergrund
-// beendet zu werden (was sich dann wie ein ungewollter Reload anfühlt).
+// Hintergrund, Bildschirm aus, andere App im Vordergrund) ODER solange ein
+// Teilen-Vorgang läuft (window.shareInProgress, siehe teileAktuellesBild).
+// Vorher lief der Timer für immer weiter und hat alle 10-20s DOM-Arbeit
+// (und früher auch teure Screenshots) ausgelöst, obwohl niemand zusehen
+// konnte bzw. gerade der native Teilen-Dialog offen war - das erhöht den
+// Ressourcenverbrauch unnötig und kann dazu führen, dass die App während
+// des Teilens unbemerkt weiterläuft/wegklickt.
+function autoKlickPausieren() {
+	clearInterval(myInterval);
+}
+
+function autoKlickFortsetzenFallsErlaubt() {
+	clearInterval(myInterval);
+	if (document.hidden || window.shareInProgress) {
+		return;
+	}
+	myInterval = setInterval(clickOnDocument, 20000);
+}
+
 document.addEventListener('visibilitychange', function () {
 	if (document.hidden) {
-		clearInterval(myInterval);
+		autoKlickPausieren();
 	} else {
-		clearInterval(myInterval);
-		myInterval = setInterval(clickOnDocument, 20000);
+		autoKlickFortsetzenFallsErlaubt();
 	}
 });
   
@@ -148,8 +160,7 @@ var btn_klickbereich = document.getElementById('klickbereich');
 btn_klickbereich.addEventListener('click', function(){
 	//console.log("click");
 	energieJetztAnzeigen(false);
-	clearInterval(myInterval);  
-	myInterval = setInterval(clickOnDocument, 20000);
+	autoKlickFortsetzenFallsErlaubt();
 })
 var mc_klickbereich = new Hammer(btn_klickbereich);
 // Pan-Recognizer entfernt: wurde nirgends ausgewertet, hat aber den ersten
@@ -167,8 +178,7 @@ var mc_klickbereich = new Hammer(btn_klickbereich);
 mc_klickbereich.on("swipe", function (ev) {
 	//console.log("swipe");
 	energieJetztAnzeigen(false);
-	clearInterval(myInterval);  
-	myInterval = setInterval(clickOnDocument, 20000);
+	autoKlickFortsetzenFallsErlaubt();
 });
 
 //btn_german
@@ -758,10 +768,15 @@ async function teileAktuellesBild() {
 	// mitten im Teilen (z.B. während der native Share-Dialog offen ist) neu
 	// laden und die App wirkt wie neu gestartet.
 	window.shareInProgress = true;
+	// Auto-Klick explizit pausieren, solange geteilt wird - unabhängig
+	// davon, ob der Browser das offene Share-Sheet überhaupt als "hidden"
+	// meldet (verhält sich je nach Android-Version/Browser unterschiedlich).
+	autoKlickPausieren();
 	try {
 		await teileAktuellesBildImpl();
 	} finally {
 		window.shareInProgress = false;
+		autoKlickFortsetzenFallsErlaubt();
 	}
 }
 
