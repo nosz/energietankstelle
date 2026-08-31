@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Energietankstelle</title>
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -47,34 +48,166 @@
 
 <body>
 
-  <div class="btn-group" role="group">
-    <a href="index.html">
-      <button type="button" class="btn btn-default">
-        <img src="img/house-heart.svg" width="100" height="100" alt="Home icon">
-      </button>
+  <div class="container energie-page">
+
+    <a href="index.html" class="home-link" aria-label="Zur Startseite">
+      <img src="img/house-heart.svg" width="28" height="28" alt="Home icon">
     </a>
+
+    <h1 class="page-title">Energietankstelle</h1>
+
+    <!-- ===== Deutsch ===== -->
+
+    <section class="energie-section">
+      <p class="motivation-text">
+        Manchmal reicht ein Klick, um kurz durchzuatmen. Genau dafür ist diese
+        Energietankstelle da: ein Moment für zwischendurch, um aufzutanken und
+        dir selbst ein Stück Energie zu schenken.
+      </p>
+    </section>
+
+    <!-- ===== Weiterempfehlen ===== -->
+    <section class="energie-section recommend-section">
+      <h2 class="recommend-heading">Energietankstelle weiterempfehlen</h2>
+      <p class="recommend-text">
+        Scanne den Code oder teile den Link, damit auch andere kurz auftanken können.
+      </p>
+      <img src="img/qr_energietankstelle.jpg" width="220" height="220" class="qr-image" alt="QR-Code zur Energietankstelle">
+      <button type="button" class="share-button" onclick="shareEnergietankstelle()">
+        📤 Teilen
+      </button>
+    </section>
+
+    <section class="energie-section">
+      <h2 class="greeting-heading">Wünsche Dir viel Glück und Energie mit der Energietankstelle</h2>
+      <p class="greeting-text">
+        Liebe Grüße<br>Norbert Szpak<br>
+        <a href="mailto:n.szpak@web.de">n.szpak@web.de</a>
+      </p>
+    </section>
+
+    <section class="energie-section">
+      <p class="motivation-text">
+        Hat dir das kurze Auftanken gutgetan? Dann schau doch mal bei der
+        Challenge App vorbei. Dort baust du Schritt für Schritt, in deinem
+        eigenen Tempo, neue gute Gewohnheiten auf.
+      </p>
+      <a href="https://nosz.github.io/challenge-app/" target="challenge" class="cta-button">
+        👉 Zur Challenge App
+      </a>
+      <small class="hint">kostenlos · keine Anmeldung</small>
+    </section>
+
+    <hr>
+
+    <!-- ===== English ===== -->
+
+    <section class="energie-section">
+      <p class="motivation-text">
+        Sometimes one click is enough to take a breath. That is exactly what
+        this Energy Station is for: a moment in between to recharge and give
+        yourself a bit of energy.
+      </p>
+    </section>
+
+    <!-- ===== Recommend ===== -->
+    <section class="energie-section recommend-section">
+      <h2 class="recommend-heading">Recommend the Energy Station</h2>
+      <p class="recommend-text">
+        Scan the code or share the link so others can recharge too.
+      </p>
+      <img src="img/qr_energietankstelle.jpg" width="220" height="220" class="qr-image" alt="QR code for the Energy Station">
+      <button type="button" class="share-button" onclick="shareEnergietankstelle()">
+        📤 Share
+      </button>
+    </section>
+
+    <section class="energie-section">
+      <h2 class="greeting-heading">Wishing you lots of energy with the Energy Station</h2>
+      <p class="greeting-text">
+        Kind regards<br>Norbert Szpak<br>
+        <a href="mailto:n.szpak@web.de">n.szpak@web.de</a>
+      </p>
+    </section>
+
+    <section class="energie-section">
+      <p class="motivation-text">
+        Did that quick recharge feel good? Then take a look at the Challenge
+        App. There you build new good habits step by step, at your own pace.
+      </p>
+      <a href="https://nosz.github.io/challenge-app/" target="challenge" class="cta-button">
+        👉 Go to Challenge App
+      </a>
+      <small class="hint">free · no registration</small>
+    </section>
+
+    <footer class="energie-footer">
+      <a href="impressum.html" target="impressum">Impressum</a>
+    </footer>
+
   </div>
 
-  <div class="content">
-    <div>
-      <br><br>
-      <img src="img/qr_energietankstelle.jpg" width="300" height="300">
-      <br><br>
+  <!-- ===== Teilen-Popup (Fallback, wenn kein natives Teilen-Menü verfügbar ist) ===== -->
+  <div class="share-modal-backdrop" id="shareModalBackdrop" onclick="closeShareModal(event)">
+    <div class="share-modal">
+      <button type="button" class="share-modal-close" onclick="closeShareModal()" aria-label="Schließen">✕</button>
+      <h3 class="share-modal-title">Energietankstelle teilen</h3>
+      <a class="share-option" id="shareWhatsapp" href="#" target="_blank" rel="noopener">
+        <span class="share-icon">💬</span> WhatsApp
+      </a>
+      <a class="share-option" id="shareMail" href="#">
+        <span class="share-icon">✉️</span> E-Mail
+      </a>
+      <button type="button" class="share-option" id="shareCopy" onclick="copyShareLink()">
+        <span class="share-icon">🔗</span> Link kopieren
+      </button>
+      <p class="share-copy-feedback" id="shareCopyFeedback">Link kopiert!</p>
     </div>
-
-    <h1>Wünsche Dir viel Glück und Energie mit der Energietankstelle
-      <br>
-      <p>Liebe Grüße<br>Norbert Szpak</p>
-      <a href="mailto:n.szpak@web.de">n.szpak@web.de</a>
-    </h1>
-    <br><br>
-    <h1>Wishing you lots of energy with the Energy Station
-      <br>
-      <p>Kind regards<br>Norbert Szpak</p>
-      <a href="mailto:n.szpak@web.de">n.szpak@web.de</a>
-    </h1>
-    <h1><a href="impressum.html" target="impressum">Impressum</a></h1>
   </div>
+
+  <script>
+    const SHARE_URL = "https://nosz.github.io/energietankstelle/";
+    const SHARE_TITLE = "Energietankstelle";
+    const SHARE_TEXT = "Schau dir die Energietankstelle an – ein kurzer Moment zum Auftanken:";
+
+    function shareEnergietankstelle() {
+      if (navigator.share) {
+        navigator.share({
+          title: SHARE_TITLE,
+          text: SHARE_TEXT,
+          url: SHARE_URL
+        }).catch(() => {
+          // Nutzer hat abgebrochen oder Fehler – kein Fallback nötig
+        });
+      } else {
+        openShareModal();
+      }
+    }
+
+    function openShareModal() {
+      const backdrop = document.getElementById("shareModalBackdrop");
+      const whatsapp = document.getElementById("shareWhatsapp");
+      const mail = document.getElementById("shareMail");
+
+      whatsapp.href = "https://wa.me/?text=" + encodeURIComponent(SHARE_TEXT + " " + SHARE_URL);
+      mail.href = "mailto:?subject=" + encodeURIComponent(SHARE_TITLE) +
+        "&body=" + encodeURIComponent(SHARE_TEXT + " " + SHARE_URL);
+
+      backdrop.classList.add("is-open");
+    }
+
+    function closeShareModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById("shareModalBackdrop").classList.remove("is-open");
+      document.getElementById("shareCopyFeedback").classList.remove("is-visible");
+    }
+
+    function copyShareLink() {
+      navigator.clipboard.writeText(SHARE_URL).then(() => {
+        document.getElementById("shareCopyFeedback").classList.add("is-visible");
+      });
+    }
+  </script>
 </body>
 
 </html>
