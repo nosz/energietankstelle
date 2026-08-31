@@ -1,6 +1,6 @@
 {
     "name": "Energie Tankstelle",
-    "short_name": "Energie",
+    "short_name": "Energie Tankstelle",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
