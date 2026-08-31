@@ -38,7 +38,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f7f1e4">
-  <link rel="stylesheet" href="css/style.css?v=22">
+  <link rel="stylesheet" href="css/style.css?v=23">
 
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
 
@@ -220,23 +220,44 @@
         // hadControllerAtLoad verhindert einen unnötigen Reload direkt beim
         // allerersten Öffnen der Seite (dann gab es ja noch keine "alte"
         // Version, die abgelöst wird).
+        //
+        // Reload wird verzögert, solange die Seite nicht sichtbar ist (z.B.
+        // weil der native Teilen-Dialog offen ist) oder gerade ein Teilen
+        // läuft (window.shareInProgress, siehe energystation.js) - sonst
+        // würde ein Reload mitten im Teilen-Vorgang die App scheinbar
+        // "neu starten".
         var hadControllerAtLoad = !!navigator.serviceWorker.controller;
         var hasReloaded = false;
+        var reloadPending = false;
+
+        function reloadWennBereit() {
+          if (hasReloaded) return;
+          if (document.hidden || window.shareInProgress) {
+            reloadPending = true;
+            return;
+          }
+          hasReloaded = true;
+          window.location.reload();
+        }
 
         navigator.serviceWorker.addEventListener('controllerchange', function () {
           if (!hadControllerAtLoad) return;
-          if (hasReloaded) return;
-          hasReloaded = true;
-          window.location.reload();
+          reloadWennBereit();
+        });
+
+        document.addEventListener('visibilitychange', function () {
+          if (!document.hidden && reloadPending) {
+            reloadWennBereit();
+          }
         });
       }
     </script>
     <script src="js/hammer.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
-    <script src="languages.js?v=22"></script>
-    <script src="energystation.js?v=22"></script>
+    <script src="languages.js?v=23"></script>
+    <script src="energystation.js?v=23"></script>
     <script src="js/particles.min.js"></script>
-    <script src="js/index.js?v=22"></script>
+    <script src="js/index.js?v=23"></script>
     <script>
 
     </script>

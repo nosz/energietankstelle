@@ -753,6 +753,21 @@ async function teileAktuellesBild() {
 	"use strict";
 	console.log("teileAktuellesBild() aufgerufen");
 
+	// Solange gesetzt, weiß ein wartender Service-Worker-Reload (siehe
+	// index.html), dass er sich noch gedulden muss - sonst könnte die Seite
+	// mitten im Teilen (z.B. während der native Share-Dialog offen ist) neu
+	// laden und die App wirkt wie neu gestartet.
+	window.shareInProgress = true;
+	try {
+		await teileAktuellesBildImpl();
+	} finally {
+		window.shareInProgress = false;
+	}
+}
+
+async function teileAktuellesBildImpl() {
+	"use strict";
+
 	// Meist liegt hier schon ein fertig vorgerendertes Bild bereit (siehe
 	// schedulePrerenderShareImage), dann geht es ab hier sofort weiter.
 	var file = cachedShareFile;
