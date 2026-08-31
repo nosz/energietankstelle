@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!--
+  Versionierung: Bei jedem neuen Release bitte die Zahl "?v=3" bei den
+  eigenen Dateien (css/style.css, languages.js, energystation.js,
+  js/index.js) UND die APP_VERSION-Konstante in service-worker.js
+  gemeinsam erhöhen (z.B. auf 3). Das sorgt dafür, dass GitHub Pages /
+  der Browser die neue Version nicht aus einem alten Cache ausliefert,
+  sondern wirklich neu lädt.
+-->
 <html>
 
 <head>
@@ -31,7 +39,7 @@
   <link rel="mask-icon" href="img/icon.png">
   <link rel="icon" type="image/png" sizes="48x48" href="img/icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="img/icon.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=3">
 
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
 
@@ -243,10 +251,10 @@
     </script>
     <script src="js/hammer.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
-    <script src="languages.js"></script>
-    <script src="energystation.js"></script>
+    <script src="languages.js?v=3"></script>
+    <script src="energystation.js?v=3"></script>
     <script src="js/particles.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/index.js?v=3"></script>
     <script>
 
     </script>

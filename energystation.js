@@ -586,7 +586,6 @@ async function teileAktuellesBild() {
 	"use strict";
 	console.log("teileAktuellesBild() aufgerufen");
 
-	var text = currentShareText || "";
 	var zielElement = document.getElementById('klickbereich') || document.getElementById('farbe');
 
 	if (typeof html2canvas !== 'function') {
@@ -638,10 +637,10 @@ async function teileAktuellesBild() {
 			"| canShare(files):", !!(navigator.canShare && navigator.canShare({ files: [file] })),
 			"| isSecureContext:", window.isSecureContext);
 
-		// Bevorzugt: Bild-Datei + Text direkt teilen
+		// Nur das Bild teilen (der Spruch steckt bereits im Screenshot selbst)
 		if (navigator.canShare && navigator.canShare({ files: [file] })) {
 			try {
-				await navigator.share({ files: [file], text: text });
+				await navigator.share({ files: [file] });
 				console.log("navigator.share() mit Bild-Datei erfolgreich aufgerufen");
 				return;
 			} catch (err) {
@@ -650,37 +649,15 @@ async function teileAktuellesBild() {
 			}
 		}
 
-		// Web Share API ohne Datei-Unterstützung -> wenigstens Text teilen
-		if (navigator.share) {
-			try {
-				await navigator.share({ text: text });
-				console.log("navigator.share() nur mit Text erfolgreich aufgerufen");
-				return;
-			} catch (err) {
-				console.log("navigator.share() (nur Text) abgebrochen oder fehlgeschlagen:", err);
-			}
-		}
-
-		// Letzter Fallback (z.B. Desktop-Browser ohne Web-Share-API):
-		// Bild herunterladen + Text in Zwischenablage
-		console.warn("navigator.share nicht verfügbar - Fallback: Download + Zwischenablage.");
+		// Letzter Fallback (z.B. Desktop-Browser ohne Datei-Share-Unterstützung):
+		// Bild einfach herunterladen
+		console.warn("Datei-Teilen nicht verfügbar - Fallback: Bild wird heruntergeladen.");
 		var link = document.createElement("a");
 		link.href = URL.createObjectURL(blob);
 		link.download = dateiname;
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
-
-		if (navigator.clipboard) {
-			try {
-				await navigator.clipboard.writeText(text);
-				alert("Bild wird heruntergeladen und Spruch wurde in die Zwischenablage kopiert.");
-				return;
-			} catch (err) {
-				// weiter zum letzten Hinweis
-			}
-		}
-		alert("Bild wird heruntergeladen.\n\nSpruch:\n" + text);
 	}, "image/jpeg", 0.85);
 }
 
