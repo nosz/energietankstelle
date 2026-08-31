@@ -27,12 +27,15 @@ canvas {
   margin-left: auto;
 }
 
-/* Platz für die fixierte Kopfzeile freihalten, damit die Flaggen-Reihen
-   (das erste Element im normalen Fluss nach der fixierten Kopfzeile) nicht
-   darunter verdeckt werden. Höhe grob an die 100px-Buttons plus Abstand
-   zum Rand plus Puffer angepasst. */
-#sprache {
-  margin-top: 140px;
+/* Platz für die fixierte Kopfzeile freihalten. Auf body statt auf den
+   Flaggen-Reihen (#sprache), da diese nach dem ersten Klick per JS komplett
+   entfernt werden (loescheElement in energieAnzeigen) - danach wäre
+   #klickbereich das erste Element im Fluss und würde ohne body-Padding
+   unter der fixierten Kopfzeile abgeschnitten. body bleibt immer bestehen,
+   der Abstand gilt also unabhängig vom aktuellen Seitenzustand. Höhe grob
+   an die 100px-Buttons plus Abstand zum Rand plus Puffer angepasst. */
+body {
+  padding-top: 140px;
 }
 
 /* ---- Links: Marken-Farbe statt Standard-Schwarz ---- */
