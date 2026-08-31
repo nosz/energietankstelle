@@ -38,7 +38,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f7f1e4">
-  <link rel="stylesheet" href="css/style.css?v=26">
+  <link rel="stylesheet" href="css/style.css?v=27">
 
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
 
@@ -250,14 +250,27 @@
             reloadWennBereit();
           }
         });
+
+        // Wird von energystation.js aufgerufen, sobald der Teilen-Schutz
+        // (window.shareInProgress) wirklich endet - also bestätigt nach
+        // Rückkehr in die App plus Sicherheitspuffer, siehe
+        // planeShareSchutzEnde() dort. Notwendig, weil manche Android-
+        // Browser document.hidden während des nativen Share-Screens nie auf
+        // true setzen - dann würde der obige visibilitychange-Listener nie
+        // feuern und ein zurückgehaltener Reload bliebe für immer hängen.
+        window.zeigeReloadFallsAusstehend = function () {
+          if (!document.hidden && reloadPending) {
+            reloadWennBereit();
+          }
+        };
       }
     </script>
     <script src="js/hammer.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
-    <script src="languages.js?v=26"></script>
-    <script src="energystation.js?v=26"></script>
+    <script src="languages.js?v=27"></script>
+    <script src="energystation.js?v=27"></script>
     <script src="js/particles.min.js"></script>
-    <script src="js/index.js?v=26"></script>
+    <script src="js/index.js?v=27"></script>
     <script>
 
     </script>

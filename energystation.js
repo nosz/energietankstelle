@@ -759,6 +759,84 @@ function schedulePrerenderShareImage() {
 	sharePrerenderTimeoutId = setTimeout(starteVorrendern, SHARE_PRERENDER_FALLBACK_MS);
 }
 
+// --- Robuster Reload-Schutz während des Teilens ---
+// navigator.share() löst sein Promise auf manchen Android-Browsern/WebViews
+// bereits auf, sobald der Share-Intent an das Betriebssystem übergeben
+// wurde - NICHT erst, wenn der native Share-Screen wieder geschlossen ist.
+// Würde window.shareInProgress direkt im finally-Block von
+// teileAktuellesBild() zurückgesetzt, könnte in genau diesem kurzen Fenster
+// (Share-Screen optisch noch offen, shareInProgress aber schon false) ein
+// Service-Worker-Reload durchrutschen (siehe controllerchange-Handler in
+// index.html) - die App wirkt dann für den Nutzer mitten im Teilen neu
+// gestartet.
+//
+// Deshalb: shareInProgress erst dann wirklich auf false setzen, wenn die
+// Seite nachweislich wieder sichtbar ist (visibilitychange zurück zu
+// sichtbar), plus ein kleiner Sicherheitspuffer danach. Meldet der Browser
+// document.hidden während des Share-Screens gar nicht als true (auch das
+// kommt vor), wird direkt der Puffer gestartet.
+var SHARE_GUARD_PUFFER_MS = 1200;
+// Sicherheitsnetz, falls visibilitychange nach einem "hidden" Zustand aus
+// irgendeinem Grund nie feuert - dann trotzdem spätestens hiernach beenden.
+var SHARE_GUARD_MAX_WARTEZEIT_MS = 5000;
+var shareGuardTimeoutId = null;
+var shareGuardVisibilityHandler = null;
+var shareGuardToken = 0;
+
+function planeShareSchutzEnde() {
+	"use strict";
+	shareGuardToken += 1;
+	var eigenerToken = shareGuardToken;
+
+	function raeumeAuf() {
+		if (shareGuardVisibilityHandler) {
+			document.removeEventListener('visibilitychange', shareGuardVisibilityHandler);
+			shareGuardVisibilityHandler = null;
+		}
+		if (shareGuardTimeoutId !== null) {
+			clearTimeout(shareGuardTimeoutId);
+			shareGuardTimeoutId = null;
+		}
+	}
+
+	function schutzBeenden() {
+		// Falls in der Zwischenzeit schon ein neuerer Share-Vorgang
+		// gestartet wurde, hat dessen eigener Schutz Vorrang - nicht
+		// vorzeitig freigeben.
+		if (eigenerToken !== shareGuardToken) return;
+		raeumeAuf();
+		window.shareInProgress = false;
+		autoKlickFortsetzenFallsErlaubt();
+		// Falls index.html in der Zwischenzeit einen Reload wegen eines
+		// neuen Service Workers zurückgehalten hat, jetzt nachholen.
+		if (typeof window.zeigeReloadFallsAusstehend === 'function') {
+			window.zeigeReloadFallsAusstehend();
+		}
+	}
+
+	function starteAbschlussPuffer() {
+		if (eigenerToken !== shareGuardToken) return;
+		if (shareGuardTimeoutId !== null) {
+			clearTimeout(shareGuardTimeoutId);
+		}
+		shareGuardTimeoutId = setTimeout(schutzBeenden, SHARE_GUARD_PUFFER_MS);
+	}
+
+	if (document.hidden) {
+		shareGuardVisibilityHandler = function () {
+			if (!document.hidden) {
+				document.removeEventListener('visibilitychange', shareGuardVisibilityHandler);
+				shareGuardVisibilityHandler = null;
+				starteAbschlussPuffer();
+			}
+		};
+		document.addEventListener('visibilitychange', shareGuardVisibilityHandler);
+		shareGuardTimeoutId = setTimeout(schutzBeenden, SHARE_GUARD_MAX_WARTEZEIT_MS);
+	} else {
+		starteAbschlussPuffer();
+	}
+}
+
 async function teileAktuellesBild() {
 	"use strict";
 	console.log("teileAktuellesBild() aufgerufen");
@@ -775,8 +853,10 @@ async function teileAktuellesBild() {
 	try {
 		await teileAktuellesBildImpl();
 	} finally {
-		window.shareInProgress = false;
-		autoKlickFortsetzenFallsErlaubt();
+		// Nicht sofort freigeben (siehe Kommentar oben bei
+		// planeShareSchutzEnde) - erst wenn die App wirklich wieder
+		// sichtbar ist, plus Sicherheitspuffer.
+		planeShareSchutzEnde();
 	}
 }
 
