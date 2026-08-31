@@ -123,6 +123,22 @@ function clickOnDocument() {
 	myInterval = setInterval(clickOnDocument, 20000);      
   }
 ;
+
+// Auto-Klick pausieren, solange die Seite nicht sichtbar ist (Tab im
+// Hintergrund, Bildschirm aus, andere App im Vordergrund). Vorher lief der
+// Timer für immer weiter und hat alle 10-20s DOM-Arbeit (und früher auch
+// teure Screenshots) ausgelöst, obwohl niemand zusehen konnte - das erhöht
+// den Hintergrund-Ressourcenverbrauch unnötig und macht die App auf Android
+// zu einem wahrscheinlicheren Kandidaten dafür, vom System im Hintergrund
+// beendet zu werden (was sich dann wie ein ungewollter Reload anfühlt).
+document.addEventListener('visibilitychange', function () {
+	if (document.hidden) {
+		clearInterval(myInterval);
+	} else {
+		clearInterval(myInterval);
+		myInterval = setInterval(clickOnDocument, 20000);
+	}
+});
   
 
 
@@ -136,7 +152,9 @@ btn_klickbereich.addEventListener('click', function(){
 	myInterval = setInterval(clickOnDocument, 20000);
 })
 var mc_klickbereich = new Hammer(btn_klickbereich);
-mc_klickbereich.get('pan').set({});
+// Pan-Recognizer entfernt: wurde nirgends ausgewertet, hat aber den ersten
+// Touch auf Android manchmal als Pan-Start statt als Tap interpretiert.
+// Nur "swipe" wird tatsächlich gebraucht (siehe unten).
 // listen to events...
 //mc_klickbereich.on("tap press", function (ev) {
 	//console.log("tap press");
@@ -351,10 +369,7 @@ var zahl;
 var zahl1;
 
 // --- für Teilen-Funktion ---
-// TEMPORÄR: Teilen-Button vorerst ausgeblendet, bis die Ursache der
-// gemeldeten Instabilität auf Android gefunden ist. Auf true setzen,
-// um den Button wieder zu aktivieren.
-var SHARE_BUTTON_AKTIV = false;
+var SHARE_BUTTON_AKTIV = true;
 var currentShareText = "";
 var currentShareImageUrl = null;
 

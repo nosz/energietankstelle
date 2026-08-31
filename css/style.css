@@ -5,15 +5,31 @@ canvas {
 }
 
 /* ---- Kopfzeile: Share-Button ganz rechts, getrennt von den übrigen Buttons ---- */
+/* Fixiert am oberen Bildschirmrand, damit die Buttons beim Wischen/Scrollen
+   immer sichtbar bleiben und nicht aus dem Bild verschwinden. */
 
 #gotoStart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #f7f1e4;
+  padding: 4px 8px;
 }
 
 #btn_share {
   margin-left: auto;
+}
+
+/* Platz für die fixierte Kopfzeile freihalten, damit der Inhalt darunter
+   nicht direkt am Anfang verdeckt wird. Höhe grob an die 100px-Buttons
+   plus etwas Puffer angepasst. */
+#klickbereich {
+  margin-top: 120px;
 }
 
 /* ---- Links: Marken-Farbe statt Standard-Schwarz ---- */
