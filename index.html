@@ -39,7 +39,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f7f1e4">
-  <link rel="stylesheet" href="css/style.css?v=42">
+  <link rel="stylesheet" href="css/style.css?v=43">
 
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
 
@@ -134,7 +134,7 @@
   <div id="eigeneModalBackdrop" class="share-modal-backdrop own-content-backdrop">
     <div class="share-modal own-content-modal">
       <button type="button" class="share-modal-close" id="eigeneModalClose" aria-label="Schließen">&times;</button>
-      <h2 class="share-modal-title">Eigene Bilder &amp; Texte</h2>
+      <h2 class="share-modal-title" id="eigeneModalTitle">Eigene Bilder &amp; Texte</h2>
 
       <div class="own-content-tabs">
         <button type="button" class="own-content-tab-btn active" id="tabBtnBilder" data-tab="bilder">Bilder</button>
@@ -144,7 +144,7 @@
       <div class="own-content-panel" id="panelBilder">
         <button type="button" class="own-content-upload-btn" id="eigeneBilderUploadBtn">
           <span class="own-content-upload-icon">📷</span>
-          <span class="own-content-upload-text">Bilder hinzufügen</span>
+          <span class="own-content-upload-text" id="eigeneBilderUploadText">Bilder hinzufügen</span>
         </button>
         <input type="file" id="eigeneBilderInput" accept="image/*" multiple class="own-content-hidden-input">
         <div class="own-content-limit-note" id="eigeneBilderZaehler"></div>
@@ -152,7 +152,8 @@
       </div>
 
       <div class="own-content-panel" id="panelSprueche" style="display:none;">
-        <textarea id="eigenerSpruchInput" class="own-content-textarea" rows="3" placeholder="Dein eigener Text..."></textarea>
+        <textarea id="eigenerSpruchInput" class="own-content-textarea" rows="3" maxlength="500" placeholder="Dein eigener Text..."></textarea>
+        <div class="own-content-limit-note" id="eigenerSpruchZeichenZaehler">0/500</div>
         <div class="own-content-spruch-form-actions">
           <button type="button" class="own-content-action-btn" id="eigenerSpruchAddBtn">Text hinzufügen</button>
           <button type="button" class="own-content-action-btn own-content-action-btn-secondary" id="eigenerSpruchCancelBtn" style="display:none;">Abbrechen</button>
@@ -163,8 +164,8 @@
 
       <hr>
       <button type="button" class="own-content-backup-link" id="oeffneBackupModalBtn">
-        <span class="own-content-backup-link-icon">💾</span>
-        Sichern &amp; Wiederherstellen
+        <span class="own-content-backup-link-icon">📤</span>
+        <span id="oeffneBackupModalText">Backup &amp; Übertragen</span>
       </button>
       <p class="share-copy-feedback" id="eigeneFeedback"></p>
     </div>
@@ -174,14 +175,14 @@
   <div id="eigeneBackupModalBackdrop" class="share-modal-backdrop own-content-backdrop">
     <div class="share-modal own-content-backup-modal">
       <button type="button" class="share-modal-close" id="eigeneBackupModalClose" aria-label="Schließen">&times;</button>
-      <h2 class="share-modal-title">Sichern &amp; Wiederherstellen</h2>
-      <p class="own-content-backup-intro">Deine eigenen Bilder &amp; Texte liegen nur auf diesem Gerät. Sichere sie als Datei, um sie auf ein anderes Gerät zu übertragen oder ein Backup zu behalten.</p>
+      <h2 class="share-modal-title" id="eigeneBackupModalTitle">Sichern &amp; Wiederherstellen</h2>
+      <p class="own-content-backup-intro" id="eigeneBackupIntro">Deine eigenen Bilder &amp; Texte liegen nur auf diesem Gerät. Sichere sie als Datei, um sie auf ein anderes Gerät zu übertragen oder ein Backup zu behalten.</p>
 
       <div class="own-content-backup-card">
         <div class="own-content-backup-card-icon">⬇️</div>
         <div class="own-content-backup-card-body">
-          <h3 class="own-content-backup-card-title">Exportieren</h3>
-          <p class="own-content-backup-card-text">Speichert alle eigenen Bilder &amp; Texte als Datei auf deinem Gerät.</p>
+          <h3 class="own-content-backup-card-title" id="eigeneExportTitle">Exportieren</h3>
+          <p class="own-content-backup-card-text" id="eigeneExportText">Speichert alle eigenen Bilder &amp; Texte als Datei auf deinem Gerät.</p>
           <button type="button" class="own-content-action-btn" id="eigeneExportBtn">Als Datei sichern</button>
         </div>
       </div>
@@ -189,8 +190,8 @@
       <div class="own-content-backup-card">
         <div class="own-content-backup-card-icon">⬆️</div>
         <div class="own-content-backup-card-body">
-          <h3 class="own-content-backup-card-title">Importieren</h3>
-          <p class="own-content-backup-card-text">Ersetzt alle eigenen Bilder &amp; Texte durch den Inhalt einer gesicherten Datei.</p>
+          <h3 class="own-content-backup-card-title" id="eigeneImportTitle">Importieren</h3>
+          <p class="own-content-backup-card-text" id="eigeneImportText">Ersetzt alle eigenen Bilder &amp; Texte durch den Inhalt einer gesicherten Datei.</p>
           <button type="button" class="own-content-action-btn own-content-action-btn-secondary" id="eigeneImportBtn">Datei auswählen</button>
           <input type="file" id="eigeneImportInput" accept="application/json" class="own-content-hidden-input">
         </div>
@@ -341,8 +342,8 @@
     </script>
     <script src="js/hammer.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
-    <script src="languages.js?v=42"></script>
-    <script src="energystation.js?v=42"></script>
+    <script src="languages.js?v=45"></script>
+    <script src="energystation.js?v=45"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/index.js?v=42"></script>
     <script>

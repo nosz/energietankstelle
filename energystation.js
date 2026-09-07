@@ -5,6 +5,39 @@ var minBild = 1;
 var maxBild = 327;
 var tempSprache;
 
+// ==================== UI-Texte "Eigene Bilder & Texte": mehrsprachig ====================
+// Liefert einen einzelnen UI-Text aus dem ownContentUI-Wörterbuch
+// (languages.js) für die aktuell aktive Sprache. Fällt auf "de" zurück,
+// solange noch keine Sprache gewählt wurde (tempSprache ist dann
+// undefined) bzw. falls ein Sprachcode im Wörterbuch fehlen sollte.
+// Platzhalter wie "{max}" oder "{n}" werden über das optionale
+// vars-Objekt ersetzt, z.B. eigeneInhalteText("feedbackMaxBilder", { max: 20 }).
+function eigeneInhalteText(key, vars) {
+	var lang = tempSprache || localStorage.getItem("langEnergie") || "de";
+	var dict = (window.ownContentUI && (window.ownContentUI[lang] || window.ownContentUI.de)) || {};
+	var text = dict[key];
+	if (text === undefined) return "";
+	if (vars) {
+		Object.keys(vars).forEach(function (k) {
+			text = text.replace("{" + k + "}", vars[k]);
+		});
+	}
+	return text;
+}
+
+// Setzt alle Oberflächen-Texte des "Eigene Bilder & Texte"-Popups sowie des
+// zugehörigen "Sichern & Wiederherstellen"-Popups auf die übergebene
+// Sprache. Wird von setLanguage() UND von jedem der 12 Flaggen-Buttons
+// aufgerufen, damit beide Wege zur Sprachwahl das Popup gleichermaßen
+// übersetzen. Die eigentliche Arbeit übernimmt ein Callback, den die
+// DOMContentLoaded-Closure weiter unten registriert (dort liegen bereits
+// alle Element-Referenzen und die Render-Funktionen der Listen).
+function wendeEigeneInhalteSpracheAn(lang) {
+	if (typeof window.__eigeneInhalteSpracheAnwenden === "function") {
+		window.__eigeneInhalteSpracheAnwenden(lang);
+	}
+}
+
 // --- AUTOMATISCHE SPRACHWAHL AUS URL ---
 function getLangFromURL() {
     const params = new URLSearchParams(window.location.search);
@@ -18,6 +51,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "unendlich klicken...";
             tempSprache = "de";
+            wendeEigeneInhalteSpracheAn("de");
             localStorage.setItem("langEnergie", "de");
             localStorage.setItem("langEnergieText1", "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "unendlich klicken...");
@@ -26,6 +60,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Energy station<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE";
             tempSprache = "en";
+            wendeEigeneInhalteSpracheAn("en");
             localStorage.setItem("langEnergie", "en");
             localStorage.setItem("langEnergieText1", "Energy station<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE");
@@ -34,6 +69,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Tu estación de energía<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN";
             tempSprache = "es";
+            wendeEigeneInhalteSpracheAn("es");
             localStorage.setItem("langEnergie", "es");
             localStorage.setItem("langEnergieText1", "Tu estación de energía<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN");
@@ -42,6 +78,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Ваша энергетическая станция<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
             tempSprache = "ru";
+            wendeEigeneInhalteSpracheAn("ru");
             localStorage.setItem("langEnergie", "ru");
             localStorage.setItem("langEnergieText1", "Ваша энергетическая станция<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
@@ -50,6 +87,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE";
             tempSprache = "it";
+            wendeEigeneInhalteSpracheAn("it");
             localStorage.setItem("langEnergie", "it");
             localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE");
@@ -58,6 +96,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Twoja stacja energetyczna<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA";
             tempSprache = "pl";
+            wendeEigeneInhalteSpracheAn("pl");
             localStorage.setItem("langEnergie", "pl");
             localStorage.setItem("langEnergieText1", "Twoja stacja energetyczna<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA");
@@ -66,6 +105,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Enerji istasyonunuz<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile";
             tempSprache = "tu";
+            wendeEigeneInhalteSpracheAn("tu");
             localStorage.setItem("langEnergie", "tu");
             localStorage.setItem("langEnergieText1", "Enerji istasyonunuz<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile");
@@ -74,6 +114,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Trạm năng lượng của bạn<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM<br>của bạn";
             tempSprache = "vi";
+            wendeEigeneInhalteSpracheAn("vi");
             localStorage.setItem("langEnergie", "vi");
             localStorage.setItem("langEnergieText1", "Trạm năng lượng của bạn<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng TRÍ THÔNG MINH TRÁI TIM<br>của bạn");
@@ -82,6 +123,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "তোমার বিদ্যুৎ কেন্দ্র<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে";
             tempSprache = "ba";
+            wendeEigeneInhalteSpracheAn("ba");
             localStorage.setItem("langEnergie", "ba");
             localStorage.setItem("langEnergieText1", "তোমার বিদ্যুৎ কেন্দ্র<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে");
@@ -90,6 +132,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "A te energiaállomásod<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével";
             tempSprache = "un";
+            wendeEigeneInhalteSpracheAn("un");
             localStorage.setItem("langEnergie", "un");
             localStorage.setItem("langEnergieText1", "A te energiaállomásod<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével");
@@ -98,6 +141,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "Твоя енергетична заправка<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
             tempSprache = "ukr";
+            wendeEigeneInhalteSpracheAn("ukr");
             localStorage.setItem("langEnergie", "ukr");
             localStorage.setItem("langEnergieText1", "Твоя енергетична заправка<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
@@ -106,6 +150,7 @@ function setLanguage(langCode) {
             document.getElementById("text1").innerHTML = "你的能量加油站<br><img src='img/energietankstelle_1.png'>";
             document.getElementById("text2").innerHTML = "点击并一次又一次地<br>为自己充能<br>用你的心智";
             tempSprache = "china";
+            wendeEigeneInhalteSpracheAn("china");
             localStorage.setItem("langEnergie", "china");
             localStorage.setItem("langEnergieText1", "你的能量加油站<br><img src='img/energietankstelle_1.png'>");
             localStorage.setItem("langEnergieText2", "点击并一次又一次地<br>为自己充能<br>用你的心智");
@@ -192,6 +237,7 @@ mc_german.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "unendlich klicken...";
 	tempSprache = "de";
+	wendeEigeneInhalteSpracheAn("de");
 	localStorage.setItem("langEnergie", "de");
 	localStorage.setItem("langEnergieText1", "ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "unendlich klicken...");
@@ -207,6 +253,7 @@ mc_english.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Energy station<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE";
 	tempSprache = "en";
+	wendeEigeneInhalteSpracheAn("en");
 	localStorage.setItem("langEnergie", "en");
 	localStorage.setItem("langEnergieText1", "Energy station<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Click and recharge<br>your energy again and again<br>with your<br>HEART INTELLIGENCE");
@@ -223,6 +270,7 @@ mc_italia.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Stazione di rifornimento di energia<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE";
 	tempSprache = "it";
+	wendeEigeneInhalteSpracheAn("it");
 	localStorage.setItem("langEnergie", "it");
 	localStorage.setItem("langEnergieText1", "Stazione di rifornimento di energia<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Clicca e ricarica<br>la tua energia più e più volte<br>con la tua<br>INTELLIGENZA DEL CUORE");
@@ -239,6 +287,7 @@ mc_russian.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Ваша энергетическая станция<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА";
 	tempSprache = "ru";
+	wendeEigeneInhalteSpracheAn("ru");
 	localStorage.setItem("langEnergie", "ru");
 	localStorage.setItem("langEnergieText1", "Ваша энергетическая станция<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Нажимай и снова и снова<br>заряжай свою энергию<br>с помощью<br>ТВОЕГО ИНТЕЛЛЕКТА СЕРДЦА");
@@ -256,6 +305,7 @@ mc_polnisch.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Twoja stacja energetyczna<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA";
 	tempSprache = "pl";
+	wendeEigeneInhalteSpracheAn("pl");
 	localStorage.setItem("langEnergie", "pl");
 	localStorage.setItem("langEnergieText1", "Twoja stacja energetyczna<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Klikaj i wielokrotnie<br>ładuj swoją energię<br>za pomocą<br>TWOJEJ INTELIGENCJI SERCA");
@@ -271,6 +321,7 @@ mc_spanish.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Tu estación de energía<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN";
 	tempSprache = "es";
+	wendeEigeneInhalteSpracheAn("es");
 	localStorage.setItem("langEnergie", "es");
 	localStorage.setItem("langEnergieText1", "Tu estación de energía<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Haz clic y recarga<br>tu energía una y otra vez<br>con tu<br>INTELIGENCIA DEL CORAZÓN");
@@ -286,6 +337,7 @@ mc_turkiye.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Enerji istasyonunuz<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile";
 	tempSprache = "tu";
+	wendeEigeneInhalteSpracheAn("tu");
 	localStorage.setItem("langEnergie", "tu");
 	localStorage.setItem("langEnergieText1", "Enerji istasyonu<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Tıkla ve tekrar tekrar<br>enerjini yenile<br>KALP ZEKÂN ile");
@@ -301,6 +353,7 @@ mc_vietnam.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Trạm năng lượng của bạn<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng<br>TRÍ THÔNG MINH TRÁI TIM<br>của bạn";
 	tempSprache = "vi";
+	wendeEigeneInhalteSpracheAn("vi");
 	localStorage.setItem("langEnergie", "vi");
 	localStorage.setItem("langEnergieText1", "Trạm năng lượng của bạn<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Nhấp và liên tục<br>nạp năng lượng cho bản thân<br>bằng<br>TRÍ THÔNG MINH TRÁI TIM<br>của bạn");
@@ -317,6 +370,7 @@ mc_bangla.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "তোমার বিদ্যুৎ কেন্দ্র<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে";
 	tempSprache = "ba";
+	wendeEigeneInhalteSpracheAn("ba");
 	localStorage.setItem("langEnergie", "ba");
 	localStorage.setItem("langEnergieText1", "তোমার বিদ্যুৎ কেন্দ্র<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "ক্লিক করুন এবং বারবার<br>আপনার শক্তি পুনরায় পূরণ করুন<br>আপনার হৃদয়-বুদ্ধিমত্তার সাহায্যে");
@@ -333,6 +387,7 @@ mc_ungarn.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "A te energiaállomásod<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével";
 	tempSprache = "un";
+	wendeEigeneInhalteSpracheAn("un");
 	localStorage.setItem("langEnergie", "un");
 	localStorage.setItem("langEnergieText1", "A te energiaállomásod<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Kattints, és újra meg újra<br>töltsd fel az energiádat<br>a SZÍV-INTELLIGENCIÁD<br>segítségével");
@@ -349,6 +404,7 @@ mc_ukraine.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "Твоя енергетична заправка<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ";
 	tempSprache = "ukr";
+	wendeEigeneInhalteSpracheAn("ukr");
 	localStorage.setItem("langEnergie", "ukr");
 	localStorage.setItem("langEnergieText1", "Твоя енергетична заправка<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "Клацай і знову і знову<br>поповнюй свою енергію<br>за допомогою<br>ТВОГО ІНТЕЛЕКТУ СЕРЦЯ");
@@ -365,6 +421,7 @@ mc_china.on("panleft panright panup pandown tap press", function (ev) {
 	document.getElementById("text1").innerHTML = "你的能量加油站<br><img src='img/energietankstelle_1.png'>";
 	document.getElementById("text2").innerHTML = "点击并一次又一次地<br>为自己充能<br>用你的心智";
 	tempSprache = "china";
+	wendeEigeneInhalteSpracheAn("china");
 	localStorage.setItem("langEnergie", "china");
 	localStorage.setItem("langEnergieText1", "你的能量加油站<br><img src='img/energietankstelle_1.png'>");
 	localStorage.setItem("langEnergieText2", "点击并一次又一次地<br>为自己充能<br>用你的心智");
@@ -498,6 +555,7 @@ var EIGENE_SPRUECHE_QUEUE_KEY = "eigeneSpruecheQueue";
 
 var EIGENE_BILDER_MAX = 20;
 var EIGENE_SPRUECHE_MAX = 50;
+var EIGENE_SPRUCH_MAX_LAENGE = 500;
 var EIGENE_BILD_MAX_EDGE = 1000;
 var EIGENE_BILD_QUALITY = 0.8;
 // Chance, dass ein eigenes Bild bzw. ein eigener Spruch gezogen wird,
@@ -603,6 +661,7 @@ function addEigenerSpruch(text) {
 	"use strict";
 	text = (text || "").trim();
 	if (!text) return false;
+	if (text.length > EIGENE_SPRUCH_MAX_LAENGE) return false;
 	var sprueche = ladeEigeneSprueche();
 	if (sprueche.length >= EIGENE_SPRUECHE_MAX) return false;
 	sprueche.push(text);
@@ -629,6 +688,7 @@ function updateEigenerSpruch(index, text) {
 	"use strict";
 	text = (text || "").trim();
 	if (!text) return false;
+	if (text.length > EIGENE_SPRUCH_MAX_LAENGE) return false;
 	var sprueche = ladeEigeneSprueche();
 	if (index < 0 || index >= sprueche.length) return false;
 	sprueche[index] = text;
@@ -1183,6 +1243,59 @@ document.addEventListener('DOMContentLoaded', function () {
 		return;
 	}
 
+	// ---------- Mehrsprachigkeit: statische Oberflächen-Texte ----------
+	// Setzt Titel/Buttons/Platzhalter/aria-labels beider Popups auf die
+	// übergebene Sprache und lässt danach die Listen neu rendern (Zähler,
+	// Lösch-Bestätigungen und leer-Hinweise stecken bereits sprachabhängig
+	// in den Render-Funktionen weiter unten). Über
+	// window.__eigeneInhalteSpracheAnwenden von außen (Flaggen-Buttons,
+	// setLanguage()) erreichbar.
+	function wendeSpracheAufEigeneInhalteAn(lang) {
+		var dict = (window.ownContentUI && (window.ownContentUI[lang] || window.ownContentUI.de)) || null;
+		if (!dict) return;
+
+		modalClose.setAttribute("aria-label", dict.modalClose);
+		var modalTitle = document.getElementById("eigeneModalTitle");
+		if (modalTitle) modalTitle.textContent = dict.title;
+		if (tabBtnBilder) tabBtnBilder.textContent = dict.tabBilder;
+		if (tabBtnSprueche) tabBtnSprueche.textContent = dict.tabSprueche;
+		var uploadText = document.getElementById("eigeneBilderUploadText");
+		if (uploadText) uploadText.textContent = dict.uploadText;
+		if (eigenerSpruchInput) eigenerSpruchInput.setAttribute("placeholder", dict.textareaPlaceholder);
+		// "Text hinzufügen" bzw. "Aktualisieren" hängt zusätzlich vom
+		// Bearbeitungsmodus ab - der ist hier bekannt (eigenerSpruchEditIndex).
+		if (eigenerSpruchAddBtn) {
+			eigenerSpruchAddBtn.textContent = eigenerSpruchEditIndex !== null ? dict.updateBtn : dict.addBtn;
+		}
+		if (eigenerSpruchCancelBtn) eigenerSpruchCancelBtn.textContent = dict.cancelBtn;
+		var backupLinkText = document.getElementById("oeffneBackupModalText");
+		if (backupLinkText) backupLinkText.textContent = dict.backupLink;
+
+		if (backupModalClose) backupModalClose.setAttribute("aria-label", dict.backupModalClose);
+		var backupTitle = document.getElementById("eigeneBackupModalTitle");
+		if (backupTitle) backupTitle.textContent = dict.backupTitle;
+		var backupIntro = document.getElementById("eigeneBackupIntro");
+		if (backupIntro) backupIntro.textContent = dict.backupIntro;
+		var exportTitle = document.getElementById("eigeneExportTitle");
+		if (exportTitle) exportTitle.textContent = dict.exportTitle;
+		var exportText = document.getElementById("eigeneExportText");
+		if (exportText) exportText.textContent = dict.exportText;
+		var exportBtn = document.getElementById("eigeneExportBtn");
+		if (exportBtn) exportBtn.textContent = dict.exportBtn;
+		var importTitle = document.getElementById("eigeneImportTitle");
+		if (importTitle) importTitle.textContent = dict.importTitle;
+		var importText = document.getElementById("eigeneImportText");
+		if (importText) importText.textContent = dict.importText;
+		var importBtn = document.getElementById("eigeneImportBtn");
+		if (importBtn) importBtn.textContent = dict.importBtn;
+
+		// Zähler, leer-Hinweise und Lösch-Bestätigungen stecken in den
+		// Listen selbst - einfach neu rendern statt Text zu erraten.
+		renderEigeneBilderListeUI();
+		renderEigeneSpruecheListeUI();
+	}
+	window.__eigeneInhalteSpracheAnwenden = wendeSpracheAufEigeneInhalteAn;
+
 	// zielId erlaubt dieselbe Funktion für beide Modals zu nutzen (Haupt-
 	// Modal: #eigeneFeedback, Sichern & Wiederherstellen: #eigeneBackupFeedback).
 	function zeigeFeedback(text, zielId) {
@@ -1196,16 +1309,32 @@ document.addEventListener('DOMContentLoaded', function () {
 	function beendeSpruchBearbeitung() {
 		eigenerSpruchEditIndex = null;
 		if (eigenerSpruchInput) eigenerSpruchInput.value = '';
-		if (eigenerSpruchAddBtn) eigenerSpruchAddBtn.textContent = 'Text hinzufügen';
+		if (eigenerSpruchAddBtn) eigenerSpruchAddBtn.textContent = eigeneInhalteText('addBtn');
 		if (eigenerSpruchCancelBtn) eigenerSpruchCancelBtn.style.display = 'none';
+		aktualisiereSpruchZeichenZaehler();
+	}
+
+	// Aktualisiert die Live-Zeichenanzeige ("123/500") unter dem Textfeld.
+	// Färbt den Zähler ein, sobald das Limit erreicht ist (rein optisch,
+	// die eigentliche Begrenzung übernimmt maxlength + addEigenerSpruch/
+	// updateEigenerSpruch).
+	function aktualisiereSpruchZeichenZaehler() {
+		var zaehlerEl = document.getElementById('eigenerSpruchZeichenZaehler');
+		if (!zaehlerEl || !eigenerSpruchInput) return;
+		var laenge = eigenerSpruchInput.value.length;
+		zaehlerEl.textContent = laenge + "/" + EIGENE_SPRUCH_MAX_LAENGE;
+		zaehlerEl.classList.toggle('own-content-limit-reached', laenge >= EIGENE_SPRUCH_MAX_LAENGE);
+	}
+	if (eigenerSpruchInput) {
+		eigenerSpruchInput.addEventListener('input', aktualisiereSpruchZeichenZaehler);
+		aktualisiereSpruchZeichenZaehler();
 	}
 
 	function oeffneModal() {
 		modalBackdrop.classList.add('is-open');
 		beendeSpruchBearbeitung();
 		eigenesBildConfirmIndex = null;
-		renderEigeneBilderListeUI();
-		renderEigeneSpruecheListeUI();
+		wendeSpracheAufEigeneInhalteAn(tempSprache || localStorage.getItem("langEnergie") || "de");
 	}
 	function schliesseModal() {
 		modalBackdrop.classList.remove('is-open');
@@ -1257,26 +1386,31 @@ document.addEventListener('DOMContentLoaded', function () {
 		var zaehlerEl = document.getElementById('eigeneBilderZaehler');
 		if (!listeEl) return;
 		var bilder = ladeEigeneBilder();
-		if (zaehlerEl) zaehlerEl.textContent = bilder.length + " von " + EIGENE_BILDER_MAX + " Bildern";
+		if (zaehlerEl) zaehlerEl.textContent = eigeneInhalteText('bilderZaehler', { n: bilder.length, max: EIGENE_BILDER_MAX });
 		if (bilder.length === 0) {
-			listeEl.innerHTML = "<p class='own-content-empty-note'>Noch keine eigenen Bilder hinzugefügt.</p>";
+			listeEl.innerHTML = "<p class='own-content-empty-note'></p>";
+			listeEl.querySelector('.own-content-empty-note').textContent = eigeneInhalteText('emptyBilder');
 			return;
 		}
 		if (eigenesBildConfirmIndex !== null && eigenesBildConfirmIndex >= bilder.length) {
 			eigenesBildConfirmIndex = null;
 		}
+		var bildRemoveAria = eigeneInhalteText('bildRemoveAria');
+		var bildConfirmFrage = eigeneInhalteText('bildConfirmFrage');
+		var confirmJa = eigeneInhalteText('confirmJa');
+		var confirmNein = eigeneInhalteText('confirmNein');
 		var html = "";
 		for (var i = 0; i < bilder.length; i++) {
 			var wirdBestaetigt = i === eigenesBildConfirmIndex;
 			html += "<div class='own-content-thumb-item" + (wirdBestaetigt ? " is-pending-delete" : "") + "' data-idx='" + i + "'>" +
 						"<img src='" + bilder[i] + "' class='own-content-thumb' alt=''>" +
-						"<button type='button' class='own-content-thumb-remove' data-idx='" + i + "' aria-label='Entfernen'>🗑️</button>" +
+						"<button type='button' class='own-content-thumb-remove' data-idx='" + i + "' aria-label='" + bildRemoveAria + "'>🗑️</button>" +
 					"</div>";
 			if (wirdBestaetigt) {
 				html += "<div class='own-content-bild-confirm-row'>" +
-							"<span>Bild wirklich löschen?</span>" +
-							"<button type='button' class='own-content-confirm-yes btn btn-danger' data-idx='" + i + "'>Ja</button>" +
-							"<button type='button' class='own-content-confirm-no btn btn-default' data-idx='" + i + "'>Nein</button>" +
+							"<span>" + bildConfirmFrage + "</span>" +
+							"<button type='button' class='own-content-confirm-yes btn btn-danger' data-idx='" + i + "'>" + confirmJa + "</button>" +
+							"<button type='button' class='own-content-confirm-no btn btn-default' data-idx='" + i + "'>" + confirmNein + "</button>" +
 						"</div>";
 			}
 		}
@@ -1314,7 +1448,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			var vorhandene = ladeEigeneBilder().length;
 			var frei = EIGENE_BILDER_MAX - vorhandene;
 			if (frei <= 0) {
-				zeigeFeedback("Maximal " + EIGENE_BILDER_MAX + " eigene Bilder möglich.");
+				zeigeFeedback(eigeneInhalteText('feedbackMaxBilder', { max: EIGENE_BILDER_MAX }));
 				return;
 			}
 			eigeneBilderUploadBtn.disabled = true;
@@ -1324,6 +1458,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				if (i >= zuVerarbeiten.length) {
 					eigeneBilderUploadBtn.disabled = false;
 					renderEigeneBilderListeUI();
+					if (zuVerarbeiten.length > 0) {
+						zeigeFeedback(eigeneInhalteText('feedbackBilderGespeichert'));
+					}
 					return;
 				}
 				var datei = zuVerarbeiten[i];
@@ -1350,25 +1487,32 @@ document.addEventListener('DOMContentLoaded', function () {
 		var zaehlerEl = document.getElementById('eigeneSpruecheZaehler');
 		if (!listeEl) return;
 		var sprueche = ladeEigeneSprueche();
-		if (zaehlerEl) zaehlerEl.textContent = sprueche.length + " von " + EIGENE_SPRUECHE_MAX + " Texten";
+		if (zaehlerEl) zaehlerEl.textContent = eigeneInhalteText('spruecheZaehler', { n: sprueche.length, max: EIGENE_SPRUECHE_MAX });
 		if (sprueche.length === 0) {
-			listeEl.innerHTML = "<p class='own-content-empty-note'>Noch keine eigenen Texte hinzugefügt.</p>";
+			listeEl.innerHTML = "<p class='own-content-empty-note'></p>";
+			listeEl.querySelector('.own-content-empty-note').textContent = eigeneInhalteText('emptySprueche');
 			return;
 		}
+		var spruchEditAria = eigeneInhalteText('spruchEditAria');
+		var spruchRemoveAria = eigeneInhalteText('spruchRemoveAria');
+		var spruchEditTitle = eigeneInhalteText('spruchEditTitle');
+		var spruchConfirmFrage = eigeneInhalteText('spruchConfirmFrage');
+		var confirmJa = eigeneInhalteText('confirmJa');
+		var confirmNein = eigeneInhalteText('confirmNein');
 		var html = "";
 		for (var i = 0; i < sprueche.length; i++) {
 			html += "<div class='own-content-spruch-item" + (i === eigenerSpruchEditIndex ? " is-editing" : "") + "' data-idx='" + i + "'>" +
 						"<div class='own-content-spruch-row'>" +
-							"<div class='own-content-spruch-text' data-idx='" + i + "' role='button' tabindex='0' title='Zum Bearbeiten antippen'></div>" +
+							"<div class='own-content-spruch-text' data-idx='" + i + "' role='button' tabindex='0' title='" + spruchEditTitle + "'></div>" +
 							"<div class='own-content-spruch-actions'>" +
-								"<button type='button' class='own-content-spruch-edit' data-idx='" + i + "' aria-label='Bearbeiten'>✏️</button>" +
-								"<button type='button' class='own-content-spruch-remove' data-idx='" + i + "' aria-label='Löschen'>🗑️</button>" +
+								"<button type='button' class='own-content-spruch-edit' data-idx='" + i + "' aria-label='" + spruchEditAria + "'>✏️</button>" +
+								"<button type='button' class='own-content-spruch-remove' data-idx='" + i + "' aria-label='" + spruchRemoveAria + "'>🗑️</button>" +
 							"</div>" +
 						"</div>" +
 						"<div class='own-content-confirm-row'>" +
-							"<span>Wirklich löschen?</span>" +
-							"<button type='button' class='own-content-confirm-yes btn btn-danger' data-idx='" + i + "'>Ja</button>" +
-							"<button type='button' class='own-content-confirm-no btn btn-default' data-idx='" + i + "'>Nein</button>" +
+							"<span>" + spruchConfirmFrage + "</span>" +
+							"<button type='button' class='own-content-confirm-yes btn btn-danger' data-idx='" + i + "'>" + confirmJa + "</button>" +
+							"<button type='button' class='own-content-confirm-no btn btn-default' data-idx='" + i + "'>" + confirmNein + "</button>" +
 						"</div>" +
 					"</div>";
 		}
@@ -1385,8 +1529,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				eigenerSpruchInput.value = sprueche[idx];
 				eigenerSpruchInput.focus();
 			}
-			if (eigenerSpruchAddBtn) eigenerSpruchAddBtn.textContent = 'Aktualisieren';
+			if (eigenerSpruchAddBtn) eigenerSpruchAddBtn.textContent = eigeneInhalteText('updateBtn');
 			if (eigenerSpruchCancelBtn) eigenerSpruchCancelBtn.style.display = '';
+			aktualisiereSpruchZeichenZaehler();
 			renderEigeneSpruecheListeUI();
 		}
 
@@ -1434,24 +1579,30 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (eigenerSpruchAddBtn && eigenerSpruchInput) {
 		eigenerSpruchAddBtn.addEventListener('click', function () {
 			var wert = eigenerSpruchInput.value;
+			var getrimmt = (wert || '').trim();
 			if (eigenerSpruchEditIndex !== null) {
 				var aktualisiert = updateEigenerSpruch(eigenerSpruchEditIndex, wert);
 				if (aktualisiert) {
 					beendeSpruchBearbeitung();
 					renderEigeneSpruecheListeUI();
+				} else if (getrimmt.length > EIGENE_SPRUCH_MAX_LAENGE) {
+					zeigeFeedback(eigeneInhalteText('feedbackMaxZeichen', { max: EIGENE_SPRUCH_MAX_LAENGE }));
 				} else {
-					zeigeFeedback("Bitte einen Text eingeben.");
+					zeigeFeedback(eigeneInhalteText('feedbackBitteText'));
 				}
 				return;
 			}
 			var ok = addEigenerSpruch(wert);
 			if (ok) {
 				eigenerSpruchInput.value = '';
+				aktualisiereSpruchZeichenZaehler();
 				renderEigeneSpruecheListeUI();
-			} else if ((wert || '').trim() === '') {
-				zeigeFeedback("Bitte einen Text eingeben.");
+			} else if (getrimmt === '') {
+				zeigeFeedback(eigeneInhalteText('feedbackBitteText'));
+			} else if (getrimmt.length > EIGENE_SPRUCH_MAX_LAENGE) {
+				zeigeFeedback(eigeneInhalteText('feedbackMaxZeichen', { max: EIGENE_SPRUCH_MAX_LAENGE }));
 			} else {
-				zeigeFeedback("Maximal " + EIGENE_SPRUECHE_MAX + " eigene Texte möglich.");
+				zeigeFeedback(eigeneInhalteText('feedbackMaxSprueche', { max: EIGENE_SPRUECHE_MAX }));
 			}
 		});
 	}
@@ -1479,7 +1630,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			a.click();
 			document.body.removeChild(a);
 			URL.revokeObjectURL(url);
-			zeigeFeedback("Datei wird heruntergeladen …", 'eigeneBackupFeedback');
+			zeigeFeedback(eigeneInhalteText('feedbackDownload'), 'eigeneBackupFeedback');
 		});
 	}
 
@@ -1497,13 +1648,15 @@ document.addEventListener('DOMContentLoaded', function () {
 				try {
 					daten = JSON.parse(reader.result);
 				} catch (err) {
-					zeigeFeedback("Datei konnte nicht gelesen werden.", 'eigeneBackupFeedback');
+					zeigeFeedback(eigeneInhalteText('feedbackReadError'), 'eigeneBackupFeedback');
 					return;
 				}
-				var bestaetigt = window.confirm("Dies überschreibt alle aktuell gespeicherten eigenen Bilder und Texte. Fortfahren?");
+				var bestaetigt = window.confirm(eigeneInhalteText('importConfirm'));
 				if (!bestaetigt) return;
 				var neueBilder = Array.isArray(daten.eigeneBilder) ? daten.eigeneBilder.slice(0, EIGENE_BILDER_MAX) : [];
-				var neueSprueche = Array.isArray(daten.eigeneSprueche) ? daten.eigeneSprueche.slice(0, EIGENE_SPRUECHE_MAX) : [];
+				var neueSprueche = Array.isArray(daten.eigeneSprueche) ? daten.eigeneSprueche.slice(0, EIGENE_SPRUECHE_MAX).map(function (s) {
+					return (s || "").toString().slice(0, EIGENE_SPRUCH_MAX_LAENGE);
+				}) : [];
 				speichereJSON(EIGENE_BILDER_KEY, neueBilder);
 				speichereJSON(EIGENE_SPRUECHE_KEY, neueSprueche);
 				// Nach einem Import startet die Warteschlange bewusst leer -
@@ -1515,7 +1668,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				beendeSpruchBearbeitung();
 				renderEigeneBilderListeUI();
 				renderEigeneSpruecheListeUI();
-				zeigeFeedback("Import erfolgreich!", 'eigeneBackupFeedback');
+				zeigeFeedback(eigeneInhalteText('feedbackImportSuccess'), 'eigeneBackupFeedback');
 			};
 			reader.readAsText(datei);
 		});
