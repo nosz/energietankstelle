@@ -552,6 +552,7 @@ var EIGENE_BILDER_KEY = "eigeneBilder";
 var EIGENE_BILDER_QUEUE_KEY = "eigeneBilderQueue";
 var EIGENE_SPRUECHE_KEY = "eigeneSprueche";
 var EIGENE_SPRUECHE_QUEUE_KEY = "eigeneSpruecheQueue";
+var LETZTES_BACKUP_KEY = "eigeneLetztesBackup";
 
 var EIGENE_BILDER_MAX = 20;
 var EIGENE_SPRUECHE_MAX = 50;
@@ -1272,6 +1273,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (backupLinkText) backupLinkText.textContent = dict.backupLink;
 		var lokalHinweis = document.getElementById("eigeneLokalHinweis");
 		if (lokalHinweis) lokalHinweis.textContent = dict.lokalHinweis;
+		aktualisiereLetztesBackupAnzeige();
 
 		if (backupModalClose) backupModalClose.setAttribute("aria-label", dict.backupModalClose);
 		var backupTitle = document.getElementById("eigeneBackupModalTitle");
@@ -1353,8 +1355,22 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (ev.target === modalBackdrop) schliesseModal();
 	});
 
+	function aktualisiereLetztesBackupAnzeige() {
+		var el = document.getElementById('eigeneLetztesBackupAnzeige');
+		if (!el) return;
+		var iso = localStorage.getItem(LETZTES_BACKUP_KEY);
+		if (!iso) {
+			el.textContent = eigeneInhalteText('keinBackup');
+			return;
+		}
+		var datum = new Date(iso);
+		var formatiert = isNaN(datum.getTime()) ? iso : datum.toLocaleDateString();
+		el.textContent = eigeneInhalteText('letztesBackup', { datum: formatiert });
+	}
+
 	function oeffneBackupModal() {
 		if (backupModalBackdrop) backupModalBackdrop.classList.add('is-open');
+		aktualisiereLetztesBackupAnzeige();
 	}
 	function schliesseBackupModal() {
 		if (backupModalBackdrop) backupModalBackdrop.classList.remove('is-open');
@@ -1618,20 +1634,23 @@ document.addEventListener('DOMContentLoaded', function () {
 	var eigeneExportBtn = document.getElementById('eigeneExportBtn');
 	if (eigeneExportBtn) {
 		eigeneExportBtn.addEventListener('click', function () {
+			var heute = new Date().toISOString().slice(0, 10);
 			var daten = {
 				eigeneBilder: ladeEigeneBilder(),
 				eigeneSprueche: ladeEigeneSprueche(),
-				exportiertAm: new Date().toISOString().slice(0, 10)
+				exportiertAm: heute
 			};
 			var blob = new Blob([JSON.stringify(daten, null, 2)], { type: 'application/json' });
 			var url = URL.createObjectURL(blob);
 			var a = document.createElement('a');
 			a.href = url;
-			a.download = 'energietankstelle-eigene-inhalte.json';
+			a.download = 'energietankstelle-eigene-inhalte-' + heute + '.json';
 			document.body.appendChild(a);
 			a.click();
 			document.body.removeChild(a);
 			URL.revokeObjectURL(url);
+			localStorage.setItem(LETZTES_BACKUP_KEY, new Date().toISOString());
+			aktualisiereLetztesBackupAnzeige();
 			zeigeFeedback(eigeneInhalteText('feedbackDownload'), 'eigeneBackupFeedback');
 		});
 	}
