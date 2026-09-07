@@ -148,6 +148,8 @@
 
     <footer class="energie-footer">
       <a href="impressum.html" target="impressum">Impressum</a>
+      <br>
+      <small class="hint" id="appVersionNote"></small>
     </footer>
 
   </div>
@@ -212,6 +214,21 @@
         document.getElementById("shareCopyFeedback").classList.add("is-visible");
       });
     }
+
+    // Zeigt die aktuelle App-Version im Footer an. Liest APP_VERSION direkt
+    // aus service-worker.js aus, damit hier keine zweite Stelle gepflegt
+    // werden muss und die Anzeige nach jedem Release automatisch stimmt.
+    fetch("service-worker.js")
+      .then(response => response.text())
+      .then(text => {
+        const match = text.match(/APP_VERSION\s*=\s*"(\d+)"/);
+        if (match) {
+          document.getElementById("appVersionNote").textContent = "Version " + match[1];
+        }
+      })
+      .catch(() => {
+        // Version konnte nicht ermittelt werden – Footer bleibt dann leer
+      });
   </script>
 </body>
 
