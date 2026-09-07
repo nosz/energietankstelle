@@ -603,14 +603,50 @@ a:focus {
   right: -6px;
   width: 22px;
   height: 22px;
-  line-height: 20px;
+  line-height: 18px;
   padding: 0;
   font-size: 15px;
-  color: #fff;
-  background-color: #9e0976;
-  border: 2px solid #fff;
+  font-weight: bold;
+  color: #666;
+  background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.own-content-thumb-remove:hover,
+.own-content-thumb-remove:active,
+.own-content-thumb-remove:focus {
+  color: #fff;
+  background-color: #9e0976;
+  border-color: #9e0976;
+}
+
+/* "+"-Kachel: fügt sich in dasselbe Raster wie die Bild-Thumbnails ein,
+   damit beim Hinzufügen kein Layout-Sprung entsteht. Wird nur gerendert,
+   solange die Bilder-Obergrenze (EIGENE_BILDER_MAX) noch nicht erreicht ist. */
+.own-content-thumb-add {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  border: 2px dashed #9e0976;
+  background: transparent;
+  color: #9e0976;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.15s;
+}
+
+.own-content-thumb-add:hover,
+.own-content-thumb-add:active,
+.own-content-thumb-add:focus {
+  background-color: rgba(158, 9, 118, 0.08);
 }
 
 .own-content-spruch-list {

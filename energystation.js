@@ -639,13 +639,14 @@ function komprimiereEigenesBild(file, maxEdge, quality) {
 function addEigenesBild(dataUrl) {
 	"use strict";
 	var bilder = ladeEigeneBilder();
-	if (bilder.length >= EIGENE_BILDER_MAX) return false;
+	if (bilder.length >= EIGENE_BILDER_MAX) return "max";
 	bilder.push(dataUrl);
-	speichereJSON(EIGENE_BILDER_KEY, bilder);
+	var gespeichert = speichereJSON(EIGENE_BILDER_KEY, bilder);
+	if (!gespeichert) return "speicherfehler";
 	var queue = ladeEigeneBilderQueue();
 	queue.push(dataUrl);
 	speichereJSON(EIGENE_BILDER_QUEUE_KEY, queue);
-	return true;
+	return "ok";
 }
 
 function removeEigenesBild(index) {
@@ -661,16 +662,17 @@ function removeEigenesBild(index) {
 function addEigenerSpruch(text) {
 	"use strict";
 	text = (text || "").trim();
-	if (!text) return false;
-	if (text.length > EIGENE_SPRUCH_MAX_LAENGE) return false;
+	if (!text) return "leer";
+	if (text.length > EIGENE_SPRUCH_MAX_LAENGE) return "zulang";
 	var sprueche = ladeEigeneSprueche();
-	if (sprueche.length >= EIGENE_SPRUECHE_MAX) return false;
+	if (sprueche.length >= EIGENE_SPRUECHE_MAX) return "max";
 	sprueche.push(text);
-	speichereJSON(EIGENE_SPRUECHE_KEY, sprueche);
+	var gespeichert = speichereJSON(EIGENE_SPRUECHE_KEY, sprueche);
+	if (!gespeichert) return "speicherfehler";
 	var queue = ladeEigeneSpruecheQueue();
 	queue.push(text);
 	speichereJSON(EIGENE_SPRUECHE_QUEUE_KEY, queue);
-	return true;
+	return "ok";
 }
 
 function removeEigenerSpruch(index) {
@@ -688,13 +690,12 @@ function removeEigenerSpruch(index) {
 function updateEigenerSpruch(index, text) {
 	"use strict";
 	text = (text || "").trim();
-	if (!text) return false;
-	if (text.length > EIGENE_SPRUCH_MAX_LAENGE) return false;
+	if (!text) return "leer";
+	if (text.length > EIGENE_SPRUCH_MAX_LAENGE) return "zulang";
 	var sprueche = ladeEigeneSprueche();
-	if (index < 0 || index >= sprueche.length) return false;
+	if (index < 0 || index >= sprueche.length) return "leer";
 	sprueche[index] = text;
-	speichereJSON(EIGENE_SPRUECHE_KEY, sprueche);
-	return true;
+	return speichereJSON(EIGENE_SPRUECHE_KEY, sprueche) ? "ok" : "speicherfehler";
 }
 
 // Zieht das nächste Bild: zuerst die Warteschlange frisch hinzugefügter
@@ -1271,8 +1272,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (eigenerSpruchCancelBtn) eigenerSpruchCancelBtn.textContent = dict.cancelBtn;
 		var backupLinkText = document.getElementById("oeffneBackupModalText");
 		if (backupLinkText) backupLinkText.textContent = dict.backupLink;
+		var lokalHinweisLabel = document.getElementById("eigeneLokalHinweisLabel");
+		if (lokalHinweisLabel) lokalHinweisLabel.textContent = dict.lokalHinweisLabel;
 		var lokalHinweis = document.getElementById("eigeneLokalHinweis");
-		if (lokalHinweis) lokalHinweis.textContent = dict.lokalHinweis;
+		if (lokalHinweis) {
+			var lokalHinweisTextNode = document.createTextNode(" " + dict.lokalHinweis);
+			// Label (<strong>) bleibt erhalten, nur der Text danach wird ersetzt.
+			while (lokalHinweis.lastChild && lokalHinweis.lastChild !== lokalHinweisLabel) {
+				lokalHinweis.removeChild(lokalHinweis.lastChild);
+			}
+			lokalHinweis.appendChild(lokalHinweisTextNode);
+		}
 		aktualisiereLetztesBackupAnzeige();
 
 		if (backupModalClose) backupModalClose.setAttribute("aria-label", dict.backupModalClose);
@@ -1417,12 +1427,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		var bildConfirmFrage = eigeneInhalteText('bildConfirmFrage');
 		var confirmJa = eigeneInhalteText('confirmJa');
 		var confirmNein = eigeneInhalteText('confirmNein');
+		var bildAddAria = eigeneInhalteText('bildAddAria');
 		var html = "";
 		for (var i = 0; i < bilder.length; i++) {
 			var wirdBestaetigt = i === eigenesBildConfirmIndex;
 			html += "<div class='own-content-thumb-item" + (wirdBestaetigt ? " is-pending-delete" : "") + "' data-idx='" + i + "'>" +
 						"<img src='" + bilder[i] + "' class='own-content-thumb' alt=''>" +
-						"<button type='button' class='own-content-thumb-remove' data-idx='" + i + "' aria-label='" + bildRemoveAria + "'>🗑️</button>" +
+						"<button type='button' class='own-content-thumb-remove' data-idx='" + i + "' aria-label='" + bildRemoveAria + "'>&times;</button>" +
 					"</div>";
 			if (wirdBestaetigt) {
 				html += "<div class='own-content-bild-confirm-row'>" +
@@ -1432,7 +1443,20 @@ document.addEventListener('DOMContentLoaded', function () {
 						"</div>";
 			}
 		}
+		// "+"-Kachel: weitere Moeglichkeit, ein Bild hinzuzufuegen (zusaetzlich
+		// zum "Bilder hinzufuegen"-Button oben), erscheint automatisch nach
+		// dem letzten Bild, solange die Obergrenze noch nicht erreicht ist.
+		if (bilder.length < EIGENE_BILDER_MAX) {
+			html += "<button type='button' class='own-content-thumb-add' id='eigeneBilderAddTile' aria-label='" + bildAddAria + "'>+</button>";
+		}
 		listeEl.innerHTML = html;
+		var addTile = document.getElementById('eigeneBilderAddTile');
+		if (addTile) {
+			addTile.addEventListener('click', function () {
+				var input = document.getElementById('eigeneBilderInput');
+				if (input) input.click();
+			});
+		}
 		listeEl.querySelectorAll('.own-content-thumb-remove').forEach(function (btn) {
 			btn.addEventListener('click', function (ev) {
 				eigenesBildConfirmIndex = parseInt(ev.currentTarget.getAttribute('data-idx'), 10);
@@ -1472,11 +1496,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			eigeneBilderUploadBtn.disabled = true;
 			var zuVerarbeiten = files.slice(0, frei);
 			var i = 0;
+			var gespeichertAnzahl = 0;
+			var speicherFehler = false;
 			function naechsteDatei() {
-				if (i >= zuVerarbeiten.length) {
+				if (speicherFehler || i >= zuVerarbeiten.length) {
 					eigeneBilderUploadBtn.disabled = false;
 					renderEigeneBilderListeUI();
-					if (zuVerarbeiten.length > 0) {
+					if (speicherFehler) {
+						zeigeFeedback(eigeneInhalteText('feedbackSpeicherVoll'));
+					} else if (gespeichertAnzahl > 0) {
 						zeigeFeedback(eigeneInhalteText('feedbackBilderGespeichert'));
 					}
 					return;
@@ -1484,7 +1512,12 @@ document.addEventListener('DOMContentLoaded', function () {
 				var datei = zuVerarbeiten[i];
 				i++;
 				komprimiereEigenesBild(datei).then(function (dataUrl) {
-					addEigenesBild(dataUrl);
+					var ergebnis = addEigenesBild(dataUrl);
+					if (ergebnis === "ok") {
+						gespeichertAnzahl++;
+					} else if (ergebnis === "speicherfehler") {
+						speicherFehler = true;
+					}
 					naechsteDatei();
 				}).catch(function (err) {
 					console.warn("Eigenes Bild konnte nicht verarbeitet werden:", err);
@@ -1517,14 +1550,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		var spruchConfirmFrage = eigeneInhalteText('spruchConfirmFrage');
 		var confirmJa = eigeneInhalteText('confirmJa');
 		var confirmNein = eigeneInhalteText('confirmNein');
+		// Anzeige-Reihenfolge: neuester Text zuerst. Das Speicher-Array
+		// "sprueche" (und damit die davon unabhängige FIFO-Rotation in der
+		// App) bleibt unangetastet - hier wird nur die Reihenfolge beim
+		// Rendern umgedreht, "data-idx" zeigt weiterhin auf den echten
+		// Original-Index im Array, damit Bearbeiten/Löschen korrekt bleibt.
 		var html = "";
-		for (var i = 0; i < sprueche.length; i++) {
+		for (var pos = sprueche.length - 1; pos >= 0; pos--) {
+			var i = pos;
 			html += "<div class='own-content-spruch-item" + (i === eigenerSpruchEditIndex ? " is-editing" : "") + "' data-idx='" + i + "'>" +
 						"<div class='own-content-spruch-row'>" +
 							"<div class='own-content-spruch-text' data-idx='" + i + "' role='button' tabindex='0' title='" + spruchEditTitle + "'></div>" +
 							"<div class='own-content-spruch-actions'>" +
 								"<button type='button' class='own-content-spruch-edit' data-idx='" + i + "' aria-label='" + spruchEditAria + "'>✏️</button>" +
-								"<button type='button' class='own-content-spruch-remove' data-idx='" + i + "' aria-label='" + spruchRemoveAria + "'>🗑️</button>" +
+								"<button type='button' class='own-content-spruch-remove' data-idx='" + i + "' aria-label='" + spruchRemoveAria + "'>&times;</button>" +
 							"</div>" +
 						"</div>" +
 						"<div class='own-content-confirm-row'>" +
@@ -1536,7 +1575,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		listeEl.innerHTML = html;
 		var textEls = listeEl.querySelectorAll('.own-content-spruch-text');
-		textEls.forEach(function (el, i) { el.textContent = sprueche[i]; });
+		textEls.forEach(function (el) {
+			var idx = parseInt(el.getAttribute('data-idx'), 10);
+			el.textContent = sprueche[idx];
+		});
 
 		// Startet den Bearbeitungsmodus für einen Text - wird sowohl vom
 		// Stift-Button als auch vom Antippen des Texts selbst ausgelöst,
@@ -1597,28 +1639,31 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (eigenerSpruchAddBtn && eigenerSpruchInput) {
 		eigenerSpruchAddBtn.addEventListener('click', function () {
 			var wert = eigenerSpruchInput.value;
-			var getrimmt = (wert || '').trim();
 			if (eigenerSpruchEditIndex !== null) {
-				var aktualisiert = updateEigenerSpruch(eigenerSpruchEditIndex, wert);
-				if (aktualisiert) {
+				var ergebnisUpdate = updateEigenerSpruch(eigenerSpruchEditIndex, wert);
+				if (ergebnisUpdate === "ok") {
 					beendeSpruchBearbeitung();
 					renderEigeneSpruecheListeUI();
-				} else if (getrimmt.length > EIGENE_SPRUCH_MAX_LAENGE) {
+				} else if (ergebnisUpdate === "zulang") {
 					zeigeFeedback(eigeneInhalteText('feedbackMaxZeichen', { max: EIGENE_SPRUCH_MAX_LAENGE }));
+				} else if (ergebnisUpdate === "speicherfehler") {
+					zeigeFeedback(eigeneInhalteText('feedbackSpeicherVoll'));
 				} else {
 					zeigeFeedback(eigeneInhalteText('feedbackBitteText'));
 				}
 				return;
 			}
-			var ok = addEigenerSpruch(wert);
-			if (ok) {
+			var ergebnis = addEigenerSpruch(wert);
+			if (ergebnis === "ok") {
 				eigenerSpruchInput.value = '';
 				aktualisiereSpruchZeichenZaehler();
 				renderEigeneSpruecheListeUI();
-			} else if (getrimmt === '') {
+			} else if (ergebnis === "leer") {
 				zeigeFeedback(eigeneInhalteText('feedbackBitteText'));
-			} else if (getrimmt.length > EIGENE_SPRUCH_MAX_LAENGE) {
+			} else if (ergebnis === "zulang") {
 				zeigeFeedback(eigeneInhalteText('feedbackMaxZeichen', { max: EIGENE_SPRUCH_MAX_LAENGE }));
+			} else if (ergebnis === "speicherfehler") {
+				zeigeFeedback(eigeneInhalteText('feedbackSpeicherVoll'));
 			} else {
 				zeigeFeedback(eigeneInhalteText('feedbackMaxSprueche', { max: EIGENE_SPRUECHE_MAX }));
 			}
