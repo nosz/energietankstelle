@@ -1270,6 +1270,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (eigenerSpruchCancelBtn) eigenerSpruchCancelBtn.textContent = dict.cancelBtn;
 		var backupLinkText = document.getElementById("oeffneBackupModalText");
 		if (backupLinkText) backupLinkText.textContent = dict.backupLink;
+		var lokalHinweis = document.getElementById("eigeneLokalHinweis");
+		if (lokalHinweis) lokalHinweis.textContent = dict.lokalHinweis;
 
 		if (backupModalClose) backupModalClose.setAttribute("aria-label", dict.backupModalClose);
 		var backupTitle = document.getElementById("eigeneBackupModalTitle");
