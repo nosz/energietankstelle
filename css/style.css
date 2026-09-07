@@ -261,14 +261,25 @@ a:focus {
 
 .share-modal-close {
   position: absolute;
-  top: 10px;
-  right: 12px;
-  padding: 4px 8px;
-  font-size: 16px;
-  color: #999;
-  background: none;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 22px;
+  line-height: 34px;
+  color: #666;
+  background: #f2f2f2;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.share-modal-close:hover,
+.share-modal-close:focus {
+  background-color: #e6e6e6;
+  color: #333;
 }
 
 .share-modal-title {
@@ -464,4 +475,435 @@ a:focus {
   background-color: transparent;
   box-shadow: none;
   outline: none;
+}
+
+/* ---- Eigene Bilder & Sprüche: Verwaltungs-Popup ---- */
+/* Nutzt dieselbe .share-modal-backdrop/.share-modal-Basis wie das
+   Teilen-Popup (gleiche Optik/Farben), .own-content-modal ergänzt nur die
+   zusätzliche Breite/Scrollbarkeit, die dieses inhaltsreichere Popup
+   braucht. */
+.own-content-modal {
+  max-width: 380px;
+  max-height: 85vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.own-content-modal .share-modal-title {
+  text-align: center;
+}
+
+.own-content-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.own-content-tab-btn {
+  flex: 1;
+  padding: 10px 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #9e0976;
+  background-color: #f7f7f7;
+  border: 1px solid #9e0976;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.own-content-tab-btn.active {
+  color: #ffffff;
+  background-color: #9e0976;
+}
+
+.own-content-hidden-input {
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.own-content-action-btn {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #9e0976;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.own-content-action-btn:hover,
+.own-content-action-btn:focus {
+  background-color: #7a075c;
+}
+
+.own-content-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-family: 'Arial', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+}
+
+.own-content-limit-note {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #999;
+  text-align: left;
+}
+
+/* Bilder-Raster: kompakte, gleich große Kacheln mit kleinem Löschen-Button
+   oben rechts pro Bild - analog zum Motivationsbilder-Muster aus der
+   Challenge-App, hier aber mit sichtbarem Löschen-Button statt separatem
+   Text-Link, da hier deutlich mehr Bilder gleichzeitig sichtbar sein können. */
+.own-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+.own-content-thumb-item {
+  position: relative;
+}
+
+.own-content-thumb-item.is-pending-delete .own-content-thumb {
+  outline: 2px solid #d9364f;
+  outline-offset: 2px;
+}
+
+.own-content-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+.own-content-thumb-remove {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  line-height: 20px;
+  padding: 0;
+  font-size: 15px;
+  color: #fff;
+  background-color: #9e0976;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.own-content-spruch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.own-content-spruch-text {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333;
+  word-break: break-word;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  transition: background-color 0.15s ease;
+}
+
+.own-content-spruch-text:hover,
+.own-content-spruch-text:focus {
+  background-color: #f0dcee;
+  outline: none;
+}
+
+.own-content-empty-note {
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.own-content-io-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---- Bilder hinzufügen: großer, einladender Upload-Button ---- */
+.own-content-upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 16px;
+  margin-bottom: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #9e0976;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.own-content-upload-btn:hover,
+.own-content-upload-btn:focus {
+  background-color: #7a075c;
+}
+
+.own-content-upload-btn:active {
+  transform: scale(0.98);
+}
+
+.own-content-upload-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.own-content-upload-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.own-content-upload-text {
+  line-height: 1;
+}
+
+/* ---- Sekundär-Variante für Action-Buttons (z.B. Abbrechen, Importieren) ---- */
+.own-content-action-btn-secondary {
+  color: #9e0976;
+  background-color: #ffffff;
+  border: 1px solid #9e0976;
+}
+
+.own-content-action-btn-secondary:hover,
+.own-content-action-btn-secondary:focus {
+  background-color: #f3e2ee;
+}
+
+/* ---- Sicherheitsabfrage beim Löschen (Bilder & Sprüche) ----
+   Statt des groben window.confirm()-Dialogs: Der Löschen-Button eines
+   einzelnen Eintrags wird durch eine kleine "Wirklich löschen? Ja/Nein"-
+   Abfrage direkt am Element ersetzt, ausgelöst über die Klasse
+   .is-confirming am jeweiligen Item. Erst ein Klick auf "Ja" entfernt den
+   Eintrag wirklich, "Nein" oder ein erneuter Klick daneben nimmt die
+   Abfrage wieder zurück. Optik kommt jetzt von Bootstrap (.btn,
+   .btn-danger, .btn-default), damit es zum Rest der App passt -
+   hier nur noch minimaler Feinschliff. */
+.own-content-confirm-yes,
+.own-content-confirm-no {
+  margin: 0;
+}
+
+/* Bilder: Bestätigungsleiste erscheint als eigene Grid-Zeile mit voller
+   Breite (grid-column: 1 / -1) direkt unter dem zu löschenden Bild - so
+   ist immer genug Platz für ordentlich große Ja/Nein-Buttons, egal wie
+   schmal die einzelne Kachel ist. */
+.own-content-bild-confirm-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ---- Sprüche: Zeilen-Layout mit Bearbeiten- und Löschen-Icon ---- */
+.own-content-spruch-item {
+  display: block;
+  padding: 10px 12px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.own-content-spruch-item.is-editing {
+  background-color: #f3e2ee;
+  box-shadow: inset 0 0 0 1px #9e0976;
+}
+
+.own-content-spruch-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.own-content-spruch-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.own-content-spruch-item.is-confirming .own-content-spruch-actions {
+  display: none;
+}
+
+.own-content-spruch-edit,
+.own-content-spruch-remove {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  line-height: 34px;
+  padding: 0;
+  font-size: 18px;
+  text-align: center;
+  color: #9e0976;
+  background: #ffffff;
+  border: 1px solid #9e0976;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Bestätigungszeile für Sprüche: standardmäßig ausgeblendet, erscheint
+   unterhalb des Textes statt wie bei den Bildern als Overlay, da Sprüche
+   keine feste Kachelgröße haben. */
+.own-content-confirm-row {
+  display: none;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+.own-content-spruch-item.is-confirming .own-content-confirm-row {
+  display: flex;
+}
+
+/* ---- Formular-Zeile Sprüche: "Hinzufügen"/"Aktualisieren" + "Abbrechen" ---- */
+.own-content-spruch-form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.own-content-spruch-form-actions .own-content-action-btn {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* ---- Link zum neuen "Sichern & Wiederherstellen"-Modal ---- */
+.own-content-backup-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #9e0976;
+  background-color: #ffffff;
+  border: 1px solid #9e0976;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.own-content-backup-link:hover,
+.own-content-backup-link:focus {
+  background-color: #9e0976;
+  color: #ffffff;
+}
+
+.own-content-backup-link-icon {
+  font-size: 17px;
+}
+
+/* ---- Sichern & Wiederherstellen: eigenes Modal ---- */
+.own-content-backup-modal {
+  max-width: 380px;
+  text-align: left;
+}
+
+.own-content-backup-intro {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  text-align: center;
+}
+
+.own-content-backup-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px;
+  margin-bottom: 14px;
+  background-color: #f7f7f7;
+  border-radius: 14px;
+}
+
+.own-content-backup-card:last-of-type {
+  margin-bottom: 0;
+}
+
+.own-content-backup-card-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.own-content-backup-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.own-content-backup-card-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+.own-content-backup-card-text {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #777;
+}
+
+.own-content-backup-card .own-content-action-btn {
+  margin-bottom: 0;
 }

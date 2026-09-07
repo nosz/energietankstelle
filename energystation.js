@@ -460,6 +460,14 @@ function energieAnzeigen(tempSelected) {
 		// Share-Button erst jetzt anzeigen, da vorher noch kein Bild/Spruch existiert
 		// TEMPORÄR DEAKTIVIERT (siehe SHARE_BUTTON_AKTIV weiter oben): Button
 		// bleibt ausgeblendet, bis die Android-Instabilität geklärt ist.
+		// "Eigene Bilder & Texte"-Button erst jetzt anzeigen - wie der
+		// Teilen-Button soll er nicht schon auf dem Startbildschirm
+		// erscheinen, sondern erst nachdem zum ersten Mal geklickt wurde.
+		var btnEigeneReveal = document.getElementById("btn_eigene");
+		if (btnEigeneReveal) {
+			btnEigeneReveal.style.display = "";
+		}
+
 		if (SHARE_BUTTON_AKTIV) {
 			var btnShare = document.getElementById("btn_share");
 			if (btnShare) {
@@ -477,6 +485,207 @@ function energieAnzeigen(tempSelected) {
 var tempSatzOld;
 var tempBildOld;
 var bildNeu = true;
+
+// ==================== Eigene Bilder & Sprüche ====================
+// Eigene Bilder und eigene Sprüche werden komplett unabhängig voneinander
+// verwaltet und gezogen - genau wie die Standard-Bilder (t1...t327.jpg) und
+// die Standard-Sprüche (sprachArray) schon immer unabhängig kombiniert
+// wurden. Beide eigenen Pools liegen nur lokal im Browser (localStorage).
+var EIGENE_BILDER_KEY = "eigeneBilder";
+var EIGENE_BILDER_QUEUE_KEY = "eigeneBilderQueue";
+var EIGENE_SPRUECHE_KEY = "eigeneSprueche";
+var EIGENE_SPRUECHE_QUEUE_KEY = "eigeneSpruecheQueue";
+
+var EIGENE_BILDER_MAX = 20;
+var EIGENE_SPRUECHE_MAX = 50;
+var EIGENE_BILD_MAX_EDGE = 1000;
+var EIGENE_BILD_QUALITY = 0.8;
+// Chance, dass ein eigenes Bild bzw. ein eigener Spruch gezogen wird,
+// sobald die Warteschlange "frisch hinzugefügt" leer ist. 30% = spürbar
+// bevorzugt, aber nicht dominant - unabhängig davon, wie viele Standard-
+// bzw. eigene Einträge es jeweils gibt.
+var EIGENE_GEWICHT = 0.3;
+
+function ladeJSON(key, fallback) {
+	"use strict";
+	try {
+		var raw = localStorage.getItem(key);
+		return raw ? JSON.parse(raw) : fallback;
+	} catch (e) {
+		return fallback;
+	}
+}
+
+function speichereJSON(key, value) {
+	"use strict";
+	try {
+		localStorage.setItem(key, JSON.stringify(value));
+		return true;
+	} catch (e) {
+		console.error("Speichern fehlgeschlagen (" + key + "):", e);
+		return false;
+	}
+}
+
+function ladeEigeneBilder() { return ladeJSON(EIGENE_BILDER_KEY, []); }
+function ladeEigeneBilderQueue() { return ladeJSON(EIGENE_BILDER_QUEUE_KEY, []); }
+function ladeEigeneSprueche() { return ladeJSON(EIGENE_SPRUECHE_KEY, []); }
+function ladeEigeneSpruecheQueue() { return ladeJSON(EIGENE_SPRUECHE_QUEUE_KEY, []); }
+
+// Verkleinert/komprimiert ein hochgeladenes eigenes Bild client-seitig
+// (max. 1000px lange Kante, JPEG-Qualität 0.8), bevor es im localStorage
+// abgelegt wird - so bleiben auch mehrere Bilder zusammen mit den übrigen
+// App-Daten sicher innerhalb des Speicherlimits.
+function komprimiereEigenesBild(file, maxEdge, quality) {
+	"use strict";
+	maxEdge = maxEdge || EIGENE_BILD_MAX_EDGE;
+	quality = quality || EIGENE_BILD_QUALITY;
+	return new Promise(function (resolve, reject) {
+		var reader = new FileReader();
+		reader.onload = function () {
+			var img = new Image();
+			img.onload = function () {
+				var width = img.width, height = img.height;
+				if (width > maxEdge || height > maxEdge) {
+					if (width >= height) {
+						height = Math.round(height * (maxEdge / width));
+						width = maxEdge;
+					} else {
+						width = Math.round(width * (maxEdge / height));
+						height = maxEdge;
+					}
+				}
+				var canvas = document.createElement("canvas");
+				canvas.width = width;
+				canvas.height = height;
+				var ctx = canvas.getContext("2d");
+				ctx.drawImage(img, 0, 0, width, height);
+				try {
+					resolve(canvas.toDataURL("image/jpeg", quality));
+				} catch (err) {
+					reject(err);
+				}
+			};
+			img.onerror = function () { reject(new Error("Bild konnte nicht geladen werden")); };
+			img.src = reader.result;
+		};
+		reader.onerror = function () { reject(new Error("Datei konnte nicht gelesen werden")); };
+		reader.readAsDataURL(file);
+	});
+}
+
+// Fügt ein bereits komprimiertes Bild (Data-URL) hinzu und reiht es zusätzlich
+// in die Warteschlange ein, damit es beim nächsten Klick garantiert als
+// Erstes gezeigt wird (danach greift wieder der gewichtete Zufall).
+function addEigenesBild(dataUrl) {
+	"use strict";
+	var bilder = ladeEigeneBilder();
+	if (bilder.length >= EIGENE_BILDER_MAX) return false;
+	bilder.push(dataUrl);
+	speichereJSON(EIGENE_BILDER_KEY, bilder);
+	var queue = ladeEigeneBilderQueue();
+	queue.push(dataUrl);
+	speichereJSON(EIGENE_BILDER_QUEUE_KEY, queue);
+	return true;
+}
+
+function removeEigenesBild(index) {
+	"use strict";
+	var bilder = ladeEigeneBilder();
+	var entfernt = bilder.splice(index, 1)[0];
+	speichereJSON(EIGENE_BILDER_KEY, bilder);
+	// auch aus der Warteschlange entfernen, falls das Bild dort noch wartet
+	var queue = ladeEigeneBilderQueue().filter(function (b) { return b !== entfernt; });
+	speichereJSON(EIGENE_BILDER_QUEUE_KEY, queue);
+}
+
+function addEigenerSpruch(text) {
+	"use strict";
+	text = (text || "").trim();
+	if (!text) return false;
+	var sprueche = ladeEigeneSprueche();
+	if (sprueche.length >= EIGENE_SPRUECHE_MAX) return false;
+	sprueche.push(text);
+	speichereJSON(EIGENE_SPRUECHE_KEY, sprueche);
+	var queue = ladeEigeneSpruecheQueue();
+	queue.push(text);
+	speichereJSON(EIGENE_SPRUECHE_QUEUE_KEY, queue);
+	return true;
+}
+
+function removeEigenerSpruch(index) {
+	"use strict";
+	var sprueche = ladeEigeneSprueche();
+	var entfernt = sprueche.splice(index, 1)[0];
+	speichereJSON(EIGENE_SPRUECHE_KEY, sprueche);
+	var queue = ladeEigeneSpruecheQueue().filter(function (s) { return s !== entfernt; });
+	speichereJSON(EIGENE_SPRUECHE_QUEUE_KEY, queue);
+}
+
+// Ändert einen bestehenden eigenen Spruch nachträglich (Bearbeiten-Funktion
+// im UI), ohne ihn aus der Warteschlange zu entfernen oder neu einzureihen -
+// er bleibt einfach an seinem Platz im Pool, nur der Text ändert sich.
+function updateEigenerSpruch(index, text) {
+	"use strict";
+	text = (text || "").trim();
+	if (!text) return false;
+	var sprueche = ladeEigeneSprueche();
+	if (index < 0 || index >= sprueche.length) return false;
+	sprueche[index] = text;
+	speichereJSON(EIGENE_SPRUECHE_KEY, sprueche);
+	return true;
+}
+
+// Zieht das nächste Bild: zuerst die Warteschlange frisch hinzugefügter
+// eigener Bilder abarbeiten (FIFO, ein Bild pro Klick), danach gewichteter
+// Zufall zwischen Standard-Bildern (t1...t327.jpg) und dem eigenen
+// Bilder-Pool (falls vorhanden). Gibt { url, istEigen } zurück.
+function zieheNaechstesBild() {
+	"use strict";
+	var queue = ladeEigeneBilderQueue();
+	if (queue.length > 0) {
+		var naechstes = queue.shift();
+		speichereJSON(EIGENE_BILDER_QUEUE_KEY, queue);
+		return { url: naechstes, istEigen: true };
+	}
+	var eigeneBilder = ladeEigeneBilder();
+	if (eigeneBilder.length > 0 && Math.random() < EIGENE_GEWICHT) {
+		var idx = rand(0, eigeneBilder.length - 1);
+		return { url: eigeneBilder[idx], istEigen: true };
+	}
+	var z = rand(minBild, maxBild);
+	if (z === tempBildOld) {
+		z = rand(minBild, maxBild);
+	} else {
+		tempBildOld = z;
+	}
+	// 9.1.2025 dass das neueste Bild am Anfang angezeigt wird
+	if (bildNeu) {
+		z = maxBild;
+		bildNeu = false;
+	}
+	return { url: "img/t" + z + ".jpg", istEigen: false };
+}
+
+// Zieht den nächsten Spruch nach demselben Prinzip: eigene Warteschlange
+// zuerst, danach gewichteter Zufall zwischen dem sprachspezifischen
+// Standard-Pool und den eigenen (sprachunabhängigen) Sprüchen. Gibt
+// { text, istEigen } zurück.
+function ziehNaechstenSpruch(sprachArrayAktuell, countTextAktuell) {
+	"use strict";
+	var queue = ladeEigeneSpruecheQueue();
+	if (queue.length > 0) {
+		var naechster = queue.shift();
+		speichereJSON(EIGENE_SPRUECHE_QUEUE_KEY, queue);
+		return { text: naechster, istEigen: true };
+	}
+	var eigeneSprueche = ladeEigeneSprueche();
+	if (eigeneSprueche.length > 0 && Math.random() < EIGENE_GEWICHT) {
+		var idx = rand(0, eigeneSprueche.length - 1);
+		return { text: eigeneSprueche[idx], istEigen: true };
+	}
+	return { text: sprachArrayAktuell[rand(0, countTextAktuell - 1)], istEigen: false };
+}
 
 function energieJetztAnzeigen(boolAnzeige) {
 	// console.log("jetzt wird neu angezeigt");
@@ -549,43 +758,39 @@ function energieJetztAnzeigen(boolAnzeige) {
 		sprachArray = motivationTextChina;
 		countText = sprachArray.length;
 	}
-	selected = sprachArray[rand(0, countText - 1)];
+	var spruchErgebnis = ziehNaechstenSpruch(sprachArray, countText);
+	selected = spruchErgebnis.text;
 	if (selected == tempSatzOld) {
-		selected = sprachArray[rand(0, countText - 1)];
+		spruchErgebnis = ziehNaechstenSpruch(sprachArray, countText);
+		selected = spruchErgebnis.text;
 	} else {
 		tempSatzOld = selected;
 	}
 
-	if (selected.slice(0, 2) === "no") {
+	// Das "no"-Präfix (nur Text, kein Bild) ist eine Konvention der
+	// Standard-Sprüche in languages.js und gilt bewusst nicht für eigene
+	// Sprüche - die werden immer mit einem Bild kombiniert.
+	if (!spruchErgebnis.istEigen && selected.slice(0, 2) === "no") {
 		selected = selected.slice(2, selected.length);
 		// kein Bild in diesem Fall -> nur Text zum Teilen
 		currentShareText = selected;
 		currentShareImageUrl = null;
 	} else {
 
-		//Grossbuchstaben
-		selected = selected.toUpperCase();
-		//end Grossbuchstaben
-		//selected = selected + motivationBild[Math.random() * countBild | 0];
-		zahl = rand(minBild, maxBild);
-		if (zahl == tempBildOld) {
-			zahl = rand(minBild, maxBild);
-		} else {
-			tempBildOld = zahl;
-		}		
-		// 9.1.2025 das das neueste Bild am Anfang angezeigt wird
-		if(bildNeu){
-			zahl = rand(maxBild, maxBild);
-			bildNeu= false;
-			//console.log("AKTUELLES STARTBILD: " + zahl)
+		if (!spruchErgebnis.istEigen) {
+			//Grossbuchstaben (nur bei Standard-Sprüchen, eigene Sprüche
+			//bleiben in der vom Nutzer eingegebenen Schreibweise)
+			selected = selected.toUpperCase();
+			//end Grossbuchstaben
 		}
-		console.log(selected);
+
+		var bildErgebnis = zieheNaechstesBild();
 
 		// für Teilen-Funktion merken (reiner Text + Bild-URL, vor dem Zusammenbauen des HTML)
 		currentShareText = selected;
-		currentShareImageUrl = "img/t" + zahl + ".jpg";
+		currentShareImageUrl = bildErgebnis.url;
 
-		meinBild = "<img src='img/t" + zahl + ".jpg' class='img-circle'>";
+		meinBild = "<img src='" + bildErgebnis.url + "' class='img-circle'>";
 		zahl1 = rand(1, 2);
 		if (zahl1 === 1) {
 			selected = selected + "&nbsp;" + meinBild;
@@ -944,4 +1149,375 @@ window.addEventListener('DOMContentLoaded', function() {
         console.log("Keine Param übergeben");
 		startBild(); // fallback auf lokale Spracheinstellung
     }
+});
+
+// ==================== UI: Eigene Bilder & Sprüche verwalten ====================
+document.addEventListener('DOMContentLoaded', function () {
+	"use strict";
+
+	var btnEigene = document.getElementById('btn_eigene');
+	var modalBackdrop = document.getElementById('eigeneModalBackdrop');
+	var modalClose = document.getElementById('eigeneModalClose');
+	var tabBtnBilder = document.getElementById('tabBtnBilder');
+	var tabBtnSprueche = document.getElementById('tabBtnSprueche');
+	var panelBilder = document.getElementById('panelBilder');
+	var panelSprueche = document.getElementById('panelSprueche');
+
+	// Sichern & Wiederherstellen (Export/Import) - eigenes, separates Modal,
+	// damit das Bilder/Sprüche-Modal übersichtlich bleibt.
+	var backupBtn = document.getElementById('oeffneBackupModalBtn');
+	var backupModalBackdrop = document.getElementById('eigeneBackupModalBackdrop');
+	var backupModalClose = document.getElementById('eigeneBackupModalClose');
+
+	var eigenerSpruchInput = document.getElementById('eigenerSpruchInput');
+	var eigenerSpruchAddBtn = document.getElementById('eigenerSpruchAddBtn');
+	var eigenerSpruchCancelBtn = document.getElementById('eigenerSpruchCancelBtn');
+	// Index des Spruchs, der gerade bearbeitet wird - null, solange nur
+	// neue Sprüche hinzugefügt werden (kein Bearbeiten-Modus aktiv).
+	var eigenerSpruchEditIndex = null;
+	// Index des Bildes, für das gerade "Wirklich löschen?" angezeigt wird -
+	// null, solange keine Löschung bestätigt werden muss.
+	var eigenesBildConfirmIndex = null;
+
+	if (!btnEigene || !modalBackdrop) {
+		return;
+	}
+
+	// zielId erlaubt dieselbe Funktion für beide Modals zu nutzen (Haupt-
+	// Modal: #eigeneFeedback, Sichern & Wiederherstellen: #eigeneBackupFeedback).
+	function zeigeFeedback(text, zielId) {
+		var el = document.getElementById(zielId || 'eigeneFeedback');
+		if (!el) return;
+		el.textContent = text;
+		el.classList.add('is-visible');
+		setTimeout(function () { el.classList.remove('is-visible'); }, 2200);
+	}
+
+	function beendeSpruchBearbeitung() {
+		eigenerSpruchEditIndex = null;
+		if (eigenerSpruchInput) eigenerSpruchInput.value = '';
+		if (eigenerSpruchAddBtn) eigenerSpruchAddBtn.textContent = 'Text hinzufügen';
+		if (eigenerSpruchCancelBtn) eigenerSpruchCancelBtn.style.display = 'none';
+	}
+
+	function oeffneModal() {
+		modalBackdrop.classList.add('is-open');
+		beendeSpruchBearbeitung();
+		eigenesBildConfirmIndex = null;
+		renderEigeneBilderListeUI();
+		renderEigeneSpruecheListeUI();
+	}
+	function schliesseModal() {
+		modalBackdrop.classList.remove('is-open');
+		beendeSpruchBearbeitung();
+		eigenesBildConfirmIndex = null;
+	}
+
+	btnEigene.addEventListener('click', function (ev) {
+		ev.preventDefault();
+		oeffneModal();
+	});
+	if (modalClose) modalClose.addEventListener('click', schliesseModal);
+	modalBackdrop.addEventListener('click', function (ev) {
+		if (ev.target === modalBackdrop) schliesseModal();
+	});
+
+	function oeffneBackupModal() {
+		if (backupModalBackdrop) backupModalBackdrop.classList.add('is-open');
+	}
+	function schliesseBackupModal() {
+		if (backupModalBackdrop) backupModalBackdrop.classList.remove('is-open');
+	}
+	if (backupBtn) backupBtn.addEventListener('click', function () { oeffneBackupModal(); });
+	if (backupModalClose) backupModalClose.addEventListener('click', schliesseBackupModal);
+	if (backupModalBackdrop) {
+		backupModalBackdrop.addEventListener('click', function (ev) {
+			if (ev.target === backupModalBackdrop) schliesseBackupModal();
+		});
+	}
+
+	function aktiviereTab(tab) {
+		var bilderAktiv = tab === 'bilder';
+		if (tabBtnBilder) tabBtnBilder.classList.toggle('active', bilderAktiv);
+		if (tabBtnSprueche) tabBtnSprueche.classList.toggle('active', !bilderAktiv);
+		if (panelBilder) panelBilder.style.display = bilderAktiv ? '' : 'none';
+		if (panelSprueche) panelSprueche.style.display = bilderAktiv ? 'none' : '';
+	}
+	if (tabBtnBilder) tabBtnBilder.addEventListener('click', function () { aktiviereTab('bilder'); });
+	if (tabBtnSprueche) tabBtnSprueche.addEventListener('click', function () { aktiviereTab('sprueche'); });
+
+	// ---------- Bilder-Liste ----------
+	// Löschen läuft zweistufig: erster Klick auf den Papierkorb markiert das
+	// Bild und zeigt darunter eine volle-Breite-Leiste ("Bild wirklich
+	// löschen? Ja/Nein") - dank grid-column:1/-1 unabhängig von der kleinen
+	// Kachelbreite, damit die Buttons immer groß genug sind. Erst ein Klick
+	// auf "Ja" entfernt das Bild wirklich.
+	function renderEigeneBilderListeUI() {
+		var listeEl = document.getElementById('eigeneBilderListe');
+		var zaehlerEl = document.getElementById('eigeneBilderZaehler');
+		if (!listeEl) return;
+		var bilder = ladeEigeneBilder();
+		if (zaehlerEl) zaehlerEl.textContent = bilder.length + " von " + EIGENE_BILDER_MAX + " Bildern";
+		if (bilder.length === 0) {
+			listeEl.innerHTML = "<p class='own-content-empty-note'>Noch keine eigenen Bilder hinzugefügt.</p>";
+			return;
+		}
+		if (eigenesBildConfirmIndex !== null && eigenesBildConfirmIndex >= bilder.length) {
+			eigenesBildConfirmIndex = null;
+		}
+		var html = "";
+		for (var i = 0; i < bilder.length; i++) {
+			var wirdBestaetigt = i === eigenesBildConfirmIndex;
+			html += "<div class='own-content-thumb-item" + (wirdBestaetigt ? " is-pending-delete" : "") + "' data-idx='" + i + "'>" +
+						"<img src='" + bilder[i] + "' class='own-content-thumb' alt=''>" +
+						"<button type='button' class='own-content-thumb-remove' data-idx='" + i + "' aria-label='Entfernen'>🗑️</button>" +
+					"</div>";
+			if (wirdBestaetigt) {
+				html += "<div class='own-content-bild-confirm-row'>" +
+							"<span>Bild wirklich löschen?</span>" +
+							"<button type='button' class='own-content-confirm-yes btn btn-danger' data-idx='" + i + "'>Ja</button>" +
+							"<button type='button' class='own-content-confirm-no btn btn-default' data-idx='" + i + "'>Nein</button>" +
+						"</div>";
+			}
+		}
+		listeEl.innerHTML = html;
+		listeEl.querySelectorAll('.own-content-thumb-remove').forEach(function (btn) {
+			btn.addEventListener('click', function (ev) {
+				eigenesBildConfirmIndex = parseInt(ev.currentTarget.getAttribute('data-idx'), 10);
+				renderEigeneBilderListeUI();
+			});
+		});
+		listeEl.querySelectorAll('.own-content-confirm-no').forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				eigenesBildConfirmIndex = null;
+				renderEigeneBilderListeUI();
+			});
+		});
+		listeEl.querySelectorAll('.own-content-confirm-yes').forEach(function (btn) {
+			btn.addEventListener('click', function (ev) {
+				var idx = parseInt(ev.currentTarget.getAttribute('data-idx'), 10);
+				removeEigenesBild(idx);
+				eigenesBildConfirmIndex = null;
+				renderEigeneBilderListeUI();
+			});
+		});
+	}
+
+	var eigeneBilderUploadBtn = document.getElementById('eigeneBilderUploadBtn');
+	var eigeneBilderInput = document.getElementById('eigeneBilderInput');
+	if (eigeneBilderUploadBtn && eigeneBilderInput) {
+		eigeneBilderUploadBtn.addEventListener('click', function () { eigeneBilderInput.click(); });
+		eigeneBilderInput.addEventListener('change', function (ev) {
+			var files = Array.prototype.slice.call(ev.target.files || []);
+			ev.target.value = '';
+			if (!files.length) return;
+			var vorhandene = ladeEigeneBilder().length;
+			var frei = EIGENE_BILDER_MAX - vorhandene;
+			if (frei <= 0) {
+				zeigeFeedback("Maximal " + EIGENE_BILDER_MAX + " eigene Bilder möglich.");
+				return;
+			}
+			eigeneBilderUploadBtn.disabled = true;
+			var zuVerarbeiten = files.slice(0, frei);
+			var i = 0;
+			function naechsteDatei() {
+				if (i >= zuVerarbeiten.length) {
+					eigeneBilderUploadBtn.disabled = false;
+					renderEigeneBilderListeUI();
+					return;
+				}
+				var datei = zuVerarbeiten[i];
+				i++;
+				komprimiereEigenesBild(datei).then(function (dataUrl) {
+					addEigenesBild(dataUrl);
+					naechsteDatei();
+				}).catch(function (err) {
+					console.warn("Eigenes Bild konnte nicht verarbeitet werden:", err);
+					naechsteDatei();
+				});
+			}
+			naechsteDatei();
+		});
+	}
+
+	// ---------- Sprüche-Liste ----------
+	// Jeder Eintrag hat jetzt zwei Icons: Stift (Bearbeiten) und Papierkorb
+	// (Löschen, mit derselben Ja/Nein-Bestätigung wie bei den Bildern).
+	// Bearbeiten lädt den Text zurück ins obere Textfeld und wandelt den
+	// "Spruch hinzufügen"-Button in "Aktualisieren" um.
+	function renderEigeneSpruecheListeUI() {
+		var listeEl = document.getElementById('eigeneSpruecheListe');
+		var zaehlerEl = document.getElementById('eigeneSpruecheZaehler');
+		if (!listeEl) return;
+		var sprueche = ladeEigeneSprueche();
+		if (zaehlerEl) zaehlerEl.textContent = sprueche.length + " von " + EIGENE_SPRUECHE_MAX + " Texten";
+		if (sprueche.length === 0) {
+			listeEl.innerHTML = "<p class='own-content-empty-note'>Noch keine eigenen Texte hinzugefügt.</p>";
+			return;
+		}
+		var html = "";
+		for (var i = 0; i < sprueche.length; i++) {
+			html += "<div class='own-content-spruch-item" + (i === eigenerSpruchEditIndex ? " is-editing" : "") + "' data-idx='" + i + "'>" +
+						"<div class='own-content-spruch-row'>" +
+							"<div class='own-content-spruch-text' data-idx='" + i + "' role='button' tabindex='0' title='Zum Bearbeiten antippen'></div>" +
+							"<div class='own-content-spruch-actions'>" +
+								"<button type='button' class='own-content-spruch-edit' data-idx='" + i + "' aria-label='Bearbeiten'>✏️</button>" +
+								"<button type='button' class='own-content-spruch-remove' data-idx='" + i + "' aria-label='Löschen'>🗑️</button>" +
+							"</div>" +
+						"</div>" +
+						"<div class='own-content-confirm-row'>" +
+							"<span>Wirklich löschen?</span>" +
+							"<button type='button' class='own-content-confirm-yes btn btn-danger' data-idx='" + i + "'>Ja</button>" +
+							"<button type='button' class='own-content-confirm-no btn btn-default' data-idx='" + i + "'>Nein</button>" +
+						"</div>" +
+					"</div>";
+		}
+		listeEl.innerHTML = html;
+		var textEls = listeEl.querySelectorAll('.own-content-spruch-text');
+		textEls.forEach(function (el, i) { el.textContent = sprueche[i]; });
+
+		// Startet den Bearbeitungsmodus für einen Text - wird sowohl vom
+		// Stift-Button als auch vom Antippen des Texts selbst ausgelöst,
+		// damit man nicht gezielt das kleine Icon treffen muss.
+		function starteSpruchBearbeitung(idx) {
+			eigenerSpruchEditIndex = idx;
+			if (eigenerSpruchInput) {
+				eigenerSpruchInput.value = sprueche[idx];
+				eigenerSpruchInput.focus();
+			}
+			if (eigenerSpruchAddBtn) eigenerSpruchAddBtn.textContent = 'Aktualisieren';
+			if (eigenerSpruchCancelBtn) eigenerSpruchCancelBtn.style.display = '';
+			renderEigeneSpruecheListeUI();
+		}
+
+		listeEl.querySelectorAll('.own-content-spruch-edit').forEach(function (btn) {
+			btn.addEventListener('click', function (ev) {
+				starteSpruchBearbeitung(parseInt(ev.currentTarget.getAttribute('data-idx'), 10));
+			});
+		});
+		listeEl.querySelectorAll('.own-content-spruch-text').forEach(function (el) {
+			el.addEventListener('click', function (ev) {
+				starteSpruchBearbeitung(parseInt(ev.currentTarget.getAttribute('data-idx'), 10));
+			});
+			el.addEventListener('keydown', function (ev) {
+				if (ev.key === 'Enter' || ev.key === ' ') {
+					ev.preventDefault();
+					starteSpruchBearbeitung(parseInt(ev.currentTarget.getAttribute('data-idx'), 10));
+				}
+			});
+		});
+		listeEl.querySelectorAll('.own-content-spruch-remove').forEach(function (btn) {
+			btn.addEventListener('click', function (ev) {
+				var item = ev.currentTarget.closest('.own-content-spruch-item');
+				if (item) item.classList.add('is-confirming');
+			});
+		});
+		listeEl.querySelectorAll('.own-content-confirm-no').forEach(function (btn) {
+			btn.addEventListener('click', function (ev) {
+				var item = ev.currentTarget.closest('.own-content-spruch-item');
+				if (item) item.classList.remove('is-confirming');
+			});
+		});
+		listeEl.querySelectorAll('.own-content-confirm-yes').forEach(function (btn) {
+			btn.addEventListener('click', function (ev) {
+				var idx = parseInt(ev.currentTarget.getAttribute('data-idx'), 10);
+				removeEigenerSpruch(idx);
+				// Falls ausgerechnet der gerade bearbeitete Spruch gelöscht
+				// wird, Bearbeiten-Modus sauber verlassen statt mit
+				// veraltetem Index hängen zu bleiben.
+				if (eigenerSpruchEditIndex === idx) beendeSpruchBearbeitung();
+				renderEigeneSpruecheListeUI();
+			});
+		});
+	}
+
+	if (eigenerSpruchAddBtn && eigenerSpruchInput) {
+		eigenerSpruchAddBtn.addEventListener('click', function () {
+			var wert = eigenerSpruchInput.value;
+			if (eigenerSpruchEditIndex !== null) {
+				var aktualisiert = updateEigenerSpruch(eigenerSpruchEditIndex, wert);
+				if (aktualisiert) {
+					beendeSpruchBearbeitung();
+					renderEigeneSpruecheListeUI();
+				} else {
+					zeigeFeedback("Bitte einen Text eingeben.");
+				}
+				return;
+			}
+			var ok = addEigenerSpruch(wert);
+			if (ok) {
+				eigenerSpruchInput.value = '';
+				renderEigeneSpruecheListeUI();
+			} else if ((wert || '').trim() === '') {
+				zeigeFeedback("Bitte einen Text eingeben.");
+			} else {
+				zeigeFeedback("Maximal " + EIGENE_SPRUECHE_MAX + " eigene Texte möglich.");
+			}
+		});
+	}
+	if (eigenerSpruchCancelBtn) {
+		eigenerSpruchCancelBtn.addEventListener('click', function () {
+			beendeSpruchBearbeitung();
+		});
+	}
+
+	// ---------- Export / Import (jetzt im eigenen "Sichern & Wiederherstellen"-Modal) ----------
+	var eigeneExportBtn = document.getElementById('eigeneExportBtn');
+	if (eigeneExportBtn) {
+		eigeneExportBtn.addEventListener('click', function () {
+			var daten = {
+				eigeneBilder: ladeEigeneBilder(),
+				eigeneSprueche: ladeEigeneSprueche(),
+				exportiertAm: new Date().toISOString().slice(0, 10)
+			};
+			var blob = new Blob([JSON.stringify(daten, null, 2)], { type: 'application/json' });
+			var url = URL.createObjectURL(blob);
+			var a = document.createElement('a');
+			a.href = url;
+			a.download = 'energietankstelle-eigene-inhalte.json';
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+			URL.revokeObjectURL(url);
+			zeigeFeedback("Datei wird heruntergeladen …", 'eigeneBackupFeedback');
+		});
+	}
+
+	var eigeneImportBtn = document.getElementById('eigeneImportBtn');
+	var eigeneImportInput = document.getElementById('eigeneImportInput');
+	if (eigeneImportBtn && eigeneImportInput) {
+		eigeneImportBtn.addEventListener('click', function () { eigeneImportInput.click(); });
+		eigeneImportInput.addEventListener('change', function (ev) {
+			var datei = ev.target.files[0];
+			ev.target.value = '';
+			if (!datei) return;
+			var reader = new FileReader();
+			reader.onload = function () {
+				var daten;
+				try {
+					daten = JSON.parse(reader.result);
+				} catch (err) {
+					zeigeFeedback("Datei konnte nicht gelesen werden.", 'eigeneBackupFeedback');
+					return;
+				}
+				var bestaetigt = window.confirm("Dies überschreibt alle aktuell gespeicherten eigenen Bilder und Texte. Fortfahren?");
+				if (!bestaetigt) return;
+				var neueBilder = Array.isArray(daten.eigeneBilder) ? daten.eigeneBilder.slice(0, EIGENE_BILDER_MAX) : [];
+				var neueSprueche = Array.isArray(daten.eigeneSprueche) ? daten.eigeneSprueche.slice(0, EIGENE_SPRUECHE_MAX) : [];
+				speichereJSON(EIGENE_BILDER_KEY, neueBilder);
+				speichereJSON(EIGENE_SPRUECHE_KEY, neueSprueche);
+				// Nach einem Import startet die Warteschlange bewusst leer -
+				// importierte Inhalte fallen direkt in den normalen
+				// gewichteten Zufall, statt alle nacheinander erzwungen
+				// angezeigt zu werden.
+				speichereJSON(EIGENE_BILDER_QUEUE_KEY, []);
+				speichereJSON(EIGENE_SPRUECHE_QUEUE_KEY, []);
+				beendeSpruchBearbeitung();
+				renderEigeneBilderListeUI();
+				renderEigeneSpruecheListeUI();
+				zeigeFeedback("Import erfolgreich!", 'eigeneBackupFeedback');
+			};
+			reader.readAsText(datei);
+		});
+	}
 });
