@@ -644,7 +644,10 @@ function addEigenesBild(dataUrl) {
 	var gespeichert = speichereJSON(EIGENE_BILDER_KEY, bilder);
 	if (!gespeichert) return "speicherfehler";
 	var queue = ladeEigeneBilderQueue();
-	queue.push(dataUrl);
+	// unshift statt push: das zuletzt hinzugefügte Bild soll beim nächsten
+	// Klick garantiert als Erstes gezeigt werden, auch wenn noch ältere
+	// Bilder in der Warteschlange warten.
+	queue.unshift(dataUrl);
 	speichereJSON(EIGENE_BILDER_QUEUE_KEY, queue);
 	return "ok";
 }
@@ -711,6 +714,18 @@ function zieheNaechstesBild() {
 		return { url: naechstes, istEigen: true };
 	}
 	var eigeneBilder = ladeEigeneBilder();
+	// Erster Bildaufruf nach dem (Neu-)Laden der Seite: früher wurde hier
+	// immer zwingend das neueste Standard-Bild (t327.jpg) erzwungen. Sind
+	// aber eigene Bilder vorhanden, hat das zuletzt hinzugefügte eigene Bild
+	// Vorrang - auch wenn die Warteschlange bereits leer ist (z.B. weil sie
+	// vor einem Browser-Refresh schon einmal gezogen wurde).
+	if (bildNeu) {
+		bildNeu = false;
+		if (eigeneBilder.length > 0) {
+			return { url: eigeneBilder[eigeneBilder.length - 1], istEigen: true };
+		}
+		return { url: "img/t" + maxBild + ".jpg", istEigen: false };
+	}
 	if (eigeneBilder.length > 0 && Math.random() < EIGENE_GEWICHT) {
 		var idx = rand(0, eigeneBilder.length - 1);
 		return { url: eigeneBilder[idx], istEigen: true };
@@ -720,11 +735,6 @@ function zieheNaechstesBild() {
 		z = rand(minBild, maxBild);
 	} else {
 		tempBildOld = z;
-	}
-	// 9.1.2025 dass das neueste Bild am Anfang angezeigt wird
-	if (bildNeu) {
-		z = maxBild;
-		bildNeu = false;
 	}
 	return { url: "img/t" + z + ".jpg", istEigen: false };
 }
@@ -1349,11 +1359,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		beendeSpruchBearbeitung();
 		eigenesBildConfirmIndex = null;
 		wendeSpracheAufEigeneInhalteAn(tempSprache || localStorage.getItem("langEnergie") || "de");
+		// Auto-Klick pausieren, solange das Modal offen ist - sonst kann der
+		// Hintergrund-Timer (alle 10-20s) den Klickbereich hinter dem Modal
+		// "anklicken" und dabei z.B. ein gerade hinzugefügtes eigenes Bild
+		// aus der Warteschlange verbrauchen, bevor der Nutzer es je sieht.
+		autoKlickPausieren();
 	}
 	function schliesseModal() {
 		modalBackdrop.classList.remove('is-open');
 		beendeSpruchBearbeitung();
 		eigenesBildConfirmIndex = null;
+		autoKlickFortsetzenFallsErlaubt();
 	}
 
 	btnEigene.addEventListener('click', function (ev) {
@@ -1381,9 +1397,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	function oeffneBackupModal() {
 		if (backupModalBackdrop) backupModalBackdrop.classList.add('is-open');
 		aktualisiereLetztesBackupAnzeige();
+		autoKlickPausieren();
 	}
 	function schliesseBackupModal() {
 		if (backupModalBackdrop) backupModalBackdrop.classList.remove('is-open');
+		autoKlickFortsetzenFallsErlaubt();
 	}
 	if (backupBtn) backupBtn.addEventListener('click', function () { oeffneBackupModal(); });
 	if (backupModalClose) backupModalClose.addEventListener('click', schliesseBackupModal);
