@@ -982,6 +982,16 @@ var motivationText = [
     "So wie ein Fluss nicht gegen seine Ufer kämpft, sondern seinen Lauf findet<br><br>Nehme ich mir die Freiheit, meinen eigenen Lauf zu finden, ohne Widerstand",
     "Manches muss man nicht verstehen, um es zu heilen<br><br>Manchmal genügt es, dem eigenen Körper und der eigenen Zeit zu vertrauen",
     "Während dieser Moment vergeht, entscheidest Du bereits, still und unbemerkt, wer Du morgen sein möchtest<br><br>Und ich erlaube es mir, diese Entscheidung mit Ruhe zu treffen",
+    "Du brauchst nicht auf Motivation zu warten, beginne einfach, und während du handelst, entsteht die Energie, die dich weiterträgt",
+    "Du brauchst nicht alles perfekt zu machen, beginne einfach, und mit jedem Schritt wächst deine Energie",
+    "Du musst nicht auf den perfekten Moment warten, beginne jetzt, und erschaffe deinen Moment durch dein Handeln",
+    "Du musst noch nicht alles wissen, beginne einfach, und während du handelst, findest du deinen nächsten Schritt",
+    "Du brauchst nicht perfekt vorbereitet zu sein, beginne einfach, denn deine Kraft entsteht durch das Tun",
+    "Du musst nicht erst bereit sein, beginne einfach, und während du handelst, wächst dein Vertrauen in dich selbst",
+    "Du brauchst nicht länger darüber nachzudenken, wie es perfekt werden könnte, beginne, und lass es durch dein Tun immer besser werden",
+    "Du musst nicht auf den richtigen Antrieb warten, setze dich in Bewegung, und deine Energie kommt mit dem ersten Schritt",
+    "Du darfst unvollkommen beginnen, denn jeder Schritt bringt neue Energie, neue Erfahrung und dich weiter nach vorn",
+    "Du brauchst keine Perfektion, um anzufangen, beginne einfach, und lass deine Energie dich Schritt für Schritt weitertragen"
 ];
 
 var motivationTextEn = [
@@ -1843,7 +1853,17 @@ var motivationTextEn = [
     "You are a limitless being of light who has the choice in every moment to bring love and understanding into the world",
     "I am a limitless being of light who has the choice in every moment to bring love and understanding into the world",
     "The most important communication is how you speak to yourself",
-    "What if from now on you only speak lovingly to yourself?"
+    "What if from now on you only speak lovingly to yourself?",
+    "You don't need to wait for motivation – just start, and as you act, the energy that carries you forward emerges",
+    "You don't need to do everything perfectly – just start, and your energy grows with every step",
+    "You don't need to wait for the perfect moment – start now, and create your moment through your actions",
+    "You don't need to know everything yet – just start, and as you act, you'll find your next step",
+    "You don't need to be perfectly prepared – just start, because your strength comes from doing",
+    "You don't need to feel ready first – just start, and as you act, your trust in yourself grows",
+    "You don't need to keep thinking about how to make it perfect – start, and let it get better and better through your doing",
+    "You don't need to wait for the right drive – get moving, and your energy will come with the first step",
+    "You're allowed to begin imperfectly – because every step brings new energy, new experience, and moves you forward",
+    "You don't need perfection to begin – just start, and let your energy carry you forward step by step",
 ];
 
 var motivationTextEs = [
@@ -2630,7 +2650,17 @@ var motivationTextEs = [
     "Eres un ser ilimitado de luz que tiene la elección en cada momento de llevar amor y comprensión al mundo",
     "Soy un ser ilimitado de luz que tiene la elección en cada momento de llevar amor y comprensión al mundo",
     "La comunicación más importante es cómo hablas contigo mismo",
-    "¿Qué pasaría si a partir de ahora solo hablas contigo mismo con amor?"
+    "¿Qué pasaría si a partir de ahora solo hablas contigo mismo con amor?",
+    "No necesitas esperar la motivación – simplemente empieza, y mientras actúas, surge la energía que te impulsa hacia adelante",
+    "No necesitas hacerlo todo perfecto – simplemente empieza, y tu energía crece con cada paso",
+    "No necesitas esperar el momento perfecto – empieza ahora, y crea tu momento a través de tu acción",
+    "Todavía no necesitas saberlo todo – simplemente empieza, y mientras actúas, encontrarás tu próximo paso",
+    "No necesitas estar perfectamente preparado – simplemente empieza, porque tu fuerza surge al hacer",
+    "No necesitas sentirte listo primero – simplemente empieza, y mientras actúas, crece tu confianza en ti mismo",
+    "No necesitas seguir pensando en cómo hacerlo perfecto – empieza, y deja que mejore cada vez más a través de tu acción",
+    "No necesitas esperar el impulso correcto – ponte en movimiento, y tu energía llegará con el primer paso",
+    "Puedes empezar de forma imperfecta – porque cada paso trae nueva energía, nueva experiencia y te impulsa hacia adelante",
+    "No necesitas la perfección para empezar – simplemente empieza, y deja que tu energía te impulse paso a paso",
 ];
 
 var motivationTextPL = [
@@ -3340,7 +3370,17 @@ var motivationTextPL = [
     "Jesteś nieogranioną istotą światła, która w każdej chwili ma wybór, by przynosić miłość i zrozumienie światu",
     "Jestem nieograniczoną istotą światła, która w każdej chwili ma wybór, by przynosić miłość i zrozumienie światu",
     "Najważniejsza komunikacja to ta, jak rozmawiasz ze sobą",
-    "Co by było, gdybyś od teraz rozmawiał ze sobą tylko w sposób pełen miłości?"
+    "Co by było, gdybyś od teraz rozmawiał ze sobą tylko w sposób pełen miłości?",
+    "Nie musisz czekać na motywację – po prostu zacznij, a podczas działania powstaje energia, która niesie cię dalej",
+    "Nie musisz robić wszystkiego perfekcyjnie – po prostu zacznij, a twoja energia rośnie z każdym krokiem",
+    "Nie musisz czekać na idealny moment – zacznij teraz i twórz swój moment poprzez działanie",
+    "Nie musisz jeszcze wszystkiego wiedzieć – po prostu zacznij, a podczas działania znajdziesz swój następny krok",
+    "Nie musisz być idealnie przygotowany – po prostu zacznij, bo twoja siła rodzi się z działania",
+    "Nie musisz być najpierw gotowy – po prostu zacznij, a podczas działania rośnie twoja pewność siebie",
+    "Nie musisz dłużej zastanawiać się, jak zrobić to idealnie – zacznij i pozwól, by dzięki działaniu stawało się coraz lepsze",
+    "Nie musisz czekać na odpowiedni napęd – zacznij działać, a twoja energia pojawi się wraz z pierwszym krokiem",
+    "Możesz zacząć niedoskonale – bo każdy krok przynosi nową energię, nowe doświadczenie i prowadzi cię dalej",
+    "Nie potrzebujesz perfekcji, by zacząć – po prostu zacznij i pozwól, by twoja energia niosła cię krok po kroku",
 ];
 
 var motivationTextIt = [
@@ -4184,7 +4224,17 @@ var motivationTextIt = [
     "Sei un essere illimitato di luce che in ogni momento ha la scelta di portare amore e comprensione nel mondo",
     "Sono un essere illimitato di luce che in ogni momento ha la scelta di portare amore e comprensione nel mondo",
     "La comunicazione più importante è come parli a te stesso",
-    "E se da ora in poi parlassi a te stesso solo con amore?"
+    "E se da ora in poi parlassi a te stesso solo con amore?",
+    "Non devi aspettare la motivazione – inizia semplicemente, e mentre agisci nasce l'energia che ti porta avanti",
+    "Non devi fare tutto perfettamente – inizia semplicemente, e la tua energia cresce con ogni passo",
+    "Non devi aspettare il momento perfetto – inizia ora, e crea il tuo momento attraverso le tue azioni",
+    "Non devi ancora sapere tutto – inizia semplicemente, e mentre agisci troverai il tuo prossimo passo",
+    "Non devi essere perfettamente preparato – inizia semplicemente, perché la tua forza nasce dal fare",
+    "Non devi essere prima pronto – inizia semplicemente, e mentre agisci cresce la tua fiducia in te stesso",
+    "Non devi continuare a pensare a come renderlo perfetto – inizia, e lascialo migliorare sempre di più attraverso il tuo agire",
+    "Non devi aspettare la spinta giusta – mettiti in movimento, e la tua energia arriverà con il primo passo",
+    "Puoi iniziare in modo imperfetto – perché ogni passo porta nuova energia, nuova esperienza e ti fa andare avanti",
+    "Non hai bisogno della perfezione per iniziare – inizia semplicemente, e lascia che la tua energia ti porti avanti passo dopo passo",
 ];
 
 var motivationTextRu = [
@@ -4980,7 +5030,17 @@ var motivationTextRu = [
     "Ты — безграничное существо света, которое в каждый момент имеет выбор приносить любовь и понимание миру",
     "Я — безграничное существо света, которое в каждый момент имеет выбор приносить любовь и понимание миру",
     "Самое важное общение — это то, как ты говоришь с самим собой",
-    "А что если с этого момента ты будешь говорить с собой только с любовью?"
+    "А что если с этого момента ты будешь говорить с собой только с любовью?",
+    "Тебе не нужно ждать мотивации – просто начни, и пока ты действуешь, рождается энергия, которая несёт тебя дальше",
+    "Тебе не нужно делать всё идеально – просто начни, и с каждым шагом твоя энергия растёт",
+    "Тебе не нужно ждать идеального момента – начни сейчас и создай свой момент через своё действие",
+    "Тебе ещё не нужно знать всё – просто начни, и пока ты действуешь, ты найдёшь свой следующий шаг",
+    "Тебе не нужно быть идеально готовым – просто начни, ведь твоя сила рождается через действие",
+    "Тебе не нужно сначала чувствовать готовность – просто начни, и пока ты действуешь, растёт твоя вера в себя",
+    "Тебе не нужно больше думать о том, как сделать это идеально – начни, и позволь этому становиться всё лучше благодаря твоим действиям",
+    "Тебе не нужно ждать правильного импульса – начни двигаться, и твоя энергия придёт вместе с первым шагом",
+    "Ты можешь начать несовершенно – ведь каждый шаг приносит новую энергию, новый опыт и ведёт тебя вперёд",
+    "Тебе не нужна идеальность, чтобы начать – просто начни, и позволь своей энергии нести тебя шаг за шагом",
 ];
 
 var motivationTextVi = [
@@ -5827,7 +5887,17 @@ var motivationTextVi = [
     "Bạn là một sinh thể ánh sáng vô hạn, có thể chọn mang tình yêu và sự thấu hiểu đến thế giới mỗi khoảnh khắc",
     "Tôi là một sinh thể ánh sáng vô hạn, có thể chọn mang tình yêu và sự thấu hiểu đến thế giới mỗi khoảnh khắc",
     "Giao tiếp quan trọng nhất là cách bạn nói chuyện với chính mình",
-    "Sẽ ra sao nếu từ nay bạn chỉ nói chuyện với bản thân bằng yêu thương?"
+    "Sẽ ra sao nếu từ nay bạn chỉ nói chuyện với bản thân bằng yêu thương?",
+    "Bạn không cần chờ đợi động lực – hãy bắt đầu ngay, và khi bạn hành động, năng lượng đưa bạn tiến về phía trước sẽ xuất hiện",
+    "Bạn không cần làm mọi thứ hoàn hảo – hãy bắt đầu ngay, và năng lượng của bạn sẽ lớn dần theo từng bước",
+    "Bạn không cần chờ khoảnh khắc hoàn hảo – hãy bắt đầu ngay bây giờ, và tạo ra khoảnh khắc của bạn bằng chính hành động của mình",
+    "Bạn chưa cần biết hết mọi thứ – hãy bắt đầu ngay, và khi hành động, bạn sẽ tìm ra bước tiếp theo",
+    "Bạn không cần chuẩn bị hoàn hảo – hãy bắt đầu ngay, vì sức mạnh của bạn đến từ hành động",
+    "Bạn không cần cảm thấy sẵn sàng trước – hãy bắt đầu ngay, và khi hành động, sự tự tin vào bản thân bạn sẽ lớn dần",
+    "Bạn không cần tiếp tục suy nghĩ làm sao để hoàn hảo – hãy bắt đầu, và để nó trở nên tốt hơn qua từng hành động của bạn",
+    "Bạn không cần chờ động lực đúng đắn – hãy hành động, và năng lượng sẽ đến cùng bước đi đầu tiên",
+    "Bạn được phép bắt đầu chưa hoàn hảo – vì mỗi bước đi mang lại năng lượng mới, trải nghiệm mới và đưa bạn tiến xa hơn",
+    "Bạn không cần sự hoàn hảo để bắt đầu – hãy bắt đầu ngay, và để năng lượng dẫn bạn đi từng bước một",
 ]
 
 var motivationTextUn = [
@@ -6656,7 +6726,17 @@ var motivationTextUn = [
     "Te egy végtelen fénylény vagy, amely minden pillanatban dönthet arról, hogy szeretetet és megértést hozzon a világba",
     "Én egy végtelen fénylény vagyok, amely minden pillanatban dönthet arról, hogy szeretetet és megértést hozzon a világba",
     "A legfontosabb kommunikáció az, ahogy önmagaddal beszélsz",
-    "Mi lenne, ha mostantól csak szeretettel beszélnél magaddal?"
+    "Mi lenne, ha mostantól csak szeretettel beszélnél magaddal?",
+    "Nem kell megvárnod a motivációt – kezdj el egyszerűen, és miközben cselekszel, megszületik az energia, amely tovább visz",
+    "Nem kell mindent tökéletesen csinálnod – kezdj el egyszerűen, és minden lépéssel nő az energiád",
+    "Nem kell megvárnod a tökéletes pillanatot – kezdd el most, és teremtsd meg a pillanatodat a cselekvéseddel",
+    "Még nem kell mindent tudnod – kezdj el egyszerűen, és cselekvés közben megtalálod a következő lépésedet",
+    "Nem kell tökéletesen felkészültnek lenned – kezdj el egyszerűen, mert az erőd a cselekvésből születik",
+    "Nem kell előbb készen állnod – kezdj el egyszerűen, és cselekvés közben nő az önmagadba vetett bizalmad",
+    "Nem kell tovább azon gondolkodnod, hogyan lehetne tökéletes – kezdj bele, és hagyd, hogy a cselekvésed által egyre jobb legyen",
+    "Nem kell megvárnod a megfelelő lendületet – indulj el, és az energiád az első lépéssel érkezik",
+    "Elkezdheted tökéletlenül is – hiszen minden lépés új energiát, új tapasztalatot hoz, és előrébb visz",
+    "Nincs szükséged tökéletességre a kezdéshez – kezdj el egyszerűen, és hagyd, hogy az energiád lépésről lépésre tovább vigyen",
 ]
 
 var motivationTextBa = [
@@ -7518,7 +7598,17 @@ var motivationTextBa = [
     "আপনি একটি অসীম আলোকিত সত্তা, যা প্রতিটি মুহূর্তে পৃথিবীতে প্রেম এবং বোঝাপড়া আনার সিদ্ধান্ত নিতে পারে",
     "আমি একটি অসীম আলোকিত সত্তা, যা প্রতিটি মুহূর্তে পৃথিবীতে প্রেম এবং বোঝাপড়া আনার সিদ্ধান্ত নিতে পারে",
     "সর্বাধিক গুরুত্বপূর্ণ যোগাযোগ হলো আপনি নিজের সঙ্গে কিভাবে কথা বলেন",
-    "ধরা যাক এখন থেকে আপনি কেবলমাত্র নিজের সঙ্গে ভালোবাসা সহকারে কথা বলবেন?"
+    "ধরা যাক এখন থেকে আপনি কেবলমাত্র নিজের সঙ্গে ভালোবাসা সহকারে কথা বলবেন?",
+    "তোমার অনুপ্রেরণার জন্য অপেক্ষা করার দরকার নেই – শুধু শুরু করো, আর যখন তুমি কাজ করো, তখনই সেই শক্তি জন্ম নেয় যা তোমাকে এগিয়ে নিয়ে যায়",
+    "সবকিছু নিখুঁত করার দরকার নেই – শুধু শুরু করো, প্রতিটি পদক্ষেপের সাথে তোমার শক্তি বাড়তে থাকে",
+    "নিখুঁত মুহূর্তের জন্য অপেক্ষা করার দরকার নেই – এখনই শুরু করো, আর নিজের কাজের মাধ্যমে নিজের মুহূর্ত তৈরি করো",
+    "তোমার এখনই সব জানার দরকার নেই – শুধু শুরু করো, কাজ করতে করতে তুমি তোমার পরবর্তী পদক্ষেপ খুঁজে পাবে",
+    "নিখুঁতভাবে প্রস্তুত থাকার দরকার নেই – শুধু শুরু করো, কারণ তোমার শক্তি কাজের মধ্য দিয়েই জন্ম নেয়",
+    "প্রথমে প্রস্তুত অনুভব করার দরকার নেই – শুধু শুরু করো, কাজ করতে করতে নিজের প্রতি তোমার বিশ্বাস বাড়তে থাকবে",
+    "এটা কীভাবে নিখুঁত হবে তা নিয়ে আর ভাবার দরকার নেই – শুরু করো, আর নিজের কাজের মাধ্যমে একে ক্রমশ ভালো হতে দাও",
+    "সঠিক প্রেরণার জন্য অপেক্ষা করার দরকার নেই – এগিয়ে যাও, তোমার শক্তি প্রথম পদক্ষেপের সাথেই চলে আসবে",
+    "তুমি অসম্পূর্ণভাবে শুরু করতে পারো – কারণ প্রতিটি পদক্ষেপ নতুন শক্তি, নতুন অভিজ্ঞতা বয়ে আনে এবং তোমাকে সামনে এগিয়ে নিয়ে যায়",
+    "শুরু করার জন্য পরিপূর্ণতার দরকার নেই – শুধু শুরু করো, আর তোমার শক্তিকে ধাপে ধাপে তোমাকে এগিয়ে নিতে দাও",
 ]
 
 var motivationTextTu = [
@@ -8268,7 +8358,17 @@ var motivationTextTu = [
     "Sen, her an dünyaya sevgi ve anlayış getirme seçeneğine sahip sonsuz bir ışık varlığısın",
     "Ben, her an dünyaya sevgi ve anlayış getirme seçeneğine sahip sonsuz bir ışık varlığıyım",
     "En önemli iletişim, kendinle nasıl konuştuğundur",
-    "Şimdi, sadece kendinle sevgi dolu konuşsan ne olurdu?"
+    "Şimdi, sadece kendinle sevgi dolu konuşsan ne olurdu?",
+    "Motivasyonu beklemene gerek yok – sadece başla, ve harekete geçtikçe seni ileriye taşıyan enerji ortaya çıkar",
+    "Her şeyi mükemmel yapmana gerek yok – sadece başla, her adımda enerjin büyür",
+    "Mükemmel anı beklemene gerek yok – şimdi başla ve kendi anını eylemlerinle yarat",
+    "Her şeyi henüz bilmene gerek yok – sadece başla, harekete geçtikçe bir sonraki adımını bulursun",
+    "Mükemmel şekilde hazır olmana gerek yok – sadece başla, çünkü gücün yapmakla ortaya çıkar",
+    "Önce hazır hissetmene gerek yok – sadece başla, harekete geçtikçe kendine olan güvenin artar",
+    "Nasıl mükemmel olacağını düşünmeye devam etmene gerek yok – başla, ve yaptıkça giderek daha iyi olmasına izin ver",
+    "Doğru dürtüyü beklemene gerek yok – harekete geç, enerjin ilk adımla birlikte gelir",
+    "Kusurlu başlayabilirsin – çünkü her adım yeni enerji, yeni deneyim getirir ve seni ileriye taşır",
+    "Başlamak için mükemmelliğe ihtiyacın yok – sadece başla, enerjinin seni adım adım taşımasına izin ver",
 ]
 
 var motivationTextUkr = [
@@ -8953,7 +9053,17 @@ var motivationTextUkr = [
     "Ти безмежна істота світла, яка в кожен момент має вибір приносити любов і розуміння у світ",
     "Я безмежна істота світла, яка в кожен момент має вибір приносити любов і розуміння у світ",
     "Найважливіше спілкування – це те, як ти розмовляєш із собою",
-    "Уяви, що відтепер ти розмовляєш із собою лише з любов’ю?"
+    "Уяви, що відтепер ти розмовляєш із собою лише з любов’ю?",
+    "Тобі не потрібно чекати на мотивацію – просто почни, і поки ти діятимеш, народжується енергія, яка несе тебе вперед",
+    "Тобі не потрібно робити все ідеально – просто почни, і з кожним кроком твоя енергія зростає",
+    "Тобі не потрібно чекати на ідеальний момент – почни зараз і створюй свій момент своєю дією",
+    "Тобі ще не потрібно знати все – просто почни, і поки ти діятимеш, знайдеш свій наступний крок",
+    "Тобі не потрібно бути ідеально підготовленим – просто почни, адже твоя сила народжується через дію",
+    "Тобі не потрібно спершу відчувати готовність – просто почни, і поки ти діятимеш, зростає твоя довіра до себе",
+    "Тобі не потрібно більше думати про те, як зробити це ідеально – почни, і дозволь цьому ставати кращим завдяки твоїй дії",
+    "Тобі не потрібно чекати на правильний поштовх – почни рухатися, і твоя енергія прийде разом із першим кроком",
+    "Ти можеш почати недосконало – адже кожен крок приносить нову енергію, новий досвід і веде тебе вперед",
+    "Тобі не потрібна досконалість, щоб почати – просто почни, і дозволь своїй енергії нести тебе крок за кроком",
 ];
 
 var motivationTextChina = [
@@ -9638,7 +9748,17 @@ var motivationTextChina = [
     "你是无限的光之存在，每时每刻都有选择把爱与理解带入世界的自由",
     "我是无限的光之存在，每时每刻都有选择把爱与理解带入世界的自由",
     "最重要的交流是你如何与自己对话",
-    "想象一下，从现在开始，你只用爱意与自己对话，会怎样？"
+    "想象一下，从现在开始，你只用爱意与自己对话，会怎样？",
+    "你不需要等待动力——直接开始吧，在你行动的过程中，推动你前进的能量就会产生",
+    "你不需要把一切做到完美——直接开始吧，你的能量会随着每一步而增长",
+    "你不需要等待完美的时刻——现在就开始，用行动创造属于你的时刻",
+    "你还不需要什么都知道——直接开始吧，在行动中你会找到下一步",
+    "你不需要做到完美的准备——直接开始吧，因为你的力量源于行动",
+    "你不需要先觉得准备好了——直接开始吧，在行动中你对自己的信心会增长",
+    "你不需要再纠结怎样才能做到完美——开始吧，让它通过你的行动变得越来越好",
+    "你不需要等待正确的动力——行动起来吧，能量会随着第一步到来",
+    "你可以不完美地开始——因为每一步都带来新的能量、新的经验，并带你继续前进",
+    "开始不需要完美——直接开始吧，让你的能量一步步带着你前进",
 ];
 
 var motivationTextTest = [
