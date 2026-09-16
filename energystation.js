@@ -555,6 +555,11 @@ var EIGENE_SPRUECHE_QUEUE_KEY = "eigeneSpruecheQueue";
 var LETZTES_BACKUP_KEY = "eigeneLetztesBackup";
 
 var EIGENE_BILDER_MAX = 20;
+// Zusätzliche Begrenzung, wie viele Bilder man in EINEM Upload-Vorgang
+// (Mehrfachauswahl im Datei-Dialog) auf einmal auswählen darf - unabhängig
+// vom Gesamt-Limit EIGENE_BILDER_MAX. Es gilt immer das kleinere der beiden
+// Limits (siehe Verwendung in eigeneBilderInput "change").
+var EIGENE_BILDER_MAX_PRO_UPLOAD = 5;
 var EIGENE_SPRUECHE_MAX = 50;
 var EIGENE_SPRUCH_MAX_LAENGE = 500;
 var EIGENE_BILD_MAX_EDGE = 1000;
@@ -688,8 +693,8 @@ function removeEigenerSpruch(index) {
 }
 
 // Ändert einen bestehenden eigenen Spruch nachträglich (Bearbeiten-Funktion
-// im UI), ohne ihn aus der Warteschlange zu entfernen oder neu einzureihen -
-// er bleibt einfach an seinem Platz im Pool, nur der Text ändert sich.
+// im UI). Der bearbeitete Text wandert dabei ganz nach oben in der Liste
+// (wie ein neuer Text) und wird auch in der App als nächstes angezeigt.
 function updateEigenerSpruch(index, text) {
 	"use strict";
 	text = (text || "").trim();
@@ -697,8 +702,22 @@ function updateEigenerSpruch(index, text) {
 	if (text.length > EIGENE_SPRUCH_MAX_LAENGE) return "zulang";
 	var sprueche = ladeEigeneSprueche();
 	if (index < 0 || index >= sprueche.length) return "leer";
-	sprueche[index] = text;
-	return speichereJSON(EIGENE_SPRUECHE_KEY, sprueche) ? "ok" : "speicherfehler";
+	var alterText = sprueche[index];
+	// Bearbeiteter Text wandert ans Ende des Arrays, damit er beim Rendern
+	// (das die Anzeige-Reihenfolge umdreht) ganz oben als erstes erscheint -
+	// genau wie ein neu hinzugefügter Text.
+	sprueche.splice(index, 1);
+	sprueche.push(text);
+	var gespeichert = speichereJSON(EIGENE_SPRUECHE_KEY, sprueche);
+	if (!gespeichert) return "speicherfehler";
+	// Auch in der Warteschlange ganz nach vorne, damit der bearbeitete Text
+	// garantiert als nächstes in der App gezeigt wird - vor allen bereits
+	// wartenden Einträgen. Ein veralteter Warteschlangen-Eintrag mit dem
+	// alten Text-Stand wird dabei entfernt.
+	var queue = ladeEigeneSpruecheQueue().filter(function (s) { return s !== alterText; });
+	queue.unshift(text);
+	speichereJSON(EIGENE_SPRUECHE_QUEUE_KEY, queue);
+	return "ok";
 }
 
 // Zieht das nächste Bild: zuerst die Warteschlange frisch hinzugefügter
@@ -1322,12 +1341,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// zielId erlaubt dieselbe Funktion für beide Modals zu nutzen (Haupt-
 	// Modal: #eigeneFeedback, Sichern & Wiederherstellen: #eigeneBackupFeedback).
-	function zeigeFeedback(text, zielId) {
+	// dauerMs erlaubt es, einzelne Meldungen länger stehen zu lassen als die
+	// Standarddauer (z.B. wenn der Hinweistext mehr Zeit zum Lesen braucht).
+	function zeigeFeedback(text, zielId, dauerMs) {
 		var el = document.getElementById(zielId || 'eigeneFeedback');
 		if (!el) return;
 		el.textContent = text;
 		el.classList.add('is-visible');
-		setTimeout(function () { el.classList.remove('is-visible'); }, 2200);
+		setTimeout(function () { el.classList.remove('is-visible'); }, dauerMs || 2200);
 	}
 
 	function beendeSpruchBearbeitung() {
@@ -1432,7 +1453,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		var zaehlerEl = document.getElementById('eigeneBilderZaehler');
 		if (!listeEl) return;
 		var bilder = ladeEigeneBilder();
-		if (zaehlerEl) zaehlerEl.textContent = eigeneInhalteText('bilderZaehler', { n: bilder.length, max: EIGENE_BILDER_MAX });
+		var maxErreicht = bilder.length >= EIGENE_BILDER_MAX;
+		if (zaehlerEl) {
+			zaehlerEl.textContent = eigeneInhalteText('bilderZaehler', { n: bilder.length, max: EIGENE_BILDER_MAX });
+			// Bei erreichtem Maximum deutlicher hervorheben (fett + Warnfarbe) -
+			// nutzt dieselbe Klasse wie der Zeichenzähler bei den Texten.
+			zaehlerEl.classList.toggle('own-content-limit-reached', maxErreicht);
+		}
+		// "Bilder hinzufügen"-Button oben komplett ausblenden, sobald das
+		// Maximum erreicht ist - es gibt ohnehin keinen freien Platz mehr.
+		var uploadBtnEl = document.getElementById('eigeneBilderUploadBtn');
+		if (uploadBtnEl) uploadBtnEl.style.display = maxErreicht ? 'none' : '';
 		if (bilder.length === 0) {
 			listeEl.innerHTML = "<p class='own-content-empty-note'></p>";
 			listeEl.querySelector('.own-content-empty-note').textContent = eigeneInhalteText('emptyBilder');
@@ -1507,12 +1538,29 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (!files.length) return;
 			var vorhandene = ladeEigeneBilder().length;
 			var frei = EIGENE_BILDER_MAX - vorhandene;
+			// Diese Meldungen (Limit erreicht/überschritten) bekommen bewusst
+			// eine längere Anzeigedauer als die restlichen Kurz-Hinweise, da
+			// hier erklärt wird, warum nicht alle markierten Bilder
+			// übernommen wurden - das braucht etwas mehr Lesezeit.
+			var LIMIT_FEEDBACK_DAUER_MS = 4500;
 			if (frei <= 0) {
-				zeigeFeedback(eigeneInhalteText('feedbackMaxBilder', { max: EIGENE_BILDER_MAX }));
+				zeigeFeedback(eigeneInhalteText('feedbackMaxBilder', { max: EIGENE_BILDER_MAX }), null, LIMIT_FEEDBACK_DAUER_MS);
 				return;
 			}
+			// Kombiniertes Limit: es gilt das kleinere von "Rest bis zum
+			// Gesamt-Limit" und "maximal erlaubt pro Upload-Vorgang". Je
+			// nachdem, welches der beiden Limits tatsächlich greift, wird die
+			// passende Hinweismeldung gezeigt.
+			var erlaubt = Math.min(EIGENE_BILDER_MAX_PRO_UPLOAD, frei);
+			if (files.length > erlaubt) {
+				if (erlaubt < EIGENE_BILDER_MAX_PRO_UPLOAD) {
+					zeigeFeedback(eigeneInhalteText('feedbackMaxBilder', { max: EIGENE_BILDER_MAX }), null, LIMIT_FEEDBACK_DAUER_MS);
+				} else {
+					zeigeFeedback(eigeneInhalteText('feedbackMaxProUpload', { max: EIGENE_BILDER_MAX_PRO_UPLOAD }), null, LIMIT_FEEDBACK_DAUER_MS);
+				}
+			}
 			eigeneBilderUploadBtn.disabled = true;
-			var zuVerarbeiten = files.slice(0, frei);
+			var zuVerarbeiten = files.slice(0, erlaubt);
 			var i = 0;
 			var gespeichertAnzahl = 0;
 			var speicherFehler = false;

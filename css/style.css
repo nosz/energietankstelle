@@ -569,6 +569,13 @@ a:focus {
   text-align: left;
 }
 
+/* Hervorhebung, sobald ein Limit erreicht ist (Bilder-Zähler und
+   Zeichen-Zähler bei den eigenen Texten). */
+.own-content-limit-reached {
+  color: #d97b00;
+  font-weight: bold;
+}
+
 /* Bilder-Raster: kompakte, gleich große Kacheln mit kleinem Löschen-Button
    oben rechts pro Bild - analog zum Motivationsbilder-Muster aus der
    Challenge-App, hier aber mit sichtbarem Löschen-Button statt separatem

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <!--
-  Versionierung: Bei jedem neuen Release bitte die Zahl "?v=3" bei den
-  eigenen Dateien (css/style.css, languages.js, energystation.js,
-  js/index.js) UND die APP_VERSION-Konstante in service-worker.js
-  gemeinsam erhöhen (z.B. auf 3). Das sorgt dafür, dass GitHub Pages /
+  Versionierung: Bei jedem neuen Release EINE gemeinsame Versionsnummer
+  verwenden - bei allen ?v=-Query-Strings der eigenen Dateien
+  (css/style.css, languages.js, energystation.js, js/index.js) UND bei
+  der APP_VERSION-Konstante in service-worker.js dieselbe Zahl eintragen
+  (z.B. überall von 61 auf 62). Das sorgt dafür, dass GitHub Pages /
   der Browser die neue Version nicht aus einem alten Cache ausliefert,
-  sondern wirklich neu lädt.
+  sondern wirklich neu lädt - und man auf einen Blick sieht, ob wirklich
+  überall dieselbe Version ausgeliefert wird.
 -->
 <html>
 
@@ -39,7 +41,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f7f1e4">
-  <link rel="stylesheet" href="css/style.css?v=44">
+  <link rel="stylesheet" href="css/style.css?v=61">
 
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
 
@@ -344,10 +346,10 @@
     </script>
     <script src="js/hammer.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
-    <script src="languages.js?v=49"></script>
-    <script src="energystation.js?v=52"></script>
+    <script src="languages.js?v=61"></script>
+    <script src="energystation.js?v=61"></script>
     <script src="js/particles.min.js"></script>
-    <script src="js/index.js?v=42"></script>
+    <script src="js/index.js?v=61"></script>
     <script>
 
     </script>
