@@ -1604,7 +1604,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		var zaehlerEl = document.getElementById('eigeneSpruecheZaehler');
 		if (!listeEl) return;
 		var sprueche = ladeEigeneSprueche();
-		if (zaehlerEl) zaehlerEl.textContent = eigeneInhalteText('spruecheZaehler', { n: sprueche.length, max: EIGENE_SPRUECHE_MAX });
+		var maxErreicht = sprueche.length >= EIGENE_SPRUECHE_MAX;
+		if (zaehlerEl) {
+			zaehlerEl.textContent = eigeneInhalteText('spruecheZaehler', { n: sprueche.length, max: EIGENE_SPRUECHE_MAX });
+			// Bei erreichtem Maximum deutlicher hervorheben - analog zum
+			// Bilder-Zähler.
+			zaehlerEl.classList.toggle('own-content-limit-reached', maxErreicht);
+		}
+		// Eingabe (Textfeld, Zeichenzähler, "Text hinzufügen"-Button) nur
+		// ausblenden, wenn das Maximum erreicht ist UND gerade kein
+		// bestehender Text bearbeitet wird - Bearbeiten/Aktualisieren fügt
+		// ja keinen neuen Text hinzu und muss daher immer möglich bleiben.
+		var eingabeAusblenden = maxErreicht && eigenerSpruchEditIndex === null;
+		var textareaEl = document.getElementById('eigenerSpruchInput');
+		var zeichenZaehlerEl = document.getElementById('eigenerSpruchZeichenZaehler');
+		var formActionsEl = document.getElementById('eigenerSpruchFormActions');
+		if (textareaEl) textareaEl.style.display = eingabeAusblenden ? 'none' : '';
+		if (zeichenZaehlerEl) zeichenZaehlerEl.style.display = eingabeAusblenden ? 'none' : '';
+		if (formActionsEl) formActionsEl.style.display = eingabeAusblenden ? 'none' : '';
 		if (sprueche.length === 0) {
 			listeEl.innerHTML = "<p class='own-content-empty-note'></p>";
 			listeEl.querySelector('.own-content-empty-note').textContent = eigeneInhalteText('emptySprueche');
