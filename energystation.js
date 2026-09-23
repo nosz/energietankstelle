@@ -563,7 +563,7 @@ var EIGENE_BILDER_MAX_PRO_UPLOAD = 5;
 var EIGENE_SPRUECHE_MAX = 50;
 var EIGENE_SPRUCH_MAX_LAENGE = 500;
 var EIGENE_BILD_MAX_EDGE = 1000;
-var EIGENE_BILD_QUALITY = 0.8;
+var EIGENE_BILD_QUALITY = 0.7;
 // Chance, dass ein eigenes Bild bzw. ein eigener Spruch gezogen wird,
 // sobald die Warteschlange "frisch hinzugefügt" leer ist. 30% = spürbar
 // bevorzugt, aber nicht dominant - unabhängig davon, wie viele Standard-
@@ -596,10 +596,39 @@ function ladeEigeneBilderQueue() { return ladeJSON(EIGENE_BILDER_QUEUE_KEY, []);
 function ladeEigeneSprueche() { return ladeJSON(EIGENE_SPRUECHE_KEY, []); }
 function ladeEigeneSpruecheQueue() { return ladeJSON(EIGENE_SPRUECHE_QUEUE_KEY, []); }
 
+// Grobe Näherung des belegten localStorage-Speichers der eigenen Inhalte:
+// Zeichenlänge (Key + Wert) mal 2 Byte je UTF-16-Zeichen. Keine exakte
+// Byte-Angabe (Browser speichern intern unterschiedlich), aber genau genug
+// zur Orientierung. Gezählt werden Bilder, Sprüche und ihre Warteschlangen -
+// die Warteschlange hält Kopien der Bilder und belegt daher echten Platz.
+function formatiereBytes(bytes) {
+	"use strict";
+	if (bytes < 1024) return bytes + " B";
+	if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+	return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+}
+
+function berechneEigenenSpeicher() {
+	"use strict";
+	function bytesFuerKey(key) {
+		try {
+			var raw = localStorage.getItem(key);
+			return raw ? (key.length + raw.length) * 2 : 0;
+		} catch (e) {
+			return 0;
+		}
+	}
+	var bilder = bytesFuerKey(EIGENE_BILDER_KEY) + bytesFuerKey(EIGENE_BILDER_QUEUE_KEY);
+	var sprueche = bytesFuerKey(EIGENE_SPRUECHE_KEY) + bytesFuerKey(EIGENE_SPRUECHE_QUEUE_KEY);
+	return { gesamt: bilder + sprueche, bilder: bilder };
+}
+
 // Verkleinert/komprimiert ein hochgeladenes eigenes Bild client-seitig
-// (max. 1000px lange Kante, JPEG-Qualität 0.8), bevor es im localStorage
-// abgelegt wird - so bleiben auch mehrere Bilder zusammen mit den übrigen
-// App-Daten sicher innerhalb des Speicherlimits.
+// (max. 1000px lange Kante, Qualität 0.7) und kodiert es wenn möglich als
+// WebP (ca. 25-30% kleiner als JPEG bei gleicher Qualität), sonst als JPEG -
+// identisch zur Challenge App. Erst danach wird es im localStorage abgelegt,
+// damit auch mehrere Bilder zusammen mit den übrigen App-Daten sicher
+// innerhalb des Speicherlimits bleiben.
 function komprimiereEigenesBild(file, maxEdge, quality) {
 	"use strict";
 	maxEdge = maxEdge || EIGENE_BILD_MAX_EDGE;
@@ -625,7 +654,14 @@ function komprimiereEigenesBild(file, maxEdge, quality) {
 				var ctx = canvas.getContext("2d");
 				ctx.drawImage(img, 0, 0, width, height);
 				try {
-					resolve(canvas.toDataURL("image/jpeg", quality));
+					// Browser ohne WebP-Encoder geben bei toDataURL("image/webp")
+					// oft statt eines Fehlers einfach ein PNG zurück - das erkennen
+					// wir am MIME-Typ im Ergebnis und weichen dann auf JPEG aus.
+					var webpUrl = canvas.toDataURL("image/webp", quality);
+					var dataUrl = webpUrl.indexOf("data:image/webp") === 0
+						? webpUrl
+						: canvas.toDataURL("image/jpeg", quality);
+					resolve(dataUrl);
 				} catch (err) {
 					reject(err);
 				}
@@ -1442,6 +1478,20 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (tabBtnBilder) tabBtnBilder.addEventListener('click', function () { aktiviereTab('bilder'); });
 	if (tabBtnSprueche) tabBtnSprueche.addEventListener('click', function () { aktiviereTab('sprueche'); });
 
+	// ---------- Speicher-Info ----------
+	// Zeile unter dem Lokal-Hinweis (in beiden Tabs sichtbar). Wird von beiden
+	// Listen-Render-Funktionen aufgerufen und ist damit nach jedem Öffnen,
+	// Upload, Löschen, Bearbeiten und Import aktuell.
+	function aktualisiereSpeicherAnzeige() {
+		var el = document.getElementById('eigeneSpeicherInfo');
+		if (!el) return;
+		var speicher = berechneEigenenSpeicher();
+		var wert = speicher.bilder > 0
+			? eigeneInhalteText('speicherMitBildern', { total: formatiereBytes(speicher.gesamt), images: formatiereBytes(speicher.bilder) })
+			: formatiereBytes(speicher.gesamt);
+		el.textContent = eigeneInhalteText('speicherLabel') + ': ' + wert;
+	}
+
 	// ---------- Bilder-Liste ----------
 	// Löschen läuft zweistufig: erster Klick auf den Papierkorb markiert das
 	// Bild und zeigt darunter eine volle-Breite-Leiste ("Bild wirklich
@@ -1452,6 +1502,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		var listeEl = document.getElementById('eigeneBilderListe');
 		var zaehlerEl = document.getElementById('eigeneBilderZaehler');
 		if (!listeEl) return;
+		aktualisiereSpeicherAnzeige();
 		var bilder = ladeEigeneBilder();
 		var maxErreicht = bilder.length >= EIGENE_BILDER_MAX;
 		if (zaehlerEl) {
@@ -1603,6 +1654,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		var listeEl = document.getElementById('eigeneSpruecheListe');
 		var zaehlerEl = document.getElementById('eigeneSpruecheZaehler');
 		if (!listeEl) return;
+		aktualisiereSpeicherAnzeige();
 		var sprueche = ladeEigeneSprueche();
 		var maxErreicht = sprueche.length >= EIGENE_SPRUECHE_MAX;
 		if (zaehlerEl) {
