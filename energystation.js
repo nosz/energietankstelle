@@ -560,7 +560,7 @@ var EIGENE_BILDER_MAX = 20;
 // vom Gesamt-Limit EIGENE_BILDER_MAX. Es gilt immer das kleinere der beiden
 // Limits (siehe Verwendung in eigeneBilderInput "change").
 var EIGENE_BILDER_MAX_PRO_UPLOAD = 5;
-var EIGENE_SPRUECHE_MAX = 50;
+var EIGENE_SPRUECHE_MAX = 100;
 var EIGENE_SPRUCH_MAX_LAENGE = 500;
 var EIGENE_BILD_MAX_EDGE = 1000;
 var EIGENE_BILD_QUALITY = 0.7;
