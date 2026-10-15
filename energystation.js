@@ -554,7 +554,7 @@ var EIGENE_SPRUECHE_KEY = "eigeneSprueche";
 var EIGENE_SPRUECHE_QUEUE_KEY = "eigeneSpruecheQueue";
 var LETZTES_BACKUP_KEY = "eigeneLetztesBackup";
 
-var EIGENE_BILDER_MAX = 20;
+var EIGENE_BILDER_MAX = 24;
 // Zusätzliche Begrenzung, wie viele Bilder man in EINEM Upload-Vorgang
 // (Mehrfachauswahl im Datei-Dialog) auf einmal auswählen darf - unabhängig
 // vom Gesamt-Limit EIGENE_BILDER_MAX. Es gilt immer das kleinere der beiden
