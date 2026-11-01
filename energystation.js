@@ -438,6 +438,8 @@ var zahl1;
 // --- für Teilen-Funktion ---
 var SHARE_BUTTON_AKTIV = true;
 var currentShareText = "";
+// Text des aktuellen Spruchs in Originalschreibweise (für das Vorlesen, siehe vorlesen.js).
+var currentSpeechText = "";
 var currentShareImageUrl = null;
 
 // Vorgerendertes Share-Bild: wird im Hintergrund erzeugt, sobald ein neuer
@@ -781,7 +783,10 @@ function zieheNaechstesBild() {
 		}
 		return { url: "img/t" + maxBild + ".jpg", istEigen: false };
 	}
-	if (eigeneBilder.length > 0 && Math.random() < EIGENE_GEWICHT) {
+	// Option "Nur eigene Bilder anzeigen" (nur-eigene.js): dann immer aus dem
+	// eigenen Pool ziehen, sofern es eigene Bilder gibt.
+	var nurEigene = localStorage.getItem("nurEigeneBilder") === "1";
+	if (eigeneBilder.length > 0 && (nurEigene || Math.random() < EIGENE_GEWICHT)) {
 		var idx = rand(0, eigeneBilder.length - 1);
 		return { url: eigeneBilder[idx], istEigen: true };
 	}
@@ -807,7 +812,10 @@ function ziehNaechstenSpruch(sprachArrayAktuell, countTextAktuell) {
 		return { text: naechster, istEigen: true };
 	}
 	var eigeneSprueche = ladeEigeneSprueche();
-	if (eigeneSprueche.length > 0 && Math.random() < EIGENE_GEWICHT) {
+	// Option "Nur eigene Sprüche anzeigen" (nur-eigene.js): dann immer aus dem
+	// eigenen Pool ziehen, sofern es eigene Texte gibt.
+	var nurEigene = localStorage.getItem("nurEigeneSprueche") === "1";
+	if (eigeneSprueche.length > 0 && (nurEigene || Math.random() < EIGENE_GEWICHT)) {
 		var idx = rand(0, eigeneSprueche.length - 1);
 		return { text: eigeneSprueche[idx], istEigen: true };
 	}
@@ -901,9 +909,13 @@ function energieJetztAnzeigen(boolAnzeige) {
 		selected = selected.slice(2, selected.length);
 		// kein Bild in diesem Fall -> nur Text zum Teilen
 		currentShareText = selected;
+		currentSpeechText = selected;
 		currentShareImageUrl = null;
 	} else {
 
+		// Originalschreibweise fürs Vorlesen merken (vor dem Großschreiben der
+		// Standard-Sprüche, das z.B. im Türkischen i/ı vertauscht).
+		currentSpeechText = selected;
 		if (!spruchErgebnis.istEigen) {
 			//Grossbuchstaben (nur bei Standard-Sprüchen, eigene Sprüche
 			//bleiben in der vom Nutzer eingegebenen Schreibweise)
@@ -1227,10 +1239,14 @@ async function teileAktuellesBildImpl() {
 		"| canShare(files):", !!(navigator.canShare && navigator.canShare({ files: [file] })),
 		"| isSecureContext:", window.isSecureContext);
 
-	// Nur das Bild teilen (der Spruch steckt bereits im Screenshot selbst)
+	// Das Bild teilen (der Spruch steckt bereits im Screenshot selbst). Dazu optional ein Hinweistext
+	// mit Link zur Energietankstelle in der gewählten Sprache (Option in den Optionen, siehe teilen.js).
 	if (navigator.canShare && navigator.canShare({ files: [file] })) {
 		try {
-			await navigator.share({ files: [file] });
+			var teilenDaten = { files: [file] };
+			var teilenHinweis = typeof energieTeilenText === "function" ? energieTeilenText() : "";
+			if (teilenHinweis) teilenDaten.text = teilenHinweis;
+			await navigator.share(teilenDaten);
 			console.log("navigator.share() mit Bild-Datei erfolgreich aufgerufen");
 		} catch (err) {
 			console.log("navigator.share() mit Datei abgebrochen oder fehlgeschlagen:", err);
@@ -1468,15 +1484,25 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	// Drei Reiter: Bilder, Texte und Optionen (Sprache, Vorlesen, "Nur eigene ...",
+	// siehe einstellungen.js).
 	function aktiviereTab(tab) {
-		var bilderAktiv = tab === 'bilder';
-		if (tabBtnBilder) tabBtnBilder.classList.toggle('active', bilderAktiv);
-		if (tabBtnSprueche) tabBtnSprueche.classList.toggle('active', !bilderAktiv);
-		if (panelBilder) panelBilder.style.display = bilderAktiv ? '' : 'none';
-		if (panelSprueche) panelSprueche.style.display = bilderAktiv ? 'none' : '';
+		var tabBtnOptionen = document.getElementById('tabBtnEinstellungen');
+		var panelOptionen = document.getElementById('panelEinstellungen');
+		if (tabBtnBilder) tabBtnBilder.classList.toggle('active', tab === 'bilder');
+		if (tabBtnSprueche) tabBtnSprueche.classList.toggle('active', tab === 'sprueche');
+		if (tabBtnOptionen) tabBtnOptionen.classList.toggle('active', tab === 'einstellungen');
+		if (panelBilder) panelBilder.style.display = tab === 'bilder' ? '' : 'none';
+		if (panelSprueche) panelSprueche.style.display = tab === 'sprueche' ? '' : 'none';
+		if (panelOptionen) panelOptionen.style.display = tab === 'einstellungen' ? '' : 'none';
+		// Info und Speicher nur bei Bilder/Texte; Backup liegt in den Optionen.
+		var infoBlock = document.getElementById('eigeneInfoBlock');
+		if (infoBlock) infoBlock.style.display = tab === 'einstellungen' ? 'none' : '';
 	}
 	if (tabBtnBilder) tabBtnBilder.addEventListener('click', function () { aktiviereTab('bilder'); });
 	if (tabBtnSprueche) tabBtnSprueche.addEventListener('click', function () { aktiviereTab('sprueche'); });
+	var tabBtnOptionenKlick = document.getElementById('tabBtnEinstellungen');
+	if (tabBtnOptionenKlick) tabBtnOptionenKlick.addEventListener('click', function () { aktiviereTab('einstellungen'); });
 
 	// ---------- Speicher-Info ----------
 	// Zeile unter dem Lokal-Hinweis (in beiden Tabs sichtbar). Wird von beiden

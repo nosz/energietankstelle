@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -7,7 +7,8 @@
   <title>❤️ HERZ INTELLIGENZ 💪 DIE UNENDLICHE ENERGIE TANKSTELLE</title>
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-   <!-- Open Graph Meta-Tags -->
+  <link rel="stylesheet" href="css/info.css?v=115">
+  <!-- Open Graph Meta-Tags -->
   <meta property="og:title" content="❤️HERZ INTELLIGENZ 💪 DIE UNENDLICHE ENERGIE TANKSTELLE">
   <meta property="og:description"
     content="❤️ HERZ INTELLIGENZ 💪 DIE UNENDLICHE ENERGIE TANKSTELLE<br><img src='img/energietankstelle_1.png'>">
@@ -26,163 +27,162 @@
   <style>
     /* Gleiche Schrift-Logik wie auf index.html, damit es keinen
        Design-Bruch zwischen den Seiten gibt. Die gesamte Seite läuft
-       einheitlich auf Arial - auch die früheren Zier-Überschriften
-       (.page-title, .greeting-heading, .recommend-heading), die jetzt
-       statt Dancing Script ebenfalls Arial nutzen und stattdessen über die
-       Marken-Farbe (#9e0976) hervorgehoben werden, siehe style.css. */
+       einheitlich auf Arial; hervorgehoben wird über die Markenfarbe
+       (#9e0976), siehe css/info.css. */
     body,
-    h1 {
+    h1,
+    h2 {
       font-family: 'Arial', sans-serif;
-      font-weight: 500;
-    }
-
-    /* Apple (iOS) spezifische Anpassungen */
-    @supports (-webkit-touch-callout: none) {
-      body,
-      h1 {
-        font-family: 'Arial', sans-serif;
-        font-weight: 500;
-      }
-    }
-
-    /* Android spezifische Anpassungen (für Bildschirmgrößen) */
-    @media screen and (max-width: 768px) {
-      body,
-      h1 {
-        font-weight: 500;
-      }
-    }
-
-    /* Für größere Android-Geräte */
-    @media screen and (min-width: 769px) {
-      body,
-      h1 {
-        font-weight: 500;
-      }
     }
   </style>
 </head>
 
-<body>
+<body class="info-seite" data-ansicht="de">
 
   <div id="gotoStart">
     <div class="btn-group" role="group">
       <a href="index.html" aria-label="Zur Startseite"><button type="button" class="btn btn-default"><img src="img/house-heart.svg" width="100"
-            height="100">
+            height="100" alt="">
         </button></a>
     </div>
   </div>
 
-  <div class="container energie-page">
+  <main class="container info-seite-inhalt">
 
-    <h1 class="page-title">❤️ HERZ INTELLIGENZ 💪<br><br>DIE UNENDLICHE ENERGIE TANKSTELLE</h1>
+    <!-- ===== Kopf: Logo, Titel, Sprachumschalter ===== -->
+    <header class="info-hero">
+      <img src="img/energietankstelle_1.png" class="info-logo" alt="Energietankstelle">
+      <p class="info-ueber">❤️ Herz-Intelligenz 💪</p>
+      <h1 class="info-titel">
+        <span data-sprache="de">Die unendliche Energietankstelle</span>
+        <span data-sprache="en">The infinite Energy Station</span>
+      </h1>
+      <ul class="nav nav-pills info-sprache" role="tablist" aria-label="Sprache / Language">
+        <li class="active" data-ansicht-knopf="de" role="presentation"><a role="tab" tabindex="0" aria-selected="true">Deutsch</a></li>
+        <li data-ansicht-knopf="en" role="presentation"><a role="tab" tabindex="0" aria-selected="false">English</a></li>
+      </ul>
+    </header>
 
-    <!-- ===== Deutsch ===== -->
-
-    <section class="energie-section">
-      <p class="motivation-text">
-        Manchmal reicht ein Klick, um kurz durchzuatmen. Genau dafür ist diese
-        Energietankstelle da: ein Moment für zwischendurch, um aufzutanken und
-        dir selbst ein Stück Energie zu schenken.
-      </p>
+    <!-- ===== Einleitung ===== -->
+    <section class="panel panel-default info-karte info-karte-intro">
+      <div class="panel-body">
+        <p class="info-text" data-sprache="de">
+          Manchmal reicht ein Klick, um kurz durchzuatmen. Genau dafür ist diese
+          Energietankstelle da: ein Moment für zwischendurch, um aufzutanken und
+          dir selbst ein Stück Energie zu schenken.
+        </p>
+        <p class="info-text" data-sprache="en">
+          Sometimes one click is enough to take a breath. That is exactly what
+          this Energy Station is for: a moment in between to recharge and give
+          yourself a bit of energy.
+        </p>
+      </div>
     </section>
 
-    <!-- ===== Weiterempfehlen ===== -->
-    <section class="energie-section recommend-section">
-      <h2 class="recommend-heading">Energietankstelle weiterempfehlen</h2>
-      <p class="recommend-text">
-        Scanne den Code oder teile den Link, damit auch andere kurz auftanken können.
-      </p>
-      <img src="img/qr_energietankstelle.jpg" width="220" height="220" class="qr-image" alt="QR-Code zur Energietankstelle">
-      <button type="button" class="share-button" onclick="shareEnergietankstelle()">
-        📤 Teilen
-      </button>
+    <!-- ===== Weiterempfehlen und Challenge App ===== -->
+    <div class="row info-zweispaltig">
+
+      <div class="col-sm-6">
+        <section class="panel panel-default info-karte info-karte-mitte">
+          <div class="panel-body">
+            <h2 class="info-karte-titel">
+              <span data-sprache="de">Weiterempfehlen</span>
+              <span data-sprache="en">Recommend</span>
+            </h2>
+            <p class="info-karte-text">
+              <span data-sprache="de">Scanne den Code oder teile den Link, damit auch andere kurz auftanken können.</span>
+              <span data-sprache="en">Scan the code or share the link so others can recharge too.</span>
+            </p>
+            <img src="img/qr_energietankstelle.jpg" width="190" height="190" class="info-qr" alt="QR-Code zur Energietankstelle / QR code for the Energy Station">
+            <button type="button" class="btn btn-default info-knopf-outline" onclick="shareEnergietankstelle()">
+              <span data-sprache="de">📤 Teilen</span>
+              <span data-sprache="en">📤 Share</span>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-sm-6">
+        <section class="panel panel-default info-karte info-karte-mitte">
+          <div class="panel-body">
+            <img src="img/challenge_app_klein.png" class="info-icon-rund" alt="">
+            <h2 class="info-karte-titel">Challenge App</h2>
+            <p class="info-karte-text">
+              <span data-sprache="de">Hat dir das kurze Auftanken gutgetan? Dann schau doch mal bei der Challenge App vorbei. Dort baust du Schritt für Schritt, in deinem eigenen Tempo, neue gute Gewohnheiten auf.</span>
+              <span data-sprache="en">Did that quick recharge feel good? Then take a look at the Challenge App. There you build new good habits step by step, at your own pace.</span>
+            </p>
+            <a href="https://nosz.github.io/challenge-app/" target="challenge" class="btn btn-primary">
+              <span data-sprache="de">👉 Zur Challenge App</span>
+              <span data-sprache="en">👉 Go to Challenge App</span>
+            </a>
+            <small class="info-hinweis">
+              <span data-sprache="de">kostenlos · keine Anmeldung</span>
+              <span data-sprache="en">free · no registration</span>
+            </small>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- ===== Herzintelligenz: Link in der gewählten Sprache (?lang=...) ===== -->
+    <section class="panel panel-default info-karte info-karte-mitte">
+      <div class="panel-body">
+        <img src="img/herzi.png" class="info-icon-rund" alt="">
+        <h2 class="info-karte-titel">Herzintelligenz</h2>
+        <p class="info-karte-text">
+          <span data-sprache="de">Mehr zur Herzintelligenz findest du auf der eigenen Seite, gleich in deiner Sprache.</span>
+          <span data-sprache="en">Find out more about Heart Intelligence on its own page, right in your language.</span>
+        </p>
+        <a href="https://nosz.github.io/herzintelligenz/?lang=de" target="herzintelligenz" class="btn btn-primary" id="herzLink">
+          <span data-sprache="de">❤️ Zur Herzintelligenz-Seite</span>
+          <span data-sprache="en">❤️ Go to the Heart Intelligence page</span>
+        </a>
+      </div>
     </section>
 
-    <section class="energie-section">
-      <h2 class="greeting-heading">Wünsche Dir viel Glück und Energie mit der Energietankstelle</h2>
-      <p class="greeting-text">
-        Liebe Grüße<br>Norbert Szpak<br>
-        <a href="mailto:n.szpak@web.de">n.szpak@web.de</a>
-      </p>
+    <!-- ===== Gruß ===== -->
+    <section class="panel panel-default info-karte info-gruss">
+      <div class="panel-body">
+        <span class="info-gruss-herz" aria-hidden="true">❤️</span>
+        <h2 class="info-gruss-titel">
+          <span data-sprache="de">Wünsche Dir viel Glück und Energie mit der Energietankstelle</span>
+          <span data-sprache="en">Wishing you lots of energy with the Energy Station</span>
+        </h2>
+        <p class="info-gruss-text">
+          <span data-sprache="de">Liebe Grüße</span>
+          <span data-sprache="en">Kind regards</span><br>
+          <strong>Norbert Szpak</strong>
+        </p>
+        <a href="mailto:n.szpak@web.de" class="btn btn-default info-knopf-outline">✉️ n.szpak@web.de</a>
+      </div>
     </section>
 
-    <section class="energie-section">
-      <p class="motivation-text">
-        Hat dir das kurze Auftanken gutgetan? Dann schau doch mal bei der
-        Challenge App vorbei. Dort baust du Schritt für Schritt, in deinem
-        eigenen Tempo, neue gute Gewohnheiten auf.
-      </p>
-      <a href="https://nosz.github.io/challenge-app/" target="challenge" class="cta-button">
-        👉 Zur Challenge App
+    <footer class="info-fuss">
+      <a href="index.html">
+        <span data-sprache="de">Zur Energietankstelle</span>
+        <span data-sprache="en">Back to the Energy Station</span>
       </a>
-      <small class="hint">kostenlos · keine Anmeldung</small>
-    </section>
-
-    <hr>
-
-    <!-- ===== English ===== -->
-
-    <section class="energie-section">
-      <p class="motivation-text">
-        Sometimes one click is enough to take a breath. That is exactly what
-        this Energy Station is for: a moment in between to recharge and give
-        yourself a bit of energy.
-      </p>
-    </section>
-
-    <!-- ===== Recommend ===== -->
-    <section class="energie-section recommend-section">
-      <h2 class="recommend-heading">Recommend the Energy Station</h2>
-      <p class="recommend-text">
-        Scan the code or share the link so others can recharge too.
-      </p>
-      <img src="img/qr_energietankstelle.jpg" width="220" height="220" class="qr-image" alt="QR code for the Energy Station">
-      <button type="button" class="share-button" onclick="shareEnergietankstelle()">
-        📤 Share
-      </button>
-    </section>
-
-    <section class="energie-section">
-      <h2 class="greeting-heading">Wishing you lots of energy with the Energy Station</h2>
-      <p class="greeting-text">
-        Kind regards<br>Norbert Szpak<br>
-        <a href="mailto:n.szpak@web.de">n.szpak@web.de</a>
-      </p>
-    </section>
-
-    <section class="energie-section">
-      <p class="motivation-text">
-        Did that quick recharge feel good? Then take a look at the Challenge
-        App. There you build new good habits step by step, at your own pace.
-      </p>
-      <a href="https://nosz.github.io/challenge-app/" target="challenge" class="cta-button">
-        👉 Go to Challenge App
-      </a>
-      <small class="hint">free · no registration</small>
-    </section>
-
-    <footer class="energie-footer">
+      ·
       <a href="impressum.html" target="impressum">Impressum</a>
-      <br>
-      <small class="hint" id="appVersionNote"></small>
+      <small class="info-version" id="appVersionNote"></small>
     </footer>
 
-  </div>
+  </main>
 
   <!-- ===== Teilen-Popup (Fallback, wenn kein natives Teilen-Menü verfügbar ist) ===== -->
   <div class="share-modal-backdrop" id="shareModalBackdrop" onclick="closeShareModal(event)">
     <div class="share-modal">
       <button type="button" class="share-modal-close" onclick="closeShareModal()" aria-label="Schließen">✕</button>
-      <h3 class="share-modal-title">Energietankstelle teilen</h3>
+      <h3 class="share-modal-title" id="shareModalTitel">Energietankstelle teilen</h3>
       <a class="share-option" id="shareWhatsapp" href="#" target="_blank" rel="noopener">
         <span class="share-icon">💬</span> WhatsApp
       </a>
       <a class="share-option" id="shareMail" href="#">
-        <span class="share-icon">✉️</span> E-Mail
+        <span class="share-icon">✉️</span> <span id="shareMailText">E-Mail</span>
       </a>
       <button type="button" class="share-option" id="shareCopy" onclick="copyShareLink()">
-        <span class="share-icon">🔗</span> Link kopieren
+        <span class="share-icon">🔗</span> <span id="shareCopyText">Link kopieren</span>
       </button>
       <p class="share-copy-feedback" id="shareCopyFeedback">Link kopiert!</p>
     </div>
@@ -190,14 +190,89 @@
 
   <script>
     const SHARE_URL = "https://nosz.github.io/energietankstelle/";
-    const SHARE_TITLE = "Energietankstelle";
-    const SHARE_TEXT = "Schau dir die Energietankstelle an – ein kurzer Moment zum Auftanken:";
+
+    // Texte je Sprachansicht (Deutsch / Englisch). Die Ansicht startet in der Sprache der App
+    // (Deutsch bei Deutsch, sonst Englisch) und lässt sich oben umschalten.
+    const TEXTE = {
+      de: {
+        titel: "Energietankstelle",
+        text: "Schau dir die Energietankstelle an – ein kurzer Moment zum Auftanken:",
+        popup: "Energietankstelle teilen",
+        mail: "E-Mail",
+        kopieren: "Link kopieren",
+        kopiert: "Link kopiert!",
+        schliessen: "Schließen"
+      },
+      en: {
+        titel: "Energy Station",
+        text: "Take a look at the Energy Station – a short moment to recharge:",
+        popup: "Share the Energy Station",
+        mail: "Email",
+        kopieren: "Copy link",
+        kopiert: "Link copied!",
+        schliessen: "Close"
+      }
+    };
+
+    function ansicht() {
+      return document.body.getAttribute("data-ansicht") === "en" ? "en" : "de";
+    }
+
+    // Sprachcodes der Herzintelligenz-Seite (https://nosz.github.io/herzintelligenz/?lang=...) zu den Codes der App.
+    const HERZ_CODES = {
+      de: "de", en: "en", es: "es", pl: "pl", it: "it", ru: "ru",
+      tu: "tr", vi: "vi", ba: "bn", un: "hu", ukr: "uk", china: "zh"
+    };
+    const HERZ_URL = "https://nosz.github.io/herzintelligenz/";
+
+    // Der Link folgt der gewählten Sprache: zuerst der Sprache der App (alle 12), nach einem Klick auf
+    // Deutsch oder English oben der dort gewählten Sprache.
+    function herzLinkSetzen(appCode) {
+      const code = HERZ_CODES[appCode] || "en";
+      document.getElementById("herzLink").href = HERZ_URL + "?lang=" + code;
+    }
+
+    function setzeAnsicht(sprache, appCode) {
+      herzLinkSetzen(appCode || sprache);
+      document.body.setAttribute("data-ansicht", sprache);
+      document.documentElement.lang = sprache;
+      document.querySelectorAll("[data-ansicht-knopf]").forEach(function (li) {
+        const aktiv = li.getAttribute("data-ansicht-knopf") === sprache;
+        li.classList.toggle("active", aktiv);
+        li.firstElementChild.setAttribute("aria-selected", aktiv ? "true" : "false");
+      });
+      const t = TEXTE[sprache];
+      document.getElementById("shareModalTitel").textContent = t.popup;
+      document.getElementById("shareMailText").textContent = t.mail;
+      document.getElementById("shareCopyText").textContent = t.kopieren;
+      document.getElementById("shareCopyFeedback").textContent = t.kopiert;
+      document.querySelector(".share-modal-close").setAttribute("aria-label", t.schliessen);
+    }
+
+    document.querySelectorAll("[data-ansicht-knopf]").forEach(function (li) {
+      const wechseln = function () { setzeAnsicht(li.getAttribute("data-ansicht-knopf")); };
+      li.addEventListener("click", wechseln);
+      li.firstElementChild.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          wechseln();
+        }
+      });
+    });
+
+    // Startansicht: Sprache der App (de -> Deutsch, alle anderen -> Englisch).
+    (function () {
+      let app = "de";
+      try { app = localStorage.getItem("langEnergie") || "de"; } catch (e) {}
+      setzeAnsicht(app === "de" ? "de" : "en", app);
+    }());
 
     function shareEnergietankstelle() {
+      const t = TEXTE[ansicht()];
       if (navigator.share) {
         navigator.share({
-          title: SHARE_TITLE,
-          text: SHARE_TEXT,
+          title: t.titel,
+          text: t.text,
           url: SHARE_URL
         }).catch(() => {
           // Nutzer hat abgebrochen oder Fehler – kein Fallback nötig
@@ -208,13 +283,14 @@
     }
 
     function openShareModal() {
+      const t = TEXTE[ansicht()];
       const backdrop = document.getElementById("shareModalBackdrop");
       const whatsapp = document.getElementById("shareWhatsapp");
       const mail = document.getElementById("shareMail");
 
-      whatsapp.href = "https://wa.me/?text=" + encodeURIComponent(SHARE_TEXT + " " + SHARE_URL);
-      mail.href = "mailto:?subject=" + encodeURIComponent(SHARE_TITLE) +
-        "&body=" + encodeURIComponent(SHARE_TEXT + " " + SHARE_URL);
+      whatsapp.href = "https://wa.me/?text=" + encodeURIComponent(t.text + " " + SHARE_URL);
+      mail.href = "mailto:?subject=" + encodeURIComponent(t.titel) +
+        "&body=" + encodeURIComponent(t.text + " " + SHARE_URL);
 
       backdrop.classList.add("is-open");
     }

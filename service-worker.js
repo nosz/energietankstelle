@@ -1,8 +1,8 @@
-// ---- Versionierung ----
+﻿// ---- Versionierung ----
 // Bei jedem neuen Release diese Nummer erhöhen. Das ändert den Cache-Namen,
 // wodurch der Browser den Service Worker als "neu" erkennt und alte Caches
 // beim Aktivieren automatisch gelöscht werden.
-const APP_VERSION = "65";
+const APP_VERSION = "115";
 const CACHE_NAME = "energietankstelle-cache-v" + APP_VERSION;
 const OFFLINE_URL = "offline.html";
 const FILES_TO_CACHE = [
@@ -12,7 +12,17 @@ const FILES_TO_CACHE = [
   "manifest.json",
   "languages.js",
   "energystation.js",
+  "vorlesen.js",
+  "einsprechen.js",
+  "nur-eigene.js",
+  "teilen.js",
+  "einstellungen.js",
+  "starthilfe.js",
   "css/style.css",
+  "css/vorlesen.css",
+  "css/einstellungen.css",
+  "css/info.css",
+  "css/starthilfe.css",
   "css/bootstrap.min.css",
   "js/index.js",
   "js/hammer.min.js",
@@ -24,6 +34,8 @@ const FILES_TO_CACHE = [
   "img/apple-touch-icon.png",
   "img/favicon.ico",
   "img/share.svg",
+  "img/gear.svg",
+  "img/herzi.png",
   OFFLINE_URL
 ];
 

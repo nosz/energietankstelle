@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
   Versionierung: Bei jedem neuen Release EINE gemeinsame Versionsnummer
   verwenden - bei allen ?v=-Query-Strings der eigenen Dateien
@@ -41,7 +41,10 @@
   <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f7f1e4">
-  <link rel="stylesheet" href="css/style.css?v=65">
+  <link rel="stylesheet" href="css/style.css?v=115">
+  <link rel="stylesheet" href="css/vorlesen.css?v=115">
+  <link rel="stylesheet" href="css/einstellungen.css?v=115">
+  <link rel="stylesheet" href="css/starthilfe.css?v=115">
 
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
 
@@ -124,8 +127,9 @@
             src="img/info-circle.svg" width="100" height="100">
         </button></a>
     </div>
-    <a href="#" id="btn_eigene" style="display:none;"><button type="button" class="btn btn-default"><img src="img/images.svg" width="100"
-          height="100">
+    <!-- Zahnrad (Bootstrap Icons): von Anfang an sichtbar, öffnet direkt die Einstellungen (einstellungen.js) -->
+    <a href="#" id="btn_eigene" aria-label="Einstellungen" title="Einstellungen"><button type="button" class="btn btn-default"><img src="img/gear.svg" width="100"
+          height="100" alt="">
       </button></a>
     <button type="button" id="btn_share" class="btn btn-default" style="display:none;"><img src="img/share.svg" width="100"
           height="100">
@@ -141,8 +145,11 @@
       <div class="own-content-tabs">
         <button type="button" class="own-content-tab-btn active" id="tabBtnBilder" data-tab="bilder">Bilder</button>
         <button type="button" class="own-content-tab-btn" id="tabBtnSprueche" data-tab="sprueche">Texte</button>
+        <button type="button" class="own-content-tab-btn" id="tabBtnEinstellungen" data-tab="einstellungen">⚙️ Optionen</button>
       </div>
 
+      <!-- Kopf (Titel, Schließen, Reiter) bleibt stehen, nur dieser Bereich scrollt -->
+      <div class="own-content-scroll">
       <div class="own-content-panel" id="panelBilder">
         <button type="button" class="own-content-upload-btn" id="eigeneBilderUploadBtn">
           <span class="own-content-upload-icon">📷</span>
@@ -164,14 +171,22 @@
         <div class="own-content-spruch-list" id="eigeneSpruecheListe"></div>
       </div>
 
+      <!-- Optionen: Sprache, Vorlesen, "Nur eigene ..." (Inhalt kommt aus einstellungen.js, vorlesen.js, nur-eigene.js) -->
+      <div class="own-content-panel" id="panelEinstellungen" style="display:none;"></div>
+
+      <!-- Info und Speicher gehören zu Bilder/Texte; auf dem Reiter Optionen werden sie ausgeblendet -->
+      <div id="eigeneInfoBlock">
       <hr>
       <p class="own-content-local-hinweis" id="eigeneLokalHinweis"><strong id="eigeneLokalHinweisLabel">Info:</strong> Deine Bilder &amp; Texte werden nur lokal auf diesem Gerät gespeichert.</p>
       <p class="own-content-local-hinweis" id="eigeneSpeicherInfo"></p>
+      </div>
+      <!-- Backup-Button: wird von einstellungen.js in den Reiter Optionen verschoben -->
       <button type="button" class="own-content-backup-link" id="oeffneBackupModalBtn">
         <span class="own-content-backup-link-icon">📤</span>
         <span id="oeffneBackupModalText">Backup &amp; Übertragen</span>
       </button>
       <p class="share-copy-feedback" id="eigeneFeedback"></p>
+      </div>
     </div>
   </div>
 
@@ -348,10 +363,16 @@
     </script>
     <script src="js/hammer.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
-    <script src="languages.js?v=65"></script>
-    <script src="energystation.js?v=65"></script>
+    <script src="languages.js?v=115"></script>
+    <script src="energystation.js?v=115"></script>
+    <script src="einstellungen.js?v=115"></script>
+    <script src="vorlesen.js?v=115"></script>
+    <script src="einsprechen.js?v=115"></script>
+    <script src="nur-eigene.js?v=115"></script>
+    <script src="teilen.js?v=115"></script>
+    <script src="starthilfe.js?v=115"></script>
     <script src="js/particles.min.js"></script>
-    <script src="js/index.js?v=65"></script>
+    <script src="js/index.js?v=115"></script>
     <script>
 
     </script>
