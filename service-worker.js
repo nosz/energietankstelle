@@ -1,8 +1,8 @@
-﻿// ---- Versionierung ----
+// ---- Versionierung ----
 // Bei jedem neuen Release diese Nummer erhöhen. Das ändert den Cache-Namen,
 // wodurch der Browser den Service Worker als "neu" erkennt und alte Caches
 // beim Aktivieren automatisch gelöscht werden.
-const APP_VERSION = "117";
+const APP_VERSION = "120";
 const CACHE_NAME = "energietankstelle-cache-v" + APP_VERSION;
 const OFFLINE_URL = "offline.html";
 const FILES_TO_CACHE = [

@@ -33,33 +33,58 @@
 	// Fehlt eine Sprache, gilt "en".
 	var TEXTE = {
 		de: ["Spruch einsprechen", "Fertig", "Ich höre zu … sprich jetzt.", "Tippe auf das Mikrofon und sprich deinen Spruch. Der Text erscheint im Feld, die Aufnahme wird ihm zugeordnet.", "Aufnahme fertig. Prüfe den Text und tippe auf", "Anhören", "Neu aufnehmen", "Löschen", "Mikrofon nicht erlaubt", "Aufnahme nicht möglich", "Tippe auf das Mikrofon und sprich deinen Spruch. Schreibe den Text dazu ins Feld, die Aufnahme wird ihm zugeordnet.",
-			"Der Text wurde nicht automatisch erkannt. Sprich ihn zum Diktieren noch einmal oder tippe ihn ins Feld.", "Dein Browser kann Sprache nicht in Text umwandeln. Bitte tippe den Text ins Feld.", "Text diktieren", "Die Spracherkennung braucht eine Internetverbindung. Bitte tippe den Text ins Feld.", "Text wird erkannt …", "Du hast die App als lokale Datei geöffnet. Darum fragt der Browser bei jeder Aufnahme erneut nach dem Mikrofon. Öffne die App über ihre Web-Adresse, dann genügt einmal „Beim Besuch der Website erlauben“."],
+			"Der Text wurde nicht automatisch erkannt. Sprich ihn zum Diktieren noch einmal oder tippe ihn ins Feld.", "Dein Browser kann Sprache nicht in Text umwandeln. Bitte tippe den Text ins Feld.", "Text diktieren", "Die Spracherkennung braucht eine Internetverbindung. Bitte tippe den Text ins Feld.", "Text wird erkannt …", "Du hast die App als lokale Datei geöffnet. Darum fragt der Browser bei jeder Aufnahme erneut nach dem Mikrofon. Öffne die App über ihre Web-Adresse, dann genügt einmal „Beim Besuch der Website erlauben“.",
+			"Schritt 1: Tippe auf das Mikrofon und sprich deinen Spruch. Der Text erscheint im Feld. Danach nimmst du ihn mit deiner Stimme auf.", "Schritt 2: Lies den Text jetzt vor, damit deine Stimme aufgenommen wird.", "Der Text wurde nicht erkannt. Tippe ihn ins Feld und nimm ihn dann mit deiner Stimme auf.", "Stimme aufnehmen", "Neu diktieren", "Lies den Text jetzt vor … tippe danach auf Fertig."],
 		en: ["Record your message", "Done", "Listening … speak now.", "Tap the microphone and say your message. The text appears in the field and the recording is linked to it.", "Recording done. Check the text and tap", "Play", "Record again", "Delete", "Microphone not allowed", "Recording not possible", "Tap the microphone and say your message. Type the text into the field; the recording is linked to it.",
-			"The text was not recognised automatically. Say it again to dictate it, or type it into the field.", "Your browser cannot convert speech to text. Please type the text into the field.", "Dictate text", "Speech recognition needs an internet connection. Please type the text into the field.", "Recognising text …", "You opened the app as a local file, so the browser asks for the microphone again for every recording. Open the app via its web address; then “Allow while visiting the site” is enough once."],
+			"The text was not recognised automatically. Say it again to dictate it, or type it into the field.", "Your browser cannot convert speech to text. Please type the text into the field.", "Dictate text", "Speech recognition needs an internet connection. Please type the text into the field.", "Recognising text …", "You opened the app as a local file, so the browser asks for the microphone again for every recording. Open the app via its web address; then “Allow while visiting the site” is enough once.",
+			"Step 1: Tap the microphone and say your message. The text appears in the field. Then you record it with your own voice.", "Step 2: Read the text aloud now so your voice is recorded.", "The text was not recognised. Type it into the field, then record it with your voice.", "Record voice", "Dictate again", "Read the text aloud now … then tap Done."],
 		es: ["Grabar tu mensaje", "Listo", "Escuchando … habla ahora.", "Toca el micrófono y di tu mensaje. El texto aparece en el campo y la grabación se asocia a él.", "Grabación lista. Revisa el texto y toca", "Escuchar", "Grabar de nuevo", "Borrar", "Micrófono no permitido", "Grabación no posible", "Toca el micrófono y di tu mensaje. Escribe el texto en el campo; la grabación se asocia a él.",
-			"El texto no se reconoció automáticamente. Dilo de nuevo para dictarlo o escríbelo en el campo.", "Tu navegador no puede convertir voz en texto. Escribe el texto en el campo.", "Dictar texto", "El reconocimiento de voz necesita internet. Escribe el texto en el campo.", "Reconociendo texto …", "Has abierto la app como archivo local, por eso el navegador pide el micrófono en cada grabación. Abre la app desde su dirección web; entonces basta con permitirlo una vez."],
+			"El texto no se reconoció automáticamente. Dilo de nuevo para dictarlo o escríbelo en el campo.", "Tu navegador no puede convertir voz en texto. Escribe el texto en el campo.", "Dictar texto", "El reconocimiento de voz necesita internet. Escribe el texto en el campo.", "Reconociendo texto …", "Has abierto la app como archivo local, por eso el navegador pide el micrófono en cada grabación. Abre la app desde su dirección web; entonces basta con permitirlo una vez.",
+			"Paso 1: toca el micrófono y di tu mensaje. El texto aparece en el campo. Después lo grabas con tu propia voz.", "Paso 2: lee ahora el texto en voz alta para que se grabe tu voz.", "No se reconoció el texto. Escríbelo en el campo y luego grábalo con tu voz.", "Grabar voz", "Dictar de nuevo", "Lee ahora el texto en voz alta … luego toca Listo."],
 		pl: ["Nagraj swoją myśl", "Gotowe", "Słucham … mów teraz.", "Dotknij mikrofonu i powiedz swoją myśl. Tekst pojawi się w polu, a nagranie zostanie do niego przypisane.", "Nagranie gotowe. Sprawdź tekst i dotknij", "Odtwórz", "Nagraj ponownie", "Usuń", "Mikrofon niedozwolony", "Nagrywanie niemożliwe", "Dotknij mikrofonu i powiedz swoją myśl. Wpisz tekst w polu; nagranie zostanie do niego przypisane.",
-			"Tekst nie został rozpoznany automatycznie. Powiedz go jeszcze raz, aby podyktować, albo wpisz go w polu.", "Twoja przeglądarka nie potrafi zamienić mowy na tekst. Wpisz tekst w polu.", "Podyktuj tekst", "Rozpoznawanie mowy wymaga internetu. Wpisz tekst w polu.", "Rozpoznawanie tekstu …", "Otworzyłeś aplikację jako plik lokalny, dlatego przeglądarka pyta o mikrofon przy każdym nagraniu. Otwórz aplikację przez jej adres internetowy, wtedy wystarczy raz zezwolić."],
+			"Tekst nie został rozpoznany automatycznie. Powiedz go jeszcze raz, aby podyktować, albo wpisz go w polu.", "Twoja przeglądarka nie potrafi zamienić mowy na tekst. Wpisz tekst w polu.", "Podyktuj tekst", "Rozpoznawanie mowy wymaga internetu. Wpisz tekst w polu.", "Rozpoznawanie tekstu …", "Otworzyłeś aplikację jako plik lokalny, dlatego przeglądarka pyta o mikrofon przy każdym nagraniu. Otwórz aplikację przez jej adres internetowy, wtedy wystarczy raz zezwolić.",
+			"Krok 1: dotknij mikrofonu i powiedz swoją myśl. Tekst pojawi się w polu. Potem nagrasz go własnym głosem.", "Krok 2: przeczytaj teraz tekst na głos, aby nagrać swój głos.", "Tekst nie został rozpoznany. Wpisz go w polu, a potem nagraj go swoim głosem.", "Nagraj głos", "Podyktuj ponownie", "Przeczytaj teraz tekst na głos … potem dotknij Gotowe."],
 		it: ["Registra il tuo messaggio", "Fatto", "Ascolto … parla ora.", "Tocca il microfono e di’ il tuo messaggio. Il testo appare nel campo e la registrazione gli viene associata.", "Registrazione pronta. Controlla il testo e tocca", "Ascolta", "Registra di nuovo", "Elimina", "Microfono non consentito", "Registrazione non possibile", "Tocca il microfono e di’ il tuo messaggio. Scrivi il testo nel campo; la registrazione gli viene associata.",
-			"Il testo non è stato riconosciuto automaticamente. Ripetilo per dettarlo oppure scrivilo nel campo.", "Il tuo browser non può convertire la voce in testo. Scrivi il testo nel campo.", "Detta il testo", "Il riconoscimento vocale richiede internet. Scrivi il testo nel campo.", "Riconoscimento del testo …", "Hai aperto l’app come file locale, quindi il browser chiede il microfono a ogni registrazione. Apri l’app dal suo indirizzo web: basterà consentire una volta."],
+			"Il testo non è stato riconosciuto automaticamente. Ripetilo per dettarlo oppure scrivilo nel campo.", "Il tuo browser non può convertire la voce in testo. Scrivi il testo nel campo.", "Detta il testo", "Il riconoscimento vocale richiede internet. Scrivi il testo nel campo.", "Riconoscimento del testo …", "Hai aperto l’app come file locale, quindi il browser chiede il microfono a ogni registrazione. Apri l’app dal suo indirizzo web: basterà consentire una volta.",
+			"Passo 1: tocca il microfono e di’ il tuo messaggio. Il testo appare nel campo. Poi lo registri con la tua voce.", "Passo 2: leggi ora il testo ad alta voce per registrare la tua voce.", "Il testo non è stato riconosciuto. Scrivilo nel campo e poi registralo con la tua voce.", "Registra la voce", "Detta di nuovo", "Leggi ora il testo ad alta voce … poi tocca Fatto."],
 		ru: ["Записать своё сообщение", "Готово", "Слушаю … говорите.", "Нажмите на микрофон и произнесите своё сообщение. Текст появится в поле, а запись будет к нему привязана.", "Запись готова. Проверьте текст и нажмите", "Слушать", "Записать заново", "Удалить", "Микрофон не разрешён", "Запись невозможна", "Нажмите на микрофон и произнесите своё сообщение. Введите текст в поле, запись будет к нему привязана.",
-			"Текст не распознан автоматически. Произнесите его ещё раз для диктовки или введите в поле.", "Ваш браузер не умеет преобразовывать речь в текст. Введите текст в поле.", "Продиктовать текст", "Для распознавания речи нужен интернет. Введите текст в поле.", "Распознаю текст …", "Вы открыли приложение как локальный файл, поэтому браузер запрашивает микрофон при каждой записи. Откройте приложение по его веб-адресу, тогда достаточно один раз разрешить."],
+			"Текст не распознан автоматически. Произнесите его ещё раз для диктовки или введите в поле.", "Ваш браузер не умеет преобразовывать речь в текст. Введите текст в поле.", "Продиктовать текст", "Для распознавания речи нужен интернет. Введите текст в поле.", "Распознаю текст …", "Вы открыли приложение как локальный файл, поэтому браузер запрашивает микрофон при каждой записи. Откройте приложение по его веб-адресу, тогда достаточно один раз разрешить.",
+			"Шаг 1: нажмите на микрофон и произнесите своё сообщение. Текст появится в поле. Затем вы запишете его своим голосом.", "Шаг 2: прочитайте текст вслух, чтобы записать свой голос.", "Текст не распознан. Введите его в поле, а затем запишите своим голосом.", "Записать голос", "Продиктовать заново", "Прочитайте текст вслух … затем нажмите «Готово»."],
 		tu: ["Mesajını sesli kaydet", "Bitti", "Dinliyorum … şimdi konuş.", "Mikrofona dokun ve mesajını söyle. Metin alanda görünür, kayıt ona bağlanır.", "Kayıt hazır. Metni kontrol et ve dokun:", "Dinle", "Yeniden kaydet", "Sil", "Mikrofona izin verilmedi", "Kayıt yapılamıyor", "Mikrofona dokun ve mesajını söyle. Metni alana yaz; kayıt ona bağlanır.",
-			"Metin otomatik olarak tanınmadı. Dikte etmek için tekrar söyle ya da alana yaz.", "Tarayıcın konuşmayı metne çeviremiyor. Lütfen metni alana yaz.", "Metni dikte et", "Konuşma tanıma için internet gerekir. Lütfen metni alana yaz.", "Metin tanınıyor …", "Uygulamayı yerel dosya olarak açtın; bu yüzden tarayıcı her kayıtta mikrofonu yeniden sorar. Uygulamayı web adresinden aç, o zaman bir kez izin vermek yeter."],
+			"Metin otomatik olarak tanınmadı. Dikte etmek için tekrar söyle ya da alana yaz.", "Tarayıcın konuşmayı metne çeviremiyor. Lütfen metni alana yaz.", "Metni dikte et", "Konuşma tanıma için internet gerekir. Lütfen metni alana yaz.", "Metin tanınıyor …", "Uygulamayı yerel dosya olarak açtın; bu yüzden tarayıcı her kayıtta mikrofonu yeniden sorar. Uygulamayı web adresinden aç, o zaman bir kez izin vermek yeter.",
+			"Adım 1: Mikrofona dokun ve mesajını söyle. Metin alanda görünür. Sonra onu kendi sesinle kaydedersin.", "Adım 2: Sesinin kaydedilmesi için metni şimdi yüksek sesle oku.", "Metin tanınmadı. Alana yaz, sonra kendi sesinle kaydet.", "Sesi kaydet", "Yeniden dikte et", "Metni şimdi yüksek sesle oku … sonra Bitti’ye dokun."],
 		vi: ["Ghi âm thông điệp của bạn", "Xong", "Đang nghe … hãy nói.", "Chạm vào micro và nói thông điệp của bạn. Văn bản xuất hiện trong ô và bản ghi được gắn với nó.", "Đã ghi xong. Kiểm tra văn bản và chạm", "Nghe", "Ghi lại", "Xóa", "Micro không được phép", "Không thể ghi âm", "Chạm vào micro và nói thông điệp của bạn. Gõ văn bản vào ô; bản ghi được gắn với nó.",
-			"Văn bản chưa được nhận dạng tự động. Hãy nói lại để đọc chính tả hoặc gõ vào ô.", "Trình duyệt của bạn không chuyển giọng nói thành văn bản được. Hãy gõ văn bản vào ô.", "Đọc để nhập văn bản", "Nhận dạng giọng nói cần internet. Hãy gõ văn bản vào ô.", "Đang nhận dạng văn bản …", "Bạn đã mở ứng dụng dưới dạng tệp cục bộ nên trình duyệt hỏi micro ở mỗi lần ghi âm. Hãy mở ứng dụng bằng địa chỉ web, khi đó chỉ cần cho phép một lần."],
+			"Văn bản chưa được nhận dạng tự động. Hãy nói lại để đọc chính tả hoặc gõ vào ô.", "Trình duyệt của bạn không chuyển giọng nói thành văn bản được. Hãy gõ văn bản vào ô.", "Đọc để nhập văn bản", "Nhận dạng giọng nói cần internet. Hãy gõ văn bản vào ô.", "Đang nhận dạng văn bản …", "Bạn đã mở ứng dụng dưới dạng tệp cục bộ nên trình duyệt hỏi micro ở mỗi lần ghi âm. Hãy mở ứng dụng bằng địa chỉ web, khi đó chỉ cần cho phép một lần.",
+			"Bước 1: Chạm vào micro và nói thông điệp của bạn. Văn bản xuất hiện trong ô. Sau đó bạn ghi âm bằng chính giọng của mình.", "Bước 2: Hãy đọc to văn bản ngay bây giờ để giọng của bạn được ghi lại.", "Văn bản chưa được nhận dạng. Hãy gõ vào ô, rồi ghi âm bằng giọng của bạn.", "Ghi âm giọng nói", "Đọc chính tả lại", "Hãy đọc to văn bản … rồi chạm Xong."],
 		ba: ["আপনার বার্তা রেকর্ড করুন", "শেষ", "শুনছি … এখন বলুন।", "মাইক্রোফোনে ট্যাপ করে আপনার বার্তা বলুন। লেখাটি ঘরে দেখা যাবে এবং রেকর্ডিং তার সাথে যুক্ত হবে।", "রেকর্ডিং শেষ। লেখা দেখে নিন এবং ট্যাপ করুন", "শুনুন", "আবার রেকর্ড করুন", "মুছুন", "মাইক্রোফোনের অনুমতি নেই", "রেকর্ড করা সম্ভব নয়", "মাইক্রোফোনে ট্যাপ করে আপনার বার্তা বলুন। লেখাটি ঘরে লিখুন; রেকর্ডিং তার সাথে যুক্ত হবে।",
-			"লেখাটি স্বয়ংক্রিয়ভাবে চেনা যায়নি। বলে লেখাতে আবার বলুন বা ঘরে টাইপ করুন।", "আপনার ব্রাউজার কথাকে লেখায় রূপান্তর করতে পারে না। অনুগ্রহ করে লেখাটি ঘরে টাইপ করুন।", "লেখা বলে দিন", "স্পিচ রিকগনিশনের জন্য ইন্টারনেট দরকার। অনুগ্রহ করে লেখাটি ঘরে টাইপ করুন।", "লেখা চেনা হচ্ছে …", "আপনি অ্যাপটি লোকাল ফাইল হিসেবে খুলেছেন, তাই ব্রাউজার প্রতিটি রেকর্ডিংয়ে মাইক্রোফোন চায়। অ্যাপটি তার ওয়েব ঠিকানা দিয়ে খুলুন, তাহলে একবার অনুমতি দিলেই চলবে।"],
+			"লেখাটি স্বয়ংক্রিয়ভাবে চেনা যায়নি। বলে লেখাতে আবার বলুন বা ঘরে টাইপ করুন।", "আপনার ব্রাউজার কথাকে লেখায় রূপান্তর করতে পারে না। অনুগ্রহ করে লেখাটি ঘরে টাইপ করুন।", "লেখা বলে দিন", "স্পিচ রিকগনিশনের জন্য ইন্টারনেট দরকার। অনুগ্রহ করে লেখাটি ঘরে টাইপ করুন।", "লেখা চেনা হচ্ছে …", "আপনি অ্যাপটি লোকাল ফাইল হিসেবে খুলেছেন, তাই ব্রাউজার প্রতিটি রেকর্ডিংয়ে মাইক্রোফোন চায়। অ্যাপটি তার ওয়েব ঠিকানা দিয়ে খুলুন, তাহলে একবার অনুমতি দিলেই চলবে।",
+			"ধাপ ১: মাইক্রোফোনে ট্যাপ করে আপনার বার্তা বলুন। লেখাটি ঘরে দেখা যাবে। এরপর নিজের কণ্ঠে রেকর্ড করবেন।", "ধাপ ২: এখন লেখাটি জোরে পড়ুন, যাতে আপনার কণ্ঠ রেকর্ড হয়।", "লেখাটি চেনা যায়নি। ঘরে টাইপ করুন, তারপর নিজের কণ্ঠে রেকর্ড করুন।", "কণ্ঠ রেকর্ড করুন", "আবার বলে লেখান", "এখন লেখাটি জোরে পড়ুন … তারপর শেষ-এ ট্যাপ করুন।"],
 		un: ["Üzeneted bemondása", "Kész", "Hallgatom … beszélj most.", "Koppints a mikrofonra, és mondd el az üzeneted. A szöveg megjelenik a mezőben, a felvétel hozzá kapcsolódik.", "A felvétel kész. Ellenőrizd a szöveget, és koppints:", "Lejátszás", "Újra felvétel", "Törlés", "A mikrofon nem engedélyezett", "A felvétel nem lehetséges", "Koppints a mikrofonra, és mondd el az üzeneted. Írd be a szöveget a mezőbe; a felvétel hozzá kapcsolódik.",
-			"A szöveget nem ismertem fel automatikusan. Mondd el újra diktáláshoz, vagy írd be a mezőbe.", "A böngésződ nem tudja a beszédet szöveggé alakítani. Írd be a szöveget a mezőbe.", "Szöveg diktálása", "A beszédfelismeréshez internet kell. Írd be a szöveget a mezőbe.", "Szöveg felismerése …", "Az alkalmazást helyi fájlként nyitottad meg, ezért a böngésző minden felvételnél újra kéri a mikrofont. Nyisd meg a webcímén, akkor elég egyszer engedélyezni."],
+			"A szöveget nem ismertem fel automatikusan. Mondd el újra diktáláshoz, vagy írd be a mezőbe.", "A böngésződ nem tudja a beszédet szöveggé alakítani. Írd be a szöveget a mezőbe.", "Szöveg diktálása", "A beszédfelismeréshez internet kell. Írd be a szöveget a mezőbe.", "Szöveg felismerése …", "Az alkalmazást helyi fájlként nyitottad meg, ezért a böngésző minden felvételnél újra kéri a mikrofont. Nyisd meg a webcímén, akkor elég egyszer engedélyezni.",
+			"1. lépés: koppints a mikrofonra, és mondd el az üzeneted. A szöveg megjelenik a mezőben. Utána felveszed a saját hangoddal.", "2. lépés: olvasd fel most hangosan a szöveget, hogy a hangod felvételre kerüljön.", "A szöveget nem ismertem fel. Írd be a mezőbe, majd vedd fel a saját hangoddal.", "Hang felvétele", "Újra diktálás", "Olvasd fel most hangosan a szöveget … utána koppints a Kész gombra."],
 		ukr: ["Записати своє повідомлення", "Готово", "Слухаю … говоріть.", "Торкніться мікрофона й промовте своє повідомлення. Текст з’явиться в полі, а запис буде з ним пов’язано.", "Запис готовий. Перевірте текст і торкніться", "Слухати", "Записати знову", "Видалити", "Мікрофон не дозволено", "Запис неможливий", "Торкніться мікрофона й промовте своє повідомлення. Введіть текст у поле, запис буде з ним пов’язано.",
-			"Текст не розпізнано автоматично. Промовте його ще раз для диктування або введіть у поле.", "Ваш браузер не вміє перетворювати мовлення на текст. Введіть текст у поле.", "Продиктувати текст", "Для розпізнавання мовлення потрібен інтернет. Введіть текст у поле.", "Розпізнаю текст …", "Ви відкрили застосунок як локальний файл, тому браузер запитує мікрофон під час кожного запису. Відкрийте застосунок за його веб-адресою, тоді достатньо один раз дозволити."],
+			"Текст не розпізнано автоматично. Промовте його ще раз для диктування або введіть у поле.", "Ваш браузер не вміє перетворювати мовлення на текст. Введіть текст у поле.", "Продиктувати текст", "Для розпізнавання мовлення потрібен інтернет. Введіть текст у поле.", "Розпізнаю текст …", "Ви відкрили застосунок як локальний файл, тому браузер запитує мікрофон під час кожного запису. Відкрийте застосунок за його веб-адресою, тоді достатньо один раз дозволити.",
+			"Крок 1: торкніться мікрофона й промовте своє повідомлення. Текст з’явиться в полі. Потім ви запишете його власним голосом.", "Крок 2: прочитайте текст уголос, щоб записати свій голос.", "Текст не розпізнано. Введіть його в поле, а потім запишіть власним голосом.", "Записати голос", "Продиктувати знову", "Прочитайте текст уголос … потім торкніться «Готово»."],
 		china: ["录制你的话", "完成", "正在聆听…请说话。", "点击麦克风并说出你的话。文字会出现在输入框，录音会与它关联。", "录音完成。检查文字并点击", "播放", "重新录制", "删除", "麦克风未被允许", "无法录音", "点击麦克风并说出你的话。请在输入框中输入文字，录音会与它关联。",
-			"未能自动识别文字。请再说一遍进行听写，或直接输入到文本框。", "你的浏览器无法将语音转换为文字。请在文本框中输入文字。", "语音输入文字", "语音识别需要网络。请在文本框中输入文字。", "正在识别文字…", "你是以本地文件方式打开应用的，因此浏览器每次录音都会再次询问麦克风。请通过网址打开应用，这样只需允许一次。"]
+			"未能自动识别文字。请再说一遍进行听写，或直接输入到文本框。", "你的浏览器无法将语音转换为文字。请在文本框中输入文字。", "语音输入文字", "语音识别需要网络。请在文本框中输入文字。", "正在识别文字…", "你是以本地文件方式打开应用的，因此浏览器每次录音都会再次询问麦克风。请通过网址打开应用，这样只需允许一次。",
+			"第1步：点击麦克风并说出你的话，文字会出现在输入框。然后用你自己的声音录制。", "第2步：现在大声朗读这段文字，以录下你的声音。", "未能识别文字。请在输入框中输入文字，然后用你的声音录制。", "录制声音", "重新听写", "现在大声朗读文字……然后点击“完成”。"]
 	};
 
 	var LOKALE_DATEI = location.protocol === "file:";
 	var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+	// Auf Handys (Android, iPhone/iPad) können Aufnahme und Texterkennung das Mikrofon nicht gleichzeitig
+	// nutzen: die Aufnahme klappt, aber die Erkennung liefert keinen Text. Dort läuft das Einsprechen deshalb
+	// in zwei Schritten: 1. Spruch sprechen (Text erscheint im Feld), 2. denselben Text mit der eigenen Stimme
+	// aufnehmen. Am Computer laufen beide gleichzeitig (ein Schritt). Zum Ausprobieren lässt sich der Modus
+	// über localStorage "einsprechenModus" ("zweistufig" oder "gleichzeitig") erzwingen.
+	var MOBIL = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || !!(navigator.userAgentData && navigator.userAgentData.mobile);
+	var modusErzwungen = "";
+	try { modusErzwungen = localStorage.getItem("einsprechenModus") || ""; } catch (e) {}
+	var ZWEISTUFIG = !!SR && (modusErzwungen === "zweistufig" || (modusErzwungen !== "gleichzeitig" && MOBIL));
+	var phase1 = false;        // Schritt 1 (Text sprechen) läuft
+	var schritt2 = false;      // Schritt 1 ist vorbei, jetzt kommt die Aufnahme der Stimme
+
 	var neueAufnahme = null;   // Aufnahme für den Text, der gerade eingegeben wird
 	var erkennung = null;      // laufende Spracherkennung
 	var aufnahme = null;       // laufende Aufnahme: { rec, timer }
@@ -113,6 +138,11 @@
 	box.innerHTML =
 		'<button type="button" class="btn btn-primary btn-block btn-lg" id="einsprechenBtn"></button>' +
 		'<p class="small text-muted einsprechen-hinweis" id="einsprechenHinweis"></p>' +
+		'<div class="einsprechen-schritt2" id="schritt2Zeile" style="display:none;">' +
+		'<div class="alert alert-info small" id="schritt2Hinweis"></div>' +
+		'<button type="button" class="btn btn-primary btn-block btn-lg" id="schritt2Aufnehmen"></button>' +
+		'<button type="button" class="btn btn-default btn-sm btn-block" id="schritt2NeuDiktieren"></button>' +
+		'</div>' +
 		'<div class="einsprechen-neu" id="neueAufnahmeZeile" style="display:none;">' +
 		'<div class="alert alert-success small" id="neueAufnahmeHinweis"></div>' +
 		'<button type="button" class="btn btn-primary btn-block" id="neueAufnahmeDiktieren" style="display:none;"></button>' +
@@ -151,35 +181,50 @@
 		var knopf = el("einsprechenBtn");
 		var hinweis = el("einsprechenHinweis");
 		var laeuft = !!aufnahme;
-		var wartet = !!neueAufnahme && !laeuft && erkenneNoch;
+		var hatText = (eingabe.value || "").trim() !== "";
+		// Zweistufig (Handy): Schritt 1 = Text sprechen, danach Schritt 2 = Stimme aufnehmen.
+		var diktiert1 = ZWEISTUFIG && !neueAufnahme && !laeuft && !!erkennung;
+		var wartet1 = ZWEISTUFIG && !neueAufnahme && !laeuft && !erkennung && erkenneNoch;
+		var schritt2Aktiv = ZWEISTUFIG && schritt2 && !neueAufnahme && !laeuft && !erkennung && !erkenneNoch;
+		var wartet = (!!neueAufnahme && !laeuft && erkenneNoch) || wartet1;
 		var fertig = !!neueAufnahme && !laeuft && !erkenneNoch;
 		var diktiert = fertig && !!erkennung;
-		var hatText = (eingabe.value || "").trim() !== "";
 
-		knopf.style.display = (fertig || wartet) ? "none" : "";
+		knopf.style.display = (fertig || wartet || schritt2Aktiv) ? "none" : "";
 		knopf.disabled = startet; // während die Mikrofon-Abfrage offen ist, nicht doppelt starten
 		// Solange aufgenommen oder erkannt wird, kann nichts gespeichert werden (Text und Aufnahme sind noch nicht fertig).
-		el("eigenerSpruchAddBtn").disabled = laeuft || startet || erkenneNoch;
-		knopf.textContent = laeuft ? "⏹ " + t(1) : "🎤 " + t(0);
-		knopf.classList.toggle("btn-danger", laeuft);
-		knopf.classList.toggle("btn-primary", !laeuft);
+		el("eigenerSpruchAddBtn").disabled = laeuft || startet || erkenneNoch || diktiert1;
+		var knopfRot = laeuft || diktiert1;
+		knopf.textContent = knopfRot ? "⏹ " + t(1) : "🎤 " + t(0);
+		knopf.classList.toggle("btn-danger", knopfRot);
+		knopf.classList.toggle("btn-primary", !knopfRot);
 
 		if (fehler) {
 			hinweis.textContent = fehler;
 			hinweis.className = "small text-danger einsprechen-hinweis";
 		} else if (laeuft) {
+			hinweis.textContent = ZWEISTUFIG ? t(22) : t(2);
+			hinweis.className = "small text-danger einsprechen-hinweis";
+		} else if (diktiert1) {
 			hinweis.textContent = t(2);
 			hinweis.className = "small text-danger einsprechen-hinweis";
 		} else if (wartet) {
 			hinweis.textContent = t(15);
 			hinweis.className = "small text-muted einsprechen-hinweis";
-		} else if (fertig) {
+		} else if (fertig || schritt2Aktiv) {
 			hinweis.textContent = "";
 			hinweis.className = "small text-muted einsprechen-hinweis";
 		} else {
-			hinweis.textContent = SR ? t(3) : t(10);
+			hinweis.textContent = ZWEISTUFIG ? t(17) : (SR ? t(3) : t(10));
 			hinweis.className = "small text-muted einsprechen-hinweis";
 		}
+
+		// Schritt 2 (nur Handy): Text ist da (oder muss getippt werden), jetzt die Stimme aufnehmen.
+		el("schritt2Zeile").style.display = schritt2Aktiv ? "" : "none";
+		el("schritt2Hinweis").textContent = hatText ? t(18) : t(19);
+		el("schritt2Hinweis").className = "alert small " + (hatText ? "alert-info" : "alert-warning");
+		el("schritt2Aufnehmen").textContent = "⏺ " + t(20);
+		el("schritt2NeuDiktieren").textContent = "🎤 " + t(21);
 		hinweis.style.display = hinweis.textContent ? "" : "none";
 
 		// Als lokale Datei geöffnet (file://) kann der Browser die Mikrofon-Erlaubnis nicht merken und
@@ -257,13 +302,18 @@
 			// Nur neu starten, wenn die Sitzung Text geliefert hat (es wird also gesprochen) und höchstens
 			// dreimal: jeder Start kann im Browser eine Mikrofon-Abfrage auslösen, ein Neustart nach
 			// Stille würde diese Abfragen endlos wiederholen.
-			if (neuStarten && aufnahme && !rec.beendet && hatErgebnis && versuch < 3) {
+			if (neuStarten && (aufnahme || phase1) && !rec.beendet && hatErgebnis && versuch < 3) {
 				erkennungStarten(true, versuch + 1);
 				return;
 			}
 			// Aufnahme beendet und letztes Ergebnis ist da: jetzt kann die Ansicht den Zustand beurteilen.
 			erkenneNoch = false;
 			clearTimeout(erkenneTimer);
+			if (phase1) {
+				// Handy: Schritt 1 (Text sprechen) ist fertig, weiter mit Schritt 2 (Stimme aufnehmen).
+				phase1 = false;
+				schritt2 = true;
+			}
 			ansichtAktualisieren();
 		};
 		erkennung = rec;
@@ -283,6 +333,10 @@
 		clearTimeout(erkenneTimer);
 		erkenneTimer = setTimeout(function () {
 			erkenneNoch = false;
+			if (phase1) {
+				phase1 = false;
+				schritt2 = true;
+			}
 			ansichtAktualisieren();
 		}, ERKENNUNG_NACHLAUF_MS);
 		erkennung.stop();
@@ -306,6 +360,8 @@
 		fehler = "";
 		erkennungFehler = "";
 		neueAufnahme = null;
+		phase1 = false;
+		schritt2 = false;
 		var meine = ++sitzung;
 		feldVorher = eingabe.value;
 		startet = true;
@@ -356,8 +412,9 @@
 				return;
 			}
 			ansichtAktualisieren();
-			// Den gesprochenen Text gleichzeitig ins Textfeld schreiben lassen.
-			if (SR) erkennungStarten(true);
+			// Den gesprochenen Text gleichzeitig ins Textfeld schreiben lassen. Auf Handys nicht: dort teilen
+			// sich Aufnahme und Erkennung das Mikrofon nicht, der Text kam schon in Schritt 1.
+			if (SR && !ZWEISTUFIG) erkennungStarten(true);
 		}, function () {
 			if (meine !== sitzung) return;
 			startet = false;
@@ -375,9 +432,11 @@
 	// "textZurueck": auch den Text im Feld auf den Stand vor dem Einsprechen zurücksetzen (beim Abbruch
 	// durch Wegklicken); beim Löschen der Aufnahme bleibt erkannter Text stehen.
 	function zuruecksetzen(textZurueck) {
-		var warAktiv = startet || !!aufnahme || !!erkennung || !!neueAufnahme || erkenneNoch;
+		var warAktiv = startet || !!aufnahme || !!erkennung || !!neueAufnahme || erkenneNoch || schritt2;
 		sitzung += 1;
 		startet = false;
+		phase1 = false;
+		schritt2 = false;
 		if (aufnahme) {
 			var a = aufnahme;
 			aufnahme = null;
@@ -415,9 +474,39 @@
 	}
 
 	// ---------- Bedienung ----------
+	// Schritt 1 (nur Handy): den Spruch sprechen, nur die Texterkennung läuft.
+	function diktatSchritt1Starten() {
+		if (erkennung || aufnahme || startet) return;
+		window.energieAufnahme.stoppen();
+		fehler = "";
+		erkennungFehler = "";
+		neueAufnahme = null;
+		schritt2 = false;
+		sitzung += 1;
+		feldVorher = eingabe.value;
+		phase1 = true;
+		erkennungStarten(true);
+		if (!erkennung) {
+			// Spracherkennung ließ sich nicht starten: gleich weiter zu Schritt 2 (Text tippen, Stimme aufnehmen).
+			phase1 = false;
+			schritt2 = true;
+		}
+		ansichtAktualisieren();
+	}
+
 	el("einsprechenBtn").addEventListener("click", function () {
 		if (aufnahme) aufnehmenBeenden();
+		else if (ZWEISTUFIG && erkennung) erkennungBeenden();   // "Fertig" in Schritt 1
+		else if (ZWEISTUFIG) diktatSchritt1Starten();
 		else aufnehmenStarten();
+	});
+	// Schritt 2 (nur Handy): denselben Text mit der eigenen Stimme aufnehmen, oder von vorn diktieren.
+	el("schritt2Aufnehmen").addEventListener("click", function () { aufnehmenStarten(); });
+	el("schritt2NeuDiktieren").addEventListener("click", function () {
+		zuruecksetzen(false);
+		eingabe.value = "";
+		eingabe.dispatchEvent(new Event("input", { bubbles: true }));
+		diktatSchritt1Starten();
 	});
 	// Zweiter Versuch ohne Aufnahme: nur den Text sprechen. Die vorhandene Aufnahme bleibt.
 	el("neueAufnahmeDiktieren").addEventListener("click", function () {
