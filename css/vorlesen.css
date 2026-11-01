@@ -1,0 +1,150 @@
+﻿/* ---- Vorlesen und Aufnahme: Bootstrap-Komponenten, hier nur Abstände ---- */
+.vorlesen-block {
+  margin-bottom: 0;
+}
+
+.vorlesen-stimme {
+  margin-bottom: 8px;
+}
+
+/* Eigene Aufnahme je eigenem Text (Bootstrap btn btn-xs / btn-danger) */
+.vorlesen-rec-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.own-content-spruch-item.is-confirming .vorlesen-rec-row {
+  display: none;
+}
+
+.vorlesen-rec-row .btn-default {
+  color: #9e0976;
+  border-color: #9e0976;
+}
+
+.vorlesen-rec-row .btn-danger {
+  animation: vorlesen-puls 1s ease-in-out infinite;
+}
+
+@keyframes vorlesen-puls {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vorlesen-rec-row .btn-danger {
+    animation: none;
+  }
+}
+
+/* ---- Spruch einsprechen (Reiter "Texte"): Bootstrap btn-lg/btn-block, alert, btn-group ---- */
+.einsprechen-box {
+  margin-bottom: 12px;
+}
+
+.einsprechen-box .btn-primary {
+  background-color: #9e0976;
+  border-color: #9e0976;
+}
+
+.einsprechen-box .btn-primary:hover,
+.einsprechen-box .btn-primary:focus {
+  background-color: #7a075c;
+  border-color: #7a075c;
+}
+
+.einsprechen-box .btn-danger {
+  animation: vorlesen-puls 1s ease-in-out infinite;
+}
+
+.einsprechen-hinweis {
+  margin: 6px 0 0;
+  line-height: 1.4;
+}
+
+.einsprechen-neu .alert {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+}
+
+.einsprechen-neu .btn-default {
+  color: #9e0976;
+  border-color: #9e0976;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .einsprechen-box .btn-danger {
+    animation: none;
+  }
+}
+
+/* ---- Hinweis, dass gerade vorgelesen wird (Tippen ist bis zum Ende gesperrt) ---- */
+.vorlesen-badge {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  z-index: 900;
+  padding: 6px 16px;
+  font-size: 20px;
+  line-height: 1;
+  color: #9e0976;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #9e0976;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.vorlesen-badge.is-on {
+  display: block;
+  animation: vorlesen-puls 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vorlesen-badge.is-on {
+    animation: none;
+  }
+}
+
+.einsprechen-neu .btn-primary {
+  margin-bottom: 8px;
+  background-color: #9e0976;
+  border-color: #9e0976;
+}
+
+.einsprechen-neu .btn-danger {
+  margin-bottom: 8px;
+  animation: vorlesen-puls 1s ease-in-out infinite;
+}
+
+/* Speichern-Knopf ist gesperrt, solange noch aufgenommen oder der Text erkannt wird */
+#eigenerSpruchAddBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.einsprechen-datei {
+  margin: 8px 0 10px;
+  padding: 8px 10px;
+}
+
+/* Vorschau des Hinweistexts beim Teilen */
+.teilen-vorschau {
+  word-break: break-word;
+}
+
+/* Eigener Text für das Teilen */
+.teilen-eigen .form-control {
+  color: #333;
+  border-color: #9e0976;
+  resize: vertical;
+}
+
+.teilen-eigen .btn {
+  margin-top: 6px;
+}

@@ -1,0 +1,108 @@
+/* ---- Startseite: die drei großen Flaggen-Reihen sind ausgeblendet; kleine Flaggen ersetzen sie
+   (die Reihen bleiben im HTML, damit die bestehende Logik unberührt bleibt) ---- */
+#sprache,
+#sprache1,
+#sprache2 {
+  display: none;
+}
+
+.sh-leiste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px 4px;
+}
+
+.sh-flagge {
+  padding: 3px;
+  line-height: 0;
+  background: #ffffff;
+  border: 1px solid #e0d2dc;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.sh-flagge img {
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.sh-flagge:hover,
+.sh-flagge:focus {
+  opacity: 1;
+  outline: none;
+}
+
+.sh-flagge.active {
+  opacity: 1;
+  border-color: #9e0976;
+  box-shadow: 0 0 0 1px #9e0976;
+}
+
+/* ---- Willkommens-Popup (nutzt .share-modal-backdrop/.share-modal, Bootstrap list-group und btn) ---- */
+.starthilfe-modal {
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.starthilfe-modal .share-modal-title {
+  padding: 0 28px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.sh-leiste-popup {
+  padding: 0 0 12px;
+}
+
+.sh-schritte {
+  margin-bottom: 16px;
+}
+
+.sh-schritte .list-group-item {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #333;
+}
+
+.starthilfe-modal .btn-primary {
+  background-color: #9e0976;
+  border-color: #9e0976;
+}
+
+.starthilfe-modal .btn-primary:hover,
+.starthilfe-modal .btn-primary:focus {
+  background-color: #7a075c;
+  border-color: #7a075c;
+}
+
+/* ---- Hilfe-Panel in den Optionen ---- */
+#starthilfeButton {
+  color: #9e0976;
+  border-color: #9e0976;
+}
+
+/* ---- Kopfzeile: dezenter, einheitlicher (Symbole und Aufbau unverändert) ---- */
+#gotoStart {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid #efe4ec;
+}
+
+#gotoStart .btn {
+  border-color: #e3d3de;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+#gotoStart .btn:hover,
+#gotoStart .btn:focus {
+  background-color: #faf1f7;
+  border-color: #9e0976;
+}

@@ -1,0 +1,291 @@
+/* ---- info.html: Gestaltung der Info-Seite ----
+   Gilt nur für <body class="info-seite">. Nutzt Bootstrap-Komponenten (container, row/col, panel, btn, nav-pills)
+   und ergänzt Markenfarbe (#9e0976), Karten und Abstände. */
+
+body.info-seite {
+  background: linear-gradient(180deg, #faf1f7 0, #ffffff 340px);
+  color: #444;
+}
+
+/* Kopfzeile wie auf der Startseite: dezenter Schatten, abgerundete Buttons */
+.info-seite #gotoStart {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid #efe4ec;
+}
+
+.info-seite #gotoStart .btn {
+  border-color: #e3d3de;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.info-seite #gotoStart .btn:hover,
+.info-seite #gotoStart .btn:focus {
+  background-color: #faf1f7;
+  border-color: #9e0976;
+}
+
+.info-seite .info-seite-inhalt {
+  max-width: 760px;
+  padding-top: 8px;
+  padding-bottom: 48px;
+}
+
+/* ---- Kopf: Logo, Titel, Sprachumschalter ---- */
+.info-hero {
+  margin: 8px 0 26px;
+  text-align: center;
+}
+
+.info-logo {
+  display: block;
+  width: clamp(110px, 32vw, 170px);
+  height: auto;
+  margin: 0 auto 10px;
+}
+
+.info-ueber {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9e0976;
+}
+
+.info-titel {
+  margin: 0 0 18px;
+  font-size: clamp(26px, 6.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333;
+}
+
+.info-sprache {
+  display: inline-flex;
+  gap: 6px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #e3c9dc;
+  border-radius: 999px;
+}
+
+.info-sprache > li > a {
+  display: block;
+  padding: 6px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9e0976;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.info-sprache > li > a:hover,
+.info-sprache > li > a:focus {
+  color: #7a075c;
+  background-color: #f6e3f0;
+  text-decoration: none;
+}
+
+.info-sprache > li.active > a,
+.info-sprache > li.active > a:hover,
+.info-sprache > li.active > a:focus {
+  color: #ffffff;
+  background-color: #9e0976;
+}
+
+/* Sprachwechsel: Texte der nicht gewählten Sprache ausblenden */
+body[data-ansicht="de"] [data-sprache="en"],
+body[data-ansicht="en"] [data-sprache="de"] {
+  display: none !important;
+}
+
+/* ---- Karten ---- */
+.info-karte {
+  margin: 0 0 22px;
+  background: #ffffff;
+  border: 1px solid #ecdde6;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(158, 9, 118, 0.07);
+  overflow: hidden;
+}
+
+.info-karte > .panel-body {
+  padding: 22px;
+}
+
+.info-karte-intro {
+  border-left: 5px solid #9e0976;
+}
+
+.info-text {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.info-karte-titel {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #9e0976;
+}
+
+.info-karte-text {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #555;
+}
+
+.info-zweispaltig {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -11px;
+}
+
+.info-zweispaltig > [class*="col-"] {
+  display: flex;
+  padding: 0 11px;
+}
+
+.info-zweispaltig .info-karte {
+  width: 100%;
+}
+
+.info-karte-mitte {
+  text-align: center;
+}
+
+.info-qr {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  margin: 0 auto 18px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #ecdde6;
+  border-radius: 12px;
+}
+
+.info-icon-rund {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+  object-fit: contain;
+}
+
+/* ---- Buttons (Bootstrap btn, in Markenfarbe) ---- */
+.info-seite .btn-primary {
+  color: #ffffff;
+  background-color: #9e0976;
+  border-color: #9e0976;
+}
+
+.info-seite .btn-primary:hover,
+.info-seite .btn-primary:focus {
+  color: #ffffff;
+  background-color: #7a075c;
+  border-color: #7a075c;
+}
+
+.info-seite .btn-default.info-knopf-outline {
+  color: #9e0976;
+  border-color: #9e0976;
+  background-color: #ffffff;
+}
+
+.info-seite .btn-default.info-knopf-outline:hover,
+.info-seite .btn-default.info-knopf-outline:focus {
+  color: #ffffff;
+  background-color: #9e0976;
+  border-color: #9e0976;
+}
+
+.info-seite .info-karte .btn {
+  min-width: 190px;
+  max-width: 100%;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.info-hinweis {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  color: #999;
+}
+
+/* ---- Gruß ---- */
+.info-gruss {
+  text-align: center;
+}
+
+.info-gruss-herz {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
+  font-size: 28px;
+  line-height: 56px;
+  background: #f6e3f0;
+  border-radius: 50%;
+}
+
+.info-gruss-titel {
+  margin: 0 0 12px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #9e0976;
+}
+
+.info-gruss-text {
+  margin: 0 0 14px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ---- Fußzeile ---- */
+.info-fuss {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.info-fuss a {
+  margin: 0 8px;
+  color: #9e0976;
+}
+
+.info-fuss a:hover,
+.info-fuss a:focus {
+  color: #7a075c;
+}
+
+.info-fuss .info-version {
+  display: block;
+  margin-top: 8px;
+}
+
+@media (max-width: 767px) {
+  .info-zweispaltig > [class*="col-"] {
+    margin-bottom: 22px;
+  }
+
+  .info-zweispaltig .info-karte {
+    margin-bottom: 0;
+  }
+
+  .info-karte > .panel-body {
+    padding: 18px;
+  }
+}

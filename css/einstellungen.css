@@ -1,0 +1,174 @@
+/* ---- Kopfzeile: Zahnrad (Einstellungen) rechts, Teilen kommt mit dem ersten Bild ganz nach rechts ----
+   Das Zahnrad schiebt sich per margin-left:auto an den rechten Rand; ist der Teilen-Button sichtbar,
+   steht er ganz rechts und das Zahnrad direkt links davon. */
+#btn_eigene {
+  margin-left: auto;
+}
+
+#btn_share {
+  margin-left: 8px;
+}
+
+/* ---- Popup "Eigene Bilder & Texte": Kopf bleibt stehen, nur der Inhalt scrollt ---- */
+/* Titel, Schließen-Button und Reiter liegen außerhalb von .own-content-scroll. */
+.own-content-modal {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.own-content-modal .share-modal-close {
+  z-index: 2;
+}
+
+.own-content-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  /* Scrollbalken an den Rand des Popups schieben, Inhalt bleibt eingerückt */
+  margin: 0 -24px;
+  padding: 0 24px 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.own-content-tab-btn {
+  padding: 10px 4px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* ---- Reiter "Optionen": Bootstrap-Komponenten (panel, list-group, btn-group, form-control),
+   hier nur die Markenfarbe der App (#9e0976) und Abstände ---- */
+#panelEinstellungen .panel {
+  margin-bottom: 14px;
+  border-color: #e3c9dc;
+  box-shadow: none;
+}
+
+#panelEinstellungen .panel-heading {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9e0976;
+  background-color: #faf1f7;
+  border-color: #e3c9dc;
+}
+
+#panelEinstellungen .panel-body {
+  padding: 10px;
+}
+
+#panelEinstellungen .list-group {
+  margin-bottom: 0;
+}
+
+#panelEinstellungen .btn-default {
+  color: #9e0976;
+  border-color: #9e0976;
+}
+
+#panelEinstellungen .btn-default:hover,
+#panelEinstellungen .btn-default:focus {
+  color: #9e0976;
+  background-color: #f6e3f0;
+  border-color: #9e0976;
+}
+
+#panelEinstellungen .btn-default.active,
+#panelEinstellungen .btn-default.active:hover,
+#panelEinstellungen .btn-default.active:focus {
+  color: #ffffff;
+  background-color: #9e0976;
+  border-color: #9e0976;
+  box-shadow: none;
+}
+
+#panelEinstellungen .form-control {
+  color: #9e0976;
+  border-color: #9e0976;
+}
+
+#panelEinstellungen .control-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #777;
+}
+
+/* Zeile: Symbol und Beschriftung links, An/Aus-Schalter rechts */
+.einst-zeile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.einst-zeile-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #333;
+}
+
+.einst-icon {
+  font-size: 18px;
+}
+
+.einst-zeile .btn-group {
+  flex-shrink: 0;
+}
+
+/* Flex statt Bootstrap-Floats: Zeilen bleiben ausgerichtet, auch wenn Buttons unterschiedlich hoch sind. */
+.einst-flaggen {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -3px;
+}
+
+.einst-flaggen:before,
+.einst-flaggen:after {
+  display: none;
+}
+
+.einst-flaggen .col-xs-4 {
+  float: none;
+}
+
+.einst-flaggen .col-xs-4 {
+  margin-bottom: 6px;
+  padding: 0 3px;
+}
+
+.einst-flagge {
+  padding: 6px 2px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.einst-flagge img {
+  display: block;
+  width: 44px;
+  height: 28px;
+  margin: 0 auto 3px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.einst-flagge span {
+  display: block;
+}
+
+.einst-flagge.active,
+.einst-flagge.active:hover,
+.einst-flagge.active:focus {
+  color: #9e0976 !important;
+  background-color: #f6e3f0 !important;
+  box-shadow: 0 0 0 1px #9e0976 inset;
+}
+
+.einst-version {
+  margin: 4px 0 0;
+}
