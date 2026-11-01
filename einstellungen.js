@@ -15,7 +15,7 @@
 	"use strict";
 
 	// ?v=... dieses Skripts als Versionsnummer lesen (muss synchron beim Laden passieren).
-	var versionMatch = ((document.currentScript && document.currentScript.src) || "").match(/[?&]v=(\d+)/);
+	var versionMatch = ((document.currentScript && document.currentScript.src) || "").match(/[?&]v=(\d+(?:\.\d+)*)/);
 	var VERSION = versionMatch ? versionMatch[1] : "?";
 
 	// Code der App, Flaggenbild, Name in der jeweiligen Sprache.

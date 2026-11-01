@@ -259,6 +259,38 @@
 		if (!fertig) fokusGesetzt = false;
 	}
 
+	// Fügt die Ergebnis-Abschnitte der Erkennung zu einem Text zusammen. Android-Browser melden denselben
+	// Satz oft mehrfach: wiederholt, als wachsende Fassung ("hallo", "hallo wie") oder ohne Leerzeichen
+	// aneinandergehängt. Ein Abschnitt, der nur den vorigen wiederholt, wird übersprungen; wächst der
+	// vorige, ersetzt der längere ihn.
+	function ergebnisText(results) {
+		var teile = [];
+		for (var i = 0; i < results.length; i++) {
+			var t = results[i][0].transcript.trim();
+			if (!t) continue;
+			var neu = t.toLowerCase();
+			var letzter = teile.length ? teile[teile.length - 1].toLowerCase() : "";
+			if (letzter) {
+				if (neu === letzter || letzter.slice(-neu.length) === neu) continue;
+				if (neu.indexOf(letzter) === 0) {
+					teile[teile.length - 1] = t;
+					continue;
+				}
+			}
+			teile.push(t);
+		}
+		var text = teile.join(" ");
+		// Verklebte Doppelung eines Worts ("hallohallo" -> "hallo"), dann ein einzelnes Wort, das
+		// mehrfach hintereinander steht ("hallo hallo hallo" -> "hallo"). Zwei verschiedene Wörter
+		// oder ein bewusst doppeltes Wort in einem längeren Satz bleiben unverändert.
+		var worte = text.split(/\s+/).map(function (w) {
+			var m = w.match(/^(.{2,})\1$/i);
+			return m ? m[1] : w;
+		});
+		var gleich = worte.every(function (w) { return w.toLowerCase() === worte[0].toLowerCase(); });
+		return (gleich ? worte[0] : worte.join(" ")).trim();
+	}
+
 	// ---------- Texterkennung ----------
 	// "dauerhaft": läuft zusammen mit der Aufnahme. Der Browser beendet die Erkennung nach einer Pause
 	// oder einem Zeitlimit von selbst; solange die Aufnahme läuft, startet sie deshalb neu und schreibt
@@ -275,14 +307,16 @@
 		}
 		rec.lang = ERKENNUNG_SPRACHE[sprache()];
 		rec.interimResults = true;
-		rec.continuous = !!dauerhaft;
+		// Auf Handys liefert "continuous" Teilergebnisse mehrfach und aufsummiert ("hallo hallohallo"):
+		// dort ein Satz pro Sitzung, die Neustarts unten sorgen für weiteres Zuhören.
+		rec.continuous = !!dauerhaft && !MOBIL;
 		var basis = eingabe.value;
 		var abstand = basis && !/\s$/.test(basis) ? " " : "";
 		var neuStarten = !!dauerhaft;
 		rec.onresult = function (ev) {
 			if (erkennung !== rec) return; // Nachzügler nach Abbruch oder Neustart ignorieren
 			var text = "";
-			for (var i = 0; i < ev.results.length; i++) text += ev.results[i][0].transcript;
+			text = ergebnisText(ev.results);
 			eingabe.value = (basis + abstand + text.trim()).slice(0, MAX_ZEICHEN);
 			hatErgebnis = true;
 			erkennungFehler = "";

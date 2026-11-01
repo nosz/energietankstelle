@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -7,7 +7,7 @@
   <title>❤️ HERZ INTELLIGENZ 💪 DIE UNENDLICHE ENERGIE TANKSTELLE</title>
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/info.css?v=119">
+  <link rel="stylesheet" href="css/info.css?v=1.2.2">
   <!-- Open Graph Meta-Tags -->
   <meta property="og:title" content="❤️HERZ INTELLIGENZ 💪 DIE UNENDLICHE ENERGIE TANKSTELLE">
   <meta property="og:description"
@@ -568,7 +568,7 @@
     fetch("service-worker.js")
       .then(response => response.text())
       .then(text => {
-        const match = text.match(/APP_VERSION\s*=\s*"(\d+)"/);
+        const match = text.match(/APP_VERSION\s*=\s*"(\d+(?:\.\d+)*)"/);
         if (match) {
           version = match[1];
           versionAnzeigen();

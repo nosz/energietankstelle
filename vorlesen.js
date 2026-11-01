@@ -464,6 +464,17 @@
 		};
 	}
 
+	// Öffnet sich ein Popup (z.B. die Einstellungen), endet eine laufende Ausgabe sofort: im Popup
+	// kommt die Stimme nur noch beim "Testen"-Knopf oder bei der Aufnahme.
+	if (window.MutationObserver) {
+		var popupWarOffen = false;
+		new MutationObserver(function () {
+			var offen = !!document.querySelector(".share-modal-backdrop.is-open");
+			if (offen && !popupWarOffen) allesStoppen();
+			popupWarOffen = offen;
+		}).observe(document.body, { subtree: true, attributes: true, attributeFilter: ["class"] });
+	}
+
 	// Tippen und Wischen auf der Oberfläche (und damit jeder Wechsel von Bild und Spruch) sind erst
 	// möglich, wenn die Ausgabe beendet ist. energystation.js ruft energieJetztAnzeigen() über den
 	// globalen Namen auf, deshalb reicht ein Schutz an dieser einen Stelle.

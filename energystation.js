@@ -160,12 +160,22 @@ function setLanguage(langCode) {
     }
 }
   //
-var myInterval = setInterval(clickOnDocument, 10000)
+// Ist irgendein Popup offen (Einstellungen mit Optionen/Aufnahme, Backup, Starthilfe, Teilen)?
+// Dann steht der automatische Bild- und Spruchwechsel still.
+function energiePopupOffen() {
+	return !!document.querySelector('.share-modal-backdrop.is-open');
+}
+// Der Timer ruft über den Namen auf, damit die Schutz-Hüllen aus vorlesen.js / einstellungen.js greifen.
+var myInterval = setInterval(function () { clickOnDocument(); }, 10000)
 function clickOnDocument() {
+	if (energiePopupOffen()) {
+		clearInterval(myInterval);
+		return;
+	}
 	var btn_klickbereich = document.getElementById('klickbereich');
-	btn_klickbereich.click();       
-	clearInterval(myInterval);  
-	myInterval = setInterval(clickOnDocument, 20000);      
+	btn_klickbereich.click();
+	clearInterval(myInterval);
+	myInterval = setInterval(function () { clickOnDocument(); }, 20000);
   }
 ;
 
@@ -183,10 +193,26 @@ function autoKlickPausieren() {
 
 function autoKlickFortsetzenFallsErlaubt() {
 	clearInterval(myInterval);
-	if (document.hidden || window.shareInProgress) {
+	if (document.hidden || window.shareInProgress || energiePopupOffen()) {
 		return;
 	}
-	myInterval = setInterval(clickOnDocument, 20000);
+	myInterval = setInterval(function () { clickOnDocument(); }, 20000);
+}
+
+// Sicherheitsnetz: egal wie ein Popup geöffnet oder geschlossen wird, der Timer läuft nie bei
+// offenem Popup und startet nach dem Schließen frisch (volle 20 s ab dem Schließen).
+var popupZustandOffen = false;
+function popupZustandPruefen() {
+	var offen = energiePopupOffen();
+	if (offen === popupZustandOffen) return;
+	popupZustandOffen = offen;
+	if (offen) autoKlickPausieren();
+	else autoKlickFortsetzenFallsErlaubt();
+}
+if (window.MutationObserver) {
+	new MutationObserver(popupZustandPruefen).observe(document.body, {
+		subtree: true, attributes: true, attributeFilter: ['class']
+	});
 }
 
 document.addEventListener('visibilitychange', function () {
