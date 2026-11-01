@@ -148,3 +148,20 @@
 .teilen-eigen .btn {
   margin-top: 6px;
 }
+
+/* Schritt 2 beim Einsprechen auf dem Handy: Stimme aufnehmen */
+.einsprechen-schritt2 .alert {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+}
+
+.einsprechen-schritt2 .btn-primary {
+  margin-bottom: 8px;
+  background-color: #9e0976;
+  border-color: #9e0976;
+}
+
+.einsprechen-schritt2 .btn-default {
+  color: #9e0976;
+  border-color: #9e0976;
+}
