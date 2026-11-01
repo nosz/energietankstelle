@@ -122,11 +122,29 @@
 
 	function aufnahmeLaden(key) {
 		if (!window.indexedDB || !key) return Promise.resolve(null);
-		return dbAktion("readonly", function (s) { return s.get(key); }).then(function (b) { return b || null; });
+		return dbAktion("readonly", function (s) { return s.get(key); }).then(function (b) {
+			if (!b) return null;
+			// Neues Format: { typ, daten (ArrayBuffer) }; ältere Einträge sind direkt ein Blob.
+			return b.daten ? new Blob([b.daten], { type: b.typ || "audio/mp4" }) : b;
+		});
+	}
+
+	// Safari (iOS) kann Blobs nicht zuverlässig in IndexedDB ablegen ("kann nicht gespeichert werden").
+	// Darum werden die Bytes (ArrayBuffer) mit dem Typ gespeichert, das geht in jedem Browser.
+	function blobBytes(blob) {
+		if (blob.arrayBuffer) return blob.arrayBuffer();
+		return new Promise(function (resolve, reject) {
+			var r = new FileReader();
+			r.onload = function () { resolve(r.result); };
+			r.onerror = function () { reject(r.error); };
+			r.readAsArrayBuffer(blob);
+		});
 	}
 
 	function aufnahmeSpeichern(key, blob) {
-		return dbAktion("readwrite", function (s) { return s.put(blob, key); });
+		return blobBytes(blob).then(function (daten) {
+			return dbAktion("readwrite", function (s) { return s.put({ typ: blob.type, daten: daten }, key); });
+		});
 	}
 
 	function aufnahmeLoeschen(key) {
