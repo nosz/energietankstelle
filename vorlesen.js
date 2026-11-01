@@ -454,11 +454,15 @@
 	// Safari auf iOS erlaubt Sprache und Web Audio erst, nachdem sie einmal direkt aus einem Tippen
 	// gestartet wurden. Gesprochen wird aber später (Timer, Datenbank-Abfrage), außerhalb des Tippens, und
 	// bliebe stumm. Beim ersten Tippen werden deshalb einmal lautlos Sprache und Audio angestoßen.
+	// Ohne Tippen kann iOS nicht sprechen (feste Vorgabe von Apple). Beim automatischen Start bleibt der
+	// Wechsel deshalb stehen, bis zum ersten Mal getippt wurde; ein pulsierendes "👆🔊" fordert dazu auf.
+	var freigeschaltet = !IOS;
 	if (IOS) {
-		var freigeschaltet = false;
 		var freischalten = function () {
 			if (freigeschaltet) return;
 			freigeschaltet = true;
+			if (!ausgabe) badge.classList.remove("is-on");
+			badge.textContent = "🔊";
 			["touchend", "click"].forEach(function (name) { document.removeEventListener(name, freischalten, true); });
 			try {
 				if (window.speechSynthesis) {
@@ -519,6 +523,11 @@
 		var automatischWeiter = clickOnDocument;
 		window.clickOnDocument = function () {
 			if (vorlesenLaeuft()) return;
+			if (an && !freigeschaltet) {
+				badge.textContent = "👆🔊";
+				badge.classList.add("is-on");
+				return;
+			}
 			automatischWeiter();
 		};
 	}
