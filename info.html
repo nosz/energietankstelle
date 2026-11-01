@@ -7,7 +7,7 @@
   <title>❤️ HERZ INTELLIGENZ 💪 DIE UNENDLICHE ENERGIE TANKSTELLE</title>
   <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/info.css?v=115">
+  <link rel="stylesheet" href="css/info.css?v=117">
   <!-- Open Graph Meta-Tags -->
   <meta property="og:title" content="❤️HERZ INTELLIGENZ 💪 DIE UNENDLICHE ENERGIE TANKSTELLE">
   <meta property="og:description"
@@ -37,67 +37,50 @@
   </style>
 </head>
 
-<body class="info-seite" data-ansicht="de">
+<body class="info-seite">
 
   <div id="gotoStart">
     <div class="btn-group" role="group">
-      <a href="index.html" aria-label="Zur Startseite"><button type="button" class="btn btn-default"><img src="img/house-heart.svg" width="100"
+      <a href="index.html" aria-label="Zur Startseite" data-t-aria="startseite"><button type="button" class="btn btn-default"><img src="img/house-heart.svg" width="100"
             height="100" alt="">
         </button></a>
     </div>
   </div>
 
+  <!-- Die Texte stehen deutsch im HTML (Rückfall ohne JavaScript) und werden von den Wörterbüchern im
+       Skript unten in die gewählte Sprache getauscht (data-t = Textschlüssel). -->
   <main class="container info-seite-inhalt">
 
-    <!-- ===== Kopf: Logo, Titel, Sprachumschalter ===== -->
+    <!-- ===== Kopf: Logo, Titel, Sprachwahl ===== -->
     <header class="info-hero">
-      <img src="img/energietankstelle_1.png" class="info-logo" alt="Energietankstelle">
+      <img src="img/energietankstelle_1.png" class="info-logo" alt="Energietankstelle" data-t-alt="titel">
       <p class="info-ueber">❤️ Herz-Intelligenz 💪</p>
-      <h1 class="info-titel">
-        <span data-sprache="de">Die unendliche Energietankstelle</span>
-        <span data-sprache="en">The infinite Energy Station</span>
-      </h1>
-      <ul class="nav nav-pills info-sprache" role="tablist" aria-label="Sprache / Language">
-        <li class="active" data-ansicht-knopf="de" role="presentation"><a role="tab" tabindex="0" aria-selected="true">Deutsch</a></li>
-        <li data-ansicht-knopf="en" role="presentation"><a role="tab" tabindex="0" aria-selected="false">English</a></li>
-      </ul>
+      <h1 class="info-titel" data-t="titel">Die unendliche Energietankstelle</h1>
+      <div class="info-flaggen" id="infoFlaggen" role="group" aria-label="Sprache / Language"></div>
     </header>
 
     <!-- ===== Einleitung ===== -->
     <section class="panel panel-default info-karte info-karte-intro">
       <div class="panel-body">
-        <p class="info-text" data-sprache="de">
+        <p class="info-text" data-t="intro">
           Manchmal reicht ein Klick, um kurz durchzuatmen. Genau dafür ist diese
           Energietankstelle da: ein Moment für zwischendurch, um aufzutanken und
           dir selbst ein Stück Energie zu schenken.
         </p>
-        <p class="info-text" data-sprache="en">
-          Sometimes one click is enough to take a breath. That is exactly what
-          this Energy Station is for: a moment in between to recharge and give
-          yourself a bit of energy.
-        </p>
       </div>
     </section>
 
-    <!-- ===== Weiterempfehlen und Challenge App ===== -->
+    <!-- ===== Erst Herzintelligenz, dann Challenge App ===== -->
     <div class="row info-zweispaltig">
 
       <div class="col-sm-6">
         <section class="panel panel-default info-karte info-karte-mitte">
           <div class="panel-body">
-            <h2 class="info-karte-titel">
-              <span data-sprache="de">Weiterempfehlen</span>
-              <span data-sprache="en">Recommend</span>
-            </h2>
-            <p class="info-karte-text">
-              <span data-sprache="de">Scanne den Code oder teile den Link, damit auch andere kurz auftanken können.</span>
-              <span data-sprache="en">Scan the code or share the link so others can recharge too.</span>
-            </p>
-            <img src="img/qr_energietankstelle.jpg" width="190" height="190" class="info-qr" alt="QR-Code zur Energietankstelle / QR code for the Energy Station">
-            <button type="button" class="btn btn-default info-knopf-outline" onclick="shareEnergietankstelle()">
-              <span data-sprache="de">📤 Teilen</span>
-              <span data-sprache="en">📤 Share</span>
-            </button>
+            <img src="img/herzi.png" class="info-icon-rund" alt="">
+            <h2 class="info-karte-titel" data-t="herzTitel">Herzintelligenz</h2>
+            <p class="info-karte-text" data-t="herzText">Mehr zur Herzintelligenz findest du auf der eigenen Seite, gleich in deiner Sprache.</p>
+            <!-- Der Link trägt die gewählte Sprache: ?lang=... (Codes der Herzintelligenz-Seite) -->
+            <a href="https://nosz.github.io/herzintelligenz/?lang=de" target="herzintelligenz" class="btn btn-primary" id="herzLink" data-t="herzKnopf">❤️ Zur Herzintelligenz-Seite</a>
           </div>
         </section>
       </div>
@@ -107,37 +90,22 @@
           <div class="panel-body">
             <img src="img/challenge_app_klein.png" class="info-icon-rund" alt="">
             <h2 class="info-karte-titel">Challenge App</h2>
-            <p class="info-karte-text">
-              <span data-sprache="de">Hat dir das kurze Auftanken gutgetan? Dann schau doch mal bei der Challenge App vorbei. Dort baust du Schritt für Schritt, in deinem eigenen Tempo, neue gute Gewohnheiten auf.</span>
-              <span data-sprache="en">Did that quick recharge feel good? Then take a look at the Challenge App. There you build new good habits step by step, at your own pace.</span>
-            </p>
-            <a href="https://nosz.github.io/challenge-app/" target="challenge" class="btn btn-primary">
-              <span data-sprache="de">👉 Zur Challenge App</span>
-              <span data-sprache="en">👉 Go to Challenge App</span>
-            </a>
-            <small class="info-hinweis">
-              <span data-sprache="de">kostenlos · keine Anmeldung</span>
-              <span data-sprache="en">free · no registration</span>
-            </small>
+            <p class="info-karte-text" data-t="challengeText">Hat dir das kurze Auftanken gutgetan? Dann schau doch mal bei der Challenge App vorbei. Dort baust du Schritt für Schritt, in deinem eigenen Tempo, neue gute Gewohnheiten auf.</p>
+            <a href="https://nosz.github.io/challenge-app/" target="challenge" class="btn btn-primary" data-t="challengeKnopf">👉 Zur Challenge App</a>
+            <small class="info-hinweis" data-t="challengeHinweis">kostenlos · keine Anmeldung</small>
           </div>
         </section>
       </div>
 
     </div>
 
-    <!-- ===== Herzintelligenz: Link in der gewählten Sprache (?lang=...) ===== -->
+    <!-- ===== Weiterempfehlen ===== -->
     <section class="panel panel-default info-karte info-karte-mitte">
       <div class="panel-body">
-        <img src="img/herzi.png" class="info-icon-rund" alt="">
-        <h2 class="info-karte-titel">Herzintelligenz</h2>
-        <p class="info-karte-text">
-          <span data-sprache="de">Mehr zur Herzintelligenz findest du auf der eigenen Seite, gleich in deiner Sprache.</span>
-          <span data-sprache="en">Find out more about Heart Intelligence on its own page, right in your language.</span>
-        </p>
-        <a href="https://nosz.github.io/herzintelligenz/?lang=de" target="herzintelligenz" class="btn btn-primary" id="herzLink">
-          <span data-sprache="de">❤️ Zur Herzintelligenz-Seite</span>
-          <span data-sprache="en">❤️ Go to the Heart Intelligence page</span>
-        </a>
+        <h2 class="info-karte-titel" data-t="empfehlenTitel">Weiterempfehlen</h2>
+        <p class="info-karte-text" data-t="empfehlenText">Scanne den Code oder teile den Link, damit auch andere kurz auftanken können.</p>
+        <img src="img/qr_energietankstelle.jpg" width="190" height="190" class="info-qr" alt="QR-Code zur Energietankstelle" data-t-alt="titel">
+        <button type="button" class="btn btn-default info-knopf-outline" onclick="shareEnergietankstelle()" data-t="teilen">📤 Teilen</button>
       </div>
     </section>
 
@@ -145,13 +113,9 @@
     <section class="panel panel-default info-karte info-gruss">
       <div class="panel-body">
         <span class="info-gruss-herz" aria-hidden="true">❤️</span>
-        <h2 class="info-gruss-titel">
-          <span data-sprache="de">Wünsche Dir viel Glück und Energie mit der Energietankstelle</span>
-          <span data-sprache="en">Wishing you lots of energy with the Energy Station</span>
-        </h2>
+        <h2 class="info-gruss-titel" data-t="grussTitel">Wünsche Dir viel Glück und Energie mit der Energietankstelle</h2>
         <p class="info-gruss-text">
-          <span data-sprache="de">Liebe Grüße</span>
-          <span data-sprache="en">Kind regards</span><br>
+          <span data-t="gruss">Liebe Grüße</span><br>
           <strong>Norbert Szpak</strong>
         </p>
         <a href="mailto:n.szpak@web.de" class="btn btn-default info-knopf-outline">✉️ n.szpak@web.de</a>
@@ -159,10 +123,7 @@
     </section>
 
     <footer class="info-fuss">
-      <a href="index.html">
-        <span data-sprache="de">Zur Energietankstelle</span>
-        <span data-sprache="en">Back to the Energy Station</span>
-      </a>
+      <a href="index.html" data-t="zurueck">Zur Energietankstelle</a>
       ·
       <a href="impressum.html" target="impressum">Impressum</a>
       <small class="info-version" id="appVersionNote"></small>
@@ -173,106 +134,401 @@
   <!-- ===== Teilen-Popup (Fallback, wenn kein natives Teilen-Menü verfügbar ist) ===== -->
   <div class="share-modal-backdrop" id="shareModalBackdrop" onclick="closeShareModal(event)">
     <div class="share-modal">
-      <button type="button" class="share-modal-close" onclick="closeShareModal()" aria-label="Schließen">✕</button>
-      <h3 class="share-modal-title" id="shareModalTitel">Energietankstelle teilen</h3>
+      <button type="button" class="share-modal-close" onclick="closeShareModal()" aria-label="Schließen" data-t-aria="schliessen">✕</button>
+      <h3 class="share-modal-title" id="shareModalTitel" data-t="popupTitel">Energietankstelle teilen</h3>
       <a class="share-option" id="shareWhatsapp" href="#" target="_blank" rel="noopener">
         <span class="share-icon">💬</span> WhatsApp
       </a>
       <a class="share-option" id="shareMail" href="#">
-        <span class="share-icon">✉️</span> <span id="shareMailText">E-Mail</span>
+        <span class="share-icon">✉️</span> <span data-t="mail">E-Mail</span>
       </a>
       <button type="button" class="share-option" id="shareCopy" onclick="copyShareLink()">
-        <span class="share-icon">🔗</span> <span id="shareCopyText">Link kopieren</span>
+        <span class="share-icon">🔗</span> <span data-t="kopieren">Link kopieren</span>
       </button>
-      <p class="share-copy-feedback" id="shareCopyFeedback">Link kopiert!</p>
+      <p class="share-copy-feedback" id="shareCopyFeedback" data-t="kopiert">Link kopiert!</p>
     </div>
   </div>
 
   <script>
     const SHARE_URL = "https://nosz.github.io/energietankstelle/";
+    const HERZ_URL = "https://nosz.github.io/herzintelligenz/";
 
-    // Texte je Sprachansicht (Deutsch / Englisch). Die Ansicht startet in der Sprache der App
-    // (Deutsch bei Deutsch, sonst Englisch) und lässt sich oben umschalten.
-    const TEXTE = {
+    // Sprachen der App: Code, Sprachcode der Seite (lang-Attribut), Code der Herzintelligenz-Seite (?lang=),
+    // Flaggenbild und Name in der Sprache selbst.
+    const SPRACHEN = [
+      { code: "de", html: "de", herz: "de", bild: "img/deutsch.jpg", name: "Deutsch" },
+      { code: "en", html: "en", herz: "en", bild: "img/englisch.jpg", name: "English" },
+      { code: "es", html: "es", herz: "es", bild: "img/spanisch.jpg", name: "Español" },
+      { code: "pl", html: "pl", herz: "pl", bild: "img/polnisch.png", name: "Polski" },
+      { code: "it", html: "it", herz: "it", bild: "img/italia.jpg", name: "Italiano" },
+      { code: "ru", html: "ru", herz: "ru", bild: "img/russian.jpg", name: "Русский" },
+      { code: "tu", html: "tr", herz: "tr", bild: "img/turkiye.jpg", name: "Türkçe" },
+      { code: "vi", html: "vi", herz: "vi", bild: "img/vietnam.jpg", name: "Tiếng Việt" },
+      { code: "un", html: "hu", herz: "hu", bild: "img/ungarn.jpg", name: "Magyar" },
+      { code: "ba", html: "bn", herz: "bn", bild: "img/bangla.jpg", name: "বাংলা" },
+      { code: "ukr", html: "uk", herz: "uk", bild: "img/ukraine.jpg", name: "Українська" },
+      { code: "china", html: "zh", herz: "zh", bild: "img/china.jpg", name: "中文" }
+    ];
+
+    // Wörterbuch je Sprache. Schlüssel siehe data-t / data-t-alt / data-t-aria im HTML.
+    // Fehlt ein Schlüssel in einer Sprache, gilt Englisch.
+    const T = {
       de: {
-        titel: "Energietankstelle",
-        text: "Schau dir die Energietankstelle an – ein kurzer Moment zum Auftanken:",
-        popup: "Energietankstelle teilen",
+        titel: "Die unendliche Energietankstelle",
+        name: "Energietankstelle",
+        intro: "Manchmal reicht ein Klick, um kurz durchzuatmen. Genau dafür ist diese Energietankstelle da: ein Moment für zwischendurch, um aufzutanken und dir selbst ein Stück Energie zu schenken.",
+        herzTitel: "Herzintelligenz",
+        herzText: "Mehr zur Herzintelligenz findest du auf der eigenen Seite, gleich in deiner Sprache.",
+        herzKnopf: "❤️ Zur Herzintelligenz-Seite",
+        challengeText: "Hat dir das kurze Auftanken gutgetan? Dann schau doch mal bei der Challenge App vorbei. Dort baust du Schritt für Schritt, in deinem eigenen Tempo, neue gute Gewohnheiten auf.",
+        challengeKnopf: "👉 Zur Challenge App",
+        challengeHinweis: "kostenlos · keine Anmeldung",
+        empfehlenTitel: "Weiterempfehlen",
+        empfehlenText: "Scanne den Code oder teile den Link, damit auch andere kurz auftanken können.",
+        teilen: "📤 Teilen",
+        grussTitel: "Wünsche Dir viel Glück und Energie mit der Energietankstelle",
+        gruss: "Liebe Grüße",
+        zurueck: "Zur Energietankstelle",
+        version: "Version",
+        startseite: "Zur Startseite",
+        schliessen: "Schließen",
+        popupTitel: "Energietankstelle teilen",
         mail: "E-Mail",
         kopieren: "Link kopieren",
         kopiert: "Link kopiert!",
-        schliessen: "Schließen"
+        teilenText: "Schau dir die Energietankstelle an – ein kurzer Moment zum Auftanken:"
       },
       en: {
-        titel: "Energy Station",
-        text: "Take a look at the Energy Station – a short moment to recharge:",
-        popup: "Share the Energy Station",
+        titel: "The infinite Energy Station",
+        name: "Energy Station",
+        intro: "Sometimes one click is enough to take a breath. That is exactly what this Energy Station is for: a moment in between to recharge and give yourself a bit of energy.",
+        herzTitel: "Heart Intelligence",
+        herzText: "Find out more about Heart Intelligence on its own page, right in your language.",
+        herzKnopf: "❤️ Go to the Heart Intelligence page",
+        challengeText: "Did that quick recharge feel good? Then take a look at the Challenge App. There you build new good habits step by step, at your own pace.",
+        challengeKnopf: "👉 Go to Challenge App",
+        challengeHinweis: "free · no registration",
+        empfehlenTitel: "Recommend",
+        empfehlenText: "Scan the code or share the link so others can recharge too.",
+        teilen: "📤 Share",
+        grussTitel: "Wishing you lots of energy with the Energy Station",
+        gruss: "Kind regards",
+        zurueck: "Back to the Energy Station",
+        version: "Version",
+        startseite: "Back to the start page",
+        schliessen: "Close",
+        popupTitel: "Share the Energy Station",
         mail: "Email",
         kopieren: "Copy link",
         kopiert: "Link copied!",
-        schliessen: "Close"
+        teilenText: "Take a look at the Energy Station – a short moment to recharge:"
+      },
+      es: {
+        titel: "La Estación de Energía infinita",
+        name: "Estación de Energía",
+        intro: "A veces basta un clic para respirar un momento. Para eso está esta Estación de Energía: un instante entre medias para recargar y regalarte un poco de energía.",
+        herzTitel: "Inteligencia del corazón",
+        herzText: "Encontrarás más sobre la inteligencia del corazón en su propia página, directamente en tu idioma.",
+        herzKnopf: "❤️ A la página de Inteligencia del corazón",
+        challengeText: "¿Te sentó bien esa recarga rápida? Entonces echa un vistazo a la Challenge App. Allí creas nuevos buenos hábitos paso a paso, a tu propio ritmo.",
+        challengeKnopf: "👉 Ir a Challenge App",
+        challengeHinweis: "gratis · sin registro",
+        empfehlenTitel: "Recomendar",
+        empfehlenText: "Escanea el código o comparte el enlace para que otros también puedan recargar.",
+        teilen: "📤 Compartir",
+        grussTitel: "Te deseo mucha suerte y energía con la Estación de Energía",
+        gruss: "Un cordial saludo",
+        zurueck: "A la Estación de Energía",
+        version: "Versión",
+        startseite: "A la página de inicio",
+        schliessen: "Cerrar",
+        popupTitel: "Compartir la Estación de Energía",
+        mail: "Correo",
+        kopieren: "Copiar enlace",
+        kopiert: "¡Enlace copiado!",
+        teilenText: "Echa un vistazo a la Estación de Energía: un breve momento para recargar:"
+      },
+      pl: {
+        titel: "Nieskończona Stacja Energii",
+        name: "Stacja Energii",
+        intro: "Czasem wystarczy jedno kliknięcie, by złapać oddech. Po to jest ta Stacja Energii: chwila w międzyczasie, by się naładować i podarować sobie odrobinę energii.",
+        herzTitel: "Inteligencja serca",
+        herzText: "Więcej o inteligencji serca znajdziesz na jej własnej stronie, od razu w Twoim języku.",
+        herzKnopf: "❤️ Do strony Inteligencji serca",
+        challengeText: "Czy to szybkie naładowanie dobrze Ci zrobiło? Zajrzyj więc do Challenge App. Tam krok po kroku, we własnym tempie, budujesz nowe dobre nawyki.",
+        challengeKnopf: "👉 Przejdź do Challenge App",
+        challengeHinweis: "bezpłatnie · bez rejestracji",
+        empfehlenTitel: "Poleć dalej",
+        empfehlenText: "Zeskanuj kod lub udostępnij link, aby inni też mogli się naładować.",
+        teilen: "📤 Udostępnij",
+        grussTitel: "Życzę Ci dużo szczęścia i energii ze Stacją Energii",
+        gruss: "Serdeczne pozdrowienia",
+        zurueck: "Do Stacji Energii",
+        version: "Wersja",
+        startseite: "Do strony startowej",
+        schliessen: "Zamknij",
+        popupTitel: "Udostępnij Stację Energii",
+        mail: "E-mail",
+        kopieren: "Kopiuj link",
+        kopiert: "Link skopiowany!",
+        teilenText: "Zobacz Stację Energii – krótka chwila na naładowanie:"
+      },
+      it: {
+        titel: "L’infinita Stazione di energia",
+        name: "Stazione di energia",
+        intro: "A volte basta un clic per respirare un attimo. Ecco a cosa serve questa Stazione di energia: un momento nel mezzo per ricaricarti e regalarti un po’ di energia.",
+        herzTitel: "Intelligenza del cuore",
+        herzText: "Scopri di più sull’intelligenza del cuore sulla sua pagina, subito nella tua lingua.",
+        herzKnopf: "❤️ Alla pagina dell’Intelligenza del cuore",
+        challengeText: "Ti ha fatto bene questa breve ricarica? Allora dai un’occhiata alla Challenge App. Lì costruisci nuove buone abitudini passo dopo passo, al tuo ritmo.",
+        challengeKnopf: "👉 Vai alla Challenge App",
+        challengeHinweis: "gratuito · senza registrazione",
+        empfehlenTitel: "Consiglia",
+        empfehlenText: "Scansiona il codice o condividi il link, così anche altri possono ricaricarsi.",
+        teilen: "📤 Condividi",
+        grussTitel: "Ti auguro tanta fortuna ed energia con la Stazione di energia",
+        gruss: "Cari saluti",
+        zurueck: "Alla Stazione di energia",
+        version: "Versione",
+        startseite: "Alla pagina iniziale",
+        schliessen: "Chiudi",
+        popupTitel: "Condividi la Stazione di energia",
+        mail: "E-mail",
+        kopieren: "Copia link",
+        kopiert: "Link copiato!",
+        teilenText: "Dai un’occhiata alla Stazione di energia: un breve momento per ricaricarti:"
+      },
+      ru: {
+        titel: "Бесконечная Энергетическая станция",
+        name: "Энергетическая станция",
+        intro: "Иногда достаточно одного клика, чтобы перевести дух. Для этого и создана эта Энергетическая станция: минутка по ходу дня, чтобы подзарядиться и подарить себе немного энергии.",
+        herzTitel: "Интеллект сердца",
+        herzText: "Больше об интеллекте сердца вы найдёте на его собственной странице, сразу на вашем языке.",
+        herzKnopf: "❤️ На страницу «Интеллект сердца»",
+        challengeText: "Понравилась короткая подзарядка? Тогда загляните в Challenge App. Там вы шаг за шагом, в своём темпе, формируете новые хорошие привычки.",
+        challengeKnopf: "👉 Перейти в Challenge App",
+        challengeHinweis: "бесплатно · без регистрации",
+        empfehlenTitel: "Порекомендовать",
+        empfehlenText: "Отсканируйте код или поделитесь ссылкой, чтобы и другие могли подзарядиться.",
+        teilen: "📤 Поделиться",
+        grussTitel: "Желаю вам много удачи и энергии с Энергетической станцией",
+        gruss: "С наилучшими пожеланиями",
+        zurueck: "К Энергетической станции",
+        version: "Версия",
+        startseite: "На главную страницу",
+        schliessen: "Закрыть",
+        popupTitel: "Поделиться Энергетической станцией",
+        mail: "Эл. почта",
+        kopieren: "Копировать ссылку",
+        kopiert: "Ссылка скопирована!",
+        teilenText: "Загляните на Энергетическую станцию – короткая минутка, чтобы подзарядиться:"
+      },
+      tu: {
+        titel: "Sonsuz Enerji İstasyonu",
+        name: "Enerji İstasyonu",
+        intro: "Bazen nefes almak için tek bir tık yeter. Bu Enerji İstasyonu tam da bunun için var: arada şarj olmak ve kendine biraz enerji hediye etmek için bir an.",
+        herzTitel: "Kalp Zekâsı",
+        herzText: "Kalp zekâsı hakkında daha fazlasını kendi sayfasında, hemen kendi dilinde bulabilirsin.",
+        herzKnopf: "❤️ Kalp Zekâsı sayfasına git",
+        challengeText: "Bu kısa şarj sana iyi geldi mi? O zaman Challenge App’e göz at. Orada kendi hızında, adım adım yeni iyi alışkanlıklar kazanırsın.",
+        challengeKnopf: "👉 Challenge App’e git",
+        challengeHinweis: "ücretsiz · kayıt yok",
+        empfehlenTitel: "Tavsiye et",
+        empfehlenText: "Kodu tara veya bağlantıyı paylaş, başkaları da şarj olabilsin.",
+        teilen: "📤 Paylaş",
+        grussTitel: "Enerji İstasyonu ile sana bol şans ve enerji diliyorum",
+        gruss: "Sevgilerimle",
+        zurueck: "Enerji İstasyonuna dön",
+        version: "Sürüm",
+        startseite: "Başlangıç sayfasına",
+        schliessen: "Kapat",
+        popupTitel: "Enerji İstasyonunu paylaş",
+        mail: "E-posta",
+        kopieren: "Bağlantıyı kopyala",
+        kopiert: "Bağlantı kopyalandı!",
+        teilenText: "Enerji İstasyonuna bir göz at – şarj olmak için kısa bir an:"
+      },
+      vi: {
+        titel: "Trạm năng lượng vô tận",
+        name: "Trạm năng lượng",
+        intro: "Đôi khi chỉ cần một cú nhấp để hít thở sâu. Trạm năng lượng này sinh ra chính vì điều đó: một khoảnh khắc giữa chừng để nạp năng lượng và tặng cho bản thân một chút sức sống.",
+        herzTitel: "Trí thông minh trái tim",
+        herzText: "Bạn có thể tìm hiểu thêm về trí thông minh trái tim trên trang riêng, ngay bằng ngôn ngữ của bạn.",
+        herzKnopf: "❤️ Đến trang Trí thông minh trái tim",
+        challengeText: "Lần nạp năng lượng ngắn này có giúp bạn thấy dễ chịu không? Hãy ghé Challenge App. Ở đó bạn xây dựng thói quen tốt mới từng bước, theo nhịp của riêng mình.",
+        challengeKnopf: "👉 Đến Challenge App",
+        challengeHinweis: "miễn phí · không cần đăng ký",
+        empfehlenTitel: "Giới thiệu",
+        empfehlenText: "Quét mã hoặc chia sẻ liên kết để người khác cũng có thể nạp năng lượng.",
+        teilen: "📤 Chia sẻ",
+        grussTitel: "Chúc bạn thật nhiều may mắn và năng lượng cùng Trạm năng lượng",
+        gruss: "Thân ái",
+        zurueck: "Về Trạm năng lượng",
+        version: "Phiên bản",
+        startseite: "Về trang chủ",
+        schliessen: "Đóng",
+        popupTitel: "Chia sẻ Trạm năng lượng",
+        mail: "Email",
+        kopieren: "Sao chép liên kết",
+        kopiert: "Đã sao chép liên kết!",
+        teilenText: "Hãy xem Trạm năng lượng – một khoảnh khắc ngắn để nạp năng lượng:"
+      },
+      un: {
+        titel: "A végtelen Energiaállomás",
+        name: "Energiaállomás",
+        intro: "Néha egyetlen kattintás elég egy kis lélegzetvételhez. Pontosan erre való ez az Energiaállomás: egy pillanat a nap közben, hogy feltöltődj, és egy kis energiát ajándékozz magadnak.",
+        herzTitel: "Szív-intelligencia",
+        herzText: "A szív-intelligenciáról többet a saját oldalán találsz, rögtön a saját nyelveden.",
+        herzKnopf: "❤️ A Szív-intelligencia oldalára",
+        challengeText: "Jólesett ez a rövid feltöltődés? Akkor nézz be a Challenge App-ba. Ott lépésről lépésre, a saját tempódban építesz új jó szokásokat.",
+        challengeKnopf: "👉 Irány a Challenge App",
+        challengeHinweis: "ingyenes · regisztráció nélkül",
+        empfehlenTitel: "Ajánlás",
+        empfehlenText: "Olvasd be a kódot, vagy oszd meg a linket, hogy mások is feltöltődhessenek.",
+        teilen: "📤 Megosztás",
+        grussTitel: "Sok szerencsét és energiát kívánok az Energiaállomással",
+        gruss: "Szeretettel",
+        zurueck: "Vissza az Energiaállomásra",
+        version: "Verzió",
+        startseite: "A kezdőlapra",
+        schliessen: "Bezárás",
+        popupTitel: "Az Energiaállomás megosztása",
+        mail: "E-mail",
+        kopieren: "Link másolása",
+        kopiert: "Link kimásolva!",
+        teilenText: "Nézd meg az Energiaállomást – egy rövid pillanat a feltöltődéshez:"
+      },
+      ba: {
+        titel: "অসীম এনার্জি স্টেশন",
+        name: "এনার্জি স্টেশন",
+        intro: "মাঝে মাঝে একটি ক্লিকই যথেষ্ট একটু দম নিতে। ঠিক এজন্যই এই এনার্জি স্টেশন: মাঝখানের একটি মুহূর্ত, নিজেকে রিচার্জ করতে এবং নিজেকে একটু শক্তি উপহার দিতে।",
+        herzTitel: "হৃদয়-বুদ্ধিমত্তা",
+        herzText: "হৃদয়-বুদ্ধিমত্তা সম্পর্কে আরও জানতে পারবেন এর নিজস্ব পেজে, সরাসরি আপনার ভাষায়।",
+        herzKnopf: "❤️ হৃদয়-বুদ্ধিমত্তা পেজে যান",
+        challengeText: "ছোট্ট এই রিচার্জ কি ভালো লেগেছে? তাহলে Challenge App দেখে নিন। সেখানে নিজের গতিতে, ধাপে ধাপে নতুন ভালো অভ্যাস গড়ে তুলতে পারবেন।",
+        challengeKnopf: "👉 Challenge App-এ যান",
+        challengeHinweis: "বিনামূল্যে · নিবন্ধন লাগে না",
+        empfehlenTitel: "সুপারিশ করুন",
+        empfehlenText: "কোডটি স্ক্যান করুন বা লিঙ্ক শেয়ার করুন, যাতে অন্যরাও রিচার্জ করতে পারে।",
+        teilen: "📤 শেয়ার",
+        grussTitel: "এনার্জি স্টেশনের সাথে আপনার জন্য অনেক সৌভাগ্য ও শক্তির শুভকামনা",
+        gruss: "শুভেচ্ছান্তে",
+        zurueck: "এনার্জি স্টেশনে ফিরুন",
+        version: "সংস্করণ",
+        startseite: "শুরুর পাতায়",
+        schliessen: "বন্ধ করুন",
+        popupTitel: "এনার্জি স্টেশন শেয়ার করুন",
+        mail: "ইমেইল",
+        kopieren: "লিঙ্ক কপি করুন",
+        kopiert: "লিঙ্ক কপি হয়েছে!",
+        teilenText: "এনার্জি স্টেশনটি দেখুন – রিচার্জ করার একটি ছোট্ট মুহূর্ত:"
+      },
+      ukr: {
+        titel: "Нескінченна Енергетична заправка",
+        name: "Енергетична заправка",
+        intro: "Іноді досить одного кліку, щоб перевести подих. Саме для цього існує ця Енергетична заправка: хвилинка між справами, щоб підзарядитися й подарувати собі трохи енергії.",
+        herzTitel: "Інтелект серця",
+        herzText: "Більше про інтелект серця ви знайдете на його власній сторінці, одразу вашою мовою.",
+        herzKnopf: "❤️ На сторінку «Інтелект серця»",
+        challengeText: "Чи пішла вам на користь ця коротка підзарядка? Тоді завітайте до Challenge App. Там ви крок за кроком, у своєму темпі, формуєте нові корисні звички.",
+        challengeKnopf: "👉 До Challenge App",
+        challengeHinweis: "безкоштовно · без реєстрації",
+        empfehlenTitel: "Порекомендувати",
+        empfehlenText: "Скануйте код або поділіться посиланням, щоб інші теж могли підзарядитися.",
+        teilen: "📤 Поділитися",
+        grussTitel: "Бажаю вам багато щастя й енергії з Енергетичною заправкою",
+        gruss: "З теплими вітаннями",
+        zurueck: "До Енергетичної заправки",
+        version: "Версія",
+        startseite: "На головну сторінку",
+        schliessen: "Закрити",
+        popupTitel: "Поділитися Енергетичною заправкою",
+        mail: "Ел. пошта",
+        kopieren: "Копіювати посилання",
+        kopiert: "Посилання скопійовано!",
+        teilenText: "Погляньте на Енергетичну заправку – коротка мить, щоб підзарядитися:"
+      },
+      china: {
+        titel: "无限能量加油站",
+        name: "能量加油站",
+        intro: "有时只需点一下，就能喘口气。这座能量加油站正是为此而生：在忙碌之间的片刻，为自己充电，送自己一点能量。",
+        herzTitel: "心智",
+        herzText: "想了解更多心智，请访问它的专属页面，直接以你的语言阅读。",
+        herzKnopf: "❤️ 前往心智页面",
+        challengeText: "这次小小的充电让你感觉好吗？那就来看看 Challenge App。在那里，你可以按自己的节奏，一步一步养成新的好习惯。",
+        challengeKnopf: "👉 前往 Challenge App",
+        challengeHinweis: "免费 · 无需注册",
+        empfehlenTitel: "推荐给朋友",
+        empfehlenText: "扫描二维码或分享链接，让更多人也能充电。",
+        teilen: "📤 分享",
+        grussTitel: "祝你在能量加油站收获满满的好运与能量",
+        gruss: "此致问候",
+        zurueck: "返回能量加油站",
+        version: "版本",
+        startseite: "返回首页",
+        schliessen: "关闭",
+        popupTitel: "分享能量加油站",
+        mail: "电子邮件",
+        kopieren: "复制链接",
+        kopiert: "链接已复制！",
+        teilenText: "来看看能量加油站——一个让你充电的小小片刻："
       }
     };
 
-    function ansicht() {
-      return document.body.getAttribute("data-ansicht") === "en" ? "en" : "de";
+    let aktuell = "de";
+    let version = "";
+
+    function t(schluessel) {
+      return (T[aktuell] && T[aktuell][schluessel]) || T.en[schluessel] || "";
     }
 
-    // Sprachcodes der Herzintelligenz-Seite (https://nosz.github.io/herzintelligenz/?lang=...) zu den Codes der App.
-    const HERZ_CODES = {
-      de: "de", en: "en", es: "es", pl: "pl", it: "it", ru: "ru",
-      tu: "tr", vi: "vi", ba: "bn", un: "hu", ukr: "uk", china: "zh"
-    };
-    const HERZ_URL = "https://nosz.github.io/herzintelligenz/";
-
-    // Der Link folgt der gewählten Sprache: zuerst der Sprache der App (alle 12), nach einem Klick auf
-    // Deutsch oder English oben der dort gewählten Sprache.
-    function herzLinkSetzen(appCode) {
-      const code = HERZ_CODES[appCode] || "en";
-      document.getElementById("herzLink").href = HERZ_URL + "?lang=" + code;
-    }
-
-    function setzeAnsicht(sprache, appCode) {
-      herzLinkSetzen(appCode || sprache);
-      document.body.setAttribute("data-ansicht", sprache);
-      document.documentElement.lang = sprache;
-      document.querySelectorAll("[data-ansicht-knopf]").forEach(function (li) {
-        const aktiv = li.getAttribute("data-ansicht-knopf") === sprache;
-        li.classList.toggle("active", aktiv);
-        li.firstElementChild.setAttribute("aria-selected", aktiv ? "true" : "false");
+    // Setzt die ganze Seite auf eine Sprache: Texte, Alt-/Aria-Beschriftungen, lang-Attribut, Flaggen,
+    // Herzintelligenz-Link (?lang=...) und die Version in der Fußzeile.
+    function setzeSprache(code) {
+      const eintrag = SPRACHEN.find(s => s.code === code) || SPRACHEN[0];
+      aktuell = eintrag.code;
+      document.documentElement.lang = eintrag.html;
+      document.querySelectorAll("[data-t]").forEach(function (el) { el.textContent = t(el.getAttribute("data-t")); });
+      document.querySelectorAll("[data-t-alt]").forEach(function (el) { el.setAttribute("alt", t(el.getAttribute("data-t-alt"))); });
+      document.querySelectorAll("[data-t-aria]").forEach(function (el) { el.setAttribute("aria-label", t(el.getAttribute("data-t-aria"))); });
+      document.getElementById("herzLink").href = HERZ_URL + "?lang=" + eintrag.herz;
+      document.querySelectorAll(".info-flagge").forEach(function (b) {
+        b.classList.toggle("active", b.getAttribute("data-code") === aktuell);
+        b.setAttribute("aria-pressed", b.getAttribute("data-code") === aktuell ? "true" : "false");
       });
-      const t = TEXTE[sprache];
-      document.getElementById("shareModalTitel").textContent = t.popup;
-      document.getElementById("shareMailText").textContent = t.mail;
-      document.getElementById("shareCopyText").textContent = t.kopieren;
-      document.getElementById("shareCopyFeedback").textContent = t.kopiert;
-      document.querySelector(".share-modal-close").setAttribute("aria-label", t.schliessen);
+      versionAnzeigen();
     }
 
-    document.querySelectorAll("[data-ansicht-knopf]").forEach(function (li) {
-      const wechseln = function () { setzeAnsicht(li.getAttribute("data-ansicht-knopf")); };
-      li.addEventListener("click", wechseln);
-      li.firstElementChild.addEventListener("keydown", function (ev) {
-        if (ev.key === "Enter" || ev.key === " ") {
-          ev.preventDefault();
-          wechseln();
-        }
-      });
+    function versionAnzeigen() {
+      document.getElementById("appVersionNote").textContent = version ? t("version") + " " + version : "";
+    }
+
+    // Flaggen zur Sprachwahl (nur für diese Seite; die Sprache der App bleibt unverändert).
+    const flaggen = document.getElementById("infoFlaggen");
+    SPRACHEN.forEach(function (s) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "info-flagge";
+      b.setAttribute("data-code", s.code);
+      b.title = s.name;
+      b.setAttribute("aria-label", s.name);
+      b.innerHTML = '<img src="' + s.bild + '" alt="" width="30" height="20">';
+      b.addEventListener("click", function () { setzeSprache(s.code); });
+      flaggen.appendChild(b);
     });
 
-    // Startansicht: Sprache der App (de -> Deutsch, alle anderen -> Englisch).
+    // Startsprache: die Sprache der App.
     (function () {
       let app = "de";
       try { app = localStorage.getItem("langEnergie") || "de"; } catch (e) {}
-      setzeAnsicht(app === "de" ? "de" : "en", app);
+      setzeSprache(T[app] ? app : "de");
     }());
 
     function shareEnergietankstelle() {
-      const t = TEXTE[ansicht()];
       if (navigator.share) {
         navigator.share({
-          title: t.titel,
-          text: t.text,
+          title: t("name"),
+          text: t("teilenText"),
           url: SHARE_URL
         }).catch(() => {
           // Nutzer hat abgebrochen oder Fehler – kein Fallback nötig
@@ -283,14 +539,13 @@
     }
 
     function openShareModal() {
-      const t = TEXTE[ansicht()];
       const backdrop = document.getElementById("shareModalBackdrop");
       const whatsapp = document.getElementById("shareWhatsapp");
       const mail = document.getElementById("shareMail");
 
-      whatsapp.href = "https://wa.me/?text=" + encodeURIComponent(t.text + " " + SHARE_URL);
-      mail.href = "mailto:?subject=" + encodeURIComponent(t.titel) +
-        "&body=" + encodeURIComponent(t.text + " " + SHARE_URL);
+      whatsapp.href = "https://wa.me/?text=" + encodeURIComponent(t("teilenText") + " " + SHARE_URL);
+      mail.href = "mailto:?subject=" + encodeURIComponent(t("name")) +
+        "&body=" + encodeURIComponent(t("teilenText") + " " + SHARE_URL);
 
       backdrop.classList.add("is-open");
     }
@@ -315,7 +570,8 @@
       .then(text => {
         const match = text.match(/APP_VERSION\s*=\s*"(\d+)"/);
         if (match) {
-          document.getElementById("appVersionNote").textContent = "Version " + match[1];
+          version = match[1];
+          versionAnzeigen();
         }
       })
       .catch(() => {

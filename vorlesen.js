@@ -266,9 +266,29 @@
 	stimmeBox.id = "vorlesenStimmeBox";
 	stimmeBox.innerHTML =
 		'<label class="control-label small" for="vorlesenStimme" id="vorlesenStimmeText"></label>' +
+		'<div class="input-group" id="vorlesenStimmeGruppe">' +
 		'<select class="form-control" id="vorlesenStimme"></select>' +
+		'<span class="input-group-btn"><button type="button" class="btn btn-default" id="vorlesenTest"></button></span>' +
+		'</div>' +
 		'<p class="text-warning small vorlesen-keine-stimme" id="vorlesenKeineStimme"></p>';
 	el("einstListe").appendChild(stimmeBox);
+
+	// Testen-Knopf: in den Einstellungen wird nie von selbst gesprochen. Die Stimme kommt nur, wenn
+	// jemand hier auf "Testen" tippt. Je Sprache: [Knopf, Beispielsatz].
+	var TEST = {
+		de: ["Testen", "Hallo! So klingt die ausgewählte Stimme."],
+		en: ["Test", "Hello! This is how the selected voice sounds."],
+		es: ["Probar", "¡Hola! Así suena la voz seleccionada."],
+		pl: ["Testuj", "Cześć! Tak brzmi wybrany głos."],
+		it: ["Prova", "Ciao! Ecco come suona la voce selezionata."],
+		ru: ["Проверить", "Здравствуйте! Так звучит выбранный голос."],
+		tu: ["Dene", "Merhaba! Seçilen ses böyle duyuluyor."],
+		vi: ["Thử", "Xin chào! Đây là giọng đọc bạn đã chọn."],
+		ba: ["পরীক্ষা", "হ্যালো! নির্বাচিত কণ্ঠ এভাবেই শোনায়।"],
+		un: ["Teszt", "Szia! Így hangzik a kiválasztott hang."],
+		ukr: ["Перевірити", "Привіт! Ось як звучить вибраний голос."],
+		china: ["试听", "你好！所选语音听起来就是这样。"]
+	};
 
 	// Hinweis, wenn für die gewählte Sprache keine Stimme auf dem Gerät installiert ist.
 	var KEINE_STIMME = {
@@ -319,7 +339,8 @@
 		el("vorlesenStimmeBox").style.display = an ? "" : "none";
 		stimmenListeFuellen();
 		var keine = keineStimmeFuerSprache();
-		el("vorlesenStimme").style.display = keine ? "none" : "";
+		el("vorlesenTest").textContent = "▶ " + (TEST[sprache()] || TEST.en)[0];
+		el("vorlesenStimmeGruppe").style.display = keine ? "none" : "";
 		el("vorlesenStimmeText").style.display = keine ? "none" : "";
 		el("vorlesenKeineStimme").textContent = keine ? (KEINE_STIMME[sprache()] || KEINE_STIMME.en) : "";
 		el("vorlesenKeineStimme").style.display = keine ? "" : "none";
@@ -417,10 +438,6 @@
 		}, function () {
 			if (token === wiedergabeToken && !sprich(text)) ausgabeEnde();
 		});
-	}
-
-	function aktuellenSpruchSprechen() {
-		if (an && letzterText) spieleSpruch(letzterRoh, letzterText);
 	}
 
 	// Jeder neue Spruch landet in #moti (energieAnzeigen); currentShareText
@@ -612,12 +629,9 @@
 		if (an === neu) return;
 		an = neu;
 		try { localStorage.setItem(AN_KEY, an ? "1" : "0"); } catch (e) {}
-		if (an) {
-			// Der Klick ist die Nutzer-Geste, die der Browser für Ton verlangt.
-			aktuellenSpruchSprechen();
-		} else {
-			allesStoppen();
-		}
+		// In den Einstellungen kommt keine Stimme von selbst: weder beim Einschalten noch beim
+		// Wechseln der Stimme. Ausgeschaltet wird eine laufende Ausgabe gestoppt.
+		if (!an) allesStoppen();
 		oberflaecheAktualisieren();
 	}
 	el("vorlesenAn").addEventListener("click", function () { vorlesenSetzen(true); });
@@ -625,7 +639,14 @@
 
 	el("vorlesenStimme").addEventListener("change", function () {
 		try { localStorage.setItem(STIMME_KEY, el("vorlesenStimme").value); } catch (e) {}
-		aktuellenSpruchSprechen();
+		allesStoppen(); // eine laufende Probe mit der alten Stimme beenden; gesprochen wird erst bei "Testen"
+	});
+
+	// "Testen": spricht einen kurzen Beispielsatz mit der gewählten Stimme (nur auf Tipp).
+	el("vorlesenTest").addEventListener("click", function () {
+		allesStoppen();
+		var beispiel = (TEST[sprache()] || TEST.en)[1];
+		if (!sprich(beispiel)) ausgabeEnde();
 	});
 
 	// Beschriftung an die aktuelle Sprache anpassen: beim Öffnen des Popups und
