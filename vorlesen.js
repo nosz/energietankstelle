@@ -60,6 +60,7 @@
 	var wiedergabeToken = 0;
 	var audio = null;
 	var audioUrl = null;
+	var IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 	var audioKontext = null;   // Web Audio für die Wiedergabe eigener Aufnahmen
 	var quelle = null;         // laufende Aufnahme-Wiedergabe über Web Audio
 	var AUFNAHME_ENDE_KUERZEN_S = 0.1;   // vom Ende längerer Aufnahmen weglassen
@@ -192,6 +193,7 @@
 
 	function allesStoppen() {
 		wiedergabeToken += 1;
+		utteranceId += 1; // eine noch wartende Sprachausgabe (iOS-Verzögerung) verfällt
 		audioStoppen();
 		if (window.speechSynthesis) window.speechSynthesis.cancel();
 		ausgabeEnde();
@@ -419,8 +421,47 @@
 		u.onend = ende;
 		u.onerror = ende;
 		ausgabeBeginnt(Math.min(90000, 8000 + text.length * 130));
-		window.speechSynthesis.speak(u);
+		var los = function () {
+			if (id !== utteranceId) return; // inzwischen kam eine neuere Ausgabe oder ein Stopp
+			window.speechSynthesis.resume(); // iOS lässt die Ausgabe sonst manchmal pausiert
+			window.speechSynthesis.speak(u);
+		};
+		// iOS verwirft ein speak(), das direkt nach cancel() kommt: kurz warten.
+		if (IOS) setTimeout(los, 80);
+		else los();
 		return true;
+	}
+
+	// ---------- iPhone/iPad: Ton freischalten ----------
+	// Safari auf iOS erlaubt Sprache und Web Audio erst, nachdem sie einmal direkt aus einem Tippen
+	// gestartet wurden. Gesprochen wird aber später (Timer, Datenbank-Abfrage), außerhalb des Tippens, und
+	// bliebe stumm. Beim ersten Tippen werden deshalb einmal lautlos Sprache und Audio angestoßen.
+	if (IOS) {
+		var freigeschaltet = false;
+		var freischalten = function () {
+			if (freigeschaltet) return;
+			freigeschaltet = true;
+			["touchend", "click"].forEach(function (name) { document.removeEventListener(name, freischalten, true); });
+			try {
+				if (window.speechSynthesis) {
+					var stumm = new SpeechSynthesisUtterance(" ");
+					stumm.volume = 0;
+					window.speechSynthesis.speak(stumm);
+				}
+			} catch (e) {}
+			try {
+				var AC = window.AudioContext || window.webkitAudioContext;
+				if (AC) {
+					var ctx = audioKontext || (audioKontext = new AC());
+					ctx.resume().catch(function () {});
+					var leer = ctx.createBufferSource();
+					leer.buffer = ctx.createBuffer(1, 1, 22050);
+					leer.connect(ctx.destination);
+					leer.start(0);
+				}
+			} catch (e) {}
+		};
+		["touchend", "click"].forEach(function (name) { document.addEventListener(name, freischalten, true); });
 	}
 
 	// Spielt für einen Spruch die eigene Aufnahme (falls vorhanden), sonst die
